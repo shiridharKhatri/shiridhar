@@ -1,0 +1,31 @@
+{
+  "name": "next-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "annyang": "^2.6.1",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}
