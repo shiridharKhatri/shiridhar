@@ -52,10 +52,12 @@ export default function Blogs() {
               <p>latest</p>
               <h2>{e.title}</h2>
               <h6>Published on 2023/08/08 at 2:45PM</h6>
-              <button>
-                Read More&nbsp;
-                <BiIcons.BiChevronRight />
-              </button>
+              <div className="btns-blog">
+                <button>
+                  Read More&nbsp;
+                  <BiIcons.BiChevronRight />
+                </button>
+              </div>
             </div>
           );
         })}

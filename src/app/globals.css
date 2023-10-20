@@ -11,33 +11,31 @@ html {
 body {
   background-color: #f5f5f5;
 }
-section {
+section,
+footer {
   overflow: hidden;
   white-space: wrap;
   word-break: break-word;
 }
+.hidden {
+  display: none;
+}
 nav.navbar {
-  padding: 1rem 3rem;
-  /* background-color: #ffffff; */
+  padding: 2rem 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 3rem; */
-  height: 11rem;
-  /* position: fixed; */
   z-index: 999;
   color: #fff;
 }
 nav.navbar-scrolled {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   background-color: #000;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 3rem; */
-  height: 11rem;
   position: fixed;
   z-index: 999;
   color: #fff;
@@ -50,6 +48,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 nav .otherSec {
   display: flex;
@@ -64,6 +63,70 @@ nav .otherSec form {
   border-radius: 3rem;
   border: 0.1rem solid #5626c4;
   position: relative;
+}
+#DropDown {
+  position: absolute;
+  background: #ffffff;
+  top: 9rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  right: 15rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+#DropDown li {
+  color: #101010;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem;
+  height: 100%;
+  border-radius: 1rem;
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+#DropDown li::before {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -2rem;
+  background-color: #5626c4;
+  transition: 0.3s ease;
+}
+#DropDown li:hover:before {
+  content: "";
+  height: 100%;
+  width: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -1rem;
+  background-color: #5626c4;
+  transition: 0.3s ease;
+}
+#DropDown li:hover {
+  background: #5626c43d;
+  color: #5626c4;
+}
+#DropDown li span {
+  background: #5626c4;
+  height: 5rem;
+  width: 5rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  border-radius: 1rem;
+  color: #ffffff;
 }
 nav .otherSec form .voiceSection {
   position: absolute;
@@ -871,24 +934,36 @@ button.learn-more:hover .button-text {
   color: #ff9529;
 }
 .BlogContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  align-items: center;
   padding: 1rem;
   height: 51rem;
+  width: 100%;
   margin-top: 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
+.BlogContainer::-webkit-scrollbar {
+  display: none;
 }
 .items {
   background: #ffffff;
   margin: 0.7rem;
   border-radius: 3rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* height: 47.5rem; */
+  position: relative;
   width: 31rem;
+  height: 47rem;
 }
 .items .image-top img {
   width: 100%;
   height: auto;
   border-radius: 3rem 3rem 0 0;
+}
+.items .btns-blog {
+  position: absolute;
+  bottom: 2rem;
 }
 .items h6 {
   margin: -1rem 2rem 2rem 2rem;
@@ -1246,10 +1321,15 @@ section.verify .mainVerifyCard form .verify-bt {
 section.verify .mainVerifyCard form .verify-bt button {
   padding: 1rem;
   width: 10rem;
-  border-radius: 0.5rem;
+  border-radius: 3rem;
   border: none;
-  margin-left: 0.5rem;
+  margin-left: 1.5rem;
   cursor: pointer;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 section.verify .mainVerifyCard form input {
   height: 4.5rem;
@@ -1259,7 +1339,7 @@ section.verify .mainVerifyCard form input {
   border: 0.1rem solid #445;
   margin: 1rem 0 0 0;
 }
-section.verify .mainVerifyCard form p{
+section.verify .mainVerifyCard form p {
   margin: 0;
   font-size: 1rem;
   width: 98%;
@@ -1267,7 +1347,7 @@ section.verify .mainVerifyCard form p{
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-top: 0.3rem;
+  margin: 0.1rem 0 0 0;
 }
 .gender .radio-button-container {
   display: flex;
@@ -1349,7 +1429,7 @@ section.verify .mainVerifyCard form p{
 
 .mainSignupCard form label {
   font-size: 1.5rem;
-  margin: 2rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   width: 88%;
 }
 .mainSignupCard form input {
@@ -1390,6 +1470,29 @@ section.signup .mainSignupCard {
   align-items: center;
   margin: 0.2rem 0 0 0;
 }
+
+.verify .successDisplay {
+  position: fixed;
+  top: -5rem;
+  background: rgb(90 223 132);
+  z-index: 999;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  width: 35rem;
+  color: rgb(22 101 52);
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.verify .successDisplay p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .signup .successDisplay {
   position: fixed;
   top: -5rem;
@@ -1519,6 +1622,51 @@ section.signup .mainSignupCard {
   font-family: "Belanosima", sans-serif;
   color: #445;
 }
+
+/* Spinner loader section  */
+.spinner {
+  --clr: rgb(0, 113, 128);
+  --gap: 6px;
+  /* gap between each circle */
+  /* width: 100px;
+  height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.spinner span {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  background-color: #f7cd46;
+  opacity: 0;
+}
+
+.spinner span:nth-child(1) {
+  animation: fade 1s ease-in-out infinite;
+}
+
+.spinner span:nth-child(2) {
+  animation: fade 1s ease-in-out 0.33s infinite;
+}
+
+.spinner span:nth-child(3) {
+  animation: fade 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+}
+
 footer {
   background: #000000;
   padding: 1rem;
@@ -1544,6 +1692,13 @@ footer .topSection {
   justify-content: space-between;
   align-items: center;
   /* background: red; */
+  padding: 1rem;
+}
+footer .topSection .flex-disp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
   padding: 1rem;
 }
 footer .topSection h1 {

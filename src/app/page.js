@@ -1,3 +1,4 @@
+
 import BelowButton from "./components/BelowButton";
 import Expertise from "./components/Expertise";
 import Footer from "./components/Footer";
@@ -8,10 +9,9 @@ import Projects from "./components/Projects";
 import Blogs from "./components/Blogs";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
-
 export default function Home() {
   return (
-    <main>
+    <>
       <Nav position="fixed" />
       <Header/>
       <BelowButton/>
@@ -22,6 +22,6 @@ export default function Home() {
       <Testimonial/>
       <Mail/>
       <Footer/>
-    </main>
+    </>
   )
 }

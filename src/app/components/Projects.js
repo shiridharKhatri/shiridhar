@@ -141,12 +141,12 @@ export default function Projects() {
         })}
       </div>
 
-      <div className="showMore">
+      {/* <div className="showMore">
         <button>
           Show more&nbsp;
           <BiIcons.BiChevronDown />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }

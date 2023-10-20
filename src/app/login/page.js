@@ -14,18 +14,30 @@ export default function Login() {
           <div id="welcomeTe">
             <h4>Hey There!</h4>
             <h4>
-              Welcome back <span style={{ color: "#5626c4" }}>Portfolio.</span>
+              Welcome back{" "}
+              <span
+                style={{
+                  color: "#5626c4",
+                  fontFamily: `"Belanosima", sans-serif`,
+                }}
+              >
+                Portfolio.
+              </span>
             </h4>
           </div>
           <form>
-            <label className="email" htmlFor="email">Email</label>
+            <label className="email" htmlFor="email">
+              Email
+            </label>
             <input
               type="email"
               name="email"
               id="emailinp"
               placeholder="example@gmail.com"
             />
-            <label className="password" htmlFor="password">Password</label>
+            <label className="password" htmlFor="password">
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -49,9 +61,30 @@ export default function Login() {
           <h5>Or With</h5>
           <div className="socialLogin">
             <ul>
-                <li><img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/google-logo.png" alt="google-logo"/></li>
-                <li><img width="50" height="50" src="https://img.icons8.com/3d-fluency/188/facebook-circled.png" alt="facebook-circled"/></li>
-                <li><img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/github.png" alt="github"/></li>
+              <li>
+                <img
+                  width="50"
+                  height="50"
+                  src="https://img.icons8.com/3d-fluency/94/google-logo.png"
+                  alt="google-logo"
+                />
+              </li>
+              <li>
+                <img
+                  width="50"
+                  height="50"
+                  src="https://img.icons8.com/3d-fluency/188/facebook-circled.png"
+                  alt="facebook-circled"
+                />
+              </li>
+              <li>
+                <img
+                  width="50"
+                  height="50"
+                  src="https://img.icons8.com/3d-fluency/94/github.png"
+                  alt="github"
+                />
+              </li>
             </ul>
           </div>
         </div>

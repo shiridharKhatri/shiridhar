@@ -1,4 +1,4 @@
-import { CgMenuRight } from "react-icons/cg";
+import { CgMenuRight, CgFeed } from "react-icons/cg";
 import {
   BiChevronDown,
   BiLogoJavascript,
@@ -14,11 +14,12 @@ import {
   AiFillHeart,
   AiOutlineEye,
   AiFillStar,
-  
+  AiOutlineLogin,
+  AiOutlineFundProjectionScreen
 } from "react-icons/ai";
 import { RiServiceLine } from "react-icons/ri";
 import { CiStickyNote, CiImageOn } from "react-icons/ci";
-import { GoProjectRoadmap, GoCodeReview } from "react-icons/go";
+import { GoProjectRoadmap, GoCodeReview, GoFileCode } from "react-icons/go";
 import { SiNextdotjs } from "react-icons/si";
 import {
   FaNodeJs,
@@ -35,38 +36,57 @@ import {
   IoLogoSass,
   IoPlay,
   IoStop,
-  IoCheckmarkDoneCircle
+  IoCheckmarkDoneCircle,
+  IoMenu,
+  IoCloseSharp
 } from "react-icons/io5";
 import { FiChevronLeft, FiInstagram, FiChevronRight } from "react-icons/fi";
-import { BsArrowRightShort } from "react-icons/bs";
-import { TbBrandFiverr } from "react-icons/tb";
+import {
+  BsArrowRightShort,
+  BsBook,
+  BsPersonPlus,
+  BsMenuButtonWideFill,
+  BsMenuUp,
+  BsInfoCircle
+} from "react-icons/bs";
+import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
 import {
   MdKeyboardVoice,
   MdSettingsVoice,
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
-  MdDone
+  MdDone,
+  MdOutlineWorkspacePremium,
+  MdWorkOutline
 } from "react-icons/md";
-import {HiPlus} from "react-icons/hi2"
-const HiIcons ={
-  HiPlus
-}
+import { HiPlus } from "react-icons/hi2";
+const HiIcons = {
+  HiPlus,
+};
 const MdIcons = {
   MdKeyboardVoice,
   MdSettingsVoice,
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
-  MdDone
+  MdDone,
+  MdOutlineWorkspacePremium,
+  MdWorkOutline
 };
 const Fa6Icons = {
   FaLocationDot,
 };
 const TbIcons = {
   TbBrandFiverr,
+  TbPhoto,
 };
 const BsIcons = {
   BsArrowRightShort,
+  BsBook,
+  BsPersonPlus,
+  BsMenuButtonWideFill,
+  BsMenuUp,
+  BsInfoCircle
 };
 const FiIcons = {
   FiChevronLeft,
@@ -75,6 +95,7 @@ const FiIcons = {
 };
 const CgIcons = {
   CgMenuRight,
+  CgFeed,
 };
 const SiIcons = {
   SiNextdotjs,
@@ -97,7 +118,9 @@ const IoIcons = {
   IoLogoSass,
   IoPlay,
   IoStop,
-  IoCheckmarkDoneCircle
+  IoCheckmarkDoneCircle,
+  IoMenu,
+  IoCloseSharp
 };
 const BiIcons = {
   BiChevronDown,
@@ -114,6 +137,8 @@ const AiIcons = {
   AiOutlineEye,
   AiFillHtml5,
   AiFillStar,
+  AiOutlineLogin,
+  AiOutlineFundProjectionScreen
 };
 const RiIcons = {
   RiServiceLine,
@@ -121,6 +146,7 @@ const RiIcons = {
 const GoIcons = {
   GoProjectRoadmap,
   GoCodeReview,
+  GoFileCode,
 };
 const CiIcons = {
   CiStickyNote,
@@ -142,5 +168,5 @@ export {
   TbIcons,
   Fa6Icons,
   MdIcons,
-  HiIcons
+  HiIcons,
 };

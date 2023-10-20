@@ -1,0 +1,286 @@
+@media (max-width: 1000px) {
+  html {
+    font-size: 55%;
+  }
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hidden {
+    display: inline-flex;
+  }
+  nav #logo img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+  }
+  nav #logo .imageProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav #logo .imageProfile .profileDe {
+    margin-left: 2rem;
+  }
+  nav #logo .imageProfile .profileDe h1 {
+    font-size: 2.5rem;
+    color: #f7cd46;
+  }
+  #DropDown li:hover {
+    background: #5626c43d;
+    color: #ffffff;
+  }
+  nav #logo .imageProfile .profileDe p {
+    font-size: 1.4rem;
+  }
+  nav ul {
+    position: absolute;
+    height: 100vh;
+    background: #000000;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: -100%;
+    width: 55rem;
+    padding: 1rem;
+    transition: 0.2s cubic-bezier(0.65, 0.05, 0.44, 0.53) all;
+  }
+  section.BelowButton {
+    padding: 0;
+    margin: 3rem 1rem 3rem 1rem;
+  }
+  nav .otherSec .menu h1 {
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* background: #5626c4; */
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  nav .otherSec form {
+    justify-content: space-between;
+    position: relative;
+    height: 6rem;
+    width: 31rem;
+  }
+  nav ul li span {
+    background: #5626c4;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 1rem;
+    color: #ffffff;
+  }
+  nav .otherSec form input {
+    padding: 1.2rem 0 1.2rem 2rem;
+  }
+  .expertise .mainContent .contentCard {
+    flex: 0 0 18rem;
+  }
+  .items {
+    flex: 0 0 30rem;
+    height: 48rem;
+  }
+
+  .BlogContainer::-webkit-scrollbar {
+    display: none;
+  }
+  #DropDown {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  #DropDown li {
+    height: auto;
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  nav ul .more {
+    font-size: 2rem;
+    padding: 1rem;
+    /* margin: 0 1rem 0 0; */
+    width: 100%;
+    border-top: 0.1rem solid #445;
+    border-bottom: 0.1rem solid #445;
+  }
+
+  #DropDown li span {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+  }
+  nav #DropDown .more {
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-top: 0.1rem solid #445;
+    border-bottom: 0.1rem solid #445;
+  }
+  nav #DropDown .more h3 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  nav #DropDown .more h3 span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  nav ul .more h3 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  nav ul .more h3 span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+  }
+
+  #contact {
+    display: none;
+  }
+  #AuthIco {
+    width: 100%;
+    height: 5.5rem;
+    font-size: 2rem;
+    background: #5626c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    margin: 0;
+  }
+  #moreItem {
+    display: none;
+  }
+  #logo {
+    width: 100%;
+    padding: 0 0 0 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #logo .cancel h2 {
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    color: #445;
+  }
+  nav ul li {
+    font-size: 2rem;
+    width: 95%;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  section.projects .titleHead h3 {
+    font-size: 1.9rem;
+  }
+  section.projects .projectCards .card {
+    background-color: transparent;
+    border-top: 0.1rem solid #445;
+    border-radius: 0;
+    margin: 2rem 0;
+    padding: 2rem 0 0 0;
+  }
+  section.projects .projectCards .card .buttons {
+    margin: 3rem 0 0 0;
+  }
+  section.projects .projectCards img {
+    border-radius: 2rem;
+  }
+
+  section.projects .projectCards {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .showMore button {
+    border-radius: 3rem;
+    width: 20rem;
+    font-size: 2rem;
+    height: 5rem;
+  }
+  header {
+    height: 70rem;
+  }
+  header h1 {
+    font-size: 20rem;
+  }
+  section.projects .projectCards .card .details .techUsed ul li {
+    font-size: 2.5rem;
+    margin: 0.2rem;
+    margin-top: 1rem;
+  }
+  section.projects .projectCards .card .buttons button {
+    font-size: 2rem;
+    background: #101010;
+    border-radius: 5rem;
+    height: 6rem;
+    margin: 1rem;
+    color: #ffffff;
+  }
+  section.projects .projectCards .card .buttons button:hover {
+    background: #10101059;
+    color: #101010;
+  }
+  section.expertise {
+    margin: 10rem 0 0 0;
+  }
+  section.BelowButton li span {
+    display: none;
+  }
+  section.BelowButton li {
+    width: 100%;
+    margin: 0 0.5rem;
+  }
+  section.projects p {
+    font-size: 1.9rem;
+  }
+  section.projects .projectCards .card .details h2 {
+    font-size: 3rem;
+  }
+  footer .topSection {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  footer .topSection .topLogo {
+    background: #101010;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+  }
+  footer .topSection .flex-disp-footer {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  footer .fourthSection {
+    padding: 0;
+    margin-top: 3rem;
+  }
+}

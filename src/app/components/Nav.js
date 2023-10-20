@@ -1,15 +1,24 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import annyang from "annyang";
-import { MdIcons, BiIcons, IoIcons, BsIcons } from "./Icons";
+import {
+  MdIcons,
+  BiIcons,
+  IoIcons,
+  AiIcons,
+  BsIcons,
+  CgIcons,
+  GoIcons,
+  TbIcons,
+} from "./Icons";
 export default function Nav(props) {
   // const [recognizedText, setRecognizedText] = useState("");
   const [active, setActive] = useState(false);
   const [inpVal, setInpVal] = useState("");
-    const [isScrolled, setIsScrolled] = useState(false);
-  const onChangeState = (e)=>{
-    setInpVal(e.target.value)
-  }
+  const [isScrolled, setIsScrolled] = useState(false);
+  const onChangeState = (e) => {
+    setInpVal(e.target.value);
+  };
   const showOptVoice = (e) => {
     e.preventDefault();
     const voiceSection = document.getElementById("voiceSection");
@@ -27,12 +36,6 @@ export default function Nav(props) {
       const commands = {
         "*text": (text) => {
           setInpVal(text);
-          if(text === "go down" || "godown"){
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: 'smooth' // Smooth scroll behavior
-            });
-          }
         },
       };
 
@@ -41,7 +44,7 @@ export default function Nav(props) {
       setActive(true);
     }
   };
-  
+
   const stopSpeechRecognition = (e) => {
     e.preventDefault();
     if (annyang) {
@@ -49,7 +52,6 @@ export default function Nav(props) {
       setActive(false);
     }
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,21 +62,37 @@ export default function Nav(props) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const sideMenuOnClick = () => {
+    const sideMenu = document.getElementById("sideMenu");
+    sideMenu.style.left = "0";
+  };
+  const cancelMenuOnClick = () => {
+    const sideMenu = document.getElementById("sideMenu");
+    sideMenu.style.left = "-100%";
+  };
   return (
-    <nav style={{position:props.position, background:props.background}} className={isScrolled ? 'navbar-scrolled' : 'navbar'}>
+    <nav
+      style={{ position: props.position, background: props.background }}
+      className={isScrolled ? "navbar-scrolled" : "navbar"}
+    >
       <div className="logo">
         <img src="/logo.png" alt="logo" />
       </div>
       <div className="otherSec">
         <form>
-          <input type="search" value={inpVal} onChange={onChangeState} placeholder="search" />
+          <input
+            type="search"
+            value={inpVal}
+            onChange={onChangeState}
+            placeholder="search"
+          />
           <button>
             <BiIcons.BiSearch />
           </button>
@@ -83,11 +101,11 @@ export default function Nav(props) {
           </button>
           <div className="voiceSection" id="voiceSection">
             {active === true ? (
-              <div style={{ width: "100%", height:"100%" }}>
+              <div style={{ width: "100%", height: "100%" }}>
                 <div className="freq">
                   <div class="ping"></div>
                   <h1>
-                  <MdIcons.MdSettingsVoice />
+                    <MdIcons.MdSettingsVoice />
                   </h1>
                   <p>Listening...</p>
                 </div>
@@ -100,7 +118,7 @@ export default function Nav(props) {
                 </button>
               </div>
             ) : (
-              <div style={{ width: "100%", height:"100%" }}>
+              <div style={{ width: "100%", height: "100%" }}>
                 <div className="freq">
                   <h1>
                     <MdIcons.MdKeyboardVoice />
@@ -118,19 +136,111 @@ export default function Nav(props) {
             )}
           </div>
         </form>
-        <ul>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Service</li>
+        <ul id="sideMenu">
+          <div className="logo hidden" id="logo">
+            <img style={{width:"auto"}} src="/logo.png" alt="logo" />
+            {/* <div className="imageProfile">
+            <img src="/profile.png" alt="logo" />
+                <div className="profileDe">
+                  <h1>Shiridhar Khatri</h1>
+                  <p>sidnight965@</p>
+                </div>
+            </div> */}
+            <div className="cancel">
+              <h2 onClick={cancelMenuOnClick}>
+                <IoIcons.IoCloseSharp />
+              </h2>
+            </div>
+          </div>
+          <div className="hidden more">
+            <h3>
+              <span>
+                <BsIcons.BsMenuUp />
+              </span>
+              Menu
+            </h3>
+          </div>
           <li>
+            <span className="hidden">
+              <BsIcons.BsInfoCircle />
+            </span>
+            About
+          </li>
+          <li>
+            <span className="hidden">
+              <AiIcons.AiOutlineFundProjectionScreen />
+            </span>
+            Projects
+          </li>
+          <li>
+            <span className="hidden">
+              <MdIcons.MdWorkOutline />
+            </span>
+            Service
+          </li>
+          <li id="moreItem">
             More <BiIcons.BiChevronDown />
           </li>
-          <li id="contact">
-            {" "}
-            <IoIcons.IoCall />
-            &nbsp;Contact
+          <li id="contact" className="mobile-hidden">
+            <AiIcons.AiOutlineLogin />
+            &nbsp;Login
+          </li>
+          <ul id="DropDown">
+            <div className="hidden more">
+              <h3>
+                <span>
+                  <BsIcons.BsMenuButtonWideFill />
+                </span>
+                More
+              </h3>
+            </div>
+            <li>
+              <span>
+                <BsIcons.BsBook />
+              </span>
+              Blogs
+            </li>
+            <li>
+              <span>
+                <CgIcons.CgFeed />
+              </span>
+              Projectfeed
+            </li>
+            <li>
+              <span>
+                <MdIcons.MdOutlineWorkspacePremium />
+              </span>
+              Paid Code
+            </li>
+            <li>
+              <span>
+                <GoIcons.GoFileCode />
+              </span>
+              Free code (For learners)
+            </li>
+            <li>
+              <span>
+                <TbIcons.TbPhoto />
+              </span>
+              Gallery
+            </li>
+            <li>
+              <span>
+                <BsIcons.BsPersonPlus />
+              </span>
+              Signup
+            </li>
+          </ul>
+          <li id="AuthIco" className="hidden">
+            <AiIcons.AiOutlineLogin />
+            &nbsp;Login
           </li>
         </ul>
+        <div className="menu hidden">
+          <h1 onClick={sideMenuOnClick}>
+            <IoIcons.IoMenu />
+          </h1>
+        </div>
       </div>
     </nav>
   );

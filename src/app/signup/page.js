@@ -33,7 +33,7 @@ export default function Signup() {
       password: "",
     });
   };
-
+  const host = process.env.NEXT_PUBLIC_HOST;
   // Handle gender selection change
   const handleGenderChange = (e) => {
     setGender(e.target.id);
@@ -60,7 +60,7 @@ export default function Signup() {
         setError(true);
       } else {
         // Send signup request
-        const response = await fetch("http://localhost:5000/auth/User/signup", {
+        const response = await fetch(`${host}/auth/User/signup`, {
           method: "POST",
           body,
           headers,
