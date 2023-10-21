@@ -49,7 +49,7 @@ export default function Blogs() {
               <div className="image-top">
                 <img src={e.image} alt="" />
               </div>
-              <p>latest</p>
+              <p id="blogStatus">latest</p>
               <h2>{e.title}</h2>
               <h6>Published on 2023/08/08 at 2:45PM</h6>
               <div className="btns-blog">

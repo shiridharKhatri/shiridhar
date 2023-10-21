@@ -76,10 +76,10 @@ export default function Projects() {
                   hoverImage(e.id);
                 }}
                 onMouseLeave={() => {
-                  mouseLeft( e.id);
+                  mouseLeft(e.id);
                 }}
               >
-                <div className={`btns-next-prev ${e.id}`} >
+                <div className={`btns-next-prev ${e.id}`}>
                   <button>
                     <FiIcons.FiChevronLeft />
                   </button>
@@ -118,6 +118,9 @@ export default function Projects() {
                   </ul>
                 </div>
               </div>
+              <p id="currentStatus" className="hidden">
+                <span>44k likes and 23 comments</span>
+              </p>
               <div className="buttons">
                 <button>
                   <AiIcons.AiOutlineHeart />
@@ -131,8 +134,8 @@ export default function Projects() {
                   <AiIcons.AiOutlineEye />
                   &nbsp;<span>Live</span>
                 </button>
-                <button>
-                  More &nbsp;
+                <button id="moreBth">
+                  <span>More</span> &nbsp;
                   <BiIcons.BiChevronRight />
                 </button>
               </div>

@@ -44,6 +44,7 @@
     left: -100%;
     width: 55rem;
     padding: 1rem;
+    z-index: 99999;
     transition: 0.2s cubic-bezier(0.65, 0.05, 0.44, 0.53) all;
   }
   section.BelowButton {
@@ -199,6 +200,10 @@
   }
   section.projects .titleHead h3 {
     font-size: 1.9rem;
+    margin: 0;
+  }
+  section.projects .titleHead {
+    margin-top: 8rem;
   }
   section.projects .projectCards .card {
     background-color: transparent;
@@ -258,7 +263,9 @@
     margin: 0 0.5rem;
   }
   section.projects p {
-    font-size: 1.9rem;
+    width: 95%;
+    text-align: center;
+    margin: auto;
   }
   section.projects .projectCards .card .details h2 {
     font-size: 3rem;
@@ -282,5 +289,311 @@
   footer .fourthSection {
     padding: 0;
     margin-top: 3rem;
+  }
+}
+@media (max-width: 722px) {
+  header h1 {
+    font-size: 15rem;
+  }
+  header img {
+    height: 37rem;
+  }
+  section.projects .projectCards img {
+    border-radius: 0.5rem;
+  }
+  .mailImage {
+    display: none;
+  }
+  .mailContent {
+    width: 100%;
+  }
+  .mailSection {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .mailContent form button {
+    height: 5rem;
+    border-radius: 3rem;
+  }
+  .mainServiceBox .cards-item h4 {
+    font-size: 2rem;
+  }
+  .mainServiceBox {
+    padding: 1rem 0;
+    margin: 3rem 0rem;
+    width: 100%;
+  }
+  .banner {
+    height: 18rem;
+  }
+  section.projects .projectCards .card .buttons button:hover {
+    background-color: #101010;
+    color: #ffffff;
+  }
+}
+@media (max-width: 580px) {
+  section.projects p {
+    font-size: 1.5rem;
+  }
+  header h1 {
+    font-size: 11rem;
+  }
+  header {
+    height: 65rem;
+  }
+  header img {
+    height: 33rem;
+  }
+  nav ul {
+    width: 100%;
+  }
+  #DropDown {
+    padding: 0;
+  }
+  nav .logo img {
+    height: 7rem;
+  }
+  nav .otherSec form {
+    margin-right: 1rem;
+  }
+  nav .otherSec form #voice {
+    display: none;
+  }
+  nav .otherSec form button {
+    border-radius: 0rem 3rem 3rem 0rem;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .otherSec form input {
+    padding: 1.2rem 0 1.2rem 2rem;
+    width: 80%;
+  }
+  nav .otherSec form {
+    height: 5.5rem;
+    width: 20rem;
+  }
+  nav.navbar {
+    padding: 2rem 1.5rem 1.5rem 1rem;
+  }
+  section.mainMailSection {
+    padding: 1rem;
+  }
+  .mailSection {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: transparent;
+  }
+  img#currentImage {
+    height: 8rem;
+    width: 8rem;
+  }
+  #prevImg,
+  #nextImg {
+    height: 6.8rem;
+    width: 6.8rem;
+  }
+  nav ul li {
+    font-family: system-ui;
+    font-weight: 500;
+  }
+  .services {
+    padding: 0.5rem;
+  }
+  .mainServiceBox .cards-item h4 {
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-view-all button.learn-more {
+    margin-right: 0;
+  }
+  .blogs p {
+    width: 100%;
+  }
+  .services p {
+    width: 100%;
+  }
+  .mainServiceBox .cards-item img {
+    height: 6rem;
+  }
+  section.projects .projectCards .card {
+    margin: 2rem 0;
+    padding: 0rem 0 2rem 0;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .mainServiceBox .cards-item {
+    height: 10rem;
+  }
+  footer .topSection .flex-disp-footer {
+    width: 100%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mainSectiontestimonial .testimonial-card q {
+    width: 85%;
+  }
+  .imageTestimonial {
+    width: 90%;
+  }
+  .mainSectiontestimonial .testimonial-card img#currentImage {
+    height: 9rem;
+    width: 9rem;
+    margin: 0 2rem;
+  }
+  .mainServiceBox .cards-item img {
+    height: 8rem;
+  }
+  .mainServiceBox .cards-item {
+    height: 17rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section.projects .projectCards .card .buttons button span {
+    display: none;
+  }
+  section.projects .projectCards img {
+    border-radius: 0;
+  }
+  section.projects .projectCards .card .buttons button {
+    font-size: 2rem;
+    height: auto;
+    display: flex;
+    padding: 1.4rem 0;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+  #currentStatus {
+    margin: 0;
+    padding: 1rem 1rem 0.5rem 2rem;
+    color: #445;
+  }
+  section.projects {
+    padding: 1rem 0;
+    margin: 5rem 0;
+  }
+  #moreBth {
+    display: none;
+  }
+  section.projects .projectCards .card .details {
+    padding: 1rem 1rem 0 1rem;
+  }
+  section.projects .projectCards .card .buttons {
+    margin: 1rem 1rem 0 1rem;
+  }
+  #blogStatus {
+    width: 9rem;
+  }
+  .banner h1 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+  .banner h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem;
+  }
+  .banner h3 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 10rem;
+  }
+}
+@media (max-width: 340px) {
+  section.login,
+  section.signup {
+    background: transparent;
+    padding: 0;
+  }
+  section.login .mainLoginCard,
+  section.signup .mainSignupCard {
+    background-color: transparent;
+    width: 100%;
+  }
+  .mainSignupCard form button,
+  .mainSignupCard form p,
+  .mainSignupCard form input,
+  .mainSignupCard form label {
+    width: 100%;
+  }
+  section.verify .mainVerifyCard {
+    width: 100%;
+    background: transparent;
+  }
+  section.verify {
+    background: transparent;
+    padding: 0;
+    height: 60rem;
+  }
+  nav #DropDown .more {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+  }
+  nav ul .more {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+  }
+  nav ul li span {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+  }
+  nav .otherSec form {
+    height: 5rem;
+    width: 19rem;
+}
+  #DropDown li span {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+  }
+  #DropDown li,
+  nav ul li {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+  #logo .cancel h2{
+    font-size: 5rem;
+  }
+  nav #logo img {
+    height: 6rem;
+}
+  nav ul .more h3{
+    font-weight: 400;
+    font-size: 1.7rem;
+  }
+  #AuthIco{
+    height: 4rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+  }
+  footer .topSection .flex-disp-footer {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  footer .topSection {
+    padding: 0;
   }
 }
