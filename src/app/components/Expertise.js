@@ -69,6 +69,7 @@ export default function Expertise() {
               className="contentCard"
               style={{ background: e.color }}
               onClick={() => openNewWindow(e.link)}
+              key={index}
             >
               <h1 style={{ color: "#ffffff" }}>{e.icon}</h1>
               <h3>{e.name}</h3>

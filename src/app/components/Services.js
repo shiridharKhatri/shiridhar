@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Services() {
@@ -32,7 +33,7 @@ export default function Services() {
           {services.map((e, index) => {
             return (
               <div className="cards-item" key={index}>
-                <img src={e.src} alt={e.name} />
+                <Image src={e.src} alt={e.name} width={200} height={200} />
                 <h4>{e.name}</h4>
               </div>
             );

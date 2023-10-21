@@ -9,6 +9,7 @@ import {
   GrIcons,
   FiIcons,
 } from "./Icons";
+import Image from "next/image";
 
 export default function Projects() {
   // const [event, setEvent] = useState("");
@@ -47,16 +48,6 @@ export default function Projects() {
     },
   ];
 
-  const hoverImage = (id) => {
-    const pregIco = document.getElementsByClassName(id);
-    pregIco[0].style.opacity = "1";
-    pregIco[1].style.opacity = "1";
-  };
-  const mouseLeft = (id) => {
-    const pregIco = document.getElementsByClassName(id);
-    pregIco[0].style.opacity = "0";
-    pregIco[1].style.opacity = "0";
-  };
   return (
     <section className="projects">
       <h1>Created Projects</h1>
@@ -69,16 +60,8 @@ export default function Projects() {
       <div className="projectCards">
         {projects.map((e, index) => {
           return (
-            <div className="card">
-              <div
-                className="image"
-                onMouseEnter={() => {
-                  hoverImage(e.id);
-                }}
-                onMouseLeave={() => {
-                  mouseLeft(e.id);
-                }}
-              >
+            <div className="card" key={index}>
+              <div className="image">
                 <div className={`btns-next-prev ${e.id}`}>
                   <button>
                     <FiIcons.FiChevronLeft />
@@ -87,7 +70,13 @@ export default function Projects() {
                     <FiIcons.FiChevronRight />
                   </button>
                 </div>
-                <img src={e.image} alt="projectPicture" />
+                <Image
+                  src={e.image}
+                  alt="projectPicture"
+                  layout="responsive"
+                  width={200}
+                  height={150}
+                />
               </div>
               <div className="details">
                 <h2>{e.name}</h2>

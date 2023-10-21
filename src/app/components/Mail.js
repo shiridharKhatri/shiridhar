@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Mail() {
@@ -5,7 +6,7 @@ export default function Mail() {
     <section className="mainMailSection">
       <div className="mailSection">
         <div className="mailImage">
-          <img src="/mail.gif" alt="message" height={200} />
+          <Image src="/mail.gif" alt="message"  width={300} height={50} />
         </div>
         <div className="mailContent">
           <h2>Contact</h2>

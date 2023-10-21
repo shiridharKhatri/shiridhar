@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { AiIcons, MdIcons, HiIcons } from "./Icons";
+import Image from "next/image";
 export default function Testimonial() {
   const reviews = [
     {
@@ -8,63 +9,56 @@ export default function Testimonial() {
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://images.saymedia-content.com/.image/t_share/MTk2NzY3MjA5ODc0MjY5ODI2/top-10-cutest-cat-photos-of-all-time.jpg",
+      image: "/profile.png",
     },
     {
       name: "Aaisha Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg",
+      image: "/profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://th.bing.com/th/id/OIP.XIh1KAQahwnsMxPBnKvJvgHaFO?pid=ImgDet&rs=1",
+      image: "/profile.png",
     },
     {
       name: "Ken kaneki",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://i.natgeofe.com/k/ad9b542e-c4a0-4d0b-9147-da17121b4c98/MOmeow1_square.png",
+      image: "/profile.png",
     },
     {
       name: "Krishima touka",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://th.bing.com/th/id/OIP.XIh1KAQahwnsMxPBnKvJvgHaFO?pid=ImgDet&rs=1",
+      image: "/profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://t3.ftcdn.net/jpg/05/77/51/48/360_F_577514801_dQYirVqOAgFDFZMyI9Ea7tinfQOITO1R.jpg",
+      image: "/profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "https://catamazing.com/cdn/shop/files/catshark.jpg?v=1649869148",
+      image: "/profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image:
-        "https://th.bing.com/th/id/OIP.XIh1KAQahwnsMxPBnKvJvgHaFO?pid=ImgDet&rs=1",
+      image: "/profile.png",
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -84,7 +78,12 @@ export default function Testimonial() {
     <>
       <section className="testimonial">
         <div className="addReview">
-          <button><span><HiIcons.HiPlus/></span>Add review </button>
+          <button>
+            <span>
+              <HiIcons.HiPlus />
+            </span>
+            Add review{" "}
+          </button>
         </div>
         <h1>
           Feedback from our <span style={{ color: "#f7cd46" }}>Client's</span>.
@@ -94,36 +93,46 @@ export default function Testimonial() {
             <q>{currentReview.review}</q>
             <div className="imageTestimonial">
               {currentIndex <= 0 ? (
-                <img
+                <Image
                   style={{ opacity: "0" }}
                   id="prevImg"
-                  src="#"
+                  src="/"
                   alt={reviews[currentIndex].name}
+                  width={200}
+                  height={150}
                 />
               ) : (
-                <img
+                <Image
                   id="prevImg"
                   src={reviews[currentIndex - 1].image}
                   alt={reviews[currentIndex - 1].name}
+                  width={200}
+                  height={150}
                 />
               )}
-              <img
+              <Image
                 id="currentImage"
                 src={currentReview.image}
                 alt={currentReview.name}
+                width={200}
+                height={150}
               />
               {currentIndex === reviews.length - 1 ? (
-                <img
+                <Image
                   style={{ opacity: "0" }}
                   id="nextImg"
-                  src="#"
+                  src="/"
                   alt={reviews[(currentIndex + 1) % reviews.length].name}
+                  width={200}
+                  height={150}
                 />
               ) : (
-                <img
+                <Image
                   id="nextImg"
                   src={reviews[(currentIndex + 1) % reviews.length].image}
                   alt={reviews[(currentIndex + 1) % reviews.length].name}
+                  width={200}
+                  height={150}
                 />
               )}
 

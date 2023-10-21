@@ -13,10 +13,10 @@ export default function Header() {
       <h1>PortFolio</h1>
       <img src="/picture.png" alt="picture" />
       <div className="scroll" onClick={handleScrollDown}>
-        <div class="scrolldown" style={{color: "skyblue"}}>
-          <div class="chevrons">
-            <div class="chevrondown"></div>
-            <div class="chevrondown"></div>
+        <div className="scrolldown" style={{color: "skyblue"}}>
+          <div className="chevrons">
+            <div className="chevrondown"></div>
+            <div className="chevrondown"></div>
           </div>
         </div>
       </div>

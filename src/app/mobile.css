@@ -351,7 +351,8 @@
     padding: 0;
   }
   nav .logo img {
-    height: 7rem;
+    height: 8rem;
+    width: 7rem;
   }
   nav .otherSec form {
     margin-right: 1rem;
@@ -421,16 +422,14 @@
     width: 100%;
   }
   .mainServiceBox .cards-item img {
-    height: 6rem;
+    height: 12rem;
+    width: 12rem;
   }
   section.projects .projectCards .card {
     margin: 2rem 0;
     padding: 0rem 0 2rem 0;
     background: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  .mainServiceBox .cards-item {
-    height: 10rem;
   }
   footer .topSection .flex-disp-footer {
     width: 100%;
@@ -449,11 +448,8 @@
     width: 9rem;
     margin: 0 2rem;
   }
-  .mainServiceBox .cards-item img {
-    height: 8rem;
-  }
   .mainServiceBox .cards-item {
-    height: 17rem;
+    height: 21rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;

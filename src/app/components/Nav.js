@@ -11,6 +11,7 @@ import {
   GoIcons,
   TbIcons,
 } from "./Icons";
+import Image from "next/image";
 export default function Nav(props) {
   // const [recognizedText, setRecognizedText] = useState("");
   const [active, setActive] = useState(false);
@@ -83,7 +84,7 @@ export default function Nav(props) {
       className={isScrolled ? "navbar-scrolled" : "navbar"}
     >
       <div className="logo">
-        <img src="/logo.png" alt="logo" />
+        <Image src="/logo.png" alt="logo" width={200} height={150} />
       </div>
       <div className="otherSec">
         <form>
@@ -103,7 +104,7 @@ export default function Nav(props) {
             {active === true ? (
               <div style={{ width: "100%", height: "100%" }}>
                 <div className="freq">
-                  <div class="ping"></div>
+                  <div className="ping"></div>
                   <h1>
                     <MdIcons.MdSettingsVoice />
                   </h1>
@@ -138,9 +139,16 @@ export default function Nav(props) {
         </form>
         <ul id="sideMenu">
           <div className="logo hidden" id="logo">
-            <img style={{width:"auto"}} src="/logo.png" alt="logo" />
+            <Image
+              style={{ width: "auto" }}
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={150}
+            />
             {/* <div className="imageProfile">
-            <img src="/profile.png" alt="logo" />
+            <Image src="/profile.png" alt="logo"  width={200}
+                  height={150} />
                 <div className="profileDe">
                   <h1>Shiridhar Khatri</h1>
                   <p>sidnight965@</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import { BiIcons } from "./Icons";
+import Image from "next/image";
 export default function Blogs() {
   const items = [
     {
@@ -8,7 +9,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "https://assets.website-files.com/6344c9cef89d6f2270a38908/64148ed756708f9b82464c96_image-of-hand-holding-an-ai-face-looking-at-the-words-chatgpt-openai.webp",
+        "/notebook.png",
     },
     {
       title:
@@ -16,7 +17,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "https://c1.wallpaperflare.com/preview/827/42/546/businessman-computer-professional-laptop-office-business.jpg",
+        "/notebook.png",
     },
     {
       title:
@@ -24,7 +25,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "https://c1.wallpaperflare.com/preview/827/42/546/businessman-computer-professional-laptop-office-business.jpg",
+        "/notebook.png",
     },
     {
       title:
@@ -32,7 +33,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "https://c1.wallpaperflare.com/preview/827/42/546/businessman-computer-professional-laptop-office-business.jpg",
+        "/notebook.png",
     },
   ];
   return (
@@ -42,12 +43,12 @@ export default function Blogs() {
         Feel free to peruse my latest blog for further insights. If you wish to
         explore more, simply click on the 'View All' button.
       </p>
-      <div class="BlogContainer">
+      <div className="BlogContainer">
         {items.map((e, index) => {
           return (
-            <div class="items">
+            <div className="items" key={index}>
               <div className="image-top">
-                <img src={e.image} alt="" />
+              <Image src={e.image} alt="blogImage" layout="responsive" width={200} height={150} />
               </div>
               <p id="blogStatus">latest</p>
               <h2>{e.title}</h2>
