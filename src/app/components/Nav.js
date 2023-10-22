@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import annyang from "annyang";
+// import annyang from "annyang";
 import {
   MdIcons,
   BiIcons,
@@ -20,43 +20,43 @@ export default function Nav(props) {
   const onChangeState = (e) => {
     setInpVal(e.target.value);
   };
-  const showOptVoice = (e) => {
-    e.preventDefault();
-    const voiceSection = document.getElementById("voiceSection");
-    voiceSection.classList.toggle("activeVoiceSec");
-    if (voiceSection.classList.contains("activeVoiceSec")) {
-      voiceSection.style.display = "flex";
-    } else {
-      voiceSection.style.display = "none";
-    }
-  };
-  const startSpeechRecognition = (e) => {
-    e.preventDefault();
+  // const showOptVoice = (e) => {
+  //   e.preventDefault();
+  //   const voiceSection = document.getElementById("voiceSection");
+  //   voiceSection.classList.toggle("activeVoiceSec");
+  //   if (voiceSection.classList.contains("activeVoiceSec")) {
+  //     voiceSection.style.display = "flex";
+  //   } else {
+  //     voiceSection.style.display = "none";
+  //   }
+  // };
+  // const startSpeechRecognition = (e) => {
+  //   e.preventDefault();
 
-    if (annyang) {
-      const commands = {
-        "*text": (text) => {
-          setInpVal(text);
-        },
-      };
+  //   if (annyang) {
+  //     const commands = {
+  //       "*text": (text) => {
+  //         setInpVal(text);
+  //       },
+  //     };
 
-      annyang.addCommands(commands);
-      annyang.start({ autoRestart: false });
-      setActive(true);
-    } else {
-      console.error("annyang is not defined");
-    }
-  };
+  //     annyang.addCommands(commands);
+  //     annyang.start({ autoRestart: false });
+  //     setActive(true);
+  //   } else {
+  //     console.error("annyang is not defined");
+  //   }
+  // };
 
-  const stopSpeechRecognition = (e) => {
-    e.preventDefault();
-    if (annyang) {
-      annyang.abort();
-      setActive(false);
-    } else {
-      console.error("annyang is not defined");
-    }
-  };
+  // const stopSpeechRecognition = (e) => {
+  //   e.preventDefault();
+  //   if (annyang) {
+  //     annyang.abort();
+  //     setActive(false);
+  //   } else {
+  //     console.error("annyang is not defined");
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,7 +101,7 @@ export default function Nav(props) {
           <button>
             <BiIcons.BiSearch />
           </button>
-          <button id="voice" onClick={showOptVoice}>
+          <button id="voice" >
             <MdIcons.MdKeyboardVoice />
           </button>
           <div className="voiceSection" id="voiceSection">
@@ -115,7 +115,7 @@ export default function Nav(props) {
                   <p>Listening...</p>
                 </div>
                 <button
-                  onClick={stopSpeechRecognition}
+                  // onClick={stopSpeechRecognition}
                   style={{ background: "#DC3545" }}
                 >
                   <IoIcons.IoStop />
@@ -131,7 +131,7 @@ export default function Nav(props) {
                   <p>Start to listen</p>
                 </div>
                 <button
-                  onClick={startSpeechRecognition}
+                  // onClick={startSpeechRecognition}
                   style={{ background: "#00b300" }}
                 >
                   <IoIcons.IoPlay />
