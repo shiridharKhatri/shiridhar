@@ -43,6 +43,8 @@ export default function Nav(props) {
       annyang.addCommands(commands);
       annyang.start({ autoRestart: false });
       setActive(true);
+    } else {
+      console.error("annyang is not defined");
     }
   };
 
@@ -51,6 +53,8 @@ export default function Nav(props) {
     if (annyang) {
       annyang.abort();
       setActive(false);
+    } else {
+      console.error("annyang is not defined");
     }
   };
 
