@@ -9,56 +9,56 @@ export default function Testimonial() {
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Aaisha Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Ken kaneki",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Krishima touka",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
     {
       name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "/profile.png",
+      image: "./profile.png",
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(1);

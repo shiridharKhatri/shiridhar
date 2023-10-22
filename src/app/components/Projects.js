@@ -20,7 +20,7 @@ export default function Projects() {
       shortDescription:
         "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
       description: "",
-      image: "/notebook.png",
+      image: "./notebook.png",
     },
     {
       id: "two",
@@ -28,7 +28,7 @@ export default function Projects() {
       shortDescription:
         "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
       description: "",
-      image: "/notebook.png",
+      image: "./notebook.png",
     },
     {
       id: "three",
@@ -36,7 +36,7 @@ export default function Projects() {
       shortDescription:
         "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
       description: "",
-      image: "/notebook.png",
+      image: "./notebook.png",
     },
     {
       id: "four",
@@ -44,7 +44,7 @@ export default function Projects() {
       shortDescription:
         "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
       description: "",
-      image: "/notebook.png",
+      image: "./notebook.png",
     },
   ];
 

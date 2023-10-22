@@ -9,7 +9,7 @@ export default function Login() {
       <section className="login">
         <div className="mainLoginCard">
           <div className="imageLogo">
-            <Image src="/logo.png" alt="logo" width={200} height={150} />
+            <Image src="./logo.png" alt="logo" width={200} height={150} />
             <h3>hiridhar</h3>
           </div>
           <div id="welcomeTe">

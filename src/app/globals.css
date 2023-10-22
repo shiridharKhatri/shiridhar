@@ -298,7 +298,8 @@ header h1 {
   font-family: "Belanosima", sans-serif;
 }
 header img {
-  height: 50rem;
+  height: 40rem;
+  width: 50rem;
   position: absolute;
   bottom: 0;
 }

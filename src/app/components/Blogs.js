@@ -9,7 +9,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "/notebook.png",
+        "./notebook.png",
     },
     {
       title:
@@ -17,7 +17,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "/notebook.png",
+        "./notebook.png",
     },
     {
       title:
@@ -25,7 +25,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "/notebook.png",
+        "./notebook.png",
     },
     {
       title:
@@ -33,7 +33,7 @@ export default function Blogs() {
       description: "",
 
       image:
-        "/notebook.png",
+        "./notebook.png",
     },
   ];
   return (

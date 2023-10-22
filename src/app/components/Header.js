@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header>
       <h1>PortFolio</h1>
-      <Image src="/picture.png" alt="picture" width={200} height={150} />
+      <Image src="./picture.png" alt="picture" width={200} height={150} />
       <div className="scroll" onClick={handleScrollDown}>
         <div className="scrolldown" style={{ color: "skyblue" }}>
           <div className="chevrons">

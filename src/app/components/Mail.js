@@ -6,7 +6,7 @@ export default function Mail() {
     <section className="mainMailSection">
       <div className="mailSection">
         <div className="mailImage">
-          <Image src="/mail.gif" alt="message"  width={300} height={50} />
+          <Image src="./mail.gif" alt="message"  width={300} height={50} />
         </div>
         <div className="mailContent">
           <h2>Contact</h2>

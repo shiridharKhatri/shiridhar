@@ -5,15 +5,15 @@ export default function Services() {
   const services = [
     {
       name: "Web Designing",
-      src: "/services/designing.png",
+      src: "./services/designing.png",
     },
     {
       name: "Web Development",
-      src: "/services/development.png",
+      src: "./services/development.png",
     },
     {
       name: "E-Commerce Development",
-      src: "/services/ecommerce.png",
+      src: "./services/ecommerce.png",
     },
     // {
     //   name: "Web Maintainance",
@@ -21,7 +21,7 @@ export default function Services() {
     // },
     {
       name: "Search Engine Optimization (SEO)",
-      src: "/services/seo.png",
+      src: "./services/seo.png",
     },
   ];
   return (

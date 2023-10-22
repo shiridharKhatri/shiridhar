@@ -110,7 +110,7 @@ export default function Signup() {
         </div>
         <div className="mainSignupCard">
           <div className="imageLogo">
-            <Image src="/logo.png" alt="logo" width={200} height={150}/>
+            <Image src="./logo.png" alt="logo" width={200} height={150}/>
             <h3>hiridhar</h3>
           </div>
           <div id="welcomeTe">
