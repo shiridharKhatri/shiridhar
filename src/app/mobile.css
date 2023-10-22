@@ -12,6 +12,10 @@
   .hidden {
     display: inline-flex;
   }
+  .banner{
+    margin: 5rem 0rem;
+    border-radius: 0;
+  }
   nav #logo img {
     height: 8rem;
     width: 8rem;
@@ -60,6 +64,12 @@
     width: 95%;
     margin: auto;
   }
+  .blogs{
+    padding: 1rem;
+  }
+  .blogs p {
+    width: 90%;
+}
   nav .otherSec .menu h1 {
     font-size: 5rem;
     display: flex;
@@ -221,7 +231,7 @@
     padding: 2rem 0 0 0;
   }
   section.projects .projectCards .card .buttons {
-    margin: 3rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
   section.projects .projectCards img {
     border-radius: 2rem;
@@ -273,7 +283,7 @@
   section.projects p {
     width: 95%;
     text-align: center;
-    margin: auto;
+   margin-left: 1rem;
   }
   section.projects .projectCards .card .details h2 {
     font-size: 3rem;
@@ -420,9 +430,6 @@
   .btn-view-all button.learn-more {
     margin-right: 0;
   }
-  .blogs p {
-    width: 100%;
-  }
   .services p {
     width: 100%;
   }
@@ -490,7 +497,7 @@
     padding: 1rem 1rem 0 1rem;
   }
   section.projects .projectCards .card .buttons {
-    margin: 1rem 1rem 0 1rem;
+    margin:0;
   }
   #blogStatus {
     width: 9rem;
