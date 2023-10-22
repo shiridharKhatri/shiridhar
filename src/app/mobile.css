@@ -33,7 +33,7 @@
     font-size: 1.4rem;
   }
   nav ul {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     background: #000000;
     top: 0;

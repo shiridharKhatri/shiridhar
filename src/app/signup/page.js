@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
+import Image from "next/image";
 // Define the Signup functional component
 export default function Signup() {
   // Initialize state variables
@@ -109,15 +110,20 @@ export default function Signup() {
         </div>
         <div className="mainSignupCard">
           <div className="imageLogo">
-            <img src="/logo.png" alt="logo" />
+            <Image src="/logo.png" alt="logo" width={200} height={150}/>
             <h3>hiridhar</h3>
           </div>
           <div id="welcomeTe">
             <h4>
-              Create new <span    style={{
+              Create new{" "}
+              <span
+                style={{
                   color: "#5626c4",
                   fontFamily: `"Belanosima", sans-serif`,
-                }}>Account.</span>
+                }}
+              >
+                Account.
+              </span>
             </h4>
           </div>
           <form action="">
@@ -208,7 +214,7 @@ export default function Signup() {
             {error === true ? (
               <p>
                 <AiIcons.AiOutlineInfoCircle />
-                &nbsp;Confirm password and password doesn't match
+                &nbsp;Confirm password and password doesn&apos;t match
               </p>
             ) : (
               <p></p>
@@ -268,25 +274,25 @@ export default function Signup() {
           <div className="socialLogin">
             <ul>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/94/google-logo.png"
                   alt="google-logo"
                 />
               </li>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/188/facebook-circled.png"
                   alt="facebook-circled"
                 />
               </li>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/94/github.png"
                   alt="github"
                 />

@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Spinner from "../tools/Spinner";
+import Image from "next/image";
 export default function Verify(props) {
   const [verify, setVerify] = useState("");
   const [code, setCode] = useState("");
@@ -183,7 +184,7 @@ export default function Verify(props) {
           </div>
           <div className="mainVerifyCard">
             <div className="imageLogo">
-              <img src="/logo.png" alt="logo" />
+              <Image src="/logo.png" alt="logo" width={200} height={150}/>
               <h3>hiridhar</h3>
             </div>
             <div id="welcomeTe">
@@ -312,7 +313,7 @@ export default function Verify(props) {
               {status.error === true ? (
                 <p>
                   <AiIcons.AiOutlineInfoCircle />
-                  &nbsp;User with given email doesn't exist.
+                  &nbsp;User with given email doesn&apos;t exist.
                 </p>
               ) : (
                 <p></p>

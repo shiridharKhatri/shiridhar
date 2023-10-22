@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
@@ -8,7 +9,7 @@ export default function Login() {
       <section className="login">
         <div className="mainLoginCard">
           <div className="imageLogo">
-            <img src="/logo.png" alt="logo" />
+            <Image src="/logo.png" alt="logo" width={200} height={150} />
             <h3>hiridhar</h3>
           </div>
           <div id="welcomeTe">
@@ -56,31 +57,31 @@ export default function Login() {
             <button>Login</button>
           </form>
           <h4>
-            Don't have an Account? <a href="">Sign up</a>
+            Don&apos;t have an Account? <a href="">Sign up</a>
           </h4>
           <h5>Or With</h5>
           <div className="socialLogin">
             <ul>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/94/google-logo.png"
                   alt="google-logo"
                 />
               </li>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/188/facebook-circled.png"
                   alt="facebook-circled"
                 />
               </li>
               <li>
-                <img
-                  width="50"
-                  height="50"
+                <Image
+                  width={50}
+                  height={50}
                   src="https://img.icons8.com/3d-fluency/94/github.png"
                   alt="github"
                 />

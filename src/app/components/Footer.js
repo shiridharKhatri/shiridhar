@@ -11,6 +11,7 @@ import {
   SiIcons,
   GrIcons,
 } from "./Icons";
+import Image from "next/image";
 export default function Footer() {
   const [datas, setData] = useState([]);
   const socialicons = [
@@ -80,7 +81,7 @@ export default function Footer() {
     <footer>
       <div className="topSection">
         <div className="topLogo">
-          <img src="/secondLogo.png" alt="logo" />
+          <Image src="/secondLogo.png" alt="logo" width={200} height={150}/>
         </div>
         <div className="flex-disp-footer">
           <div className="secondSection item">

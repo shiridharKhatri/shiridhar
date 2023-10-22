@@ -41,7 +41,7 @@ export default function Blogs() {
       <h1>Latest Blogs</h1>
       <p>
         Feel free to peruse my latest blog for further insights. If you wish to
-        explore more, simply click on the 'View All' button.
+        explore more, simply click on the &apos;View All&apos; button.
       </p>
       <div className="BlogContainer">
         {items.map((e, index) => {

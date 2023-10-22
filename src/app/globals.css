@@ -21,7 +21,7 @@ footer {
   display: none;
 }
 nav.navbar {
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -42,6 +42,7 @@ nav.navbar-scrolled {
 }
 nav .logo img {
   height: 9rem;
+  width: 7rem;
 }
 nav ul {
   list-style: none;
@@ -1612,7 +1613,8 @@ section.signup .mainSignupCard {
   margin-top: 2rem;
 }
 .imageLogo img {
-  height: 5rem;
+  height: 6rem;
+  width: 5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
