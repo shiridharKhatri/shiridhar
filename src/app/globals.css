@@ -281,7 +281,7 @@ nav ul li {
 header {
   background-color: #000000;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-    url(./header.svg);
+    url(/header.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
