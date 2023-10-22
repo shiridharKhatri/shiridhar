@@ -89,6 +89,7 @@ nav .otherSec form {
   right: 15rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  display: none;
 }
 .topMenuSecInfo{
   display: flex;
@@ -317,9 +318,10 @@ header img {
   bottom: 0;
 }
 section.BelowButton {
-  padding: 2rem;
-  margin: 3rem;
-  /* border-bottom: .1rem solid #445; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 section.BelowButton ul {
   list-style: none;
@@ -743,6 +745,8 @@ button.learn-more:hover .button-text {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  height: auto;
 }
 .blogs h1 {
   width: 100%;
@@ -948,7 +952,7 @@ button.learn-more:hover .button-text {
   display: flex;
   align-items: center;
   padding: 1rem;
-  height: 51rem;
+  height: 100%;
   width: 100%;
   margin-top: 2rem;
   overflow-x: scroll;
@@ -965,19 +969,19 @@ button.learn-more:hover .button-text {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 31rem;
-  height: 47rem;
+  padding: 0.5rem;
 }
 .items .image-top img {
   width: 100%;
   height: auto;
-  border-radius: 3rem 3rem 0 0;
+  border-radius: 2.5rem 2.5rem 0 0;
 }
-.items .btns-blog {
+/* .items .btns-blog {
   position: absolute;
   bottom: 2rem;
-}
+} */
 .items h6 {
-  margin: -1rem 2rem 2rem 2rem;
+  margin: 0 0 0 1rem;
   font-weight: 400;
   font-size: 1rem;
   color: #445;
@@ -987,16 +991,16 @@ button.learn-more:hover .button-text {
   background: #5626c43d;
   color: #5626c4;
   padding: 0.5rem;
-  margin: 2rem 0 0 2rem;
+  margin: 1rem 0 0 1rem;
   border-radius: 3rem;
   text-transform: capitalize;
 }
 .items h2 {
-  margin: 2rem;
+  margin: 1rem 1rem .5rem 1rem;
   font-size: 1.6rem;
 }
 .items button {
-  margin: 0 2rem;
+  margin: 2rem 0 1rem 1rem;
   padding: 1.3rem;
   border-radius: 3rem;
   border: none;
@@ -1014,8 +1018,9 @@ button.learn-more:hover .button-text {
   width: 100%;
   display: flex;
   justify-content: right;
-  margin: 5rem 0 0 0;
   position: relative;
+  background: red;
+  margin: 5.5rem 0 0 0;
 }
 /* .btn-view-all button.viewAll {
   padding: 0.5rem;
@@ -1030,7 +1035,6 @@ button.learn-more:hover .button-text {
 .btn-view-all button.learn-more {
   width: 11rem;
   height: auto;
-  position: absolute;
   right: 1rem;
   bottom: 1.5rem;
   display: inline-block;
@@ -1673,6 +1677,77 @@ section.signup .mainSignupCard {
   }
 }
 
+/* Blogs section here  */
+.blogHead{
+  height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.blogHead .content{
+  position: absolute;
+  bottom: 7rem;
+  width: 75%;
+  color: #ffffff;
+}
+.blogHead .content h1{
+  font-size: 3rem;
+  width: 70rem;
+  color: #facd3d;
+  margin: 0.5rem;
+}
+.blogHead .content button{
+  height: 4rem;
+    width: 16rem;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+    color: #101010;
+    margin: 2rem 0 0 0.5rem;
+    font-weight: bold;
+}
+.blogHead .content h5{
+  background: #5626c4;
+  color: #ffffff;
+  width: 9rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.blogHead .content p{
+  width: 70rem;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.allBlogsSec{
+  padding: 1rem;
+}
+.allBlogsSec h1{
+  font-size: 3rem;
+  /* background: red; */
+  text-align: center;
+  margin: 7rem 0 3rem 0;
+  font-family: "Belanosima", sans-serif;
+}
+.allBlogsSec .blogCardParent .blogTitleHead h3{
+  font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #445;
+    padding: 0 0.5rem 1rem 0.5rem;
+}
 footer {
   background: #000000;
   padding: 1rem;

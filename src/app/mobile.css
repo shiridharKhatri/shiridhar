@@ -96,7 +96,6 @@
   }
   .items {
     flex: 0 0 30rem;
-    height: 48rem;
   }
 
   .BlogContainer::-webkit-scrollbar {

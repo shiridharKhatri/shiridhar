@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Mail from "./components/Mail";
 import Nav from "./components/Nav";
 import Projects from "./components/Projects";
-import Blogs from "./components/Blogs";
+import BlogsHighlight from "./components/BlogsHighlight";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <BelowButton/>
       <Projects/>
       <Expertise/>
-      <Blogs/>
+      <BlogsHighlight/>
       <Services/>
       <Testimonial/>
       <Mail/>

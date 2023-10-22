@@ -1,39 +1,35 @@
 import React from "react";
 import { BiIcons } from "./Icons";
 import Image from "next/image";
-export default function Blogs() {
+export default function BlogsHighlight() {
   const items = [
     {
       title:
         "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
       description: "",
-
-      image:
-        "./notebook.png",
+      image: "./blogImage/blog1.png",
+      color: "#5aaef5",
     },
     {
       title:
         "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
       description: "",
-
-      image:
-        "./notebook.png",
+      image: "./blogImage/blog2.png",
+      color: "#515568",
     },
     {
       title:
         "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
       description: "",
-
-      image:
-        "./notebook.png",
+      image: "./blogImage/blog3.png",
+      color: "#d7c0e4",
     },
     {
       title:
         "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
       description: "",
-
-      image:
-        "./notebook.png",
+      image: "./blogImage/blog4.png",
+      color: "#212325",
     },
   ];
   return (
@@ -47,14 +43,21 @@ export default function Blogs() {
         {items.map((e, index) => {
           return (
             <div className="items" key={index}>
-              <div className="image-top">
-              <Image src={e.image} alt="blogImage" layout="responsive" width={200} height={150} />
+              <div className="image-top" >
+                <Image
+                  style={{ background: e.color }}
+                  src={e.image}
+                  alt="blogImage"
+                  layout="responsive"
+                  width={200}
+                  height={150}
+                />
               </div>
               <p id="blogStatus">latest</p>
               <h2>{e.title}</h2>
               <h6>Published on 2023/08/08 at 2:45PM</h6>
               <div className="btns-blog">
-                <button>
+                <button style={{background:e.color}}>
                   Read More&nbsp;
                   <BiIcons.BiChevronRight />
                 </button>
