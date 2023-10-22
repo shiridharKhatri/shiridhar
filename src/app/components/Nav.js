@@ -164,6 +164,7 @@ export default function Nav(props) {
               </h2>
             </div>
           </div>
+          <div className="topMenuSecInfo">
           <div className="hidden more">
             <h3>
               <span>
@@ -193,6 +194,7 @@ export default function Nav(props) {
           <li id="moreItem">
             More <BiIcons.BiChevronDown />
           </li>
+          </div>
           <li id="contact" className="mobile-hidden">
             <AiIcons.AiOutlineLogin />
             &nbsp;Login

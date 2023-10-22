@@ -5,6 +5,9 @@
   body {
     -webkit-tap-highlight-color: transparent;
   }
+  .topMenuSecInfo{
+  width: 100%;
+  }
   .hidden {
     display: inline-flex;
   }
@@ -49,7 +52,12 @@
   }
   section.BelowButton {
     padding: 0;
-    margin: 3rem 1rem 3rem 1rem;
+    margin: 3rem 0;
+    width: 100%;
+  }
+  section.BelowButton ul{
+    width: 95%;
+    margin: auto;
   }
   nav .otherSec .menu h1 {
     font-size: 5rem;
@@ -113,10 +121,10 @@
     margin: 0.5rem;
     padding: 0.5rem;
   }
-  nav ul .more {
+  nav ul .topMenuSecInfo .more {
     font-size: 2rem;
     padding: 1rem;
-    /* margin: 0 1rem 0 0; */
+    margin-bottom: 1rem;
     width: 100%;
     border-top: 0.1rem solid #445;
     border-bottom: 0.1rem solid #445;
@@ -130,7 +138,7 @@
   nav #DropDown .more {
     font-size: 2rem;
     padding: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     width: 100%;
     border-top: 0.1rem solid #445;
     border-bottom: 0.1rem solid #445;
@@ -146,12 +154,12 @@
     align-items: center;
     margin-right: 1rem;
   }
-  nav ul .more h3 {
+  nav ul .topMenuSecInfo .more h3 {
     display: flex;
     justify-content: left;
     align-items: center;
   }
-  nav ul .more h3 span {
+  nav ul .topMenuSecInfo .more h3 span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,7 +204,7 @@
     width: 95%;
     padding: 0.5rem;
     justify-content: flex-start;
-    margin-left: 0;
+      margin: 0.5rem 0;
   }
   section.projects .titleHead h3 {
     font-size: 1.9rem;
@@ -296,7 +304,7 @@
     font-size: 15rem;
   }
   header img {
-    height: 37rem;
+    width: 40rem;
   }
   section.projects .projectCards img {
     border-radius: 0.5rem;
@@ -341,9 +349,6 @@
   header {
     height: 65rem;
   }
-  header img {
-    height: 33rem;
-  }
   nav ul {
     width: 100%;
   }
@@ -352,7 +357,7 @@
   }
   nav .logo img {
     height: 8rem;
-    width: 7rem;
+    width: 6.5rem;
   }
   nav .otherSec form {
     margin-right: 1rem;
@@ -540,10 +545,12 @@
   nav #DropDown .more {
     font-size: 1.7rem;
     padding: 0.5rem;
+    margin-bottom: 1rem;
   }
-  nav ul .more {
+  nav ul .topMenuSecInfo .more {
     font-size: 1.7rem;
     padding: 0.5rem;
+    margin-bottom: 1rem;
   }
   nav ul li span {
     height: 2rem;
@@ -572,7 +579,7 @@
   nav #logo img {
     height: 6rem;
 }
-  nav ul .more h3{
+  nav ul .topMenuSecInfo .more h3{
     font-weight: 400;
     font-size: 1.7rem;
   }

@@ -6,7 +6,15 @@ export default function Login() {
   return (
     <>
       <Nav position="relative" background="#000000" />
-      <section className="login" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`}}>
+      <section
+        className="login"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
         <div className="mainLoginCard">
           <div className="imageLogo">
             <Image src="./logo.png" alt="logo" width={200} height={150} />

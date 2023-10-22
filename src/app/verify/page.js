@@ -90,14 +90,11 @@ export default function Verify(props) {
         code: Number(code),
       });
 
-      let response = await fetch(
-        `${host}/auth/User/forgetPasswordConfirm`,
-        {
-          method: "POST",
-          body: bodyContent,
-          headers: headersList,
-        }
-      );
+      let response = await fetch(`${host}/auth/User/forgetPasswordConfirm`, {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      });
 
       let data = await response.json();
       if (data.success === false) {
@@ -130,14 +127,11 @@ export default function Verify(props) {
         confirm_password: password.confirm_password,
       });
 
-      let response = await fetch(
-        `${host}/auth/User/forgetChangePassword`,
-        {
-          method: "POST",
-          body: bodyContent,
-          headers: headersList,
-        }
-      );
+      let response = await fetch(`${host}/auth/User/forgetChangePassword`, {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      });
 
       let data = await response.json();
       if (data.success === false) {
@@ -175,7 +169,15 @@ export default function Verify(props) {
       <Nav background="#000000" />
 
       {success === true ? (
-        <section className="verify" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./header.svg)`}}>
+        <section
+          className="verify"
+          style={{
+            background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./header.svg)`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="successDisplay" id="successVerify">
             <p>
               <IoIcons.IoCheckmarkDoneCircle />
@@ -184,7 +186,7 @@ export default function Verify(props) {
           </div>
           <div className="mainVerifyCard">
             <div className="imageLogo">
-              <Image src="./logo.png" alt="logo" width={200} height={150}/>
+              <Image src="./logo.png" alt="logo" width={200} height={150} />
               <h3>hiridhar</h3>
             </div>
             <div id="welcomeTe">
@@ -264,7 +266,15 @@ export default function Verify(props) {
           </div>
         </section>
       ) : (
-        <section className="verify" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`}}>
+        <section
+          className="verify"
+          style={{
+            background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="successDisplay" id="successVerify">
             <p>
               <IoIcons.IoCheckmarkDoneCircle />
