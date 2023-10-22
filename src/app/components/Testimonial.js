@@ -76,7 +76,12 @@ export default function Testimonial() {
 
   return (
     <>
-      <section className="testimonial">
+      <section
+        className="testimonial"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./review.png")`,
+        }}
+      >
         <div className="addReview">
           <button>
             <span>
@@ -86,7 +91,8 @@ export default function Testimonial() {
           </button>
         </div>
         <h1>
-          Feedback from our <span style={{ color: "#f7cd46" }}>Client&apos;s</span>.
+          Feedback from our{" "}
+          <span style={{ color: "#f7cd46" }}>Client&apos;s</span>.
         </h1>
         <div className="mainSectiontestimonial">
           <div className="testimonial-card">

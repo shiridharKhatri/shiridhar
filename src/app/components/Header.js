@@ -10,7 +10,7 @@ export default function Header() {
     });
   };
   return (
-    <header>
+    <header style={{background:`linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),url("./header.svg")`}}>
       <h1>PortFolio</h1>
       <Image src="./picture.png" alt="picture" width={200} height={150} />
       <div className="scroll" onClick={handleScrollDown}>

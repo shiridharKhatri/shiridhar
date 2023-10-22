@@ -145,7 +145,7 @@ export default function Nav(props) {
           <div className="logo hidden" id="logo">
             <Image
               style={{ width: "auto" }}
-              src="/logo.png"
+              src="./logo.png"
               alt="logo"
               width={200}
               height={150}

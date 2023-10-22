@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["img.icons8.com"],
     unoptimized: true,
   },
-  basePath: '/github-pages',
+  // basePath: '/github-pages',
 };
 
 module.exports = nextConfig;

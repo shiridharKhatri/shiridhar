@@ -77,7 +77,7 @@ export default function Expertise() {
           );
         })}
       </div>
-      <div className="banner">
+      <div className="banner" style={{background:`url("./banner.png")`}}>
         <h1>Get free source code here</h1>
         <h3>
           I am serving free codes for beginner learners in my github you can

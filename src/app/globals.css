@@ -10,6 +10,16 @@ html {
 }
 body {
   background-color: #f5f5f5;
+  width:100%;
+}
+main{
+  width: 100%;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+section,footer,header{
+  width: 100%;
 }
 section,
 footer {
@@ -280,8 +290,6 @@ nav ul li {
 }
 header {
   background-color: #000000;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
-    url(/header.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -298,7 +306,7 @@ header h1 {
   font-family: "Belanosima", sans-serif;
 }
 header img {
-  height: 40rem;
+  height: auto;
   width: 50rem;
   position: absolute;
   bottom: 0;
@@ -627,7 +635,6 @@ section.projects .projectCards .card .image {
   align-items: center;
   position: relative;
   flex-direction: column;
-  background-image: url("/banner.png");
   color: #ffffff;
 }
 .banner h1 {
@@ -843,8 +850,6 @@ button.learn-more:hover .button-text {
 .testimonial {
   margin: 4rem 0 10rem 0;
   padding: 6rem 0 1rem 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/review.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1245,8 +1250,6 @@ section.login {
   align-items: center;
   padding: 2rem;
   background-color: #000000;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(/header.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1260,8 +1263,6 @@ section.signup {
   padding: 2rem;
   height: 100rem;
   background-color: #000000;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(/header.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1273,8 +1274,6 @@ section.verify {
   align-items: center;
   padding: 15rem 2rem;
   background-color: #000000;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(/header.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -175,7 +175,7 @@ export default function Verify(props) {
       <Nav background="#000000" />
 
       {success === true ? (
-        <section className="verify">
+        <section className="verify" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./header.svg)`}}>
           <div className="successDisplay" id="successVerify">
             <p>
               <IoIcons.IoCheckmarkDoneCircle />
@@ -264,7 +264,7 @@ export default function Verify(props) {
           </div>
         </section>
       ) : (
-        <section className="verify">
+        <section className="verify" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`}}>
           <div className="successDisplay" id="successVerify">
             <p>
               <IoIcons.IoCheckmarkDoneCircle />
