@@ -12,6 +12,7 @@ import {
   TbIcons,
 } from "./Icons";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 export default function Nav(props) {
   // const [recognizedText, setRecognizedText] = useState("");
   const [active, setActive] = useState(false);
@@ -82,12 +83,13 @@ export default function Nav(props) {
     const sideMenu = document.getElementById("sideMenu");
     sideMenu.style.left = "-100%";
   };
+  const router = useRouter()
   return (
     <nav
       style={{ position: props.position, background: props.background }}
       className={isScrolled ? "navbar-scrolled" : "navbar"}
     >
-      <div className="logo">
+      <div className="logo" onClick={()=>{router.push('/')}}>
         <Image src="./logo.png" alt="logo" width={200} height={150} />
       </div>
       <div className="otherSec">
@@ -195,7 +197,7 @@ export default function Nav(props) {
             More <BiIcons.BiChevronDown />
           </li>
           </div>
-          <li id="contact" className="mobile-hidden">
+          <li id="contact" className="mobile-hidden" onClick={()=>{router.push('/login')}}>
             <AiIcons.AiOutlineLogin />
             &nbsp;Login
           </li>
@@ -238,14 +240,14 @@ export default function Nav(props) {
               </span>
               Gallery
             </li>
-            <li>
+            <li onClick={()=>{router.push('/signup')}}>
               <span>
                 <BsIcons.BsPersonPlus />
               </span>
               Signup
             </li>
           </ul>
-          <li id="AuthIco" className="hidden">
+          <li id="AuthIco" className="hidden" onClick={()=>{router.push('/login')}}>
             <AiIcons.AiOutlineLogin />
             &nbsp;Login
           </li>

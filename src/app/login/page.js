@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-
+import Link from "next/link";
 export default function Login() {
   return (
     <>
@@ -59,13 +59,13 @@ export default function Login() {
                 <label htmlFor="remember">Remember me</label>
               </div>
               <div className="forgetpass">
-                <a href="#">Forget Password</a>
+                <Link href="/verify">Forget Password</Link>
               </div>
             </div>
             <button>Login</button>
           </form>
           <h4>
-            Don&apos;t have an Account? <a href="">Sign up</a>
+            Don&apos;t have an Account? <Link href="/signup">Sign up</Link>
           </h4>
           <h5>Or With</h5>
           <div className="socialLogin">

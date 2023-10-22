@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Image from "next/image";
+import Link from "next/link";
 // Define the Signup functional component
 export default function Signup() {
   // Initialize state variables
@@ -97,7 +98,6 @@ export default function Signup() {
       console.error("Signup failed:", error);
     }
   };
-
   return (
     <>
       <Nav position="relative" background="#000000" />
@@ -271,7 +271,7 @@ export default function Signup() {
             <button onClick={handleSignup}>Signup</button>
           </form>
           <h4>
-            Already have an Account? <a href="">Sign in</a>
+            Already have an Account? <Link href="/login">Sign in</Link>
           </h4>
           <h5>Or With</h5>
           <div className="socialLogin">

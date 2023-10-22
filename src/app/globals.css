@@ -90,6 +90,9 @@ nav .otherSec form {
   padding: 2rem;
   border-radius: 0.5rem;
 }
+.topMenuSecInfo{
+  display: flex;
+}
 #DropDown li {
   color: #101010;
   width: 100%;

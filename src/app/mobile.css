@@ -6,7 +6,8 @@
     -webkit-tap-highlight-color: transparent;
   }
   .topMenuSecInfo{
-  width: 100%;
+    width: 100%;
+    flex-direction: column;
   }
   .hidden {
     display: inline-flex;
@@ -201,10 +202,10 @@
   }
   nav ul li {
     font-size: 2rem;
-    width: 95%;
+    width: 100%;
     padding: 0.5rem;
     justify-content: flex-start;
-      margin: 0.5rem 0;
+    margin: 0.5rem;
   }
   section.projects .titleHead h3 {
     font-size: 1.9rem;
