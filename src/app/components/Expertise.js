@@ -60,7 +60,7 @@ export default function Expertise() {
     <section className="expertise">
       <h1 className="head">My Expertise</h1>
       <p className="paragraph">
-      I possess expertise in the following technologies.
+        I possess expertise in the following technologies.
       </p>
       <div className="mainContent">
         {content.map((e, index) => {
@@ -77,7 +77,12 @@ export default function Expertise() {
           );
         })}
       </div>
-      <div className="banner" style={{background:`url("./banner.png")`}}>
+      <div
+        className="banner"
+        style={{
+          background: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(./banner.png)`,
+        }}
+      >
         <h1>Get free source code here</h1>
         <h3>
           I am serving free codes for beginner learners in my github you can

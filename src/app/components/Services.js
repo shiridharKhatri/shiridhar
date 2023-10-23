@@ -6,14 +6,17 @@ export default function Services() {
     {
       name: "Web Designing",
       src: "./services/designing.png",
+      color:"linear-gradient(45deg,#FB7140,#FB9951)"
     },
     {
       name: "Web Development",
       src: "./services/development.png",
+      color:"linear-gradient(45deg,#239FE9,#44D5F3)"
     },
     {
       name: "E-Commerce Development",
       src: "./services/ecommerce.png",
+      color:"linear-gradient(45deg,#F1467A,#FB949E)"
     },
     // {
     //   name: "Web Maintainance",
@@ -22,6 +25,7 @@ export default function Services() {
     {
       name: "Search Engine Optimization (SEO)",
       src: "./services/seo.png",
+      color:"linear-gradient(45deg,#DA1FF2,#4C15D0)"
     },
   ];
   return (
@@ -32,7 +36,7 @@ export default function Services() {
         <div className="mainServiceBox">
           {services.map((e, index) => {
             return (
-              <div className="cards-item" key={index}>
+              <div className="cards-item" key={index} style={{background:e.color}}>
                 <Image src={e.src} alt={e.name} width={200} height={200} />
                 <h4>{e.name}</h4>
               </div>

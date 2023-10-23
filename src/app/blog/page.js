@@ -38,7 +38,11 @@ export default function Page() {
               </h3>
             </div>
             <div className="cardsSecParent">
-              <div className="cards"></div>
+              <div className="cards">
+                <div className="BlogCardImage">
+                    {/* <Image src="/"/> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>
