@@ -7,7 +7,7 @@ export default function Page() {
   const items = [
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
@@ -15,7 +15,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog2.png",
@@ -23,7 +23,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog3.png",
@@ -31,7 +31,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
@@ -39,7 +39,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
@@ -47,7 +47,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
@@ -55,7 +55,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog2.png",
@@ -63,7 +63,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
@@ -71,7 +71,7 @@ export default function Page() {
     },
     {
       title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+        "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
