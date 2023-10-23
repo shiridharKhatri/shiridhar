@@ -28,7 +28,7 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from "react-icons/fa";
-import { GrReactjs, GrGithub } from "react-icons/gr";
+import { GrReactjs, GrGithub,GrNext,GrPrevious } from "react-icons/gr";
 import {
   IoLogoCss3,
   IoCall,
@@ -110,6 +110,8 @@ const FaIcons = {
 const GrIcons = {
   GrReactjs,
   GrGithub,
+  GrNext,
+  GrPrevious
 };
 const IoIcons = {
   IoLogoCss3,

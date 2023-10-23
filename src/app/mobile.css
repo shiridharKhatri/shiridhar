@@ -139,7 +139,9 @@
     border-top: 0.1rem solid #445;
     border-bottom: 0.1rem solid #445;
   }
-
+  .cardsSecParent{
+    grid-template-columns: repeat(3, 1fr);
+  }
   #DropDown li span {
     height: 4rem;
     width: 4rem;
@@ -319,6 +321,32 @@
   section.projects .projectCards img {
     border-radius: 0.5rem;
   }
+  .cardsSecParent{
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0;
+  }
+  .blogHead .content {
+    width: 95%
+}
+.allBlogsSec {
+  padding: 1rem 0.5rem;
+}
+.cardsSecParent .cards{
+  box-shadow: none;
+  background: transparent;
+}
+.cardsSecParent .cards{
+  margin:0;
+}
+.cardsSecParent .cards img {
+  border-radius: 1rem;
+}
+.blogHead .content h1{
+  width: 100%;
+}
+.blogHead .content p{
+  width: 100%;
+}
   .mailImage {
     display: none;
   }
@@ -427,6 +455,7 @@
     justify-content: center;
     align-items: center;
   }
+ 
   .btn-view-all button.learn-more {
     margin-right: 0;
   }

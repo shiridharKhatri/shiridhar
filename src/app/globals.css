@@ -10,15 +10,17 @@ html {
 }
 body {
   background-color: #f5f5f5;
-  width:100%;
-}
-main{
   width: 100%;
 }
-body::-webkit-scrollbar{
+main {
+  width: 100%;
+}
+body::-webkit-scrollbar {
   display: none;
 }
-section,footer,header{
+section,
+footer,
+header {
   width: 100%;
 }
 section,
@@ -91,7 +93,7 @@ nav .otherSec form {
   border-radius: 0.5rem;
   display: none;
 }
-.topMenuSecInfo{
+.topMenuSecInfo {
   display: flex;
 }
 #DropDown li {
@@ -997,7 +999,7 @@ button.learn-more:hover .button-text {
   text-transform: capitalize;
 }
 .items h2 {
-  margin: 1rem 1rem .5rem 1rem;
+  margin: 1rem 1rem 0.5rem 1rem;
   font-size: 1.6rem;
 }
 .items button {
@@ -1216,7 +1218,7 @@ section.mainMailSection {
   width: 100%;
   font-family: "Belanosima", sans-serif;
 }
-.mailContent h4{
+.mailContent h4 {
   font-size: 1.2rem;
   margin-bottom: 4rem;
   font-weight: 400;
@@ -1687,7 +1689,7 @@ section.signup .mainSignupCard {
 }
 
 /* Blogs section here  */
-.blogHead{
+.blogHead {
   height: 100vh;
   height: 100vh;
   display: flex;
@@ -1695,30 +1697,35 @@ section.signup .mainSignupCard {
   align-items: center;
   position: relative;
 }
-.blogHead .content{
+.blogHead .content {
   position: absolute;
   bottom: 7rem;
   width: 75%;
   color: #ffffff;
 }
-.blogHead .content h1{
+.blogHead .content h1 {
   font-size: 3rem;
   width: 70rem;
   color: #facd3d;
   margin: 0.5rem;
 }
-.blogHead .content button{
-  height: 4rem;
-    width: 16rem;
-    border: none;
-    border-radius: 3rem;
-    cursor: pointer;
-    background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
-    color: #101010;
-    margin: 2rem 0 0 0.5rem;
-    font-weight: bold;
+#mainBtn{
+  background: #facd3d;
+  height: 4.3rem;
+  width: 3.5rem;
 }
-.blogHead .content h5{
+.blogHead .content button {
+  height: 4rem;
+  width: 16rem;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, #5efce8 10%, #736efe 100%);
+  color: #101010;
+  margin: 2rem 0 0 0.5rem;
+  font-weight: bold;
+}
+.blogHead .content h5 {
   background: #5626c4;
   color: #ffffff;
   width: 9rem;
@@ -1732,30 +1739,101 @@ section.signup .mainSignupCard {
   margin-bottom: 1rem;
   font-weight: 400;
 }
-.blogHead .content p{
+.blogHead .content p {
   width: 70rem;
   font-size: 1.5rem;
   margin: 0.5rem;
 }
-.allBlogsSec{
+.allBlogsSec {
   padding: 1rem;
 }
-.allBlogsSec h1{
+.allBlogsSec h1 {
   font-size: 3rem;
   /* background: red; */
   text-align: center;
-  margin: 7rem 0 3rem 0;
+  margin: 7rem 0 7rem 0;
   font-family: "Belanosima", sans-serif;
 }
-.allBlogsSec .blogCardParent .blogTitleHead h3{
+.allBlogsSec .blogCardParent .blogTitleHead h3 {
   font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid #445;
+  padding: 0 0.5rem 1rem 0.5rem;
+}
+.cardsSecParent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem;
+}
+.cardsSecParent .cards {
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 3rem;
+  margin: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.cardsSecParent .cards img {
+  border-radius: 2.3rem 2.3rem 0 0;
+}
+.cardsSecParent .cards .detailsBlogSec h5 {
+  padding: 0.5rem;
+  background: #5626c440;
+  color: #5626c4;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+.cardsSecParent .cards .detailsBlogSec h6 {
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  color: #445;
+  padding: 0 0 0 0.5rem;
+}
+.cardsSecParent .cards .detailsBlogSec h2 {
+  font-size: 1.6rem;
+  color: #101010;
+}
+.cardsSecParent .cards .detailsBlogSec p {
+  font-size: 1.2rem;
+  color: #101010;
+}
+.cardsSecParent .cards button {
+  border: none;
+  padding: 1rem;
+  margin: 2rem 0 0 0;
+  width: 50%;
+  height: 4rem;
+  margin: 2rem 1rem 1rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3rem;
+}
+.pagePreg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+}
+.pagePreg button{
+  padding: 1rem;
+    border: 0.1rem solid #445;
+    border-radius: 1rem;
+    margin: .5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-weight: 400;
-    padding-bottom: 1rem;
-    border-bottom: 0.1rem solid #445;
-    padding: 0 0.5rem 1rem 0.5rem;
+    cursor: pointer;
+    background-color: #5224bc;
+    color: #ffffff;
 }
 footer {
   background: #000000;

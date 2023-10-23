@@ -2,8 +2,82 @@ import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Image from "next/image";
-
+import { GrIcons } from "../components/Icons";
 export default function Page() {
+  const items = [
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog1.png",
+      color: "#5aaef5",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog2.png",
+      color: "#515568",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog3.png",
+      color: "#d7c0e4",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog1.png",
+      color: "#5aaef5",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog4.png",
+      color: "#212325",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog4.png",
+      color: "#212325",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog2.png",
+      color: "#515568",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog4.png",
+      color: "#212325",
+    },
+    {
+      title:
+        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
+      description:
+        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
+      image: "./blogImage/blog1.png",
+      color: "#5aaef5",
+    },
+  ];
   return (
     <>
       <Nav position="fixed" />
@@ -38,12 +112,38 @@ export default function Page() {
               </h3>
             </div>
             <div className="cardsSecParent">
-              <div className="cards">
-                <div className="BlogCardImage">
-                    {/* <Image src="/"/> */}
-                </div>
-              </div>
+              {items.map((e, index) => {
+                return (
+                  <div className="cards" key={index}>
+                    <div className="BlogCardImage">
+                      <Image
+                        src={e.image}
+                        style={{ background: e.color }}
+                        alt="blogImage"
+                        layout="responsive"
+                        width={200}
+                        height={150}
+                      />
+                    </div>
+                    <div className="detailsBlogSec">
+                      <h5>Latest</h5>
+                      <h2>{e.title}</h2>
+                      <p>{e.description}</p>
+                      <h6 style={{borderLeft: `0.3rem solid ${e.color}`}}>Published on 2023/08/08 at 2:45PM</h6>
+                    </div>
+                    <button style={{ background: e.color }}>Read</button>
+                  </div>
+                );
+              })}
             </div>
+          </div>
+          <div className="pagePreg">
+            <button id="mainBtn"><GrIcons.GrPrevious/></button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button id="mainBtn"><GrIcons.GrNext/></button>
           </div>
         </div>
       </section>
