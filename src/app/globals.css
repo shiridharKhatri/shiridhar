@@ -9,7 +9,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width:100%;
 }
 main{
@@ -383,7 +383,7 @@ section.projects .projectCards {
 }
 
 section.projects .projectCards .card {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 1rem;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -964,7 +964,7 @@ button.learn-more:hover .button-text {
   display: none;
 }
 .items {
-  background: #f5f5f5;
+  background: #ffffff;
   margin: 0.7rem;
   border-radius: 3rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
