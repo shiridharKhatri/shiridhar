@@ -12,6 +12,7 @@ import {
   GrIcons,
 } from "./Icons";
 import Image from "next/image";
+import Link from "next/link";
 export default function Footer() {
   const [datas, setData] = useState([]);
   const socialicons = [
@@ -88,19 +89,19 @@ export default function Footer() {
             <h1>Menu</h1>
             <ul>
               <li>
-                <a href="">About</a>
+                <Link href="/about">About</Link>
               </li>
               <li>
-                <a href="">Hire me</a>
+                <Link href="/hire">Hire me</Link>
               </li>
               <li>
-                <a href="">Blogs</a>
+                <Link href="/blog">Blogs</Link>
               </li>
               <li>
-                <a href="">Services</a>
+                <Link href="/service">Services</Link>
               </li>
               <li>
-                <a href="">Projects</a>
+                <Link href="/projects">Projects</Link>
               </li>
             </ul>
           </div>

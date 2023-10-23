@@ -443,6 +443,9 @@
     font-family: system-ui;
     font-weight: 500;
   }
+  .blogTitleHead{
+    margin: 10rem 0rem 0 0rem;
+  }
   .services {
     padding: 0.5rem;
   }

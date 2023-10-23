@@ -210,7 +210,7 @@ export default function Nav(props) {
                 More
               </h3>
             </div>
-            <li>
+            <li onClick={()=>{router.push("/blog")}}>
               <span>
                 <BsIcons.BsBook />
               </span>

@@ -6,72 +6,63 @@ import { GrIcons } from "../components/Icons";
 export default function Page() {
   const items = [
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
       color: "#5aaef5",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog2.png",
       color: "#515568",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog3.png",
       color: "#d7c0e4",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
       color: "#5aaef5",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
       color: "#212325",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
       color: "#212325",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog2.png",
       color: "#515568",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog4.png",
       color: "#212325",
     },
     {
-      title:
-        "How to use chatGPT like a professional",
+      title: "How to use chatGPT like a professional",
       description:
         " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
       image: "./blogImage/blog1.png",
@@ -104,12 +95,13 @@ export default function Page() {
           </div>
         </div>
         <div className="allBlogsSec">
-          <h1>Blogs</h1>
           <div className="blogCardParent">
             <div className="blogTitleHead">
-              <h3>
-                Total Blogs(34) <span>Page : 1</span>
-              </h3>
+              <h1>All Blogs</h1>
+              <select name="" id="">
+                <option value="">Newest First</option>
+                <option value="">Newest First</option>
+              </select>
             </div>
             <div className="cardsSecParent">
               {items.map((e, index) => {
@@ -129,7 +121,9 @@ export default function Page() {
                       <h5>Latest</h5>
                       <h2>{e.title}</h2>
                       <p>{e.description}</p>
-                      <h6 style={{borderLeft: `0.3rem solid ${e.color}`}}>Published on 2023/08/08 at 2:45PM</h6>
+                      <h6 style={{ borderLeft: `0.3rem solid ${e.color}` }}>
+                        Published on 2023/08/08 at 2:45PM
+                      </h6>
                     </div>
                     <button style={{ background: e.color }}>Read</button>
                   </div>
@@ -138,12 +132,16 @@ export default function Page() {
             </div>
           </div>
           <div className="pagePreg">
-            <button id="mainBtn"><GrIcons.GrPrevious/></button>
+            <button id="mainBtn">
+              <GrIcons.GrPrevious />
+            </button>
             <button>1</button>
             <button>2</button>
             <button>3</button>
             <button>4</button>
-            <button id="mainBtn"><GrIcons.GrNext/></button>
+            <button id="mainBtn">
+              <GrIcons.GrNext />
+            </button>
           </div>
         </div>
       </section>
