@@ -1758,7 +1758,7 @@ section.signup .mainSignupCard {
   font-size: 2.5rem;
   font-family: "Belanosima", sans-serif;
 }
-.blogTitleHead option {
+.blogTitleHead select{
   padding: 0.5rem;
   border: 0.1rem solid #5626c4;
   border-radius: 0.5rem;
