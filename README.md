@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+My Portfolio Website
+Welcome to my Portfolio Website repository! This website showcases my skills and experiences as a web developer. I've built this site using Next.js for the frontend, Node.js for the backend, and MongoDB as the database. It features an array of functionalities including my professional journey, source code of various projects, useful tools for beginners, a section for paid code, a blog platform, and much more.
 
-## Getting Started
+Features
+1. Professional Journey
+Explore my professional journey, education, work experiences, and skills. Get to know me better and discover what I have achieved in my career.
 
-First, run the development server:
+2. Source Code Showcase
+Browse through the source code of many of my web projects. Learn from the code and discover how I've implemented different features in various applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. Useful Tools for Beginners
+As a developer, I understand the importance of resources for beginners. You can find a collection of useful tools and resources that can help aspiring developers kickstart their journey in web development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Paid Code
+For those looking for premium code, I offer a section where you can purchase high-quality code snippets, templates, or entire projects to accelerate your own development projects.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+5. Blog
+I maintain a blog section where I regularly post articles on various topics related to web development, programming, and technology. Stay updated with the latest trends and insights.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. More Features
+My portfolio website is constantly evolving. I am continuously adding new features and content to provide an enriching experience for visitors. Keep an eye out for updates and new additions.
 
-## Learn More
+Technologies Used
+Frontend: Next.js
+Backend: Node.js
+Database: MongoDB
 
-To learn more about Next.js, take a look at the following resources:
+License
+This project is licensed under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you for visiting my portfolio website! I hope you find it informative and inspiring.
