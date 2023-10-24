@@ -378,6 +378,10 @@
   }
 }
 @media (max-width: 580px) {
+  .cardsSecParent .cards button{
+    width: 70%;
+    margin: 2rem 1rem 1rem 0rem;
+  }
   section.projects p {
     font-size: 1.5rem;
   }
