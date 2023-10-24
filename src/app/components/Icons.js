@@ -15,7 +15,7 @@ import {
   AiOutlineEye,
   AiFillStar,
   AiOutlineLogin,
-  AiOutlineFundProjectionScreen
+  AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
 import { RiServiceLine } from "react-icons/ri";
 import { CiStickyNote, CiImageOn } from "react-icons/ci";
@@ -28,7 +28,7 @@ import {
   FaLinkedinIn,
   FaGithub,
 } from "react-icons/fa";
-import { GrReactjs, GrGithub,GrNext,GrPrevious } from "react-icons/gr";
+import { GrReactjs, GrGithub, GrNext, GrPrevious } from "react-icons/gr";
 import {
   IoLogoCss3,
   IoCall,
@@ -38,7 +38,7 @@ import {
   IoStop,
   IoCheckmarkDoneCircle,
   IoMenu,
-  IoCloseSharp
+  IoCloseSharp,
 } from "react-icons/io5";
 import { FiChevronLeft, FiInstagram, FiChevronRight } from "react-icons/fi";
 import {
@@ -47,7 +47,7 @@ import {
   BsPersonPlus,
   BsMenuButtonWideFill,
   BsMenuUp,
-  BsInfoCircle
+  BsInfoCircle,
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -58,9 +58,13 @@ import {
   MdKeyboardArrowRight,
   MdDone,
   MdOutlineWorkspacePremium,
-  MdWorkOutline
+  MdWorkOutline,
 } from "react-icons/md";
 import { HiPlus } from "react-icons/hi2";
+import { LuCalendarClock } from "react-icons/lu";
+const LuIcons = {
+  LuCalendarClock,
+};
 const HiIcons = {
   HiPlus,
 };
@@ -71,7 +75,7 @@ const MdIcons = {
   MdKeyboardArrowRight,
   MdDone,
   MdOutlineWorkspacePremium,
-  MdWorkOutline
+  MdWorkOutline,
 };
 const Fa6Icons = {
   FaLocationDot,
@@ -86,7 +90,7 @@ const BsIcons = {
   BsPersonPlus,
   BsMenuButtonWideFill,
   BsMenuUp,
-  BsInfoCircle
+  BsInfoCircle,
 };
 const FiIcons = {
   FiChevronLeft,
@@ -111,7 +115,7 @@ const GrIcons = {
   GrReactjs,
   GrGithub,
   GrNext,
-  GrPrevious
+  GrPrevious,
 };
 const IoIcons = {
   IoLogoCss3,
@@ -122,7 +126,7 @@ const IoIcons = {
   IoStop,
   IoCheckmarkDoneCircle,
   IoMenu,
-  IoCloseSharp
+  IoCloseSharp,
 };
 const BiIcons = {
   BiChevronDown,
@@ -140,7 +144,7 @@ const AiIcons = {
   AiFillHtml5,
   AiFillStar,
   AiOutlineLogin,
-  AiOutlineFundProjectionScreen
+  AiOutlineFundProjectionScreen,
 };
 const RiIcons = {
   RiServiceLine,
@@ -171,4 +175,5 @@ export {
   Fa6Icons,
   MdIcons,
   HiIcons,
+  LuIcons
 };

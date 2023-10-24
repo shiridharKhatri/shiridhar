@@ -1,8 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Image from "next/image";
-import { GrIcons } from "../components/Icons";
+import { GrIcons, LuIcons } from "../components/Icons";
 export default function Page() {
   const items = [
     {
@@ -69,6 +70,26 @@ export default function Page() {
       color: "#5aaef5",
     },
   ];
+  const fetchData = async () => {
+    let headersList = {
+      Accept: "*/*",
+    };
+
+    let response = await fetch("http://localhost:5000/api/blog/fetch", {
+      method: "GET",
+      headers: headersList,
+    });
+
+    let data = await response.json();
+    let datas = data.data.map((e) => {
+      return {id : e._id}
+    });
+    console.log([datas][0])
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <Nav position="fixed" />
@@ -121,8 +142,8 @@ export default function Page() {
                       <h5>Latest</h5>
                       <h2>{e.title}</h2>
                       <p>{e.description}</p>
-                      <h6 style={{ borderLeft: `0.3rem solid ${e.color}` }}>
-                        Published on 2023/08/08 at 2:45PM
+                      <h6 style={{ color: e.color }}>
+                       <LuIcons.LuCalendarClock/>&nbsp;Published on 2023/08/08 at 2:45PM
                       </h6>
                     </div>
                     <button style={{ background: e.color }}>Read</button>

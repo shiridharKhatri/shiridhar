@@ -1795,9 +1795,10 @@ section.signup .mainSignupCard {
   margin: 1rem 0;
 }
 .cardsSecParent .cards .detailsBlogSec h6 {
-  /* font-size: 1rem; */
-  color: #445;
-  padding: 0 0 0 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 .cardsSecParent .cards .detailsBlogSec h2 {
   font-size: 1.6rem;
@@ -1806,7 +1807,7 @@ section.signup .mainSignupCard {
 .cardsSecParent .cards .detailsBlogSec p {
   font-size: 1.2rem;
   color: #101010;
-  margin: 1rem 0px 2rem 0;
+  margin: 1rem 0px 1rem 0;
 }
 .cardsSecParent .cards button {
   border: none;
