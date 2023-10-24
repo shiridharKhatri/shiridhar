@@ -12,7 +12,7 @@ export default function Testimonial() {
       image: "./profile.png",
     },
     {
-      name: "Aaisha Khatri",
+      name: "Shiridhar Khatri",
       star: 5,
       review:
         "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
