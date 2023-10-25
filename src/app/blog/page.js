@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Image from "next/image";
 import { GrIcons, LuIcons } from "../components/Icons";
+import IndvBlog from "../components/IndvBlog";
 export default function Page() {
   const items = [
     {
@@ -70,30 +71,13 @@ export default function Page() {
       color: "#5aaef5",
     },
   ];
-  const fetchData = async () => {
-    let headersList = {
-      Accept: "*/*",
-    };
 
-    let response = await fetch("http://localhost:5000/api/blog/fetch", {
-      method: "GET",
-      headers: headersList,
-    });
 
-    let data = await response.json();
-    let datas = data.data.map((e) => {
-      return {id : e._id}
-    });
-    console.log([datas][0])
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <>
-      <Nav position="fixed" />
-      <section>
+      {/* <Nav position="fixed" /> */}
+      <IndvBlog/>
+      {/* <section>
         <div
           className="blogHead"
           style={{
@@ -165,8 +149,8 @@ export default function Page() {
             </button>
           </div>
         </div>
-      </section>
-      <Footer />
+      </section> */}
+      {/* <Footer /> */}
     </>
   );
 }

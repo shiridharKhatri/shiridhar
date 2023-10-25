@@ -50,8 +50,8 @@ export default function Projects() {
 
   return (
     <section className="projects">
-      <h1>Created Projects</h1>
-      <p>All the projects that i created using wed development technologies</p>
+      <h1 id="projectHeading">Created Projects</h1>
+      <p id="projectParagraph">All the projects that i created using wed development technologies</p>
       <div className="titleHead">
         <h3>
           Total projects (5) <span>View all</span>

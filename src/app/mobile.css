@@ -264,7 +264,7 @@
     font-size: 2rem;
     background: #101010;
     border-radius: 5rem;
-    height: 6rem;
+    height: 5rem;
     margin: 1rem;
     color: #ffffff;
   }
@@ -447,6 +447,12 @@
     font-family: system-ui;
     font-weight: 500;
   }
+  section.projects .titleHead h3{
+    font-size: 1.5rem;
+  }
+  #projectHeading, #projectParagraph{
+    display: none;
+  }
   .blogTitleHead{
     margin: 10rem 0rem 0 0rem;
   }
@@ -510,7 +516,7 @@
   }
   section.projects .projectCards .card .buttons button {
     font-size: 2rem;
-    height: auto;
+    height: 5rem;
     display: flex;
     padding: 1.4rem 0;
     justify-content: center;

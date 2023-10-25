@@ -1758,7 +1758,7 @@ section.signup .mainSignupCard {
   font-size: 2.5rem;
   font-family: "Belanosima", sans-serif;
 }
-.blogTitleHead select{
+.blogTitleHead select {
   padding: 0.5rem;
   border: 0.1rem solid #5626c4;
   border-radius: 0.5rem;
@@ -1839,6 +1839,68 @@ section.signup .mainSignupCard {
   background-color: #5224bc;
   color: #ffffff;
 }
+.indBlogDesc {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 2rem;
+  margin: 3rem;
+}
+.indBlogDesc img {
+  height: 13rem;
+  width: 18rem;
+  border-radius: 2rem;
+  margin-right: 2rem;
+}
+.indBlogDetails h2 {
+  font-size: 2rem;
+  margin: 1rem 0 0 0;
+}
+.indBlogDetails p {
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.indBlogDesc .indBlogDetails .profile img {
+  height: 3rem;
+  width: 3rem;
+  margin: 0 1rem 0 0;
+}
+.indBlogDesc .indBlogDetails .profile span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.indBlogDesc .indBlogDetails .profile span .author{
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0 0 0 0.7rem;
+}
+.indBlogDesc .indBlogDetails .profile {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.descriptionOfBlog{
+  padding: 4rem;
+}
+.descriptionOfBlog h1{
+  font-family: "Belanosima", sans-serif;
+  font-size: 2.5rem;
+}
+.descriptionOfBlog p{
+  font-size: 1.5rem;
+  margin: 0.5rem;   
+}
+.descriptionOfBlog ul{
+  margin: 1rem 2.3rem 2.3rem 2.3rem;
+  font-size: 1.6rem;
+}
 footer {
   background: #000000;
   padding: 1rem;
@@ -1918,7 +1980,7 @@ footer .fourthSection a {
 }
 footer .fourthSection span {
   font-size: 2rem;
-  /* padding: 1rem; */
+  padding: 1rem;
   background: #445;
   border-radius: 50%;
   display: flex;
