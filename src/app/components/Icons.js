@@ -48,6 +48,8 @@ import {
   BsMenuButtonWideFill,
   BsMenuUp,
   BsInfoCircle,
+  BsMoonStarsFill,
+  BsFillSunFill
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -91,6 +93,8 @@ const BsIcons = {
   BsMenuButtonWideFill,
   BsMenuUp,
   BsInfoCircle,
+  BsFillSunFill,
+  BsMoonStarsFill
 };
 const FiIcons = {
   FiChevronLeft,

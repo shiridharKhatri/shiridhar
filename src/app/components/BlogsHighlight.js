@@ -43,24 +43,26 @@ export default function BlogsHighlight() {
         {items.map((e, index) => {
           return (
             <div className="items" key={index}>
-              <div className="image-top" >
-                <Image
-                  style={{ background: e.color }}
-                  src={e.image}
-                  alt="blogImage"
-                  layout="responsive"
-                  width={200}
-                  height={150}
-                />
-              </div>
-              <p id="blogStatus">latest</p>
-              <h2>{e.title}</h2>
-              <h6>Published on 2023/08/08 at 2:45PM</h6>
-              <div className="btns-blog">
-                <button style={{background:e.color}}>
-                  Read More&nbsp;
-                  <BiIcons.BiChevronRight />
-                </button>
+              <div className="card-item">
+                <div className="image-top">
+                  <Image
+                    style={{ background: e.color }}
+                    src={e.image}
+                    alt="blogImage"
+                    layout="responsive"
+                    width={200}
+                    height={150}
+                  />
+                </div>
+                <p id="blogStatus">latest</p>
+                <h2>{e.title}</h2>
+                <h6>Published on 2023/08/08 at 2:45PM</h6>
+                <div className="btns-blog">
+                  <button style={{ background: e.color }}>
+                    Read More&nbsp;
+                    <BiIcons.BiChevronRight />
+                  </button>
+                </div>
               </div>
             </div>
           );

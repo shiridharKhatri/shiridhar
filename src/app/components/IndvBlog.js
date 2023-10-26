@@ -54,6 +54,7 @@ export default function IndvBlog(props) {
             // layout="responsive"
             width={200}
             height={150}
+            
           />
           <div className="indBlogDetails">
             <div className="profile">

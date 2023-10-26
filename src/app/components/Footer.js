@@ -82,7 +82,7 @@ export default function Footer() {
     <footer>
       <div className="topSection">
         <div className="topLogo">
-          <Image src="./secondLogo.png" alt="logo" width={200} height={150}/>
+          <Image src="./secondLogo.png" alt="logo" width={200} height={150} />
         </div>
         <div className="flex-disp-footer">
           <div className="secondSection item">

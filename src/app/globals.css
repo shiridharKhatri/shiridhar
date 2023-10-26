@@ -3,13 +3,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Belanosima", sans-serif; */
+  font-family: Open Sans, sans-serif;
+}
+:root {
+  --primary-background-color: #f5f5f5;
+  --secondary-background-color: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );
+  --card-primary-color: #ffffff;
+  --card-secondary-color: transparent;
+  --color: #000000;
+  --headTextColor:#000000;
+}
+.darkMode {
+  --primary-background-color: #0d0a1a;
+  --secondary-background-color: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );
+  --card-primary-color: linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0) 32.76%,
+      rgba(59, 51, 102, 0.5) 100%
+    ),
+    linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0.5) 0%,
+      rgba(36, 36, 77, 0) 67.24%,
+      rgba(43, 36, 77, 0) 67.24%
+    );
+  --card-secondary-color: rgba(17, 14, 36, 0.8);
+  --color: rgba(238, 235, 255, 0.9);
+  --headTextColor:rgb(250 205 61);
 }
 html {
   font-size: 62.5%;
 }
 body {
-  background-color: #f5f5f5;
+  background-color: var(--primary-background-color);
   width: 100%;
 }
 main {
@@ -22,6 +56,7 @@ section,
 footer,
 header {
   width: 100%;
+  background: var(--secondary-background-color);
 }
 section,
 footer {
@@ -41,18 +76,18 @@ nav.navbar {
   z-index: 999;
   position: relative;
   top: 0;
-  color: #fff;
+  color: var(--color);
 }
 nav.navbar-scrolled {
   padding: 1rem 2rem;
-  background-color: #000;
+  background: #000;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   z-index: 999;
-  color: #fff;
+  color: var(--color);
 }
 nav .logo img {
   height: 9rem;
@@ -118,7 +153,7 @@ nav .otherSec form {
   border-radius: 50%;
   position: absolute;
   right: -2rem;
-  background-color: #5626c4;
+  background: #5626c4;
   transition: 0.3s ease;
 }
 #DropDown li:hover:before {
@@ -128,7 +163,7 @@ nav .otherSec form {
   border-radius: 50%;
   position: absolute;
   right: -1rem;
-  background-color: #5626c4;
+  background: #5626c4;
   transition: 0.3s ease;
 }
 #DropDown li:hover {
@@ -145,7 +180,7 @@ nav .otherSec form {
   align-items: center;
   font-size: 2.3rem;
   border-radius: 1rem;
-  color: #ffffff;
+  color: var(--color);
 }
 nav .otherSec form .voiceSection {
   position: absolute;
@@ -237,6 +272,27 @@ nav ul li {
   align-items: center;
   cursor: pointer;
   font-family: sans-serif;
+  color: #ffffff;
+}
+header .themeSection{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+header .themeSection .themeDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #10101087;
+  color: #ffffff;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+header .themeSection .themeDisplay h2{
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ping {
   --uib-size: 9rem;
@@ -324,6 +380,7 @@ section.BelowButton {
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+  background: none;
 }
 section.BelowButton ul {
   list-style: none;
@@ -357,12 +414,14 @@ section.projects h1 {
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
 }
 section.projects p {
   width: 100%;
   text-align: center;
   margin-top: 0.5rem;
   font-size: 1.4rem;
+  color: var(--color);
 }
 section.projects .titleHead h3 {
   display: flex;
@@ -371,6 +430,7 @@ section.projects .titleHead h3 {
   padding: 0 1rem;
   font-size: 1.4rem;
   margin: 4rem 2rem 0rem 2rem;
+  color: var(--color);
 }
 section.projects .titleHead span {
   cursor: pointer;
@@ -385,11 +445,20 @@ section.projects .projectCards {
 }
 
 section.projects .projectCards .card {
-  background-color: #ffffff;
-  padding: 1rem;
+  background: var(--card-primary-color);
+  /* padding: 1rem; */
   margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   position: relative;
+  padding: 0.1rem;
+}
+section.projects .projectCards .card .project-card-items {
+  background: var(--card-secondary-color);
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  color: var(--color);
 }
 section.projects .projectCards .card .details h2 {
   font-size: 2rem;
@@ -429,7 +498,7 @@ section.projects .projectCards .card .buttons button {
   border: none;
   cursor: pointer;
   background: transparent;
-  color: #101010;
+  color: var(--color);
   transition: 0.3s ease;
 }
 section.projects .projectCards .card .buttons button:hover {
@@ -447,7 +516,7 @@ section.projects .projectCards .card .buttons button:hover {
   border-radius: 0.5rem;
   border: none;
   background: #5626c4;
-  color: #ffffff;
+  color: var(--color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -578,7 +647,7 @@ section.projects .projectCards .card .image {
   border-radius: 0.5rem;
   border: none;
   background: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  color: var(--color);
   height: 4rem;
   backdrop-filter: blur(0.5rem);
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
@@ -591,12 +660,14 @@ section.projects .projectCards .card .image {
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
 }
 .expertise .paragraph {
   width: 100%;
   text-align: center;
   margin-top: 0.5rem;
   font-size: 1.4rem;
+  color: var(--color);
 }
 .expertise .mainContent {
   height: 35rem;
@@ -644,7 +715,7 @@ section.projects .projectCards .card .image {
   align-items: center;
   position: relative;
   flex-direction: column;
-  color: #ffffff;
+  color: var(--color);
 }
 .banner h1 {
   font-size: 3rem;
@@ -653,6 +724,7 @@ section.projects .projectCards .card .image {
 }
 .banner h3 {
   font-weight: 400;
+  color: #ffffff;
 }
 
 button.learn-more {
@@ -756,6 +828,7 @@ button.learn-more:hover .button-text {
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
 }
 .blogs p {
   width: 50rem;
@@ -763,6 +836,7 @@ button.learn-more:hover .button-text {
   text-align: center;
   margin-top: 0.5rem;
   font-size: 1.4rem;
+  color: var(--color);
 }
 .services {
   padding: 1rem;
@@ -772,6 +846,7 @@ button.learn-more:hover .button-text {
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
 }
 .mainServiceBox {
   display: grid;
@@ -809,12 +884,14 @@ button.learn-more:hover .button-text {
   text-align: center;
   margin-top: 0.5rem;
   font-size: 1.4rem;
+  color: var(--color);
 }
 .testimonial h1 {
   width: 100%;
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
+  color: #ffffff;
 }
 
 .testimonial .header-paragraph {
@@ -857,7 +934,7 @@ button.learn-more:hover .button-text {
 }
 .nextPrevtest button:disabled {
   background: #f7cd4670;
-  color: #ffffff;
+  color: var(--color);
 }
 .testimonial {
   margin: 4rem 0 10rem 0;
@@ -865,7 +942,7 @@ button.learn-more:hover .button-text {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #ffffff;
+  color: var(--color);
   position: relative;
 }
 .testimonial .addReview {
@@ -902,6 +979,7 @@ button.learn-more:hover .button-text {
   align-items: center;
   width: 95%;
   margin: auto;
+  color: #ffffff;
 }
 .mainSectiontestimonial .testimonial-card {
   flex: 0 0 100%;
@@ -966,13 +1044,20 @@ button.learn-more:hover .button-text {
   display: none;
 }
 .items {
-  background: #ffffff;
+  background: var(--card-primary-color);
   margin: 0.7rem;
   border-radius: 3rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 31rem;
+  padding: 0.1rem;
+}
+.items .card-item {
+  background: var(--card-secondary-color);
+  height: 100%;
+  width: 100%;
   padding: 0.5rem;
+  border-radius: 3rem;
 }
 .items .image-top img {
   width: 100%;
@@ -1001,6 +1086,7 @@ button.learn-more:hover .button-text {
 .items h2 {
   margin: 1rem 1rem 0.5rem 1rem;
   font-size: 1.6rem;
+  color: var(--color);
 }
 .items button {
   margin: 2rem 0 1rem 1rem;
@@ -1119,7 +1205,7 @@ button.learn-more:hover .button-text {
 }
 
 .btn-view-all button.learn-more:hover .button-text {
-  color: #ffffff;
+  color: var(--color);
 }
 section.mainMailSection {
   padding: 2rem;
@@ -1301,7 +1387,7 @@ section.verify .mainVerifyCard {
   flex-direction: column;
   align-items: center;
   width: 50rem;
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 1rem;
   padding: 0 0 1rem 0;
 }
@@ -1311,7 +1397,7 @@ section.login .mainLoginCard {
 
   align-items: center;
   width: 50rem;
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 1rem;
   padding: 0 0 5rem 0;
 }
@@ -1468,7 +1554,7 @@ section.signup .mainSignupCard {
   align-items: center;
   width: 50rem;
   /* margin: 10rem 0 0 0; */
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 1rem;
   padding: 0 0 5rem 0;
 }
@@ -1593,7 +1679,7 @@ section.signup .mainSignupCard {
   margin: 3rem 0;
   cursor: pointer;
   background: #5626c4;
-  color: #ffffff;
+  color: var(--color);
   transition: 0.3s ease;
 }
 .mainSignupCard form button:hover {
@@ -1701,7 +1787,7 @@ section.signup .mainSignupCard {
   position: absolute;
   bottom: 7rem;
   width: 75%;
-  color: #ffffff;
+  color: var(--color);
 }
 .blogHead .content h1 {
   font-size: 3rem;
@@ -1727,7 +1813,7 @@ section.signup .mainSignupCard {
 }
 .blogHead .content h5 {
   background: #5626c4;
-  color: #ffffff;
+  color: var(--color);
   width: 9rem;
   height: 3.5rem;
   display: flex;
@@ -1816,7 +1902,7 @@ section.signup .mainSignupCard {
   width: 50%;
   height: 4rem;
   margin: 2rem 1rem 1rem 1rem;
-  color: #ffffff;
+  color: var(--color);
   font-weight: bold;
   cursor: pointer;
   border-radius: 3rem;
@@ -1837,7 +1923,7 @@ section.signup .mainSignupCard {
   align-items: center;
   cursor: pointer;
   background-color: #5224bc;
-  color: #ffffff;
+  color: var(--color);
 }
 .indBlogDesc {
   display: flex;
@@ -1871,9 +1957,8 @@ section.signup .mainSignupCard {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.indBlogDesc .indBlogDetails .profile span .author{
+.indBlogDesc .indBlogDetails .profile span .author {
   border-radius: 1rem;
   font-size: 1rem;
   font-weight: bold;
@@ -1886,25 +1971,25 @@ section.signup .mainSignupCard {
   justify-content: left;
   align-items: center;
 }
-.descriptionOfBlog{
+.descriptionOfBlog {
   padding: 4rem;
 }
-.descriptionOfBlog h1{
+.descriptionOfBlog h1 {
   font-family: "Belanosima", sans-serif;
   font-size: 2.5rem;
 }
-.descriptionOfBlog p{
+.descriptionOfBlog p {
   font-size: 1.5rem;
-  margin: 0.5rem;   
+  margin: 0.5rem;
 }
-.descriptionOfBlog ul{
+.descriptionOfBlog ul {
   margin: 1rem 2.3rem 2.3rem 2.3rem;
   font-size: 1.6rem;
 }
 footer {
   background: #000000;
   padding: 1rem;
-  color: #ffffff;
+  color: var(--color);
   /* margin-top: 10rem; */
 }
 footer ul {
@@ -1939,11 +2024,13 @@ footer .topSection h1 {
   font-family: "Belanosima", sans-serif;
   font-size: 2.5rem;
   margin: 1rem 0;
+  color: #ffffff;
 }
 footer .topSection .item ul li {
   font-size: 1.5rem;
   margin: 0.7rem 0;
   display: flex;
+  color: #ffffff;
 }
 footer .topSection .item ul li a {
   text-decoration: none;
