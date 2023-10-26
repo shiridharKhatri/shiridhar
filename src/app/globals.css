@@ -284,8 +284,8 @@ header .themeSection .themeDisplay {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background: #10101087;
-  color: #ffffff;
+  background: #facd3d;
+  color: #445;
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -633,7 +633,7 @@ section.projects .projectCards .card .image {
   width: 100%;
   /* background: red; */
   padding: 0 1rem;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   transition: 0.3s ease;

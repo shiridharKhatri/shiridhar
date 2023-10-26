@@ -103,6 +103,14 @@
   nav .otherSec form input {
     padding: 1.2rem 0 1.2rem 2rem;
   }
+  section.projects .projectCards .card .project-card-items{
+    background: var(--card-secondary-color);
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--color);
+  }
   .expertise .mainContent .contentCard {
     flex: 0 0 18rem;
   }
@@ -241,7 +249,7 @@
     /* border-top: 0.1rem solid #445; */
     border-radius: 0;
     margin: 2rem 0;
-    padding: 2rem 0 0 0;
+    /* padding: 2rem 0 0 0; */
   }
   section.projects .projectCards .card .buttons {
     margin: 1rem 0 0 0;
@@ -306,7 +314,7 @@
     flex-direction: column;
   }
   footer .topSection .topLogo {
-    background: #101010;
+    background: var(--primary-background-color);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -335,6 +343,12 @@
   .cardsSecParent{
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0;
+  }
+  .mailContent h2{
+    color: var(--color);
+  }
+  .mailContent h4{
+    color: var(--color);
   }
   .blogHead .content {
     width: 95%
@@ -507,9 +521,8 @@
   }
   section.projects .projectCards .card {
     margin: 2rem 0;
-    padding: 0rem 0 2rem 0;
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* padding: 0rem 0 2rem 0; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   }
   footer .topSection .flex-disp-footer {
     width: 100%;
@@ -538,7 +551,7 @@
     display: none;
   }
   section.projects .projectCards img {
-    border-radius: 0;
+    border-radius: 1rem;
   }
   section.projects .projectCards .card .buttons button {
     font-size: 2rem;
