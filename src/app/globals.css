@@ -16,6 +16,8 @@
   --card-secondary-color: transparent;
   --color: #000000;
   --headTextColor:#000000;
+  --btn-text-color:#5626c4;
+  --btn-bg-color:#5626c43d;
 }
 .darkMode {
   --primary-background-color: #0d0a1a;
@@ -38,6 +40,8 @@
   --card-secondary-color: rgba(17, 14, 36, 0.8);
   --color: rgba(238, 235, 255, 0.9);
   --headTextColor:rgb(250 205 61);
+  --btn-text-color:#facd3d;
+  --btn-bg-color:#facd3d2e;
 }
 html {
   font-size: 62.5%;
@@ -434,7 +438,7 @@ section.projects .titleHead h3 {
 }
 section.projects .titleHead span {
   cursor: pointer;
-  color: #5626c4;
+  color: var(--btn-text-color);
   text-decoration: underline;
 }
 section.projects .projectCards {
@@ -502,8 +506,8 @@ section.projects .projectCards .card .buttons button {
   transition: 0.3s ease;
 }
 section.projects .projectCards .card .buttons button:hover {
-  color: #5626c4;
-  background: #5626c44a;
+  color: var(--btn-text-color);
+  background: var(--btn-bg-color);
 }
 .showMore {
   display: flex;
@@ -1076,8 +1080,8 @@ button.learn-more:hover .button-text {
 }
 .items p {
   width: 9rem;
-  background: #5626c43d;
-  color: #5626c4;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
   padding: 0.5rem;
   margin: 1rem 0 0 1rem;
   border-radius: 3rem;
