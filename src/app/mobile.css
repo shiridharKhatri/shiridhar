@@ -5,14 +5,14 @@
   body {
     -webkit-tap-highlight-color: transparent;
   }
-  .topMenuSecInfo{
+  .topMenuSecInfo {
     width: 100%;
     flex-direction: column;
   }
   .hidden {
     display: inline-flex;
   }
-  .banner{
+  .banner {
     margin: 5rem 0rem;
     border-radius: 0;
   }
@@ -61,16 +61,16 @@
     margin: 3rem 0;
     width: 100%;
   }
-  section.BelowButton ul{
+  section.BelowButton ul {
     width: 95%;
     margin: auto;
   }
-  .blogs{
+  .blogs {
     padding: 1rem;
   }
   .blogs p {
     width: 90%;
-}
+  }
   nav .otherSec .menu h1 {
     font-size: 5rem;
     display: flex;
@@ -89,7 +89,7 @@
     width: 31rem;
   }
   nav ul li span {
-    background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+    background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
     height: 4rem;
     width: 4rem;
     margin-right: 1rem;
@@ -103,7 +103,7 @@
   nav .otherSec form input {
     padding: 1.2rem 0 1.2rem 2rem;
   }
-  section.projects .projectCards .card .project-card-items{
+  section.projects .projectCards .card .project-card-items {
     background: var(--card-secondary-color);
     border-radius: 0;
     height: 100%;
@@ -135,7 +135,7 @@
     height: auto;
     padding: 1rem;
   }
-  #DropDown::-webkit-scrollbar{
+  #DropDown::-webkit-scrollbar {
     display: none;
   }
   #DropDown li {
@@ -154,14 +154,14 @@
     border-bottom: 0.1rem solid #445;
     color: #ffffff;
   }
-  .cardsSecParent{
+  .cardsSecParent {
     grid-template-columns: repeat(3, 1fr);
   }
   #DropDown li span {
     height: 4rem;
     width: 4rem;
     font-size: 2rem;
-    background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+    background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
     color: #ffffff;
   }
   nav #DropDown .more {
@@ -172,7 +172,7 @@
     border-top: 0.1rem solid #445;
     border-bottom: 0.1rem solid #445;
     color: #ffffff;
-}
+  }
   nav #DropDown .more h3 {
     display: flex;
     justify-content: left;
@@ -304,7 +304,7 @@
   section.projects p {
     width: 95%;
     text-align: center;
-   margin-left: 1rem;
+    margin-left: 1rem;
   }
   section.projects .projectCards .card .details h2 {
     font-size: 3rem;
@@ -340,38 +340,38 @@
   section.projects .projectCards img {
     border-radius: 0.5rem;
   }
-  .cardsSecParent{
+  .cardsSecParent {
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0;
   }
-  .mailContent h2{
+  .mailContent h2 {
     color: var(--color);
   }
-  .mailContent h4{
+  .mailContent h4 {
     color: var(--color);
   }
   .blogHead .content {
-    width: 95%
-}
-.allBlogsSec {
-  padding: 1rem 0.5rem;
-}
-.cardsSecParent .cards{
-  box-shadow: none;
-  background: transparent;
-}
-.cardsSecParent .cards{
-  margin:0;
-}
-.cardsSecParent .cards img {
-  border-radius: 1rem;
-}
-.blogHead .content h1{
-  width: 100%;
-}
-.blogHead .content p{
-  width: 100%;
-}
+    width: 95%;
+  }
+  .allBlogsSec {
+    padding: 1rem 0.5rem;
+  }
+  .cardsSecParent .cards {
+    box-shadow: none;
+    background: transparent;
+  }
+  .cardsSecParent .cards {
+    margin: 0;
+  }
+  .cardsSecParent .cards img {
+    border-radius: 1rem;
+  }
+  .blogHead .content h1 {
+    width: 100%;
+  }
+  .blogHead .content p {
+    width: 100%;
+  }
   .mailImage {
     display: none;
   }
@@ -403,11 +403,11 @@
   }
 }
 @media (max-width: 580px) {
-  nav ul{
+  nav ul {
     height: 100vh;
     border-radius: 0;
   }
-  .cardsSecParent .cards button{
+  .cardsSecParent .cards button {
     width: 70%;
     margin: 2rem 1rem 1rem 0rem;
   }
@@ -487,13 +487,14 @@
     font-family: system-ui;
     font-weight: 500;
   }
-  section.projects .titleHead h3{
+  section.projects .titleHead h3 {
     font-size: 1.5rem;
   }
-  #projectHeading, #projectParagraph{
+  #projectHeading,
+  #projectParagraph {
     display: none;
   }
-  .blogTitleHead{
+  .blogTitleHead {
     margin: 10rem 0rem 0 0rem;
   }
   .services {
@@ -508,7 +509,7 @@
     justify-content: center;
     align-items: center;
   }
- 
+
   .btn-view-all button.learn-more {
     margin-right: 0;
   }
@@ -519,7 +520,11 @@
     height: 12rem;
     width: 12rem;
   }
+  section.projects .projectCards .card .project-card-items {
+    background: transparent;
+  }
   section.projects .projectCards .card {
+    background: transparent;
     margin: 2rem 0;
     /* padding: 0rem 0 2rem 0; */
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
@@ -561,6 +566,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
   }
   #currentStatus {
     margin: 0;
@@ -578,7 +584,7 @@
     padding: 1rem 1rem 0 1rem;
   }
   section.projects .projectCards .card .buttons {
-    margin:0;
+    margin: 0;
   }
   #blogStatus {
     width: 9rem;
@@ -649,7 +655,7 @@
   nav .otherSec form {
     height: 5rem;
     width: 19rem;
-}
+  }
   #DropDown li span {
     height: 2rem;
     width: 2rem;
@@ -661,22 +667,22 @@
     font-size: 1.5rem;
     margin-left: 0;
   }
-  #logo .cancel h2{
+  #logo .cancel h2 {
     font-size: 5rem;
   }
   nav #logo img {
     height: 6rem;
-}
-  nav ul .topMenuSecInfo .more h3{
+  }
+  nav ul .topMenuSecInfo .more h3 {
     font-weight: 400;
     font-size: 1.7rem;
   }
-  #AuthIco{
+  #AuthIco {
     height: 4rem;
     font-size: 1.5rem;
     border-radius: 1rem;
   }
-  
+
   footer .topSection .flex-disp-footer {
     width: 100%;
     margin-top: 1rem;
