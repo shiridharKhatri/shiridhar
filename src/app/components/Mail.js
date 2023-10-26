@@ -9,7 +9,7 @@ export default function Mail() {
           <Image src="./mail.gif" alt="message"  width={300} height={50} />
         </div>
         <div className="mailContent">
-          <h2>Do you have any <span style={{color:"#5626c4"}}>message</span> for me?</h2>
+          <h2>Do you have any <span style={{color:"var(--btn-text-color)"}}>message</span> for me?</h2>
           <h4>Send me your message by entering your valid email address. Thank you for visiting this website.</h4>
           <form action="">
             {/* <label htmlFor="email">Email</label> */}

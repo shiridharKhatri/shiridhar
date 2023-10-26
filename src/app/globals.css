@@ -1935,6 +1935,7 @@ section.signup .mainSignupCard {
   align-items: center;
   padding: 2rem;
   margin: 3rem;
+  color: var(--color);
 }
 .indBlogDesc img {
   height: 13rem;
@@ -1977,10 +1978,12 @@ section.signup .mainSignupCard {
 }
 .descriptionOfBlog {
   padding: 4rem;
+  color: var(--color);
 }
 .descriptionOfBlog h1 {
   font-family: "Belanosima", sans-serif;
   font-size: 2.5rem;
+  color: var(--headTextColor);
 }
 .descriptionOfBlog p {
   font-size: 1.5rem;

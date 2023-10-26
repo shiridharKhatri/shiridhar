@@ -314,7 +314,7 @@
     flex-direction: column;
   }
   footer .topSection .topLogo {
-    background: var(--primary-background-color);
+    background: #060606;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -497,6 +497,31 @@
   .blogTitleHead {
     margin: 10rem 0rem 0 0rem;
   }
+  .indBlogDesc img {
+    height: 10rem;
+    width: 13rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+  }
+  .indBlogDesc {
+    margin: 3rem 1rem;
+    padding: 2rem 1rem;
+  }
+  .indBlogDetails h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0 0;
+  }
+  .indBlogDesc .indBlogDetails .profile img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .descriptionOfBlog h1{
+    margin-bottom: 1rem;
+  }
+  .descriptionOfBlog {
+    padding: 2rem;
+    margin-bottom: 6rem;
+  }
   .services {
     padding: 0.5rem;
   }
@@ -566,6 +591,9 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+  }
+  section.projects .projectCards .card .buttons button:hover {
     background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
   }
   #currentStatus {
