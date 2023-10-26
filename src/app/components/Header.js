@@ -9,16 +9,20 @@ export default function Header() {
     body.classList.toggle("darkMode");
     if (body.classList.contains("darkMode")) {
       setDarkmode(true);
+      localStorage.setItem("DarkModeOn", "true"); // Set a key-value pair
     } else {
       setDarkmode(false);
+      localStorage.removeItem("DarkModeOn"); // Remove the key
     }
   };
+  
   const handleScrollDown = () => {
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: "smooth", // Smooth scroll behavior
     });
   };
+
   return (
     <header
       style={{

@@ -1817,7 +1817,7 @@ section.signup .mainSignupCard {
 }
 .blogHead .content h5 {
   background: #5626c4;
-  color: var(--color);
+  color: #ffffff;
   width: 9rem;
   height: 3.5rem;
   display: flex;
@@ -1833,6 +1833,7 @@ section.signup .mainSignupCard {
   width: 70rem;
   font-size: 1.5rem;
   margin: 0.5rem;
+  color: #ffffff;
 }
 .allBlogsSec {
   padding: 1rem;
@@ -1847,13 +1848,15 @@ section.signup .mainSignupCard {
 .blogTitleHead h1 {
   font-size: 2.5rem;
   font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
 }
 .blogTitleHead select {
-  padding: 0.5rem;
-  border: 0.1rem solid #5626c4;
+  padding: 0.7rem;
+  border: 0.1rem solid var(--btn-text-color);
   border-radius: 0.5rem;
-  background: #5626c440;
-  color: #5626c4;
+
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
   cursor: pointer;
   outline: none;
 }
@@ -1863,19 +1866,25 @@ section.signup .mainSignupCard {
   margin: 2rem;
 }
 .cardsSecParent .cards {
-  padding: 1rem;
-  background: #ffffff;
+  background: var(--card-primary-color);
   border-radius: 3rem;
   margin: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: .1rem;
+}
+.cardsSecParent .cards .sec-card{
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  background: var(--card-secondary-color);
+  border-radius: 3rem;
 }
 .cardsSecParent .cards img {
   border-radius: 2.3rem 2.3rem 0 0;
 }
 .cardsSecParent .cards .detailsBlogSec h5 {
   padding: 0.5rem;
-  background: #5626c440;
-  color: #5626c4;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
   width: 8rem;
   display: flex;
   justify-content: center;
@@ -1892,11 +1901,11 @@ section.signup .mainSignupCard {
 }
 .cardsSecParent .cards .detailsBlogSec h2 {
   font-size: 1.6rem;
-  color: #101010;
+  color: var(--color);
 }
 .cardsSecParent .cards .detailsBlogSec p {
   font-size: 1.2rem;
-  color: #101010;
+  color: var(--color);
   margin: 1rem 0px 1rem 0;
 }
 .cardsSecParent .cards button {
@@ -1906,7 +1915,7 @@ section.signup .mainSignupCard {
   width: 50%;
   height: 4rem;
   margin: 2rem 1rem 1rem 1rem;
-  color: var(--color);
+  color:#ffffff;
   font-weight: bold;
   cursor: pointer;
   border-radius: 3rem;

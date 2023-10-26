@@ -72,12 +72,11 @@ export default function Page() {
     },
   ];
 
-
   return (
     <>
-      {/* <Nav position="fixed" /> */}
-      <IndvBlog/>
-      {/* <section>
+      <Nav position="fixed" />
+      {/* <IndvBlog/> */}
+      <section>
         <div
           className="blogHead"
           style={{
@@ -112,25 +111,28 @@ export default function Page() {
               {items.map((e, index) => {
                 return (
                   <div className="cards" key={index}>
-                    <div className="BlogCardImage">
-                      <Image
-                        src={e.image}
-                        style={{ background: e.color }}
-                        alt="blogImage"
-                        layout="responsive"
-                        width={200}
-                        height={150}
-                      />
+                    <div className="sec-card">
+                      <div className="BlogCardImage">
+                        <Image
+                          src={e.image}
+                          style={{ background: e.color }}
+                          alt="blogImage"
+                          layout="responsive"
+                          width={200}
+                          height={150}
+                        />
+                      </div>
+                      <div className="detailsBlogSec">
+                        <h5>Latest</h5>
+                        <h2>{e.title}</h2>
+                        <p>{e.description}</p>
+                        <h6 style={{ color: e.color }}>
+                          <LuIcons.LuCalendarClock />
+                          &nbsp;Published on 2023/08/08 at 2:45PM
+                        </h6>
+                      </div>
+                      <button style={{ background: e.color }}>Read</button>
                     </div>
-                    <div className="detailsBlogSec">
-                      <h5>Latest</h5>
-                      <h2>{e.title}</h2>
-                      <p>{e.description}</p>
-                      <h6 style={{ color: e.color }}>
-                       <LuIcons.LuCalendarClock/>&nbsp;Published on 2023/08/08 at 2:45PM
-                      </h6>
-                    </div>
-                    <button style={{ background: e.color }}>Read</button>
                   </div>
                 );
               })}
@@ -149,7 +151,7 @@ export default function Page() {
             </button>
           </div>
         </div>
-      </section> */}
+      </section>
       <Footer />
     </>
   );
