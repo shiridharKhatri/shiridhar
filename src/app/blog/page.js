@@ -12,7 +12,7 @@ export default function Page() {
   useEffect(() => {
     async function fetchItems() {
       try {
-        const response = await fetch(`${host}/api/blog/fetch`);
+        const response = await fetch(`https://calm-lime-caiman-hem.cyclic.app/api/blog/fetch`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
