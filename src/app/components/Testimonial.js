@@ -106,6 +106,7 @@ export default function Testimonial() {
                   alt={reviews[currentIndex].name}
                   width={200}
                   height={150}
+                  loading="lazy"
                 />
               ) : (
                 <Image

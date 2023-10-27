@@ -37,7 +37,7 @@ export default function Services() {
           {services.map((e, index) => {
             return (
               <div className="cards-item" key={index} style={{background:e.color}}>
-                <Image src={e.src} alt={e.name} width={200} height={200} />
+                <Image src={e.src} alt={e.name} width={200} height={200}  loading="lazy"/>
                 <h4>{e.name}</h4>
               </div>
             );

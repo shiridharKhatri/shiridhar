@@ -79,6 +79,7 @@ export default function Projects() {
                     layout="responsive"
                     width={200}
                     height={150}
+                    loading="lazy"
                   />
                 </div>
                 <div className="details">

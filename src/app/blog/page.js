@@ -1,81 +1,35 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Image from "next/image";
 import { GrIcons, LuIcons } from "../components/Icons";
-import IndvBlog from "../components/IndvBlog";
+import Spinner from "../tools/Spinner";
 export default function Page() {
-  const items = [
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog1.png",
-      color: "#5aaef5",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog2.png",
-      color: "#515568",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog3.png",
-      color: "#d7c0e4",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog1.png",
-      color: "#5aaef5",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog4.png",
-      color: "#212325",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog4.png",
-      color: "#212325",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog2.png",
-      color: "#515568",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog4.png",
-      color: "#212325",
-    },
-    {
-      title: "How to use chatGPT like a professional",
-      description:
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae iste, aspernatur tempora nemo eum. In, repellendus libero cum debitis accusantium pariatur neque incidunt aliquam sit quidem repellat nobis corporis.",
-      image: "./blogImage/blog1.png",
-      color: "#5aaef5",
-    },
-  ];
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const host = process.env.NEXT_PUBLIC_HOST;
+  useEffect(() => {
+    async function fetchItems() {
+      try {
+        const response = await fetch(`${host}/api/blog/fetch`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setItems(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
 
+    fetchItems();
+  }, [host]);
   return (
     <>
-      <Nav position="fixed" />
-      {/* <IndvBlog/> */}
+      <Nav position="relative" background="#000000" />
       <section>
         <div
           className="blogHead"
@@ -104,40 +58,63 @@ export default function Page() {
               <h1>All Blogs</h1>
               <select name="" id="">
                 <option value="">Newest First</option>
-                <option value="">Newest First</option>
+                <option value="">Oldest First</option>
               </select>
             </div>
-            <div className="cardsSecParent">
-              {items.map((e, index) => {
-                return (
-                  <div className="cards" key={index}>
-                    <div className="sec-card">
-                      <div className="BlogCardImage">
-                        <Image
-                          src={e.image}
+            {loading ? (
+              <div className="cardsSecParent-loader">
+                <Spinner />
+              </div>
+            ) : (
+              <div className="cardsSecParent">
+                {items.data?.map((e) => {
+                  return (
+                    <div className="cards" key={e._id}>
+                      <div className="sec-card">
+                        <div className="BlogCardImage">
+                          <Image
+                            src={`${host}/blogImage/${e.img}`}
+                            style={{ background: e.color }}
+                            alt="blogImage"
+                            layout="responsive"
+                            width={50}
+                            height={50}
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="detailsBlogSec">
+                          <h5>Latest</h5>
+                          <h2>
+                            {e.title.length > 52
+                              ? e.title.slice(0, 52) + "..."
+                              : e.title}
+                          </h2>
+                          <p>
+                            {e.description.length > 131
+                              ? e.description.slice(0, 131) + "..."
+                              : e.description}
+                          </p>
+                          <h6 style={{ color: e.color }}>
+                            <LuIcons.LuCalendarClock />
+                            &nbsp;{e.publishedOn} at {e.time}
+                          </h6>
+                        </div>
+                        <button
+                          onClick={() => {
+                            showBlog(e._id);
+                          }}
                           style={{ background: e.color }}
-                          alt="blogImage"
-                          layout="responsive"
-                          width={200}
-                          height={150}
-                        />
+                        >
+                          Read
+                        </button>
                       </div>
-                      <div className="detailsBlogSec">
-                        <h5>Latest</h5>
-                        <h2>{e.title}</h2>
-                        <p>{e.description}</p>
-                        <h6 style={{ color: e.color }}>
-                          <LuIcons.LuCalendarClock />
-                          &nbsp;Published on 2023/08/08 at 2:45PM
-                        </h6>
-                      </div>
-                      <button style={{ background: e.color }}>Read</button>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
+
           <div className="pagePreg">
             <button id="mainBtn">
               <GrIcons.GrPrevious />

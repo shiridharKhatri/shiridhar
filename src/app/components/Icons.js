@@ -6,6 +6,7 @@ import {
   BiCommentDetail,
   BiChevronRight,
   BiSearch,
+  BiHomeAlt
 } from "react-icons/bi";
 import {
   AiOutlineInfoCircle,
@@ -39,6 +40,7 @@ import {
   IoCheckmarkDoneCircle,
   IoMenu,
   IoCloseSharp,
+  IoArrowBackCircleOutline
 } from "react-icons/io5";
 import { FiChevronLeft, FiInstagram, FiChevronRight } from "react-icons/fi";
 import {
@@ -131,6 +133,7 @@ const IoIcons = {
   IoCheckmarkDoneCircle,
   IoMenu,
   IoCloseSharp,
+  IoArrowBackCircleOutline
 };
 const BiIcons = {
   BiChevronDown,
@@ -139,6 +142,7 @@ const BiIcons = {
   BiLogoJavascript,
   BiLogoMongodb,
   BiSearch,
+  BiHomeAlt
 };
 const AiIcons = {
   AiOutlineInfoCircle,

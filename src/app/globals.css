@@ -15,9 +15,9 @@
   --card-primary-color: #ffffff;
   --card-secondary-color: transparent;
   --color: #000000;
-  --headTextColor:#000000;
-  --btn-text-color:#5626c4;
-  --btn-bg-color:#5626c43d;
+  --headTextColor: #000000;
+  --btn-text-color: #5626c4;
+  --btn-bg-color: #5626c43d;
 }
 .darkMode {
   --primary-background-color: #0d0a1a;
@@ -39,9 +39,9 @@
     );
   --card-secondary-color: rgba(17, 14, 36, 0.8);
   --color: rgba(238, 235, 255, 0.9);
-  --headTextColor:rgb(250 205 61);
-  --btn-text-color:#facd3d;
-  --btn-bg-color:#facd3d2e;
+  --headTextColor: rgb(250 205 61);
+  --btn-text-color: #facd3d;
+  --btn-bg-color: #facd3d2e;
 }
 html {
   font-size: 62.5%;
@@ -278,7 +278,7 @@ nav ul li {
   font-family: sans-serif;
   color: #ffffff;
 }
-header .themeSection{
+header .themeSection {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
@@ -293,10 +293,10 @@ header .themeSection .themeDisplay {
   border-radius: 1rem;
   cursor: pointer;
 }
-header .themeSection .themeDisplay h2{
+header .themeSection .themeDisplay h2 {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .ping {
   --uib-size: 9rem;
@@ -1751,7 +1751,7 @@ section.signup .mainSignupCard {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 100%;
-  background-color: #f7cd46;
+  background-color: var(--btn-text-color);
   opacity: 0;
 }
 
@@ -1865,13 +1865,21 @@ section.signup .mainSignupCard {
   grid-template-columns: repeat(4, 1fr);
   margin: 2rem;
 }
+.cardsSecParent-loader {
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 40rem;
+  margin: 2rem;
+}
 .cardsSecParent .cards {
   background: var(--card-primary-color);
   border-radius: 3rem;
   margin: 1rem;
-  padding: .1rem;
+  padding: 0.1rem;
 }
-.cardsSecParent .cards .sec-card{
+
+.cardsSecParent .cards .sec-card {
   padding: 1rem;
   height: 100%;
   width: 100%;
@@ -1915,10 +1923,28 @@ section.signup .mainSignupCard {
   width: 50%;
   height: 4rem;
   margin: 2rem 1rem 1rem 1rem;
-  color:#ffffff;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
   border-radius: 3rem;
+}
+.backHome {
+  margin: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.backHome button{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
 }
 .pagePreg {
   display: flex;
@@ -1936,7 +1962,7 @@ section.signup .mainSignupCard {
   align-items: center;
   cursor: pointer;
   background-color: #5224bc;
-  color: var(--color);
+  color: #ffffff;
 }
 .indBlogDesc {
   display: flex;

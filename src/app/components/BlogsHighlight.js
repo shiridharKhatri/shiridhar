@@ -52,6 +52,7 @@ export default function BlogsHighlight() {
                     layout="responsive"
                     width={200}
                     height={150}
+                    loading="lazy"
                   />
                 </div>
                 <p id="blogStatus">latest</p>
