@@ -8,11 +8,12 @@ import Spinner from "../tools/Spinner";
 export default function Page() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = process.env.NEXT_PUBLIC_HOST;
+  const host = "https://calm-lime-caiman-hem.cyclic.app"
   useEffect(() => {
     async function fetchItems() {
       try {
-        const response = await fetch(`https://calm-lime-caiman-hem.cyclic.app/api/blog/fetch`);
+        const response = await fetch(`${host}/api/blog/fetch`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
