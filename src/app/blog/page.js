@@ -8,8 +8,8 @@ import Spinner from "../tools/Spinner";
 export default function Page() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://calm-lime-caiman-hem.cyclic.app"
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://calm-lime-caiman-hem.cyclic.app"
   useEffect(() => {
     async function fetchItems() {
       try {
