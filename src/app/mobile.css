@@ -142,7 +142,7 @@
     height: auto;
     color: #ffffff;
     font-size: 2rem;
-    margin: 0.7rem 0.5rem;
+    margin: 0.5rem 0.5rem;
     padding: 0.5rem;
   }
   nav ul .topMenuSecInfo .more {
@@ -203,7 +203,7 @@
     width: 96%;
     height: 6rem;
     font-size: 2rem;
-    background: #5626c4;
+    background: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,6 +221,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
   }
   #logo .cancel h2 {
     font-size: 6rem;
@@ -235,7 +236,7 @@
     width: 100%;
     padding: 0.5rem;
     justify-content: flex-start;
-    margin: 0.7rem 0.5rem;
+    margin: 0.5rem 0.5rem;
   }
   section.projects .titleHead h3 {
     font-size: 1.9rem;
@@ -598,7 +599,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+    background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
   }
   section.projects .projectCards .card .buttons button:hover {
     background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
