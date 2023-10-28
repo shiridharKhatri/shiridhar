@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <>
-      <Nav position="relative" background="#000000" />
+      <Nav position="relative" background="#000000" image="./profile.png"/>
       <section
         className="login"
         style={{
@@ -98,7 +98,7 @@ export default function Login() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer image="./secondLogo.png"/>
     </>
   );
 }

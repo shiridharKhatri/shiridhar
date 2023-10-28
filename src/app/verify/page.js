@@ -167,7 +167,7 @@ export default function Verify(props) {
   };
   return (
     <>
-      <Nav background="#000000" />
+      <Nav background="#000000" image="./profile.png"/>
 
       {success === true ? (
         <section
@@ -381,7 +381,7 @@ export default function Verify(props) {
         </section>
       )}
 
-      <Footer />
+      <Footer image="./secondLogo.png"/>
     </>
   );
 }

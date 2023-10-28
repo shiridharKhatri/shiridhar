@@ -4,10 +4,12 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Image from "next/image";
 import { GrIcons, LuIcons } from "../components/Icons";
-import Spinner from "../tools/Spinner";
+import { useRouter } from "next/navigation";
+import Loader from "../tools/Loader";
 export default function Page() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
   // const host = process.env.NEXT_PUBLIC_HOST;
   const host = "https://portfolio-backend-0roz.onrender.com"
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function Page() {
   }, [host]);
   return (
     <>
-      <Nav position="relative" background="#000000" />
+      <Nav position="relative" background="#000000" image="./logo.png"/>
       <section>
         <div
           className="blogHead"
@@ -64,7 +66,7 @@ export default function Page() {
             </div>
             {loading ? (
               <div className="cardsSecParent-loader">
-                <Spinner />
+                <Loader/>
               </div>
             ) : (
               <div className="cardsSecParent">
@@ -102,11 +104,11 @@ export default function Page() {
                         </div>
                         <button
                           onClick={() => {
-                            showBlog(e._id);
+                           router.push(`/blog/${e._id}`)
                           }}
                           style={{ background: e.color }}
                         >
-                          Read
+                          Read more
                         </button>
                       </div>
                     </div>
@@ -130,7 +132,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer image="./secondLogo.png"/>
     </>
   );
 }

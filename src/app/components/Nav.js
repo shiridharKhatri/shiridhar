@@ -90,7 +90,7 @@ export default function Nav(props) {
       className={isScrolled ? "navbar-scrolled" : "navbar"}
     >
       <div className="logo" onClick={()=>{router.push('/')}}>
-        <Image src="./logo.png" alt="logo" width={200} height={150} />
+        <Image src={props.image} alt="logo" width={200} height={150} />
       </div>
       <div className="otherSec">
         <form>

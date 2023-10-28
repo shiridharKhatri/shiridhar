@@ -13,7 +13,7 @@ import {
 } from "./Icons";
 import Image from "next/image";
 import Link from "next/link";
-export default function Footer() {
+export default function Footer(props) {
   const [datas, setData] = useState([]);
   const socialicons = [
     {
@@ -82,7 +82,7 @@ export default function Footer() {
     <footer>
       <div className="topSection">
         <div className="topLogo">
-          <Image src="./secondLogo.png" alt="logo" width={200} height={150} />
+          <Image src={props.image} alt="logo" width={200} height={150} />
         </div>
         <div className="flex-disp-footer">
           <div className="secondSection item">
