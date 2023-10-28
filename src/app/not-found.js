@@ -26,8 +26,8 @@ export default function NotFound() {
           404
         </div>
         <p>
-          Oops! The page you're looking for couldn't be found. It might have
-          been moved, deleted, under maintainance, or simply doesn't exist.
+          Oops! The page you&apos;re looking for couldn&apos;t be found. It might have
+          been moved, deleted, under maintainance, or simply doesn&apos;t exist.
           Please check the URL or navigate back to the homepage
         </p>
         <button
