@@ -412,6 +412,9 @@
     width: 70%;
     margin: 2rem 1rem 1rem 0rem;
   }
+  .notfoundSection p{
+    width: 90%;
+  }
   #AuthIco {
     width: 100%;
     height: 5.5rem;

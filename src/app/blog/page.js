@@ -63,7 +63,7 @@ export default function Page() {
 
             <button
               onClick={() => {
-                router.push("/blog/653c808a055a42bc970dfe4b");
+                router.push("/blog/653c9b0dc5e0c5153655a012");
                 setActive(true);
               }}
             >
