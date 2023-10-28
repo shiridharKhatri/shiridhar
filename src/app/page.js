@@ -18,7 +18,7 @@ export default function Home() {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </Head>
-      <Nav position="fixed" />
+      <Nav position="fixed" image="./logo.png"/>
       <Header />
       <BelowButton />
       <Projects />
@@ -27,7 +27,7 @@ export default function Home() {
       <Services />
       <Testimonial />
       <Mail />
-      <Footer />
+      <Footer image="./secondLogo.png"/>
     </>
   );
 }

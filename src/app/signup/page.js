@@ -101,7 +101,7 @@ export default function Signup() {
   };
   return (
     <>
-      <Nav position="relative" background="#000000" image="./profile.png"/>
+      <Nav position="relative" background="#000000" image="./logo.png"/>
       <section className="signup" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

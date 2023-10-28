@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <>
-      <Nav position="relative" background="#000000" image="./profile.png"/>
+      <Nav position="relative" background="#000000" image="./logo.png"/>
       <section
         className="login"
         style={{

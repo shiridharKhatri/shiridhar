@@ -6,12 +6,14 @@ import Image from "next/image";
 import { GrIcons, LuIcons } from "../components/Icons";
 import { useRouter } from "next/navigation";
 import Loader from "../tools/Loader";
+import Spinner from "../tools/Spinner";
 export default function Page() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState(false);
   const router = useRouter();
   // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com"
+  const host = "https://portfolio-backend-0roz.onrender.com";
   useEffect(() => {
     async function fetchItems() {
       try {
@@ -27,17 +29,17 @@ export default function Page() {
         setLoading(false);
       }
     }
-
     fetchItems();
   }, [host]);
+  // console.log(blog);
   return (
     <>
-      <Nav position="relative" background="#000000" image="./logo.png"/>
+      <Nav position="fixed" image="./logo.png" />
       <section>
         <div
           className="blogHead"
           style={{
-            background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("https://blog.vrplayin.ca/wp-content/uploads/2023/06/immersive-experience.png")`,
+            background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("./vr.png")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -45,14 +47,28 @@ export default function Page() {
         >
           <div className="content">
             <h5>New Blog</h5>
-            <h1>How to create a responsive navbar without many codes</h1>
+
+            <h1>
+              Virtual Reality Unveiled: A Comprehensive Guide to Immersive
+              Technology.
+            </h1>
+
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et
-              recusandae iste, aspernatur tempora nemo eum. In, repellendus
-              libero cum debitis accusantium pariatur neque incidunt aliquam sit
-              quidem repellat nobis corporis.
+              Dive into the immersive world of virtual reality (VR) as this
+              guide explores the technology, applications, and transformative
+              experiences that VR offers. From entertainment to education,
+              uncover the boundless possibilities within this captivating
+              digital real...
             </p>
-            <button>Read More</button>
+
+            <button
+              onClick={() => {
+                router.push("/blog/653c808a055a42bc970dfe4b");
+                setActive(true);
+              }}
+            >
+              {active ? <Spinner /> : "Read More"}
+            </button>
           </div>
         </div>
         <div className="allBlogsSec">
@@ -66,7 +82,7 @@ export default function Page() {
             </div>
             {loading ? (
               <div className="cardsSecParent-loader">
-                <Loader/>
+                <Loader />
               </div>
             ) : (
               <div className="cardsSecParent">
@@ -104,7 +120,7 @@ export default function Page() {
                         </div>
                         <button
                           onClick={() => {
-                           router.push(`/blog/${e._id}`)
+                            router.push(`/blog/${e._id}`);
                           }}
                           style={{ background: e.color }}
                         >
@@ -132,7 +148,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <Footer image="./secondLogo.png"/>
+      <Footer image="./secondLogo.png" />
     </>
   );
 }
