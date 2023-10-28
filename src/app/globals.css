@@ -1044,6 +1044,15 @@ button.learn-more:hover .button-text {
   overflow-y: hidden;
   position: relative;
 }
+.BlogContainer-loader{
+  width: 100%;
+  height: 38rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
 .BlogContainer::-webkit-scrollbar {
   display: none;
 }
@@ -1076,7 +1085,10 @@ button.learn-more:hover .button-text {
   margin: 0 0 0 1rem;
   font-weight: 400;
   font-size: 1rem;
-  color: #445;
+  color: #70709b;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 .items p {
   width: 9rem;
@@ -1150,7 +1162,7 @@ button.learn-more:hover .button-text {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #5626c4;
+  background: var(--btn-bg-color);
   border-radius: 1.625rem;
 }
 
@@ -1160,7 +1172,7 @@ button.learn-more:hover .button-text {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #ffffff;
+  background: var(--btn-text-color);;
 }
 
 .btn-view-all button.learn-more .circle .icon.arrow {
@@ -1178,8 +1190,8 @@ button.learn-more:hover .button-text {
   right: 0.0625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #ffffff;
-  border-right: 0.125rem solid #ffffff;
+  border-top: 0.125rem solid var(--btn-text-color);;
+  border-right: 0.125rem solid var(--btn-text-color);;
   transform: rotate(45deg);
 }
 
@@ -1192,7 +1204,7 @@ button.learn-more:hover .button-text {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #5626c4;
+  color: var(--btn-text-color);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -1204,12 +1216,12 @@ button.learn-more:hover .button-text {
 }
 
 .btn-view-all button.learn-more:hover .circle .icon.arrow {
-  background: #ffffff;
+  background: var(--btn-text-color);;
   transform: translate(1rem, 0);
 }
 
 .btn-view-all button.learn-more:hover .button-text {
-  color: var(--color);
+  color: var(--btn-text-color);;
 }
 section.mainMailSection {
   padding: 2rem;
@@ -1235,7 +1247,7 @@ section.mainMailSection {
 }
 .mailSection form p {
   margin: 0.5rem;
-  color: #445;
+ color: #70709b;
 }
 /* .mailContent form label {
   font-size: 1.8rem;

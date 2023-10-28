@@ -415,6 +415,12 @@
   .notfoundSection p{
     width: 90%;
   }
+  .blogTitleHead select {
+    padding: 1rem;
+    border: none;
+    border-radius: 2.5rem;
+    background: var(--btn-bg-color);
+  }
   #AuthIco {
     width: 100%;
     height: 5.5rem;

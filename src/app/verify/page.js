@@ -36,7 +36,7 @@ export default function Verify(props) {
     }),
   ];
   // const host = process.env.NEXT_PUBLIC_HOST;
-  const host ="https://portfolio-backend-0roz.onrender.com"
+  const host = "https://portfolio-backend-0roz.onrender.com";
   const verifyEmail = async (e) => {
     e.preventDefault();
     setActive(true);
@@ -167,7 +167,7 @@ export default function Verify(props) {
   };
   return (
     <>
-      <Nav background="#000000" image="./logo.png"/>
+      <Nav background="#000000" image="./logo.png" />
 
       {success === true ? (
         <section
@@ -284,7 +284,7 @@ export default function Verify(props) {
           </div>
           <div className="mainVerifyCard">
             <div className="imageLogo">
-              <Image src="./logo.png" alt="logo" height={100} width={150}/>
+              <Image src="./logo.png" alt="logo" height={100} width={150} />
               <h3>hiridhar</h3>
             </div>
             <div id="welcomeTe">
@@ -381,7 +381,7 @@ export default function Verify(props) {
         </section>
       )}
 
-      <Footer image="./secondLogo.png"/>
+      <Footer image="./secondLogo.png" />
     </>
   );
 }

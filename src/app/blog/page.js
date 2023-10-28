@@ -86,7 +86,7 @@ export default function Page() {
               </div>
             ) : (
               <div className="cardsSecParent">
-                {items.data?.map((e) => {
+                {items.data?.reverse().map((e) => {
                   return (
                     <div className="cards" key={e._id}>
                       <div className="sec-card">

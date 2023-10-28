@@ -1,37 +1,32 @@
-import React from "react";
-import { BiIcons } from "./Icons";
+"use client";
+import React, { useEffect, useState } from "react";
+import { BiIcons, LuIcons } from "./Icons";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Loader from "../tools/Loader";
 export default function BlogsHighlight() {
-  const items = [
-    {
-      title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
-      description: "",
-      image: "./blogImage/blog1.png",
-      color: "#5aaef5",
-    },
-    {
-      title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
-      description: "",
-      image: "./blogImage/blog2.png",
-      color: "#515568",
-    },
-    {
-      title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
-      description: "",
-      image: "./blogImage/blog3.png",
-      color: "#d7c0e4",
-    },
-    {
-      title:
-        "How to use chatGPT like a professional and earn money using AI without hustle-CHATGPT",
-      description: "",
-      image: "./blogImage/blog4.png",
-      color: "#212325",
-    },
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  // const host = process.env.NEXT_PUBLIC_HOST;
+  const host = "https://portfolio-backend-0roz.onrender.com";
+  useEffect(() => {
+    async function fetchItems() {
+      try {
+        const response = await fetch(`${host}/api/blog/fetch`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setBlogs(data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchItems();
+  }, [host]);
   return (
     <section className="blogs">
       <h1>Latest Blogs</h1>
@@ -39,38 +34,62 @@ export default function BlogsHighlight() {
         Feel free to peruse my latest blog for further insights. If you wish to
         explore more, simply click on the &apos;View All&apos; button.
       </p>
-      <div className="BlogContainer">
-        {items.map((e, index) => {
-          return (
-            <div className="items" key={index}>
-              <div className="card-item">
-                <div className="image-top">
-                  <Image
-                    style={{ background: e.color }}
-                    src={e.image}
-                    alt="blogImage"
-                    layout="responsive"
-                    width={200}
-                    height={150}
-                    loading="lazy"
-                  />
-                </div>
-                <p id="blogStatus">latest</p>
-                <h2>{e.title}</h2>
-                <h6>Published on 2023/08/08 at 2:45PM</h6>
-                <div className="btns-blog">
-                  <button style={{ background: e.color }}>
-                    Read More&nbsp;
-                    <BiIcons.BiChevronRight />
-                  </button>
+      {loading ? (
+        <div className="BlogContainer-loader">
+          <Loader />
+        </div>
+      ) : (
+        <div className="BlogContainer">
+          {blogs.slice(-4).map((e) => {
+            return (
+              <div className="items" key={e._id}>
+                <div className="card-item">
+                  <div className="image-top">
+                    <Image
+                      style={{ background: e.color }}
+                      src={`${host}/blogImage/${e.img}`}
+                      alt="blogImage"
+                      layout="responsive"
+                      width={200}
+                      height={150}
+                      loading="lazy"
+                    />
+                  </div>
+                  <p id="blogStatus">latest</p>
+                  <h2>
+                    {e.title.length > 52
+                      ? e.title.slice(0, 52) + ".."
+                      : e.title}
+                  </h2>
+                  <h6>
+                    {" "}
+                    <LuIcons.LuCalendarClock />
+                    &nbsp;{e.publishedOn} at {e.time}
+                  </h6>
+                  <div className="btns-blog">
+                    <button
+                      onClick={() => {
+                        router.push(`/blog/${e._id}`);
+                      }}
+                      style={{ background: e.color }}
+                    >
+                      Read More&nbsp;
+                      <BiIcons.BiChevronRight />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
       <div className="btn-view-all">
-        <button className="learn-more">
+        <button
+          className="learn-more"
+          onClick={() => {
+            router.push("/blog");
+          }}
+        >
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>
