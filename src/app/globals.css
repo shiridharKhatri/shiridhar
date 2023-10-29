@@ -949,6 +949,214 @@ button.learn-more:hover .button-text {
   color: var(--color);
   position: relative;
 }
+.postReviewSection {
+  position: fixed;
+  background: var(--card-primary-color);
+  /* margin: 1rem; */
+  width: 50rem;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 0.1rem;
+  backdrop-filter: blur(1rem);
+}
+.close-review {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.close-review h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0.6rem;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+  color: var(--color);
+}
+.postReviewSection .secPostRev {
+  background: var(--card-secondary-color);
+  height: 100%;
+  width: 100%;
+  border-radius: 1.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  --stroke: var(--color);
+  --fill: #ffc73a;
+}
+
+.rating input {
+  appearance: unset;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating svg {
+  width: 2rem;
+  height: 2rem;
+  overflow: visible;
+  fill: transparent;
+  stroke: var(--stroke);
+  stroke-linejoin: bevel;
+  stroke-dasharray: 12;
+  animation: idle 4s linear infinite;
+  transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+
+.rating label:hover svg {
+  stroke: var(--fill);
+}
+
+.rating input:checked ~ label svg {
+  transition: 0s;
+  animation: idle 4s linear infinite, yippee 0.75s backwards;
+  fill: var(--fill);
+  stroke: var(--fill);
+  stroke-opacity: 0;
+  stroke-dasharray: 0;
+  stroke-linejoin: miter;
+  stroke-width: 8px;
+}
+
+@keyframes yippee {
+  0% {
+    transform: scale(1);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30% {
+    transform: scale(0);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30.1% {
+    stroke: var(--fill);
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+
+  60% {
+    transform: scale(1.2);
+    fill: var(--fill);
+  }
+}
+.postReviewSection textarea {
+  width: 90%;
+  padding: 1.5rem;
+  height: 10rem;
+  border: 0.1rem solid #445;
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--color);
+  outline: none;
+}
+.postReviewSection .secPostRev p {
+  width: 90%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+.postReviewSection .secPostRev h3 {
+  font-size: 3rem;
+  font-family: "Belanosima", sans-serif;
+}
+.postReviewSection ul {
+  list-style: none;
+  background: #70709b;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  border-radius: 0.5rem;
+  display: none;
+  flex-direction: column;
+}
+.postReviewSection h5 {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.postReviewSection ul li {
+  font-size: 1.4rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #ffffff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.starReview {
+  margin: 2rem 0;
+}
+.postReviewSection ul li:hover {
+  color: var(--btn-text-color);
+  background: var(--btn-bg-color);
+}
+.postReviewSection .chooseUser {
+  width: 90%;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  border: 0.1rem solid #445;
+  cursor: pointer;
+}
+.postReviewSection button {
+  padding: 1rem;
+  margin: 2rem 0 1rem 0;
+  border: 0.1rem solid #445;
+  border-radius: 3rem;
+  width: 90%;
+  height: 4.5rem;
+  background: var(--btn-text-color);
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
 .testimonial .addReview {
   position: absolute;
   bottom: 1rem;
@@ -1012,6 +1220,13 @@ button.learn-more:hover .button-text {
   padding: 0.4rem;
   background-image: linear-gradient(135deg, #fdd819 10%, #e80505 100%);
 }
+#profile-img-select {
+  height: 7.5rem;
+  width: 7.5rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  border: none;
+}
 #prevImg,
 #nextImg {
   height: 7.5rem;
@@ -1044,7 +1259,7 @@ button.learn-more:hover .button-text {
   overflow-y: hidden;
   position: relative;
 }
-.BlogContainer-loader{
+.BlogContainer-loader {
   width: 100%;
   height: 38rem;
   position: relative;
@@ -1172,7 +1387,7 @@ button.learn-more:hover .button-text {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: var(--btn-text-color);;
+  background: var(--btn-text-color);
 }
 
 .btn-view-all button.learn-more .circle .icon.arrow {
@@ -1190,8 +1405,8 @@ button.learn-more:hover .button-text {
   right: 0.0625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid var(--btn-text-color);;
-  border-right: 0.125rem solid var(--btn-text-color);;
+  border-top: 0.125rem solid var(--btn-text-color);
+  border-right: 0.125rem solid var(--btn-text-color);
   transform: rotate(45deg);
 }
 
@@ -1216,12 +1431,12 @@ button.learn-more:hover .button-text {
 }
 
 .btn-view-all button.learn-more:hover .circle .icon.arrow {
-  background: var(--btn-text-color);;
+  background: var(--btn-text-color);
   transform: translate(1rem, 0);
 }
 
 .btn-view-all button.learn-more:hover .button-text {
-  color: var(--btn-text-color);;
+  color: var(--btn-text-color);
 }
 section.mainMailSection {
   padding: 2rem;
@@ -1247,7 +1462,7 @@ section.mainMailSection {
 }
 .mailSection form p {
   margin: 0.5rem;
- color: #70709b;
+  color: #70709b;
 }
 /* .mailContent form label {
   font-size: 1.8rem;
@@ -1583,7 +1798,7 @@ section.signup .mainSignupCard {
   width: 100%;
 }
 .mainSignupCard form p {
-  width: 88%;
+  width: 93%;
   color: #ff0000;
   font-weight: 400;
   display: flex;
@@ -1591,7 +1806,25 @@ section.signup .mainSignupCard {
   align-items: center;
   margin: 0.2rem 0 0 0;
 }
-
+.login .errorPopuo {
+  position: fixed;
+  top: -10rem;
+  z-index: 999;
+  /* background: ; */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  /* font-weight: 400; */
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.login .errorPopuo p{
+  font-size: 1.7rem;
+}
 .verify .successDisplay {
   position: fixed;
   top: -5rem;
@@ -1695,7 +1928,7 @@ section.signup .mainSignupCard {
   margin: 3rem 0;
   cursor: pointer;
   background: #5626c4;
-  color: var(--color);
+  color: #ffffff;
   transition: 0.3s ease;
 }
 .mainSignupCard form button:hover {

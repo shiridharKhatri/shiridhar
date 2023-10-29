@@ -28,6 +28,7 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaGithub,
+  FaUserSecret
 } from "react-icons/fa";
 import { GrReactjs, GrGithub, GrNext, GrPrevious } from "react-icons/gr";
 import {
@@ -51,7 +52,8 @@ import {
   BsMenuUp,
   BsInfoCircle,
   BsMoonStarsFill,
-  BsFillSunFill
+  BsFillSunFill,
+  BsPersonFill
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -96,7 +98,8 @@ const BsIcons = {
   BsMenuUp,
   BsInfoCircle,
   BsFillSunFill,
-  BsMoonStarsFill
+  BsMoonStarsFill,
+  BsPersonFill
 };
 const FiIcons = {
   FiChevronLeft,
@@ -116,6 +119,7 @@ const FaIcons = {
   FaLinkedinIn,
   FaGithub,
   FaViber,
+  FaUserSecret
 };
 const GrIcons = {
   GrReactjs,

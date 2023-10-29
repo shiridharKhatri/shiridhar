@@ -5,8 +5,11 @@ import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Spinner from "../tools/Spinner";
 // Define the Signup functional component
 export default function Signup() {
+  let router = useRouter();
   // Initialize state variables
   const [input, setInput] = useState({
     name: "",
@@ -23,7 +26,7 @@ export default function Signup() {
 
   const [error, setError] = useState(false);
   const [gender, setGender] = useState("");
-
+  const [loader, setLoader] = useState(false);
   // Handle input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +39,7 @@ export default function Signup() {
     });
   };
   // const host = process.env.NEXT_PUBLIC_HOST;
-  const host ="https://portfolio-backend-0roz.onrender.com"
+  const host = "https://portfolio-backend-0roz.onrender.com";
   // Handle gender selection change
   const handleGenderChange = (e) => {
     setGender(e.target.id);
@@ -45,6 +48,7 @@ export default function Signup() {
   // Handle signup button click
   const handleSignup = async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
       // Create headers and body for the request
       const headers = {
@@ -72,6 +76,7 @@ export default function Signup() {
         console.log(data);
 
         if (data.success === false) {
+          setLoader(false);
           // Handle error response
           if (data.errors && data.errors.length > 0) {
             data.errors.forEach((e) => {
@@ -88,6 +93,8 @@ export default function Signup() {
             });
           }
         } else {
+          router.push("/login");
+          setLoader(false);
           let successDisp = document.getElementById("successDisp");
           successDisp.style.top = "5rem";
           setTimeout(() => {
@@ -101,11 +108,16 @@ export default function Signup() {
   };
   return (
     <>
-      <Nav position="relative" background="#000000" image="./logo.png"/>
-      <section className="signup" style={{background:`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",}}>
+      <Nav position="relative" background="#000000" image="./logo.png" />
+      <section
+        className="signup"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
         <div className="successDisplay" id="successDisp">
           <p>
             <IoIcons.IoCheckmarkDoneCircle />
@@ -114,7 +126,7 @@ export default function Signup() {
         </div>
         <div className="mainSignupCard">
           <div className="imageLogo">
-            <Image src="./logo.png" alt="logo" width={200} height={150}/>
+            <Image src="./logo.png" alt="logo" width={200} height={150} />
             <h3>hiridhar</h3>
           </div>
           <div id="welcomeTe">
@@ -145,15 +157,7 @@ export default function Signup() {
               onChange={handleInputChange}
               value={input.name}
             />
-            {fieldError.name.length >= 1 ? (
-              <p>
-                {" "}
-                <AiIcons.AiOutlineInfoCircle />
-                &nbsp;{fieldError.name}
-              </p>
-            ) : (
-              <p></p>
-            )}
+            {fieldError.name.length >= 1 ? <p> {fieldError.name}</p> : <p></p>}
             <label htmlFor="signupEmail">Email</label>
             <input
               style={
@@ -169,11 +173,7 @@ export default function Signup() {
               value={input.email}
             />
             {fieldError.email.length >= 1 ? (
-              <p>
-                {" "}
-                <AiIcons.AiOutlineInfoCircle />
-                &nbsp;{fieldError.email}
-              </p>
+              <p> {fieldError.email}</p>
             ) : (
               <p></p>
             )}
@@ -192,11 +192,7 @@ export default function Signup() {
               value={input.password}
             />
             {fieldError.password.length >= 1 ? (
-              <p>
-                {" "}
-                <AiIcons.AiOutlineInfoCircle />
-                &nbsp;{fieldError.password}
-              </p>
+              <p> {fieldError.password}</p>
             ) : (
               <p></p>
             )}
@@ -216,10 +212,7 @@ export default function Signup() {
               value={input.confirmPassword}
             />
             {error === true ? (
-              <p>
-                <AiIcons.AiOutlineInfoCircle />
-                &nbsp;Confirm password and password doesn&apos;t match
-              </p>
+              <p>Confirm password and password doesn&apos;t match</p>
             ) : (
               <p></p>
             )}
@@ -269,7 +262,9 @@ export default function Signup() {
                 </div>
               </div>
             </div>
-            <button onClick={handleSignup}>Signup</button>
+            <button onClick={handleSignup}>
+              {loader === true ? <Spinner /> : "Signup"}
+            </button>
           </form>
           <h4>
             Already have an Account? <Link href="/login">Sign in</Link>
@@ -305,7 +300,7 @@ export default function Signup() {
           </div>
         </div>
       </section>
-      <Footer image="./secondLogo.png"/>
+      <Footer image="./secondLogo.png" />
     </>
   );
 }

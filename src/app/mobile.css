@@ -421,6 +421,36 @@
     border-radius: 2.5rem;
     background: var(--btn-bg-color);
   }
+  .postReviewSection{
+    width: 95%;
+  }
+  .postReviewSection .chooseUser{
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rating svg{
+    width: 3rem;
+    height: 4rem;
+  }
+  #profile-img-select{
+    height: 9.5rem;
+    width: 9.5rem;
+  }
+  .login .errorPopuo{
+    font-size: 1rem;
+    width: 90%;
+  }
+  .postReviewSection ul li{
+    font-size: 1.5rem;
+  }
+  .postReviewSection button{
+    height: 5rem;
+  }
+  .postReviewSection h5{
+    width: 100%;
+  }
   #AuthIco {
     width: 100%;
     height: 5.5rem;
