@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1.5rem;
   }
   .hidden {
     display: inline-flex;
@@ -50,7 +51,7 @@
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     left: -100%;
     width: 55rem;
@@ -131,7 +132,7 @@
     position: relative;
     top: 0;
     left: 0;
-    margin: 0;
+    margin-bottom: 1.5rem;
     background: transparent;
     border-radius: 0;
     box-shadow: none;
@@ -220,12 +221,12 @@
   }
   #logo {
     width: 100%;
-    padding: 0 0 0 1.5rem;
+    /* padding: 0 0 0 1.5rem; */
     /* margin-bottom: 1rem; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 1rem; */
+    margin-bottom: 1.5rem;
     height: 12rem;
   }
   #logo .cancel h2 {
@@ -337,7 +338,7 @@
   }
 }
 @media (max-width: 722px) {
-  nav ul{
+  nav ul {
     height: 100vh;
   }
   header h1 {
@@ -420,7 +421,7 @@
     width: 70%;
     margin: 2rem 1rem 1rem 0rem;
   }
-  .notfoundSection p{
+  .notfoundSection p {
     width: 90%;
   }
   .blogTitleHead select {
@@ -429,34 +430,34 @@
     border-radius: 2.5rem;
     background: var(--btn-bg-color);
   }
-  .postReviewSection{
+  .postReviewSection {
     width: 95%;
   }
-  .postReviewSection .chooseUser{
+  .postReviewSection .chooseUser {
     height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .rating svg{
+  .rating svg {
     width: 3rem;
     height: 4rem;
   }
-  #profile-img-select{
+  #profile-img-select {
     height: 9.5rem;
     width: 9.5rem;
   }
-  .login .errorPopuo{
+  .login .errorPopuo {
     font-size: 1rem;
     width: 90%;
   }
-  .postReviewSection ul li{
+  .postReviewSection ul li {
     font-size: 1.5rem;
   }
-  .postReviewSection button{
+  .postReviewSection button {
     height: 5rem;
   }
-  .postReviewSection h5{
+  .postReviewSection h5 {
     width: 100%;
   }
   #AuthIco {
@@ -531,7 +532,7 @@
     width: 100%;
     background: transparent;
     border-radius: 3rem;
-}
+  }
   #prevImg,
   #nextImg {
     height: 6.8rem;
@@ -569,7 +570,7 @@
     width: 2rem;
     height: 2rem;
   }
-  .descriptionOfBlog h1{
+  .descriptionOfBlog h1 {
     margin-bottom: 1rem;
   }
   .descriptionOfBlog {
@@ -645,7 +646,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+    background-image: linear-gradient(135deg, #97abff 10%, #123597 100%);
   }
   section.projects .projectCards .card .buttons button:hover {
     background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
@@ -653,7 +654,7 @@
   #currentStatus {
     margin: 0;
     padding: 1rem 1rem 0.5rem 2rem;
-    color: #445;
+    color: #70709b;
   }
   section.projects {
     padding: 1rem 0;
