@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Spinner from "../tools/Spinner";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 export default function Verify(props) {
   let router = useRouter()
   const [verify, setVerify] = useState("");
