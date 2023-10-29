@@ -6,7 +6,8 @@ import {
   BiCommentDetail,
   BiChevronRight,
   BiSearch,
-  BiHomeAlt
+  BiHomeAlt,
+  BiLogOutCircle
 } from "react-icons/bi";
 import {
   AiOutlineInfoCircle,
@@ -17,6 +18,7 @@ import {
   AiFillStar,
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
+  AiOutlineSetting
 } from "react-icons/ai";
 import { RiServiceLine } from "react-icons/ri";
 import { CiStickyNote, CiImageOn } from "react-icons/ci";
@@ -146,7 +148,8 @@ const BiIcons = {
   BiLogoJavascript,
   BiLogoMongodb,
   BiSearch,
-  BiHomeAlt
+  BiHomeAlt,
+  BiLogOutCircle
 };
 const AiIcons = {
   AiOutlineInfoCircle,
@@ -157,6 +160,7 @@ const AiIcons = {
   AiFillStar,
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
+  AiOutlineSetting
 };
 const RiIcons = {
   RiServiceLine,

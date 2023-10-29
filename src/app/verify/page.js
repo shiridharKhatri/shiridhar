@@ -5,7 +5,9 @@ import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Spinner from "../tools/Spinner";
 import Image from "next/image";
+import { useRouter } from "next/router";
 export default function Verify(props) {
+  let router = useRouter()
   const [verify, setVerify] = useState("");
   const [code, setCode] = useState("");
   const [status, setStatus] = useState({ error: false, success: false });
@@ -151,6 +153,7 @@ export default function Verify(props) {
           });
         }
       } else {
+        router.push('/login')
         setTimeout(() => {
           localStorage.removeItem("name");
         }, 180000); // 180,000 milliseconds (3 minutes)

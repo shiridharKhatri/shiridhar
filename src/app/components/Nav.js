@@ -13,11 +13,14 @@ import {
 } from "./Icons";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import { Alphabets } from "./Alphabets";
 export default function Nav(props) {
   // const [recognizedText, setRecognizedText] = useState("");
   const [active, setActive] = useState(false);
   const [inpVal, setInpVal] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [image, setImage] = useState("");
   const onChangeState = (e) => {
     setInpVal(e.target.value);
   };
@@ -83,13 +86,36 @@ export default function Nav(props) {
     const sideMenu = document.getElementById("sideMenu");
     sideMenu.style.left = "-100%";
   };
-  const router = useRouter()
+  const router = useRouter();
+  const cookieValue = Cookies.get("token");
+  const name = Cookies.get("name");
+  const email = Cookies.get("email");
+  const logout = () => {
+    Cookies.remove("token");
+    Cookies.remove("name");
+    Cookies.remove("email");
+    router.push("/login");
+  };
+  useEffect(() => {
+    if (cookieValue) {
+      Alphabets.forEach((e) => {
+        if (e.letter === name.slice(0, 1).toLowerCase()) {
+          setImage(e.image);
+        }
+      });
+    }
+  }, []);
   return (
     <nav
       style={{ position: props.position, background: props.background }}
       className={isScrolled ? "navbar-scrolled" : "navbar"}
     >
-      <div className="logo" onClick={()=>{router.push('/')}}>
+      <div
+        className="logo"
+        onClick={() => {
+          router.push("/");
+        }}
+      >
         <Image src={props.image} alt="logo" width={200} height={150} />
       </div>
       <div className="otherSec">
@@ -103,7 +129,7 @@ export default function Nav(props) {
           <button>
             <BiIcons.BiSearch />
           </button>
-          <button id="voice" >
+          <button id="voice">
             <MdIcons.MdKeyboardVoice />
           </button>
           <div className="voiceSection" id="voiceSection">
@@ -145,21 +171,36 @@ export default function Nav(props) {
         </form>
         <ul id="sideMenu">
           <div className="logo hidden" id="logo">
-            <Image
-              style={{ width: "auto" }}
-              src="./logo.png"
-              alt="logo"
-              width={200}
-              height={150}
-            />
-            {/* <div className="imageProfile">
-            <Image src="/profile.png" alt="logo"  width={200}
-                  height={150} />
+            {cookieValue ? (
+              <div className="imageProfile" style={{ padding: "1rem" }}>
+                <Image
+                  style={{
+                    height: "8rem",
+                    width: "8rem",
+                    borderRadius: "50%",
+                    backgroundImage:
+                      "linear-gradient( 135deg, #FFE985 10%, #FA742B 100%)",
+                    padding: "1rem",
+                  }}
+                  src={image}
+                  alt="logo"
+                  width={200}
+                  height={150}
+                />
                 <div className="profileDe">
-                  <h1>Shiridhar Khatri</h1>
-                  <p>sidnight965@</p>
+                  <h1>{name}</h1>
+                  <p>{email}</p>
                 </div>
-            </div> */}
+              </div>
+            ) : (
+              <Image
+                style={{ width: "auto" }}
+                src="./logo.png"
+                alt="logo"
+                width={200}
+                height={150}
+              />
+            )}
             <div className="cancel">
               <h2 onClick={cancelMenuOnClick}>
                 <IoIcons.IoCloseSharp />
@@ -167,37 +208,43 @@ export default function Nav(props) {
             </div>
           </div>
           <div className="topMenuSecInfo">
-          <div className="hidden more">
-            <h3>
-              <span>
-                <BsIcons.BsMenuUp />
+            <div className="hidden more">
+              <h3>
+                <span>
+                  <BsIcons.BsMenuUp />
+                </span>
+                Menu
+              </h3>
+            </div>
+            <li>
+              <span className="hidden">
+                <BsIcons.BsInfoCircle />
               </span>
-              Menu
-            </h3>
+              About
+            </li>
+            <li>
+              <span className="hidden">
+                <AiIcons.AiOutlineFundProjectionScreen />
+              </span>
+              Projects
+            </li>
+            <li>
+              <span className="hidden">
+                <MdIcons.MdWorkOutline />
+              </span>
+              Service
+            </li>
+            <li id="moreItem">
+              More <BiIcons.BiChevronDown />
+            </li>
           </div>
-          <li>
-            <span className="hidden">
-              <BsIcons.BsInfoCircle />
-            </span>
-            About
-          </li>
-          <li>
-            <span className="hidden">
-              <AiIcons.AiOutlineFundProjectionScreen />
-            </span>
-            Projects
-          </li>
-          <li>
-            <span className="hidden">
-              <MdIcons.MdWorkOutline />
-            </span>
-            Service
-          </li>
-          <li id="moreItem">
-            More <BiIcons.BiChevronDown />
-          </li>
-          </div>
-          <li id="contact" className="mobile-hidden" onClick={()=>{router.push('/login')}}>
+          <li
+            id="contact"
+            className="mobile-hidden"
+            onClick={() => {
+              router.push("/login");
+            }}
+          >
             <AiIcons.AiOutlineLogin />
             &nbsp;Login
           </li>
@@ -210,7 +257,11 @@ export default function Nav(props) {
                 More
               </h3>
             </div>
-            <li onClick={()=>{router.push("/blog")}}>
+            <li
+              onClick={() => {
+                router.push("/blog");
+              }}
+            >
               <span>
                 <BsIcons.BsBook />
               </span>
@@ -240,17 +291,43 @@ export default function Nav(props) {
               </span>
               Gallery
             </li>
-            <li onClick={()=>{router.push('/signup')}}>
-              <span>
-                <BsIcons.BsPersonPlus />
-              </span>
-              Signup
-            </li>
+            {!cookieValue ? (
+              <li
+                onClick={() => {
+                  router.push("/signup");
+                }}
+              >
+                <span>
+                  <BsIcons.BsPersonPlus />
+                </span>
+                Signup
+              </li>
+            ) : (
+              <li>
+                <span>
+                  <AiIcons.AiOutlineSetting />
+                </span>
+                Setting
+              </li>
+            )}
           </ul>
-          <li id="AuthIco" className="hidden" onClick={()=>{router.push('/login')}}>
-            <AiIcons.AiOutlineLogin />
-            &nbsp;Login
-          </li>
+          {!cookieValue ? (
+            <li
+              id="AuthIco"
+              className="hidden"
+              onClick={() => {
+                router.push("/login");
+              }}
+            >
+              <AiIcons.AiOutlineLogin />
+              &nbsp;Login
+            </li>
+          ) : (
+            <li id="AuthIco" className="hidden" onClick={logout}>
+              <BiIcons.BiLogOutCircle />
+              &nbsp;Logout
+            </li>
+          )}
         </ul>
         <div className="menu hidden">
           <h1 onClick={sideMenuOnClick}>

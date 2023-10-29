@@ -39,6 +39,7 @@
   }
   nav #logo .imageProfile .profileDe p {
     font-size: 1.4rem;
+    color: #ffffff;
   }
   nav ul {
     position: fixed;
@@ -332,6 +333,9 @@
   }
 }
 @media (max-width: 722px) {
+  nav ul{
+    height: 100vh;
+  }
   header h1 {
     font-size: 15rem;
   }
@@ -455,7 +459,6 @@
     width: 100%;
     height: 5.5rem;
     font-size: 2rem;
-    background: #5626c4;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -13,6 +13,7 @@ export default function Login() {
   const [loader, setLoader] = useState(false);
   // const host = process.env.NEXT_PUBLIC_HOST;
   const host = "https://portfolio-backend-0roz.onrender.com";
+  // const host = "http://localhost:5000";
   let router = useRouter();
   const loginOnChangeStage = (e) => {
     const { name, value } = e.target;
@@ -22,7 +23,6 @@ export default function Login() {
     }));
     setSuccess({ success: "" });
   };
-  // console.log(value.email, value.password)
   const loginOnCLick = async (e) => {
     e.preventDefault();
     setLoader(true);
