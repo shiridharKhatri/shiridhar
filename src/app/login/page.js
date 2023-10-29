@@ -119,7 +119,7 @@ export default function Login() {
               ></path>
             </svg>
             &nbsp;
-            <p>The data provided doesn't align with valid user criteria.</p>
+            <p>The data provided doesn&apos;t align with valid user criteria.</p>
           </div>
         )}
 
