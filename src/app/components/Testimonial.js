@@ -102,7 +102,7 @@ export default function Testimonial() {
       (prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length
     );
   };
-  let host = "http://localhost:5000";
+  const host = "https://portfolio-backend-0roz.onrender.com";
   const currentReview = reviews[currentIndex];
   const chooseUserOnClick = () => {
     let chooseUser = document.getElementById("chooseUser");
