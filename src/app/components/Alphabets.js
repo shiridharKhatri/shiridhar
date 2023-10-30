@@ -26,5 +26,20 @@ const Alphabets = [
   { letter: "y", image: "./alphabet/y.png" },
   { letter: "z", image: "./alphabet/z.png" },
 ];
+const Profile = [
+  { image: "./boy/b1.png" },
+  { image: "./boy/b2.png" },
+  { image: "./boy/b3.png" },
+  { image: "./boy/b4.png" },
+  { image: "./boy/b5.png" },
+  { image: "./boy/b6.png" },
+  { image: "./boy/b7.png" },
+  { image: "./girl/g1.png" },
+  { image: "./girl/g2.png" },
+  { image: "./girl/g3.png" },
+  { image: "./girl/g4.png" },
+  { image: "./girl/g5.png" },
+  { image: "./girl/g6.png" },
+];
 
-export { Alphabets };
+export { Alphabets, Profile };

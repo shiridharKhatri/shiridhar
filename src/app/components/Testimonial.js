@@ -12,83 +12,26 @@ import {
 import Image from "next/image";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import { Alphabets } from "./Alphabets";
+import { Alphabets, Profile } from "./Alphabets";
 import Spinner from "../tools/Spinner";
+import Loader from "../tools/Loader";
 export default function Testimonial() {
-  const [profile, setProfile] = useState("Choose profile");
+  const [profile, setProfile] = useState(Cookies.get("name"));
   const [image, setProfileImage] = useState();
   const [imgs, setImage] = useState("");
-  const [formImage, setFormImage] = useState();
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [success, setSuccess] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [reviews, setReviews] = useState([]);
+  const [prLoader, setPrLoader] = useState(true);
   const router = useRouter();
+  const host = "https://portfolio-backend-0roz.onrender.com";
   const reviewOnChange = (e) => {
     setReviewText(e.target.value);
   };
-  const reviews = [
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Ken kaneki",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Krishima touka",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-    {
-      name: "Shiridhar Khatri",
-      star: 5,
-      review:
-        "Great website! Simple, sleek design. Easy navigation. Content is engaging and loads quickly. Impressed with the user experience",
-      image: "./profile.png",
-    },
-  ];
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
+
   const showReviewForm = () => {
     let reviewForm = document.getElementById("reviewForm");
     reviewForm.style.display = "flex";
@@ -97,13 +40,15 @@ export default function Testimonial() {
     let reviewForm = document.getElementById("reviewForm");
     reviewForm.style.display = "none";
   };
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  };
   const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length
     );
   };
-  const host = "https://portfolio-backend-0roz.onrender.com";
-  const currentReview = reviews[currentIndex];
+
   const chooseUserOnClick = () => {
     let chooseUser = document.getElementById("chooseUser");
     chooseUser.classList.toggle("toggledUser");
@@ -120,12 +65,6 @@ export default function Testimonial() {
   const handleProfileClick = (profile) => {
     setProfile(profile);
   };
-  const profileOnCHange = (e) => {
-    // let image = document.getElementById("profile-img-select");
-    let profileImage = URL.createObjectURL(e.target.files[0]);
-    setProfileImage(profileImage);
-    setFormImage(e.target.files[0]);
-  };
   const sumbitReview = async () => {
     setLoader(true);
     try {
@@ -133,12 +72,12 @@ export default function Testimonial() {
         Accept: "*/*",
         "auth-token": Cookies.get("token"),
       };
-
-      let bodyContent = new FormData();
-      bodyContent.append("review", reviewText);
-      bodyContent.append("display_name", profile);
-      bodyContent.append("star", stars);
-      bodyContent.append("review-img", formImage);
+      let bodyContent = JSON.stringify({
+        review: reviewText,
+        display_name: profile,
+        star: stars,
+        img: image,
+      });
 
       let response = await fetch(`${host}/api/review/postReview`, {
         method: "POST",
@@ -164,6 +103,41 @@ export default function Testimonial() {
       // Handle other errors, if needed
     }
   };
+  const ptofilePhoto = (e) => {
+    setProfileImage(e);
+    let imageSelectionSection = document.getElementById(
+      "imageSelectionSection"
+    );
+    imageSelectionSection.style.display = "none";
+  };
+  const showProfileOpt = () => {
+    let imageSelectionSection = document.getElementById(
+      "imageSelectionSection"
+    );
+    imageSelectionSection.style.display = "grid";
+  };
+  useEffect(() => {
+    const fetchReview = async () => {
+      setPrLoader(true);
+      let headersList = {
+        Accept: "*/*",
+      };
+
+      let response = await fetch(`${host}/api/review/fetch`, {
+        method: "GET",
+        headers: headersList,
+      });
+
+      let data = await response.json();
+      if (data.success === true) {
+        setPrLoader(false);
+        setReviews(data.review);
+      } else {
+        setPrLoader(false);
+      }
+    };
+    fetchReview();
+  }, [host]);
 
   useEffect(() => {
     let name = Cookies.get("name");
@@ -175,6 +149,9 @@ export default function Testimonial() {
       });
     }
   }, []);
+  const currentReview = reviews[currentIndex];
+  // const nextReview = reviews[(currentIndex + 1) % reviews.length].img;
+  // console.log('Next Review:', nextReview);
   return (
     <>
       <section
@@ -236,39 +213,63 @@ export default function Testimonial() {
                   <IoIcons.IoCloseSharp />
                 </h1>
               </div>
-              <div className="imageSection">
-                <label htmlFor="profile-photo">
-                  <Image
-                    style={
-                      profile === "Annonymous"
-                        ? { background: "#e3cc0f", cursor: "not-allowed" }
-                        : { background: "#e3cc0f", cursor: "pointer" }
-                    }
-                    id="profile-img-select"
-                    // src="./anonymous.png"
-                    src={
-                      profile === "Annonymous"
-                        ? "./anonymous.png"
-                        : profile === "Choose profile"
-                        ? "./anonymous.png"
-                        : !image
-                        ? imgs
-                        : image
-                    }
-                    alt="demo"
-                    width={200}
-                    height={150}
-                    loading="lazy"
-                  />
-                </label>
-                <input
-                  disabled={profile === "Annonymous"}
-                  onChange={(e) => profileOnCHange(e)}
-                  type="file"
-                  name="profile-photo"
-                  id="profile-photo"
-                  style={{ display: "none" }}
+              <div
+                onClick={showProfileOpt}
+                className="imageSection"
+                style={{ position: "relative" }}
+              >
+                <Image
+                  style={{ background: "#e3cc0f", cursor: "pointer" }}
+                  id="profile-img-select"
+                  src={
+                    !image
+                      ? imgs
+                      : profile === "Annonymous"
+                      ? "./anonymous.png"
+                      : image
+                  }
+                  alt="demo"
+                  width={200}
+                  height={150}
+                  loading="lazy"
                 />
+              </div>
+              <div
+                className="imageSelectionSection"
+                style={{ position: "absolute" }}
+                id="imageSelectionSection"
+              >
+                {Profile.map((e, index) => {
+                  return (
+                    <div
+                      onClick={() => {
+                        ptofilePhoto(e.image);
+                      }}
+                      className="imageItems"
+                      key={index}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        margin: ".5rem",
+                      }}
+                    >
+                      <Image
+                        key={index}
+                        style={{
+                          height: "6rem",
+                          width: "6rem",
+                          cursor: "pointer",
+                        }}
+                        alt={e.image}
+                        width={200}
+                        height={150}
+                        src={e.image}
+                        loading="lazy"
+                      />
+                    </div>
+                  );
+                })}
               </div>
               <div className="starReview">
                 <div class="rating">
@@ -409,77 +410,100 @@ export default function Testimonial() {
           <span style={{ color: "#f7cd46" }}>Client&apos;s</span>.
         </h1>
         <div className="mainSectiontestimonial">
-          <div className="testimonial-card">
-            <q>{currentReview.review}</q>
-            <div className="imageTestimonial">
-              {currentIndex <= 0 ? (
+          {prLoader ? (
+            <div className="testimonial-card">
+              <Loader />
+            </div>
+          ) : (
+            <div className="testimonial-card">
+              <q>{currentReview.review}</q>
+              <div className="imageTestimonial">
+                {currentIndex <= 0 ? (
+                  <Image
+                    style={{ opacity: "0" }}
+                    id="prevImg"
+                    src="/"
+                    alt={reviews[currentIndex].display_name}
+                    width={200}
+                    height={150}
+                    loading="lazy"
+                  />
+                ) : (
+                  <Image
+                    id="prevImg"
+                    src={
+                      reviews[currentIndex - 1].display_name === "Annonymous"
+                        ? "./anonymous.png"
+                        : reviews[currentIndex - 1].img
+                    }
+                    alt={reviews[currentIndex - 1].display_name}
+                    width={200}
+                    height={150}
+                  />
+                )}
                 <Image
-                  style={{ opacity: "0" }}
-                  id="prevImg"
-                  src="/"
-                  alt={reviews[currentIndex].name}
-                  width={200}
-                  height={150}
-                  loading="lazy"
-                />
-              ) : (
-                <Image
-                  id="prevImg"
-                  src={reviews[currentIndex - 1].image}
-                  alt={reviews[currentIndex - 1].name}
-                  width={200}
-                  height={150}
-                />
-              )}
-              <Image
-                id="currentImage"
-                src={currentReview.image}
-                alt={currentReview.name}
-                width={200}
-                height={150}
-              />
-              {currentIndex === reviews.length - 1 ? (
-                <Image
-                  style={{ opacity: "0" }}
-                  id="nextImg"
-                  src="/"
-                  alt={reviews[(currentIndex + 1) % reviews.length].name}
-                  width={200}
-                  height={150}
-                />
-              ) : (
-                <Image
-                  id="nextImg"
-                  src={reviews[(currentIndex + 1) % reviews.length].image}
-                  alt={reviews[(currentIndex + 1) % reviews.length].name}
+                  id="currentImage"
+                  src={
+                    currentReview.display_name === "Annonymous"
+                      ? "./anonymous.png"
+                      : currentReview.img
+                  }
+                  alt={currentReview.display_name}
                   width={200}
                   height={150}
                 />
-              )}
+                {currentIndex === reviews.length - 1 ? (
+                  <Image
+                    style={{ opacity: "0" }}
+                    id="nextImg"
+                    src="/"
+                    alt={
+                      reviews[(currentIndex + 1) % reviews.length].display_name
+                    }
+                    width={200}
+                    height={150}
+                  />
+                ) : (
+                  <Image
+                    id="nextImg"
+                    src={
+                      reviews[(currentIndex + 1) % reviews.length]
+                        .display_name === "Annonymous"
+                        ? "./anonymous.png"
+                        : reviews[(currentIndex + 1) % reviews.length].img
+                    }
+                    alt={
+                      reviews[(currentIndex + 1) % reviews.length].display_name
+                    }
+                    width={200}
+                    height={150}
+                  />
+                )}
 
-              <div className="nextPrevtest">
-                <button onClick={handlePrev} disabled={currentIndex <= 0}>
-                  <MdIcons.MdKeyboardArrowLeft />
-                </button>
-                <button
-                  onClick={handleNext}
-                  disabled={currentIndex === reviews.length - 1}
-                >
-                  <MdIcons.MdKeyboardArrowRight />
-                </button>
+                <div className="nextPrevtest">
+                  <button onClick={handlePrev} disabled={currentIndex <= 0}>
+                    <MdIcons.MdKeyboardArrowLeft />
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    disabled={currentIndex === reviews.length - 1}
+                  >
+                    <MdIcons.MdKeyboardArrowRight />
+                  </button>
+                </div>
+              </div>
+              <h2>{currentReview.display_name}</h2>
+              <div className="star">
+                <h3>
+                  <AiIcons.AiFillStar />
+                  <AiIcons.AiFillStar />
+                  <AiIcons.AiFillStar />
+                  <AiIcons.AiFillStar />
+                  <AiIcons.AiFillStar />
+                </h3>
               </div>
             </div>
-            <h2>{currentReview.name}</h2>
-            <div className="star">
-              <h3>
-                <AiIcons.AiFillStar />
-                <AiIcons.AiFillStar />
-                <AiIcons.AiFillStar />
-                <AiIcons.AiFillStar />
-                <AiIcons.AiFillStar />
-              </h3>
-            </div>
-          </div>
+          )}
         </div>
       </section>
     </>

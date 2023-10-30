@@ -936,6 +936,28 @@ button.learn-more:hover .button-text {
   background: #f7cd46;
   color: #101010;
 }
+.imageSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.imageSelectionSection{
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  left: 0;
+  right: 0;
+  top: 14rem;
+  background: var(--btn-text-color);
+  z-index: 2;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  /* width: auto; */
+  margin: 2rem;
+  border-radius: 2rem;
+}
 .nextPrevtest button:disabled {
   background: #f7cd4670;
   color: var(--color);
@@ -1234,6 +1256,7 @@ button.learn-more:hover .button-text {
   border-radius: 50%;
   margin-top: 0.5rem;
   border: none;
+  background: #f7cd46;
 }
 .mainSectiontestimonial .testimonial-card h2 {
   font-size: 2rem;
