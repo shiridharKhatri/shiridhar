@@ -944,7 +944,7 @@ button.learn-more:hover .button-text {
 }
 .imageSelectionSection{
   position: absolute;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(5, 1fr);
   left: 0;
   right: 0;
