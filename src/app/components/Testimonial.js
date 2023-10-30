@@ -189,7 +189,11 @@ export default function Testimonial() {
         {success ? (
           <div className="postReviewSection" id="reviewForm">
             <div className="secPostRev">
-              <div className="close-review" style={{ position: "absolute" }}>
+              <div
+                onClick={closeReviewForm}
+                className="close-review"
+                style={{ position: "absolute" }}
+              >
                 <h1>
                   <IoIcons.IoCloseSharp />
                 </h1>
@@ -212,6 +216,7 @@ export default function Testimonial() {
               <button
                 onClick={() => {
                   router.push("/");
+                  closeReviewForm();
                 }}
                 style={{ background: "#009b0b" }}
               >
