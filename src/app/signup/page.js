@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Spinner from "../tools/Spinner";
+import Cookies from "js-cookie";
 // Define the Signup functional component
 export default function Signup() {
   let router = useRouter();
@@ -106,6 +107,11 @@ export default function Signup() {
       console.error("Signup failed:", error);
     }
   };
+  useEffect(()=>{
+    if(Cookies.get('token')){
+      router.push('/')
+    }
+  },[])
   return (
     <>
       <Nav position="relative" background="#000000" image="./logo.png" />

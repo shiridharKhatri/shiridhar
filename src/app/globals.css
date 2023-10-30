@@ -1822,7 +1822,7 @@ section.signup .mainSignupCard {
   align-items: center;
   transition: 0.3s ease;
 }
-.login .errorPopuo p{
+.login .errorPopuo p {
   font-size: 1.7rem;
 }
 .verify .successDisplay {

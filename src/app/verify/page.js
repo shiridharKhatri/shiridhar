@@ -1,13 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { AiIcons, IoIcons } from "../components/Icons";
 import Spinner from "../tools/Spinner";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 export default function Verify(props) {
-  let router = useRouter()
+  let router = useRouter();
   const [verify, setVerify] = useState("");
   const [code, setCode] = useState("");
   const [status, setStatus] = useState({ error: false, success: false });
@@ -153,7 +154,7 @@ export default function Verify(props) {
           });
         }
       } else {
-        router.push('/login')
+        router.push("/login");
         setTimeout(() => {
           localStorage.removeItem("name");
         }, 180000); // 180,000 milliseconds (3 minutes)
@@ -168,6 +169,11 @@ export default function Verify(props) {
       console.error("Error:", error.message);
     }
   };
+  useEffect(() => {
+    if (Cookies.get("token")) {
+      router.push("/");
+    }
+  }, []);
   return (
     <>
       <Nav background="#000000" image="./logo.png" />

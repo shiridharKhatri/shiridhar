@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Spinner from "../tools/Spinner";
 export default function Login() {
@@ -64,6 +64,11 @@ export default function Login() {
       }, 4000);
     }
   };
+  useEffect(()=>{
+    if(Cookies.get('token')){
+      router.push('/')
+    }
+  },[])
   return (
     <>
       <Nav position="relative" background="#000000" image="./logo.png" />

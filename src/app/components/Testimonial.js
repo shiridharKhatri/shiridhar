@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AiIcons,
   MdIcons,
@@ -10,10 +10,23 @@ import {
   IoIcons,
 } from "./Icons";
 import Image from "next/image";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { Alphabets } from "./Alphabets";
+import Spinner from "../tools/Spinner";
 export default function Testimonial() {
   const [profile, setProfile] = useState("Choose profile");
   const [image, setProfileImage] = useState();
+  const [imgs, setImage] = useState("");
+  const [formImage, setFormImage] = useState();
   const [stars, setStars] = useState(0);
+  const [reviewText, setReviewText] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const router = useRouter();
+  const reviewOnChange = (e) => {
+    setReviewText(e.target.value);
+  };
   const reviews = [
     {
       name: "Shiridhar Khatri",
@@ -76,13 +89,20 @@ export default function Testimonial() {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
-
+  const showReviewForm = () => {
+    let reviewForm = document.getElementById("reviewForm");
+    reviewForm.style.display = "flex";
+  };
+  const closeReviewForm = () => {
+    let reviewForm = document.getElementById("reviewForm");
+    reviewForm.style.display = "none";
+  };
   const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length
     );
   };
-
+  let host = "http://localhost:5000";
   const currentReview = reviews[currentIndex];
   const chooseUserOnClick = () => {
     let chooseUser = document.getElementById("chooseUser");
@@ -104,31 +124,57 @@ export default function Testimonial() {
     // let image = document.getElementById("profile-img-select");
     let profileImage = URL.createObjectURL(e.target.files[0]);
     setProfileImage(profileImage);
+    setFormImage(e.target.files[0]);
   };
   const sumbitReview = async () => {
-    let headersList = {
-      Accept: "*/*",
-      "auth-token":
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUyMmEwMjA5MTJkZDcwZWY4ZWVjOTg1In0sImlhdCI6MTY5ODQ4OTAxNiwiZXhwIjoxNzAxMDgxMDE2fQ.FNQWclv8zUE1DCZDLCpZ41THVjkjN5UoZdPl22vb788",
-    };
+    setLoader(true);
+    try {
+      let headersList = {
+        Accept: "*/*",
+        "auth-token": Cookies.get("token"),
+      };
 
-    let bodyContent = new FormData();
-    bodyContent.append("review", "this is testing");
-    bodyContent.append("star", "3");
-    bodyContent.append(
-      "review-img",
-      "c:UserssidniOneDriveDesktop\next-portfolioclientpublicpicture.png"
-    );
+      let bodyContent = new FormData();
+      bodyContent.append("review", reviewText);
+      bodyContent.append("display_name", profile);
+      bodyContent.append("star", stars);
+      bodyContent.append("review-img", formImage);
 
-    let response = await fetch(`${host}/api/review/postReview`, {
-      method: "POST",
-      body: bodyContent,
-      headers: headersList,
-    });
+      let response = await fetch(`${host}/api/review/postReview`, {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      });
 
-    let data = await response.json();
-    console.log(data);
+      if (response.ok) {
+        let data = await response.json();
+        if (data.success === true) {
+          setSuccess(true);
+          setLoader(false);
+        } else {
+          setSuccess(false);
+          setLoader(false);
+        }
+      } else {
+        console.error("Error:", response.status);
+        // Handle error cases here, if needed
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      // Handle other errors, if needed
+    }
   };
+
+  useEffect(() => {
+    let name = Cookies.get("name");
+    if (Cookies.get("token")) {
+      Alphabets.forEach((e) => {
+        if (e.letter === name.slice(0, 1).toLowerCase()) {
+          setImage(e.image);
+        }
+      });
+    }
+  }, []);
   return (
     <>
       <section
@@ -140,182 +186,218 @@ export default function Testimonial() {
           backgroundSize: "cover",
         }}
       >
-        {/* <div className="postReviewSection">
-          <div className="secPostRev">
-          <div className="close-review" style={{ position: "absolute" }}>
-              <h1>
-                <IoIcons.IoCloseSharp />
-              </h1>
-            </div>
-            <Image
-              style={{ height: "16rem", width: "16rem" }}
-              id="profile-img-select"
-              src="./success.png"
-              alt="demo"
-              width={200}
-              height={150}
-              loading="lazy"
-            />
-            <h3>Thank you.</h3>
-            <p>
-              Your valuable feedback is greatly appreciated. Thank you for
-              taking the time to share your thoughts and insights, as they are
-              instrumental in our continuous improvement and growth.
-            </p>
-            <button style={{ background: "#009b0b" }}>Close</button>
-          </div>
-        </div> */}
-
-        <div className="postReviewSection">
-          <div className="secPostRev">
-            <div className="close-review" style={{ position: "absolute" }}>
-              <h1>
-                <IoIcons.IoCloseSharp />
-              </h1>
-            </div>
-            <div className="imageSection">
-              <label htmlFor="profile-photo">
-                <Image
-                  style={{ background: "#e3cc0f", cursor: "pointer" }}
-                  id="profile-img-select"
-                  // src="./anonymous.png"
-                  src={
-                    profile === "Annonymous"
-                      ? "./anonymous.png"
-                      : profile === "Choose profile"
-                      ? "./anonymous.png"
-                      : image
-                  }
-                  alt="demo"
-                  width={200}
-                  height={150}
-                  loading="lazy"
-                />
-              </label>
-              <input
-                disabled={profile === "Annonymous"}
-                onChange={(e) => profileOnCHange(e)}
-                type="file"
-                name="profile-photo"
-                id="profile-photo"
-                style={{ display: "none" }}
-              />
-            </div>
-            <div className="starReview">
-              <div class="rating">
-                <input
-                  type="radio"
-                  id="5"
-                  name="star-radio"
-                  value={stars}
-                  onChange={getStarsValueOnChange}
-                />
-                <label for="5">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                      pathLength="360"
-                      d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                    ></path>
-                  </svg>
-                </label>
-                <input
-                  type="radio"
-                  id="4"
-                  name="star-radio"
-                  value={stars}
-                  onChange={getStarsValueOnChange}
-                />
-                <label for="4">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                      pathLength="360"
-                      d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                    ></path>
-                  </svg>
-                </label>
-                <input
-                  type="radio"
-                  id="3"
-                  name="star-radio"
-                  value={stars}
-                  onChange={getStarsValueOnChange}
-                />
-                <label for="3">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                      pathLength="360"
-                      d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                    ></path>
-                  </svg>
-                </label>
-                <input
-                  type="radio"
-                  id="2"
-                  name="star-radio"
-                  value={stars}
-                  onChange={getStarsValueOnChange}
-                />
-                <label for="2">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                      pathLength="360"
-                      d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                    ></path>
-                  </svg>
-                </label>
-                <input
-                  type="radio"
-                  id="1"
-                  name="star-radio"
-                  value={stars}
-                  onChange={getStarsValueOnChange}
-                />
-                <label for="1">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                      pathLength="360"
-                      d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                    ></path>
-                  </svg>
-                </label>
+        {success ? (
+          <div className="postReviewSection" id="reviewForm">
+            <div className="secPostRev">
+              <div className="close-review" style={{ position: "absolute" }}>
+                <h1>
+                  <IoIcons.IoCloseSharp />
+                </h1>
               </div>
+              <Image
+                style={{ height: "16rem", width: "16rem" }}
+                id="profile-img-select"
+                src="./success.png"
+                alt="demo"
+                width={200}
+                height={150}
+                loading="lazy"
+              />
+              <h3>Thank you.</h3>
+              <p>
+                Your valuable feedback is greatly appreciated. Thank you for
+                taking the time to share your thoughts and insights, as they are
+                instrumental in our continuous improvement and growth.
+              </p>
+              <button
+                onClick={() => {
+                  router.push("/");
+                }}
+                style={{ background: "#009b0b" }}
+              >
+                Close
+              </button>
             </div>
-            <div
-              className="chooseUser"
-              id="chooseUser"
-              onClick={chooseUserOnClick}
-            >
-              <h5>
-                {profile}
-                <span>
-                  <BiIcons.BiChevronDown />
-                </span>
-              </h5>
-              <ul id="profileUl">
-                <li onClick={() => handleProfileClick("Shiridhar Khatri")}>
-                  Shiridhar Khatri
-                </li>
-                <li onClick={() => handleProfileClick("Annonymous")}>
-                  Annonymous
-                </li>
-              </ul>
-            </div>
-            <textarea
-              name="review"
-              id="review"
-              placeholder="Type your review here..."
-            />
-            <button>Submit</button>
           </div>
-        </div>
+        ) : (
+          <div className="postReviewSection" id="reviewForm">
+            <div className="secPostRev">
+              <div
+                onClick={closeReviewForm}
+                className="close-review"
+                style={{ position: "absolute" }}
+              >
+                <h1>
+                  <IoIcons.IoCloseSharp />
+                </h1>
+              </div>
+              <div className="imageSection">
+                <label htmlFor="profile-photo">
+                  <Image
+                    style={
+                      profile === "Annonymous"
+                        ? { background: "#e3cc0f", cursor: "not-allowed" }
+                        : { background: "#e3cc0f", cursor: "pointer" }
+                    }
+                    id="profile-img-select"
+                    // src="./anonymous.png"
+                    src={
+                      profile === "Annonymous"
+                        ? "./anonymous.png"
+                        : profile === "Choose profile"
+                        ? "./anonymous.png"
+                        : !image
+                        ? imgs
+                        : image
+                    }
+                    alt="demo"
+                    width={200}
+                    height={150}
+                    loading="lazy"
+                  />
+                </label>
+                <input
+                  disabled={profile === "Annonymous"}
+                  onChange={(e) => profileOnCHange(e)}
+                  type="file"
+                  name="profile-photo"
+                  id="profile-photo"
+                  style={{ display: "none" }}
+                />
+              </div>
+              <div className="starReview">
+                <div class="rating">
+                  <input
+                    type="radio"
+                    id="5"
+                    name="star-radio"
+                    value={stars}
+                    onChange={getStarsValueOnChange}
+                  />
+                  <label for="5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                      ></path>
+                    </svg>
+                  </label>
+                  <input
+                    type="radio"
+                    id="4"
+                    name="star-radio"
+                    value={stars}
+                    onChange={getStarsValueOnChange}
+                  />
+                  <label for="4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                      ></path>
+                    </svg>
+                  </label>
+                  <input
+                    type="radio"
+                    id="3"
+                    name="star-radio"
+                    value={stars}
+                    onChange={getStarsValueOnChange}
+                  />
+                  <label for="3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                      ></path>
+                    </svg>
+                  </label>
+                  <input
+                    type="radio"
+                    id="2"
+                    name="star-radio"
+                    value={stars}
+                    onChange={getStarsValueOnChange}
+                  />
+                  <label for="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                      ></path>
+                    </svg>
+                  </label>
+                  <input
+                    type="radio"
+                    id="1"
+                    name="star-radio"
+                    value={stars}
+                    onChange={getStarsValueOnChange}
+                  />
+                  <label for="1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                      ></path>
+                    </svg>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="chooseUser"
+                id="chooseUser"
+                onClick={chooseUserOnClick}
+              >
+                <h5>
+                  {profile}
+                  <span>
+                    <BiIcons.BiChevronDown />
+                  </span>
+                </h5>
+                <ul id="profileUl">
+                  <li onClick={() => handleProfileClick(Cookies.get("name"))}>
+                    {Cookies.get("name")}
+                  </li>
+                  <li onClick={() => handleProfileClick("Annonymous")}>
+                    Annonymous
+                  </li>
+                </ul>
+              </div>
+              <textarea
+                onChange={reviewOnChange}
+                value={reviewText}
+                name="review"
+                id="review"
+                placeholder="Type your review here..."
+              />
+              <button onClick={sumbitReview}>
+                {loader ? <Spinner /> : "Submit"}
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="addReview">
-          <button>
-            <span>
-              <HiIcons.HiPlus />
-            </span>
-            Add review{" "}
-          </button>
+          {!Cookies.get("token") ? (
+            <button
+              onClick={() => {
+                router.push("/login");
+              }}
+            >
+              <span>
+                <HiIcons.HiPlus />
+              </span>
+              Login
+            </button>
+          ) : (
+            <button onClick={showReviewForm}>
+              <span>
+                <HiIcons.HiPlus />
+              </span>
+              Add review{" "}
+            </button>
+          )}
         </div>
         <h1>
           Feedback from our{" "}
