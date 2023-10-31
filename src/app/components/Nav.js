@@ -179,7 +179,8 @@ export default function Nav(props) {
                     width: "8rem",
                     borderRadius: "50%",
                     backgroundImage:
-                      "linear-gradient( 135deg, #FFE985 10%, #FA742B 100%)"
+                      "linear-gradient( 135deg, #FFE985 10%, #FA742B 100%)",
+                    padding: "1rem",
                   }}
                   src={image}
                   alt="logo"

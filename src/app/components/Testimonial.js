@@ -107,6 +107,12 @@ export default function Testimonial() {
       // Handle other errors, if needed
     }
   };
+  const exitOnMouseLeft = () => {
+    let imageSelectionSection = document.getElementById(
+      "imageSelectionSection"
+    );
+    imageSelectionSection.style.display = "none";
+  };
   const ptofilePhoto = (e) => {
     setProfileImage(e);
     let imageSelectionSection = document.getElementById(
@@ -242,6 +248,7 @@ export default function Testimonial() {
                 className="imageSelectionSection"
                 style={{ position: "absolute" }}
                 id="imageSelectionSection"
+                onMouseLeave={exitOnMouseLeft}
               >
                 {Profile.map((e, index) => {
                   return (
