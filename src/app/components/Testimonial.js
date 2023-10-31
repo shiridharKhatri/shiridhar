@@ -39,6 +39,7 @@ export default function Testimonial() {
   const closeReviewForm = () => {
     let reviewForm = document.getElementById("reviewForm");
     reviewForm.style.display = "none";
+    window.location.reload();
   };
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
@@ -71,11 +72,13 @@ export default function Testimonial() {
       let headersList = {
         Accept: "*/*",
         "auth-token": Cookies.get("token"),
+        "Content-Type": "application/json",
       };
+
       let bodyContent = JSON.stringify({
         review: reviewText,
-        display_name: profile,
         star: stars,
+        display_name: profile,
         img: image,
       });
 
@@ -90,6 +93,7 @@ export default function Testimonial() {
         if (data.success === true) {
           setSuccess(true);
           setLoader(false);
+          console.log(data);
         } else {
           setSuccess(false);
           setLoader(false);
@@ -422,7 +426,7 @@ export default function Testimonial() {
                   <Image
                     style={{ opacity: "0" }}
                     id="prevImg"
-                    src="/"
+                    src="./profile.png"
                     alt={reviews[currentIndex].display_name}
                     width={200}
                     height={150}
@@ -456,7 +460,7 @@ export default function Testimonial() {
                   <Image
                     style={{ opacity: "0" }}
                     id="nextImg"
-                    src="/"
+                    src="./profile.png"
                     alt={
                       reviews[(currentIndex + 1) % reviews.length].display_name
                     }
