@@ -464,8 +464,8 @@ section.projects .projectCards .card .project-card-items {
   padding: 1rem;
   color: var(--color);
 }
-section.projects .projectCards .card .project-card-items .details{
-  padding: 1rem 0 0 0.5rem;
+section.projects .projectCards .card .project-card-items .details {
+  padding: 1rem 0.5rem 0 0.5rem;
 }
 section.projects .projectCards .card .details h2 {
   font-size: 2rem;
@@ -496,20 +496,20 @@ section.projects .projectCards .card .buttons {
 }
 section.projects .projectCards .card .buttons button {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    height: 4rem;
-    font-weight: bold;
-    margin: 0.5rem;
-    border-radius: 3rem;
-    border: none;
-    cursor: pointer;
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    transition: 0.3s ease;
-    font-size: 1.4rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  height: 4rem;
+  font-weight: bold;
+  margin: 0.5rem;
+  border-radius: 3rem;
+  border: none;
+  cursor: pointer;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  transition: 0.3s ease;
+  font-size: 1.4rem;
 }
 section.projects .projectCards .card .buttons button:hover {
   color: var(--btn-text-color);
@@ -942,13 +942,18 @@ button.learn-more:hover .button-text {
   background: #f7cd46;
   color: #101010;
 }
-.imageSection{
+.imageSection {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: relative;
 }
-.imageSelectionSection{
+.imageSection h2{
+  font-family: "Belanosima", sans-serif;
+  margin-bottom: 1.5rem;
+}
+.imageSelectionSection {
   position: absolute;
   display: none;
   grid-template-columns: repeat(5, 1fr);
@@ -1021,7 +1026,7 @@ button.learn-more:hover .button-text {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 .rating {
   display: flex;
@@ -1254,6 +1259,8 @@ button.learn-more:hover .button-text {
   border-radius: 50%;
   margin-top: 0.5rem;
   border: none;
+  
+  /* padding:1.5rem; */
 }
 #prevImg,
 #nextImg {

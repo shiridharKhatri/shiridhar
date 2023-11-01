@@ -16,6 +16,7 @@ import {
   AiFillHeart,
   AiOutlineEye,
   AiFillStar,
+  AiOutlineStar,
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
   AiOutlineSetting
@@ -160,7 +161,8 @@ const AiIcons = {
   AiFillStar,
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
-  AiOutlineSetting
+  AiOutlineSetting,
+  AiOutlineStar
 };
 const RiIcons = {
   RiServiceLine,

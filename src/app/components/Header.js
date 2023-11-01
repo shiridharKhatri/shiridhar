@@ -15,7 +15,7 @@ export default function Header() {
       localStorage.removeItem("DarkModeOn"); // Remove the key
     }
   };
-  
+
   const handleScrollDown = () => {
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -33,7 +33,13 @@ export default function Header() {
       }}
     >
       <h1>PortFolio</h1>
-      <Image src="./picture.png" alt="picture" width={200} height={150} loading="lazy" />
+      <Image
+        src="./picture.png"
+        alt="picture"
+        width={200}
+        height={150}
+        priority={true}
+      />
       <div className="scroll" onClick={handleScrollDown}>
         <div className="scrolldown" style={{ color: "skyblue" }}>
           <div className="chevrons">

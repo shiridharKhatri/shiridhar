@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Alphabets } from "./Alphabets";
+import Loader from "../tools/Loader";
 export default function Nav(props) {
   // const [recognizedText, setRecognizedText] = useState("");
   const [active, setActive] = useState(false);
@@ -106,6 +107,8 @@ export default function Nav(props) {
     }
   }, []);
   return (
+    <>
+    {/* <Loader/> */}
     <nav
       style={{ position: props.position, background: props.background }}
       className={isScrolled ? "navbar-scrolled" : "navbar"}
@@ -336,5 +339,6 @@ export default function Nav(props) {
         </div>
       </div>
     </nav>
+    </>
   );
 }

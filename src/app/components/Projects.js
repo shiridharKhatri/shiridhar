@@ -10,7 +10,6 @@ import {
   FiIcons,
 } from "./Icons";
 import Image from "next/image";
-import { Spinnaker } from "next/font/google";
 import Loader from "../tools/Loader";
 
 export default function Projects() {
@@ -18,40 +17,7 @@ export default function Projects() {
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const projects = [
-    {
-      id: "one",
-      name: "Shopme ecommerce website",
-      shortDescription:
-        "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
-      description: "",
-      image: "./notebook.png",
-    },
-    {
-      id: "two",
-      name: "Shopme ecommerce website",
-      shortDescription:
-        "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
-      description: "",
-      image: "./notebook.png",
-    },
-    {
-      id: "three",
-      name: "Shopme ecommerce website",
-      shortDescription:
-        "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
-      description: "",
-      image: "./notebook.png",
-    },
-    {
-      id: "four",
-      name: "Shopme ecommerce website",
-      shortDescription:
-        "This is ecommerce website created using given technologies nextjs, nodejs, mongodb and vanilla css.",
-      description: "",
-      image: "./notebook.png",
-    },
-  ];
+
   useEffect(() => {
     const fetchProjects = async () => {
       setLoader(true);
@@ -89,7 +55,7 @@ export default function Projects() {
         <>
           <div className="titleHead">
             <h3>
-              Total projects ({data.length}) <span>View all</span>
+              Total projects ({data.total}) <span>View all</span>
             </h3>
           </div>
           <div className="projectCards">
@@ -105,7 +71,6 @@ export default function Projects() {
                         layout="responsive"
                         width={200}
                         height={150}
-                        loading="lazy"
                       />
                     </div>
                     <div className="details">

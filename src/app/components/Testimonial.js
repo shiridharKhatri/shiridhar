@@ -66,6 +66,40 @@ export default function Testimonial() {
   const handleProfileClick = (profile) => {
     setProfile(profile);
   };
+
+  function getRatingStars(rating) {
+    const fullStars = Math.floor(rating);
+    const halfStars = Math.ceil(rating - fullStars);
+    const emptyStars = 5 - fullStars - halfStars;
+
+    const stars = [];
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <h3 key={`full-star-${i}`} className="stars">
+          <AiIcons.AiFillStar />
+        </h3>
+      );
+    }
+
+    for (let i = 0; i < halfStars; i++) {
+      stars.push(
+        <h3 key={`half-star-${i}`} className="stars">
+          <AiIcons.AiFillStar style={{ opacity: 0.5 }} />
+        </h3>
+      );
+    }
+
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(
+        <h3 key={`empty-star-${i}`} className="stars">
+          <AiIcons.AiOutlineStar />
+        </h3>
+      );
+    }
+
+    return stars;
+  }
   const sumbitReview = async () => {
     setLoader(true);
     try {
@@ -79,7 +113,7 @@ export default function Testimonial() {
         review: reviewText,
         star: stars,
         display_name: profile,
-        img: image,
+        img: !image ? imgs : image,
       });
 
       let response = await fetch(`${host}/api/review/postReview`, {
@@ -228,8 +262,22 @@ export default function Testimonial() {
                 className="imageSection"
                 style={{ position: "relative" }}
               >
+                <h2>Choose your avatar</h2>
                 <Image
-                  style={{ background: "#e3cc0f", cursor: "pointer" }}
+                  style={
+                    !image
+                      ? {
+                          background:
+                            "linear-gradient(45deg, rgb(35, 159, 233), rgb(68, 213, 243))",
+                          cursor: "pointer",
+                          padding: "1.5rem",
+                        }
+                      : {
+                          background:
+                            "linear-gradient(45deg, rgb(35, 159, 233), rgb(68, 213, 243))",
+                          cursor: "pointer",
+                        }
+                  }
                   id="profile-img-select"
                   src={
                     !image
@@ -276,7 +324,6 @@ export default function Testimonial() {
                         width={200}
                         height={150}
                         src={e.image}
-                        loading="lazy"
                       />
                     </div>
                   );
@@ -504,15 +551,7 @@ export default function Testimonial() {
                 </div>
               </div>
               <h2>{currentReview.display_name}</h2>
-              <div className="star">
-                <h3>
-                  <AiIcons.AiFillStar />
-                  <AiIcons.AiFillStar />
-                  <AiIcons.AiFillStar />
-                  <AiIcons.AiFillStar />
-                  <AiIcons.AiFillStar />
-                </h3>
-              </div>
+              <div className="star">{getRatingStars(currentReview.star)}</div>
             </div>
           )}
         </div>
