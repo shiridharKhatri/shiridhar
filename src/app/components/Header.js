@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsIcons } from "./Icons";
 export default function Header() {
   const [darkmode, setDarkmode] = useState(false);
@@ -22,7 +22,7 @@ export default function Header() {
       behavior: "smooth", // Smooth scroll behavior
     });
   };
-  useState(()=>{
+  useEffect(()=>{
     let darkmode = localStorage.getItem('DarkModeOn');
     if(darkmode === "true"){
       setDarkmode(true);

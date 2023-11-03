@@ -1,3 +1,4 @@
+'use client'
 import BelowButton from "./components/BelowButton";
 import Expertise from "./components/Expertise";
 import Footer from "./components/Footer";
@@ -8,9 +9,9 @@ import Projects from "./components/Projects";
 import BlogsHighlight from "./components/BlogsHighlight";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
-import { useState } from "react";
+import { useEffect } from "react";
 export default function Home() {
-  useState(()=>{
+  useEffect(()=>{
    let darkmode = localStorage.getItem('DarkModeOn');
    if(darkmode === "true"){
     let body = document.body;
