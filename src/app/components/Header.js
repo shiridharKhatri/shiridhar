@@ -22,7 +22,16 @@ export default function Header() {
       behavior: "smooth", // Smooth scroll behavior
     });
   };
-
+  useState(()=>{
+    let darkmode = localStorage.getItem('DarkModeOn');
+    if(darkmode === "true"){
+      setDarkmode(true);
+      body.classList.add("darkMode");
+    }else{
+      setDarkmode(false);
+      body.classList.remove("darkMode");
+    }
+   },[])
   return (
     <header
       style={{
