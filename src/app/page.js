@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import BelowButton from "./components/BelowButton";
 import Expertise from "./components/Expertise";
 import Footer from "./components/Footer";
@@ -11,18 +11,18 @@ import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
 import { useEffect } from "react";
 export default function Home() {
-  useEffect(()=>{
-   let darkmode = localStorage.getItem('DarkModeOn');
-   if(darkmode === "true"){
+  useEffect(() => {
+    let darkmode = localStorage.getItem("DarkModeOn");
     let body = document.body;
-    body.classList.add("darkMode");
-   }else{
-    body.classList.remove("darkMode");
-   }
-  },[])
+    if (darkmode === "true") {
+      body.classList.add("darkMode");
+    } else {
+      body.classList.remove("darkMode");
+    }
+  }, []);
   return (
     <>
-      <Nav position="fixed" image="./logo.png"/>
+      <Nav position="fixed" image="./logo.png" />
       <Header />
       <BelowButton />
       <Projects />
@@ -31,7 +31,7 @@ export default function Home() {
       <Services />
       <Testimonial />
       <Mail />
-      <Footer image="./secondLogo.png"/>
+      <Footer image="./secondLogo.png" />
     </>
   );
 }

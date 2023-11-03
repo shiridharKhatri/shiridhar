@@ -23,6 +23,7 @@ export default function Header() {
     });
   };
   useEffect(()=>{
+    let body = document.body;
     let darkmode = localStorage.getItem('DarkModeOn');
     if(darkmode === "true"){
       setDarkmode(true);
