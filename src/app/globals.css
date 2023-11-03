@@ -877,7 +877,7 @@ button.learn-more:hover .button-text {
   height: 14rem;
 }
 .mainServiceBox .cards-item img {
-  height: 12rem;
+  height: 13rem;
 }
 .mainServiceBox .cards-item h4 {
   /* position: absolute; */
@@ -1478,13 +1478,22 @@ section.mainMailSection {
   padding: 2rem;
 }
 .mailSection {
-  background: #ffffff;
+  background: var(--card-primary-color);
+  height: 55rem;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 6rem;
+  margin-bottom: 4rem;
+  padding: .1rem;
+}
+.mailSection .cardMail{
+  background: var(--card-secondary-color);
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 55rem;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 6rem;
   margin-bottom: 4rem;
@@ -1511,12 +1520,13 @@ section.mainMailSection {
   height: 10rem;
   padding: 1.3rem;
   border-radius: 1.2rem;
-  border: 1.5px solid lightgrey;
   outline: none;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0px 0px 20px -18px;
   margin-top: 2rem;
-  /* outline: .1rem solid #2d79f3; */
+  background: transparent;
+  color: var(--color);
+  border: .1rem solid #445;
 }
 
 .mailContent form textarea:hover {
@@ -1547,10 +1557,12 @@ section.mainMailSection {
   height: 45px;
   padding: 12px;
   border-radius: 12px;
-  border: 1.5px solid lightgrey;
+  border: 1.5px solid #445;
   outline: none;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0px 0px 20px -18px;
+  background: transparent;
+  color: var(--color);
 }
 
 .mailContent form input:hover {
@@ -1570,22 +1582,25 @@ section.mainMailSection {
   font-size: 3rem;
   width: 100%;
   font-family: "Belanosima", sans-serif;
+  color: var(--color);
 }
 .mailContent h4 {
   font-size: 1.2rem;
   margin-bottom: 4rem;
   font-weight: 400;
   margin-top: 0.5rem;
+  color: var(--color);
 }
 .mailContent form button {
   padding: 1rem;
   width: 15rem;
+  height: 4rem;
   margin: 3rem 0 1rem 0;
-  border-radius: 0.5rem;
+  border-radius: 4.5rem;
   border: none;
-  background: #5626c4;
-  color: #fff;
+  background: var(--btn-text-color);
   cursor: pointer;
+  font-weight: bold;
 }
 .mailImage {
   width: 50%;
@@ -2447,6 +2462,33 @@ section.signup .mainSignupCard {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+section.aboutSection .about-header{
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#animationText{
+  font-size: 4rem;
+  font-family: "Belanosima", sans-serif;
+  color: #facd3d;
+}
+section.aboutSection .about-header button{
+  padding: 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    height: 4.5rem;
+    width: 16rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 footer {
   background: #000000;

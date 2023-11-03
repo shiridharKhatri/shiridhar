@@ -12,12 +12,50 @@ import {
 import Image from "next/image";
 import Loader from "../tools/Loader";
 
+
 export default function Projects() {
   // const host = "http://localhost:5000";
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-
+  
+const tech = [
+  {
+    name: "nextjs",
+    icons: <SiIcons.SiNextdotjs />,
+    color: "#000000",
+  },
+  {
+    name: "nodejs",
+    icons: <FaIcons.FaNodeJs />,
+    color: "#3C873A",
+  },
+  {
+    name: "reactjs",
+    icons: <GrIcons.GrReactjs />,
+    color: "#61dafb",
+  },
+  {
+    name: "mongodb",
+    icons: <BiIcons.BiLogoMongodb />,
+    color: "#589636",
+  },
+  {
+    name: "css",
+    icons: <IoIcons.IoLogoCss3 />,
+    color: "#264de4",
+  },
+  {
+    name: "javascript",
+    icons: <BiIcons.BiLogoJavascript />,
+    color: "#F0DB4F",
+  },
+  {
+    name: "html",
+    icons: <AiIcons.AiFillHtml5 />,
+    color: "#ea4335",
+  },
+];
   useEffect(() => {
     const fetchProjects = async () => {
       setLoader(true);
@@ -33,7 +71,6 @@ export default function Projects() {
       let data = await response.json();
       if (data.success === true) {
         setLoader(false);
-        console.log(data);
         setData(data);
       } else {
         setLoader(false);
@@ -41,6 +78,7 @@ export default function Projects() {
     };
     fetchProjects();
   }, [host]);
+
   return (
     <section className="projects">
       <h1 id="projectHeading">Created Projects</h1>
@@ -82,41 +120,44 @@ export default function Projects() {
                       </p>
                       <div className="techUsed">
                         <ul>
-                          <li>
-                            <SiIcons.SiNextdotjs />
-                          </li>
-                          <li style={{ color: "#3C873A" }}>
-                            <FaIcons.FaNodeJs />
-                          </li>
-                          <li style={{ color: "#61dafb" }}>
-                            <GrIcons.GrReactjs />
-                          </li>
-                          <li style={{ color: "#589636" }}>
-                            <BiIcons.BiLogoMongodb />
-                          </li>
-                          <li style={{ color: "#264de4" }}>
-                            <IoIcons.IoLogoCss3 />
-                          </li>
-                          <li style={{ color: "#F0DB4F" }}>
-                            <BiIcons.BiLogoJavascript />
-                          </li>
-                          <li style={{ color: "#ea4335" }}>
-                            <AiIcons.AiFillHtml5 />
-                          </li>
+                         { tech.map((e, index) => {
+                                return (
+                                  <li key={index} style={{ color: e.color }}>
+                                    {e.icons}
+                                  </li>
+                                );
+                              })}
+                          
                         </ul>
                       </div>
                     </div>
                     <p id="currentStatus" className="hidden">
-                      <span>44k likes and 23 comments</span>
+                      <span>
+                        {e.likes > 1000 ? e.likes + "K" : e.likes} likes and{" "}
+                        {!e.comments.length
+                          ? "0"
+                          : e.comments.length > 1000
+                          ? e.comments.length + "K"
+                          : e.comments.length}{" "}
+                        comments
+                      </span>
                     </p>
                     <div className="buttons">
                       <button>
                         <AiIcons.AiOutlineHeart />
-                        &nbsp;<span>34k</span>
+                        &nbsp;
+                        <span>{e.likes > 1000 ? e.likes + "K" : e.likes}</span>
                       </button>
                       <button>
                         <BiIcons.BiCommentDetail />
-                        &nbsp;<span>4k</span>
+                        &nbsp;
+                        <span>
+                          {!e.comments.length
+                            ? "0"
+                            : e.comments.length > 1000
+                            ? e.comments.length + "K"
+                            : e.comments.length}
+                        </span>
                       </button>
                       <button>
                         <AiIcons.AiOutlineEye />
