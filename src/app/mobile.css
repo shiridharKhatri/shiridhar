@@ -139,6 +139,8 @@
     height: auto;
     padding: 1rem;
     /* height: 44%; */
+    border: none;
+    
   }
   #DropDown::-webkit-scrollbar {
     display: none;

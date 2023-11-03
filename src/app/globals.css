@@ -120,28 +120,28 @@ nav .otherSec form {
 }
 #DropDown {
   position: absolute;
-  background: #ffffff;
+  background: var(--primary-background-color);
   top: 9rem;
-  display: flex;
+  display: none;
   justify-content: center;
-  /* align-items: flex-start; */
+  align-items: flex-start;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   right: 15rem;
   padding: 2rem;
-  border-radius: 0.5rem;
-  display: none;
+  border-radius: 2rem;
+  border: 0.1rem solid #445;
 }
 .topMenuSecInfo {
   display: flex;
 }
 #DropDown li {
-  color: #101010;
+  color: var(--color);
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   height: 100%;
   border-radius: 1rem;
   position: relative;
@@ -157,7 +157,7 @@ nav .otherSec form {
   border-radius: 50%;
   position: absolute;
   right: -2rem;
-  background: #5626c4;
+  background: var(--btn-text-color);
   transition: 0.3s ease;
 }
 #DropDown li:hover:before {
@@ -167,15 +167,15 @@ nav .otherSec form {
   border-radius: 50%;
   position: absolute;
   right: -1rem;
-  background: #5626c4;
+  background: var(--btn-text-color);
   transition: 0.3s ease;
 }
 #DropDown li:hover {
-  background: #5626c43d;
-  color: #5626c4;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
 }
 #DropDown li span {
-  background: #5626c4;
+  background: var(--btn-bg-color);
   height: 5rem;
   width: 5rem;
   margin-right: 1rem;
@@ -184,7 +184,7 @@ nav .otherSec form {
   align-items: center;
   font-size: 2.3rem;
   border-radius: 1rem;
-  color: var(--color);
+  color: var(--btn-text-color);
 }
 nav .otherSec form .voiceSection {
   position: absolute;

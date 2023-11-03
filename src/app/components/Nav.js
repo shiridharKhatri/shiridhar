@@ -97,6 +97,15 @@ export default function Nav(props) {
     Cookies.remove("email");
     router.push("/login");
   };
+  const showMenuOnClick = ()=>{
+    let id = document.getElementById("DropDown");
+    id.classList.toggle("togglMoreSec");
+    if(id.classList.contains("togglMoreSec")){
+      id.style.display = "flex";
+    }else{
+      id.style.display = "none";
+    }
+  }
   useEffect(() => {
     if (cookieValue) {
       Alphabets.forEach((e) => {
@@ -219,11 +228,13 @@ export default function Nav(props) {
                 Menu
               </h3>
             </div>
-            <li>
+            <li onClick={()=>{
+              router.push('/')
+            }}>
               <span className="hidden">
-                <BsIcons.BsInfoCircle />
+                <BiIcons.BiHomeAlt />
               </span>
-              About
+              Home
             </li>
             <li>
               <span className="hidden">
@@ -237,7 +248,7 @@ export default function Nav(props) {
               </span>
               Service
             </li>
-            <li id="moreItem">
+            <li id="moreItem" onClick={showMenuOnClick}>
               More <BiIcons.BiChevronDown />
             </li>
           </div>
