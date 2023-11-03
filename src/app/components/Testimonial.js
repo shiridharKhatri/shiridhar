@@ -39,7 +39,6 @@ export default function Testimonial() {
   const closeReviewForm = () => {
     let reviewForm = document.getElementById("reviewForm");
     reviewForm.style.display = "none";
-    window.location.reload();
   };
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
@@ -238,6 +237,7 @@ export default function Testimonial() {
                 onClick={() => {
                   router.push("/");
                   closeReviewForm();
+                  window.location.reload();
                 }}
                 style={{ background: "#009b0b" }}
               >
@@ -280,16 +280,15 @@ export default function Testimonial() {
                   }
                   id="profile-img-select"
                   src={
-                    !image
-                      ? imgs
-                      : profile === "Annonymous"
+                    profile === "Annonymous"
                       ? "./anonymous.png"
+                      : !image
+                      ? imgs
                       : image
                   }
                   alt="demo"
                   width={200}
                   height={150}
-                  loading="lazy"
                 />
               </div>
               <div

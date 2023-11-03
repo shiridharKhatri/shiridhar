@@ -413,6 +413,9 @@
   }
 }
 @media (max-width: 580px) {
+  .mailContent form, .mailSection .cardMail{
+    background: transparent;
+  }
   nav ul {
     height: 100vh;
     border-radius: 0;

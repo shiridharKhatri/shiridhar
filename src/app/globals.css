@@ -1193,7 +1193,7 @@ button.learn-more:hover .button-text {
 .testimonial .addReview {
   position: absolute;
   bottom: 1rem;
-  right: 1rem;
+  right: 0;
   transition: 0.3s ease;
 }
 .testimonial .addReview:hover {
@@ -1201,9 +1201,9 @@ button.learn-more:hover .button-text {
 }
 .testimonial .addReview button {
   border: none;
-  border-radius:3rem;
+  border-radius:3rem 0 0 3rem;
   height: 3rem;
-  width: 11rem;
+  width: 12rem;
   display: flex;
   align-items: center;
   cursor: pointer;
