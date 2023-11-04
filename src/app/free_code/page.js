@@ -45,7 +45,7 @@ export default function Page() {
         </div>: <div className="codeSection">
           {data.codes?.map((e) => {
             return (
-              <div className="codeCard">
+              <div className="codeCard" key={e._id}>
                 <div className="secCodeCard">
                   <div className="imageCode" style={{ background: e.color }}>
                     <Image
