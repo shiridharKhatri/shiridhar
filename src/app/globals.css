@@ -2490,6 +2490,81 @@ section.aboutSection .about-header button{
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+section.freeCode{
+  padding: 2rem;
+}
+section.freeCode .codeSection{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+section.freeCode .codeSection .codeCard{
+    background: var(--card-primary-color);
+    border-radius: 2rem;
+    padding: .1rem;
+    margin: 1rem;
+}
+section.freeCode .codeSection .codeCard .secCodeCard{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 1.7rem;
+ background-color: var(--card-secondary-color);
+}
+.detailCode h2{
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+.detailCode p{
+  font-size: 1.4rem;
+}
+.btnsCode{
+  width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1rem 1rem;
+}
+.btnsCode button{
+  padding: 1rem;
+    border: none;
+    width: 14rem;
+    height: 4rem;
+    background: #36bcfc;
+    color: #ffffff;
+    border-radius: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+section.freeCode .codeSection .codeCard .imageCode{
+  width: 100%;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    margin-bottom: 1rem;
+}
+.freeCode h1{
+  margin: 1rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.freeCode h1 span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 footer {
   background: #000000;
   padding: 1rem;

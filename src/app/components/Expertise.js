@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import { AiIcons, BiIcons, IoIcons, SiIcons, FaIcons, GrIcons } from "./Icons";
+import { useRouter } from "next/navigation";
 export default function Expertise() {
+  const router = useRouter()
   const content = [
     {
       icon: <SiIcons.SiNextdotjs />,
@@ -89,7 +91,7 @@ export default function Expertise() {
           check it out!
         </h3>
 
-        <button className="learn-more">
+        <button onClick={()=>{router.push('/free_code')}} className="learn-more">
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>

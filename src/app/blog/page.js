@@ -98,7 +98,6 @@ export default function Page() {
                             layout="responsive"
                             width={50}
                             height={50}
-                            loading="lazy"
                           />
                         </div>
                         <div className="detailsBlogSec">

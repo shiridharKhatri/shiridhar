@@ -293,7 +293,7 @@ export default function Nav(props) {
               </span>
               Paid Code
             </li>
-            <li>
+            <li onClick={()=>{router.push('/free_code')}}>
               <span>
                 <GoIcons.GoFileCode />
               </span>

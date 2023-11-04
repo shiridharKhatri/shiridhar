@@ -140,7 +140,6 @@
     padding: 1rem;
     /* height: 44%; */
     border: none;
-    
   }
   #DropDown::-webkit-scrollbar {
     display: none;
@@ -217,7 +216,10 @@
     border-radius: 2.5rem;
     margin: 0;
   }
-
+  section.freeCode .codeSection {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1rem 0;
+  }
   #moreItem {
     display: none;
   }
@@ -409,13 +411,21 @@
   .banner {
     height: 18rem;
   }
+  section.freeCode .codeSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+  }
   section.projects .projectCards .card .buttons button:hover {
     background-color: #101010;
     color: #ffffff;
   }
 }
 @media (max-width: 580px) {
-  .mailContent form, .mailSection .cardMail{
+  .mailContent form,
+  .mailSection .cardMail {
     background: transparent;
   }
   nav ul {
@@ -425,6 +435,27 @@
   .cardsSecParent .cards button {
     width: 70%;
     margin: 2rem 1rem 1rem 0rem;
+  }
+  section.freeCode {
+    padding: 2rem 0;
+  }
+  section.freeCode .codeSection .codeCard .secCodeCard {
+    background-color: transparent;
+  }
+  section.freeCode .codeSection .codeCard {
+    background: transparent;
+  }
+  section.freeCode .codeSection .codeCard {
+    margin: 0;
+  }
+  section.freeCode .codeSection .codeCard .imageCode {
+    border-radius: 1.5rem;
+  }
+  .btnsCode button {
+    height: 4.5rem;
+  }
+  .freeCode h1 {
+    margin: 1rem 2rem;
   }
   .notfoundSection p {
     width: 90%;
@@ -644,7 +675,7 @@
     border-radius: 1rem;
   }
   section.projects .projectCards .card .buttons button {
-    font-size: 2rem;
+    font-size: 2.3rem;
     height: 5rem;
     display: flex;
     padding: 1.4rem 0;
