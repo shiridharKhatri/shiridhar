@@ -1,11 +1,11 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { GoIcons, AiIcons } from "../components/Icons";
 import Image from "next/image";
 import Loader from "../tools/Loader";
-export default function page() {
+export default function Page() {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const host = "https://portfolio-backend-0roz.onrender.com";
