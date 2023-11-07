@@ -1,11 +1,12 @@
 'use client'
-import React, { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
+import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import { BiIcons, BsIcons, LuIcons } from "../components/Icons";
 import Typed from "typed.js";
 import { useRouter } from "next/navigation";
-export default function page() {
+
+export default function Page() {
   const router = useRouter();
   // Create reference to store the DOM element containing the animation
   const el = useRef(null);
