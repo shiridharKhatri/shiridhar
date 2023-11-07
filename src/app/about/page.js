@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -6,7 +6,7 @@ import { BiIcons, BsIcons, LuIcons } from "../components/Icons";
 import Typed from "typed.js";
 import { useRouter } from "next/navigation";
 export default function page() {
-  const router = useRouter()
+  const router = useRouter();
   // Create reference to store the DOM element containing the animation
   const el = useRef(null);
 
@@ -37,7 +37,11 @@ export default function page() {
           }}
         >
           <h1 id="animationText" ref={el} />
-          <button onClick={()=>{router.push("/")}}>
+          <button
+            onClick={() => {
+              router.push("/");
+            }}
+          >
             <BiIcons.BiHomeAlt />
           </button>
         </div>
@@ -89,7 +93,7 @@ export default function page() {
             database of choice.
           </p>
           <p>
-            The culmination of my skills finds expression in a website I've
+            The culmination of my skills finds expression in a website I&apos;ve
             meticulously crafted using NextJS for the front-end and employing
             NodeJS alongside MongoDB for the back-end operations. This platform
             stands as my digital portfolio, meticulously designed to serve as a
@@ -98,7 +102,7 @@ export default function page() {
             guide burgeoning talents.
           </p>
           <p>
-            Within this website, you'll find an assortment of sections
+            Within this website, you&apos;ll find an assortment of sections
             meticulously crafted to cater to a diverse audience. From the
             essential login, signup, profile management, and password recovery
             features to the more engaging sections such as blogs, showcased
@@ -109,7 +113,7 @@ export default function page() {
             While there are premium codes available for purchase, I have ensured
             their accessibility by offering them at an affordable price point.
             In addition to the plethora of content available, the website
-            facilitates direct interaction. Whether it's through Fiverr for
+            facilitates direct interaction. Whether it&apos;s through Fiverr for
             project collaborations or via direct communication through messages
             and emails, I am readily available for consultations or project
             commissions.
@@ -117,7 +121,7 @@ export default function page() {
           <p>
             My aim is to share knowledge, empower learners, and provide valuable
             services to those seeking to embark on their programming journey.
-            Whether it's through the educational resources provided on the site
+            Whether it&apos;s through the educational resources provided on the site
             or through direct collaboration on individual projects, I am
             dedicated to fostering a supportive and resourceful community.
           </p>
