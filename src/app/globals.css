@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Spice&family=Caveat&family=Combo&family=Concert+One&family=Dancing+Script&family=DynaPuff:wght@400;500&family=Lexend:wght@500&family=Lobster&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@100&family=Qwitcher+Grypen&family=Roboto:ital,wght@1,100&family=Rubik:wght@300&family=Silkscreen&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kolker+Brush&family=Paytone+One&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Kolker+Brush&family=Montserrat:ital@1&family=Paytone+One&family=Poppins&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Open Sans, sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 :root {
   --primary-background-color: #f5f5f5;
@@ -354,7 +357,7 @@ header .themeSection .themeDisplay h2 {
 }
 #contact:hover {
   background-color: #5626c440;
-  color: #5626c4;
+  color: #ffffff;
 }
 header {
   background-color: #000000;
@@ -949,7 +952,7 @@ button.learn-more:hover .button-text {
   flex-direction: column;
   position: relative;
 }
-.imageSection h2{
+.imageSection h2 {
   font-family: "Belanosima", sans-serif;
   margin-bottom: 1.5rem;
 }
@@ -1201,7 +1204,7 @@ button.learn-more:hover .button-text {
 }
 .testimonial .addReview button {
   border: none;
-  border-radius:3rem 0 0 3rem;
+  border-radius: 3rem 0 0 3rem;
   height: 3rem;
   width: 12rem;
   display: flex;
@@ -1259,7 +1262,7 @@ button.learn-more:hover .button-text {
   border-radius: 50%;
   margin-top: 0.5rem;
   border: none;
-  
+
   /* padding:1.5rem; */
 }
 #prevImg,
@@ -1484,9 +1487,9 @@ section.mainMailSection {
   margin: 0 auto;
   border-radius: 6rem;
   margin-bottom: 4rem;
-  padding: .1rem;
+  padding: 0.1rem;
 }
-.mailSection .cardMail{
+.mailSection .cardMail {
   background: var(--card-secondary-color);
   padding: 2rem;
   display: flex;
@@ -1526,7 +1529,7 @@ section.mainMailSection {
   margin-top: 2rem;
   background: transparent;
   color: var(--color);
-  border: .1rem solid #445;
+  border: 0.1rem solid #445;
 }
 
 .mailContent form textarea:hover {
@@ -2463,7 +2466,7 @@ section.signup .mainSignupCard {
   align-items: center;
   cursor: pointer;
 }
-section.aboutSection .about-header{
+section.aboutSection .about-header {
   height: 100vh;
   width: 100%;
   background-position: center;
@@ -2474,40 +2477,117 @@ section.aboutSection .about-header{
   align-items: center;
   flex-direction: column;
 }
-#animationText{
-  font-size: 4rem;
+#animationText {
+  font-size: 11rem;
+  /* margin-top: 3rem; */
   font-family: "Belanosima", sans-serif;
   color: #facd3d;
 }
-section.aboutSection .about-header button{
+section.aboutSection .about-header button {
   padding: 1.5rem;
-    border-radius: 3rem;
-    border: none;
-    height: 4.5rem;
-    width: 16rem;
-    margin-top: 1rem;
-    cursor: pointer;
-    font-size: 1.3rem;
-    font-weight: bold;
+  border-radius: 3rem;
+  border: none;
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #fdeb71 10%, #f8d800 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 2rem;
 }
-
-section.freeCode{
+.bannerNumber {
+  background: transparent;
+  margin: 1rem 1rem;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-radius: 0;
+  /* border-bottom: 0.1rem solid #445; */
+}
+.bannerNumber .itms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.bannerNumber .itms .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bannerNumber .itms .number h1 {
+  font-family: "Belanosima", sans-serif;
+  font-size: 3.5rem;
+  /* margin-top: 1rem; */
+}
+.aboutMainSec {
+  padding: 2rem;
+  margin: 6rem 1rem;
+}
+.aboutBelowBtn button{
+  padding: 1rem;
+  width: 13rem;
+  border: none;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  margin: 1rem 1rem 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.aboutBelowBtn{
+  margin-top: 3rem;
+}
+.aboutMainSec h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+.aboutMainSec p {
+  font-size: 1.7rem;
+    margin: 1rem 0;
+}
+.bannerNumber .itms .number h2 {
+  font-size: 3rem;
+  background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+  padding: 1rem;
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.bannerNumber .itms .number h3 {
+  font-size: 2rem;
+  color: #445;
+}
+section.freeCode {
   padding: 2rem;
 }
-section.freeCode .codeSection{
+section.freeCode .codeSection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   margin: 3rem 0;
 }
-section.freeCode .codeSection .codeCard{
-    background: var(--card-primary-color);
-    border-radius: 2rem;
-    padding: .1rem;
-    margin: 1rem;
+section.freeCode .codeSection .codeCard {
+  background: var(--card-primary-color);
+  border-radius: 2rem;
+  padding: 0.1rem;
+  margin: 1rem;
 }
-section.freeCode .codeSection .codeCard .secCodeCard{
+section.freeCode .codeSection .codeCard .secCodeCard {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -2516,51 +2596,54 @@ section.freeCode .codeSection .codeCard .secCodeCard{
   height: 100%;
   width: 100%;
   border-radius: 1.7rem;
- background-color: var(--card-secondary-color);
+  background-color: var(--card-secondary-color);
 }
-.detailCode h2{
+.detailCode h2 {
   font-size: 2rem;
   margin-bottom: 0.3rem;
+  color: var(--color);
 }
-.detailCode p{
+.detailCode p {
   font-size: 1.4rem;
+  color: var(--color);
 }
-.btnsCode{
+.btnsCode {
   width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 2rem 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 1rem 1rem;
 }
-.btnsCode button{
+.btnsCode button {
   padding: 1rem;
-    border: none;
-    width: 14rem;
-    height: 4rem;
-    background: #36bcfc;
-    color: #ffffff;
-    border-radius: 3rem;
-    font-weight: bold;
-    cursor: pointer;
+  border: none;
+  width: 14rem;
+  height: 4rem;
+  background: #36bcfc;
+  color: #ffffff;
+  border-radius: 3rem;
+  font-weight: bold;
+  cursor: pointer;
 }
-section.freeCode .codeSection .codeCard .imageCode{
+section.freeCode .codeSection .codeCard .imageCode {
   width: 100%;
-    background: orange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 1.5rem 1.5rem 0 0;
-    margin-bottom: 1rem;
+  background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  margin-bottom: 1rem;
 }
-.freeCode h1{
+.freeCode h1 {
   margin: 1rem;
   font-size: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--color);
 }
 
-.freeCode h1 span{
+.freeCode h1 span {
   display: flex;
   justify-content: center;
   align-items: center;

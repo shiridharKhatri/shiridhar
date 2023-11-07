@@ -7,7 +7,8 @@ import {
   BiChevronRight,
   BiSearch,
   BiHomeAlt,
-  BiLogOutCircle
+  BiLogOutCircle,
+  BiGitRepoForked
 } from "react-icons/bi";
 import {
   AiOutlineInfoCircle,
@@ -56,7 +57,8 @@ import {
   BsInfoCircle,
   BsMoonStarsFill,
   BsFillSunFill,
-  BsPersonFill
+  BsPersonFill,
+  BsPersonBadge
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -102,7 +104,8 @@ const BsIcons = {
   BsInfoCircle,
   BsFillSunFill,
   BsMoonStarsFill,
-  BsPersonFill
+  BsPersonFill,
+  BsPersonBadge
 };
 const FiIcons = {
   FiChevronLeft,
@@ -150,7 +153,8 @@ const BiIcons = {
   BiLogoMongodb,
   BiSearch,
   BiHomeAlt,
-  BiLogOutCircle
+  BiLogOutCircle,
+  BiGitRepoForked
 };
 const AiIcons = {
   AiOutlineInfoCircle,

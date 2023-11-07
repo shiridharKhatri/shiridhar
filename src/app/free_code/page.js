@@ -63,8 +63,9 @@ export default function Page() {
                     <p>{e.description}</p>
                   </div>
                   <div className="btnsCode">
-                    <button style={{ background: e.color }}>Source code</button>{" "}
+                    <button  onClick={()=>{window.open(e.link, "_blank")}} style={{ background: e.color }}>Source code</button>{" "}
                     <button
+                    onClick={()=>{window.open(e.live, "_blank")}}
                       style={{
                         width: "4.5rem",
                         height: "4.5rem",

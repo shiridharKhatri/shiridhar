@@ -358,6 +358,26 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0;
   }
+  #animationText{
+    font-size: 7rem;
+  }
+  section.aboutSection .about-header {
+    height: 65rem;
+    width: 100%;
+    position: relative;
+}
+.bannerNumber .itms .number h2{
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+}
+.bannerNumber .itms .number h3{
+  font-size: 1.5rem;
+}
+.bannerNumber .itms .number h1{
+  font-size: 2.8rem;
+  color: var(--btn-text-color);;
+}
   .mailContent h2 {
     color: var(--color);
   }
@@ -460,6 +480,17 @@
   .notfoundSection p {
     width: 90%;
   }
+  #animationText{
+    font-size: 6rem;
+  }
+  .bannerNumber {
+    background-image: linear-gradient( 135deg, #FFE985 10%, #FA742B 100%);
+    margin: 0;
+}
+.bannerNumber .itms .number h1 {
+  font-size: 2.8rem;
+  color: #445;
+}
   .blogTitleHead select {
     padding: 1rem;
     border: none;

@@ -55,7 +55,7 @@ export default function BlogsHighlight() {
                       loading="lazy"
                     />
                   </div>
-                  <p id="blogStatus">latest</p>
+                  <p style={{width:"9rem"}} id="blogStatus">latest</p>
                   <h2>
                     {e.title.length > 52
                       ? e.title.slice(0, 52) + ".."
