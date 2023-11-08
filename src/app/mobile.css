@@ -5,9 +5,10 @@
   body {
     -webkit-tap-highlight-color: transparent;
   }
-  #hiddenInMobile {
+  #hiddeOnDesktop {
     display: none;
   }
+
   .otherSec .closeSearch {
     display: none;
   }
@@ -464,6 +465,12 @@
     justify-content: center;
     align-items: center;
     margin-right: 0.5rem;
+  }
+  #hiddenInMobile{
+    display: none;
+  }
+  #hiddeOnDesktop{
+    display: flex;
   }
   .cardsSecParent .cards button {
     width: 70%;

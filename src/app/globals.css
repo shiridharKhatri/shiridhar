@@ -74,6 +74,9 @@ footer {
 .hidden {
   display: none;
 }
+#hiddeOnDesktop{
+  display: none;
+}
 nav.navbar {
   padding: 1rem 3rem;
   width: 100%;
@@ -105,11 +108,11 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  /* position: relative; */
 }
 nav .otherSec {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 nav .otherSec form {

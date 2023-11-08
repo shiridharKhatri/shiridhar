@@ -125,8 +125,8 @@ export default function Projects() {
                     <div className="details">
                       <h2>{e.title}</h2>
                       <p>
-                        {e.description.length > 216
-                          ? e.description.slice(0, 216) + "..."
+                        {e.description.length > 210
+                          ? e.description.slice(0, 210) + "..."
                           : e.description}
                       </p>
                     

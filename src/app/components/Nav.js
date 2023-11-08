@@ -152,7 +152,7 @@ export default function Nav(props) {
           <div className="hidden closeSearch" id="closeSearch">
             <BsIcons.BsChevronLeft />
           </div>
-          <form className="hidden" >
+          <form className="hidden" id="hiddeOnDesktop" >
             <input 
             onFocus={focused}
             onBlur={blurred}
