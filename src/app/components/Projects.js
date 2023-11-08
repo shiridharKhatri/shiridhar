@@ -7,7 +7,8 @@ import {
   SiIcons,
   FaIcons,
   GrIcons,
-  FiIcons,
+  PiIcons,
+  RiIcons,
 } from "./Icons";
 import Image from "next/image";
 import Loader from "../tools/Loader";
@@ -131,7 +132,7 @@ const tech = [
                         </ul>
                       </div>
                     </div>
-                    <p id="currentStatus" className="hidden">
+                    {/* <p id="currentStatus" className="hidden">
                       <span>
                         {e.likes > 1000 ? e.likes + "K" : e.likes} likes and{" "}
                         {!e.comments.length
@@ -141,15 +142,15 @@ const tech = [
                           : e.comments.length}{" "}
                         comments
                       </span>
-                    </p>
+                    </p> */}
                     <div className="buttons">
                       <button>
-                        <AiIcons.AiOutlineHeart />
+                       <span className="projectIco"><AiIcons.AiOutlineHeart /></span>
                         &nbsp;
                         <span>{e.likes > 1000 ? e.likes + "K" : e.likes}</span>
                       </button>
                       <button>
-                        <BiIcons.BiCommentDetail />
+                        <span className="projectIco"><RiIcons.RiMessage3Line /></span> 
                         &nbsp;
                         <span>
                           {!e.comments.length
@@ -160,12 +161,10 @@ const tech = [
                         </span>
                       </button>
                       <button>
-                        <AiIcons.AiOutlineEye />
-                        &nbsp;<span>Live</span>
+                        <span className="projectIco"><PiIcons.PiEyeBold /></span>
                       </button>
-                      <button id="moreBth">
-                        <span>More</span> &nbsp;
-                        <BiIcons.BiChevronRight />
+                      <button>
+                        <span className="projectIco"><PiIcons.PiShareFatBold /></span>
                       </button>
                     </div>
                   </div>

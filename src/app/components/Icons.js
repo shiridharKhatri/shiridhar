@@ -22,7 +22,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineSetting
 } from "react-icons/ai";
-import { RiServiceLine } from "react-icons/ri";
+import { RiServiceLine, RiMessage3Line } from "react-icons/ri";
 import { CiStickyNote, CiImageOn } from "react-icons/ci";
 import { GoProjectRoadmap, GoCodeReview, GoFileCode } from "react-icons/go";
 import { SiNextdotjs } from "react-icons/si";
@@ -34,6 +34,7 @@ import {
   FaGithub,
   FaUserSecret
 } from "react-icons/fa";
+import {PiShareFatBold, PiEyeBold} from "react-icons/pi"
 import { GrReactjs, GrGithub, GrNext, GrPrevious } from "react-icons/gr";
 import {
   IoLogoCss3,
@@ -73,6 +74,10 @@ import {
 } from "react-icons/md";
 import { HiPlus } from "react-icons/hi2";
 import { LuCalendarClock } from "react-icons/lu";
+const PiIcons = {
+  PiShareFatBold,
+  PiEyeBold
+}
 const LuIcons = {
   LuCalendarClock,
 };
@@ -170,6 +175,7 @@ const AiIcons = {
 };
 const RiIcons = {
   RiServiceLine,
+  RiMessage3Line
 };
 const GoIcons = {
   GoProjectRoadmap,
@@ -197,5 +203,6 @@ export {
   Fa6Icons,
   MdIcons,
   HiIcons,
-  LuIcons
+  LuIcons,
+  PiIcons
 };

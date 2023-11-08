@@ -108,7 +108,7 @@
     padding: 1.2rem 0 1.2rem 2rem;
   }
   section.projects .projectCards .card .project-card-items {
-    background: var(--card-secondary-color);
+    background: transparent;
     border-radius: 0;
     height: 100%;
     width: 100%;
@@ -292,16 +292,13 @@
   }
   section.projects .projectCards .card .buttons button {
     font-size: 2rem;
-    background: #101010;
+    background: transparent;
     border-radius: 5rem;
-    height: 5rem;
+    height: auto;
     margin: 1rem;
     color: #ffffff;
   }
-  section.projects .projectCards .card .buttons button:hover {
-    background: #10101059;
-    color: #101010;
-  }
+
   section.expertise {
     margin: 10rem 0 0 0;
   }
@@ -370,6 +367,7 @@
   font-size: 2rem;
   height: 4rem;
   width: 4rem;
+  /* background: #445; */
 }
 .bannerNumber .itms .number h3{
   font-size: 1.5rem;
@@ -438,10 +436,7 @@
     align-items: center;
     margin: 1rem 0;
   }
-  section.projects .projectCards .card .buttons button:hover {
-    background-color: #101010;
-    color: #ffffff;
-  }
+
 }
 @media (max-width: 580px) {
   .mailContent form,
@@ -486,6 +481,7 @@
   .bannerNumber {
     background-image: linear-gradient( 135deg, #FFE985 10%, #FA742B 100%);
     margin: 0;
+    border-radius: 0;
 }
 .bannerNumber .itms .number h1 {
   font-size: 2.8rem;
@@ -699,39 +695,27 @@
     justify-content: center;
     align-items: center;
   }
-  section.projects .projectCards .card .buttons button span {
-    display: none;
-  }
+  section.projects .projectCards .card .buttons button span.projectIco {
+    font-size: 2.5rem;
+}
   section.projects .projectCards img {
     border-radius: 1rem;
   }
   section.projects .projectCards .card .buttons button {
-    font-size: 2.3rem;
-    height: 5rem;
+    font-size: 2rem;
+    /* height: 5rem; */
     display: flex;
-    padding: 1.4rem 0;
+    /* padding: 1.4rem 0; */
     justify-content: center;
     align-items: center;
-    margin: 1rem;
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
+    margin: 1rem 1.5rem 0 1rem;
   }
-  section.projects .projectCards .card .buttons button:hover {
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
-  }
-  #currentStatus {
-    margin: 0;
-    padding: 1rem 1rem 0.5rem 2rem;
-    color: #70709b;
-  }
+  
   section.projects {
     padding: 1rem 0;
     margin: 5rem 0;
   }
-  #moreBth {
-    display: none;
-  }
+
   section.projects .projectCards .card .details {
     padding: 1rem 1rem 0 1rem;
   }
