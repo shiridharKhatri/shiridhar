@@ -13,50 +13,49 @@ import {
 import Image from "next/image";
 import Loader from "../tools/Loader";
 
-
 export default function Projects() {
   // const host = "http://localhost:5000";
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  
-const tech = [
-  {
-    name: "nextjs",
-    icons: <SiIcons.SiNextdotjs />,
-    color: "#000000",
-  },
-  {
-    name: "nodejs",
-    icons: <FaIcons.FaNodeJs />,
-    color: "#3C873A",
-  },
-  {
-    name: "reactjs",
-    icons: <GrIcons.GrReactjs />,
-    color: "#61dafb",
-  },
-  {
-    name: "mongodb",
-    icons: <BiIcons.BiLogoMongodb />,
-    color: "#589636",
-  },
-  {
-    name: "css",
-    icons: <IoIcons.IoLogoCss3 />,
-    color: "#264de4",
-  },
-  {
-    name: "javascript",
-    icons: <BiIcons.BiLogoJavascript />,
-    color: "#F0DB4F",
-  },
-  {
-    name: "html",
-    icons: <AiIcons.AiFillHtml5 />,
-    color: "#ea4335",
-  },
-];
+
+  const tech = [
+    {
+      name: "nextjs",
+      icons: <SiIcons.SiNextdotjs />,
+      color: "#000000",
+    },
+    {
+      name: "nodejs",
+      icons: <FaIcons.FaNodeJs />,
+      color: "#3C873A",
+    },
+    {
+      name: "reactjs",
+      icons: <GrIcons.GrReactjs />,
+      color: "#61dafb",
+    },
+    {
+      name: "mongodb",
+      icons: <BiIcons.BiLogoMongodb />,
+      color: "#589636",
+    },
+    {
+      name: "css",
+      icons: <IoIcons.IoLogoCss3 />,
+      color: "#264de4",
+    },
+    {
+      name: "javascript",
+      icons: <BiIcons.BiLogoJavascript />,
+      color: "#F0DB4F",
+    },
+    {
+      name: "html",
+      icons: <AiIcons.AiFillHtml5 />,
+      color: "#ea4335",
+    },
+  ];
   useEffect(() => {
     const fetchProjects = async () => {
       setLoader(true);
@@ -112,6 +111,17 @@ const tech = [
                         height={150}
                       />
                     </div>
+                    <div className="techUsed">
+                        <ul>
+                          {tech.map((e, index) => {
+                            return (
+                              <li key={index} style={{ color: e.color }}>
+                                {e.icons}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
                     <div className="details">
                       <h2>{e.title}</h2>
                       <p>
@@ -119,18 +129,7 @@ const tech = [
                           ? e.description.slice(0, 216) + "..."
                           : e.description}
                       </p>
-                      <div className="techUsed">
-                        <ul>
-                         { tech.map((e, index) => {
-                                return (
-                                  <li key={index} style={{ color: e.color }}>
-                                    {e.icons}
-                                  </li>
-                                );
-                              })}
-                          
-                        </ul>
-                      </div>
+                    
                     </div>
                     {/* <p id="currentStatus" className="hidden">
                       <span>
@@ -145,12 +144,16 @@ const tech = [
                     </p> */}
                     <div className="buttons">
                       <button>
-                       <span className="projectIco"><AiIcons.AiOutlineHeart /></span>
+                        <span className="projectIco">
+                          <AiIcons.AiOutlineHeart />
+                        </span>
                         &nbsp;
                         <span>{e.likes > 1000 ? e.likes + "K" : e.likes}</span>
                       </button>
                       <button>
-                        <span className="projectIco"><RiIcons.RiMessage3Line /></span> 
+                        <span className="projectIco">
+                          <RiIcons.RiMessage3Line />
+                        </span>
                         &nbsp;
                         <span>
                           {!e.comments.length
@@ -161,10 +164,14 @@ const tech = [
                         </span>
                       </button>
                       <button>
-                        <span className="projectIco"><PiIcons.PiEyeBold /></span>
+                        <span className="projectIco">
+                          <PiIcons.PiEyeBold />
+                        </span>
                       </button>
                       <button>
-                        <span className="projectIco"><PiIcons.PiShareFatBold /></span>
+                        <span className="projectIco">
+                          <PiIcons.PiShareFatBold />
+                        </span>
                       </button>
                     </div>
                   </div>
