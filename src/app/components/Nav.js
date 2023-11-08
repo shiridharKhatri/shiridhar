@@ -106,15 +106,19 @@ export default function Nav(props) {
       id.style.display = "none";
     }
   };
-  const logoFirst = document.getElementById('logoFirst')
-  const formSecSearch = document.getElementById('formSecSearch')
-  const closeSearch = document.getElementById('closeSearch')
+ 
   const focused = ()=>{
+    const logoFirst = document.getElementById('logoFirst')
+    const formSecSearch = document.getElementById('formSecSearch')
+    const closeSearch = document.getElementById('closeSearch')
     logoFirst.style.display = "none"
     formSecSearch.style.width = "100%"
     closeSearch.style.display = "flex"
   }
   const blurred = ()=>{
+    const logoFirst = document.getElementById('logoFirst')
+    const formSecSearch = document.getElementById('formSecSearch')
+    const closeSearch = document.getElementById('closeSearch')
     logoFirst.style.display = "flex"
     formSecSearch.style.width = "75%"
     closeSearch.style.display = "none"
