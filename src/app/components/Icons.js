@@ -23,7 +23,7 @@ import {
   AiOutlineSetting
 } from "react-icons/ai";
 import { RiServiceLine, RiMessage3Line } from "react-icons/ri";
-import { CiStickyNote, CiImageOn } from "react-icons/ci";
+import { CiStickyNote, CiImageOn, CiHeart } from "react-icons/ci";
 import { GoProjectRoadmap, GoCodeReview, GoFileCode } from "react-icons/go";
 import { SiNextdotjs } from "react-icons/si";
 import {
@@ -34,7 +34,7 @@ import {
   FaGithub,
   FaUserSecret
 } from "react-icons/fa";
-import {PiShareFatBold, PiEyeBold} from "react-icons/pi"
+import {PiShareFatBold, PiEyeBold, PiEyeLight, PiShareFatLight, PiChatTeardropDotsLight} from "react-icons/pi"
 import { GrReactjs, GrGithub, GrNext, GrPrevious } from "react-icons/gr";
 import {
   IoLogoCss3,
@@ -48,7 +48,7 @@ import {
   IoCloseSharp,
   IoArrowBackCircleOutline
 } from "react-icons/io5";
-import { FiChevronLeft, FiInstagram, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiInstagram, FiChevronRight,  } from "react-icons/fi";
 import {
   BsArrowRightShort,
   BsBook,
@@ -77,7 +77,10 @@ import { HiPlus } from "react-icons/hi2";
 import { LuCalendarClock } from "react-icons/lu";
 const PiIcons = {
   PiShareFatBold,
-  PiEyeBold
+  PiEyeBold,
+  PiEyeLight,
+  PiShareFatLight,
+  PiChatTeardropDotsLight
 }
 const LuIcons = {
   LuCalendarClock,
@@ -187,6 +190,7 @@ const GoIcons = {
 const CiIcons = {
   CiStickyNote,
   CiImageOn,
+  CiHeart
 };
 export {
   CgIcons,

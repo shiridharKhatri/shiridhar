@@ -9,6 +9,7 @@ import {
   GrIcons,
   PiIcons,
   RiIcons,
+  CiIcons,
 } from "./Icons";
 import Image from "next/image";
 import Loader from "../tools/Loader";
@@ -112,16 +113,16 @@ export default function Projects() {
                       />
                     </div>
                     <div className="techUsed">
-                        <ul>
-                          {tech.map((e, index) => {
-                            return (
-                              <li key={index} style={{ color: e.color }}>
-                                {e.icons}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
+                      <ul>
+                        {tech.map((e, index) => {
+                          return (
+                            <li key={index} style={{ color: e.color }}>
+                              {e.icons}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                     <div className="details">
                       <h2>{e.title}</h2>
                       <p>
@@ -129,7 +130,6 @@ export default function Projects() {
                           ? e.description.slice(0, 210) + "..."
                           : e.description}
                       </p>
-                    
                     </div>
                     {/* <p id="currentStatus" className="hidden">
                       <span>
@@ -145,14 +145,17 @@ export default function Projects() {
                     <div className="buttons">
                       <button>
                         <span className="projectIco">
-                          <AiIcons.AiOutlineHeart />
+                          {/* <AiIcons.AiOutlineHeart /> */}
+                          <CiIcons.CiHeart />
                         </span>
                         &nbsp;
                         <span>{e.likes > 1000 ? e.likes + "K" : e.likes}</span>
                       </button>
                       <button>
                         <span className="projectIco">
-                          <RiIcons.RiMessage3Line />
+                          {/* <RiIcons.RiMessage3Line /> */}
+
+                          <PiIcons.PiChatTeardropDotsLight />
                         </span>
                         &nbsp;
                         <span>
@@ -165,12 +168,14 @@ export default function Projects() {
                       </button>
                       <button>
                         <span className="projectIco">
-                          <PiIcons.PiEyeBold />
+                          {/* <PiIcons.PiEyeThin /> */}
+                          <PiIcons.PiEyeLight />
                         </span>
                       </button>
                       <button>
                         <span className="projectIco">
-                          <PiIcons.PiShareFatBold />
+                          {/* <PiIcons.PiShareFatBold /> */}
+                          <PiIcons.PiShareFatLight />
                         </span>
                       </button>
                     </div>

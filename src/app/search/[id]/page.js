@@ -1,6 +1,6 @@
-import Search from "@/app/components/Search";
+// import Search from "@/app/components/Search";
 
-export default function Page({ params }) {
-  const query = params.id;
-  return <Search id={query} />;
-}
+// export default function Page({ params }) {
+//   const query = params.id;
+//   return <Search id={query} />;
+// }
