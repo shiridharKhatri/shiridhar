@@ -106,23 +106,23 @@ export default function Nav(props) {
       id.style.display = "none";
     }
   };
- 
-  const focused = ()=>{
-    const logoFirst = document.getElementById('logoFirst')
-    const formSecSearch = document.getElementById('formSecSearch')
-    const closeSearch = document.getElementById('closeSearch')
-    logoFirst.style.display = "none"
-    formSecSearch.style.width = "100%"
-    closeSearch.style.display = "flex"
-  }
-  const blurred = ()=>{
-    const logoFirst = document.getElementById('logoFirst')
-    const formSecSearch = document.getElementById('formSecSearch')
-    const closeSearch = document.getElementById('closeSearch')
-    logoFirst.style.display = "flex"
-    formSecSearch.style.width = "75%"
-    closeSearch.style.display = "none"
-  }
+
+  const focused = () => {
+    const logoFirst = document.getElementById("logoFirst");
+    const formSecSearch = document.getElementById("formSecSearch");
+    const closeSearch = document.getElementById("closeSearch");
+    logoFirst.style.display = "none";
+    formSecSearch.style.width = "100%";
+    closeSearch.style.display = "flex";
+  };
+  const blurred = () => {
+    const logoFirst = document.getElementById("logoFirst");
+    const formSecSearch = document.getElementById("formSecSearch");
+    const closeSearch = document.getElementById("closeSearch");
+    logoFirst.style.display = "flex";
+    formSecSearch.style.width = "75%";
+    closeSearch.style.display = "none";
+  };
   useEffect(() => {
     if (cookieValue) {
       Alphabets.forEach((e) => {
@@ -140,7 +140,7 @@ export default function Nav(props) {
         className={isScrolled ? "navbar-scrolled" : "navbar"}
       >
         <div
-        id="logoFirst"
+          id="logoFirst"
           className="logo"
           onClick={() => {
             router.push("/");
@@ -148,20 +148,25 @@ export default function Nav(props) {
         >
           <Image src={props.image} alt="logo" width={200} height={150} />
         </div>
-        <div className="otherSec"  id="formSecSearch">
+        <div className="otherSec" id="formSecSearch">
           <div className="hidden closeSearch" id="closeSearch">
             <BsIcons.BsChevronLeft />
           </div>
-          <form className="hidden" id="hiddeOnDesktop" >
-            <input 
-            onFocus={focused}
-            onBlur={blurred}
+          <form className="hidden" id="hiddeOnDesktop">
+            <input
+              onFocus={focused}
+              onBlur={blurred}
               type="search"
               value={inpVal}
               onChange={onChangeState}
               placeholder="Search..."
             />
-            <button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(`/search/${inpVal}`);
+              }}
+            >
               <BiIcons.BiSearch />
             </button>
             <button id="voice">
@@ -211,7 +216,12 @@ export default function Nav(props) {
               onChange={onChangeState}
               placeholder="Search..."
             />
-            <button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(`/search/${inpVal}`);
+              }}
+            >
               <BiIcons.BiSearch />
             </button>
             <button id="voice">

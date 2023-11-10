@@ -466,10 +466,10 @@
     align-items: center;
     margin-right: 0.5rem;
   }
-  #hiddenInMobile{
+  #hiddenInMobile {
     display: none;
   }
-  #hiddeOnDesktop{
+  #hiddeOnDesktop {
     display: flex;
   }
   .cardsSecParent .cards button {
@@ -478,6 +478,12 @@
   }
   nav .otherSec {
     width: 75%;
+  }
+  section.searchSec {
+    padding: 0.5rem;
+  }
+  section.searchSec .headerTitle {
+    margin: 6rem 0 7rem 0;
   }
   section.freeCode {
     padding: 2rem 0;
