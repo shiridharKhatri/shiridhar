@@ -100,7 +100,7 @@ export default function Search(props) {
                 : `${code.total} Free code `}
               of&nbsp;
               <span style={{ color: "var(--btn-text-color)" }}>
-                "{query}"
+              &quot;{query}&quot;
               </span>{" "}
             </p>
           </div>
