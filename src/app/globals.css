@@ -474,7 +474,7 @@ section.projects .projectCards .card .project-card-items .details {
   padding: 0rem 0.5rem 0 0.5rem;
 }
 section.projects .projectCards .card .details h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 0.5rem;
 }
 section.projects .projectCards .card .details p {
@@ -523,6 +523,7 @@ section.projects .projectCards .card .buttons button span {
   justify-content: center;
   align-items: center;
   font-weight: 400;
+  font-family: sans-serif;
 }
 section.projects .projectCards .card .buttons button span.projectIco {
   font-size: 2rem;
