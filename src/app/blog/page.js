@@ -31,6 +31,9 @@ export default function Page() {
     }
     fetchItems();
   }, [host]);
+
+
+ 
   // console.log(blog);
   return (
     <>

@@ -269,6 +269,9 @@ export default function Nav(props) {
               {cookieValue ? (
                 <div className="imageProfile" style={{ padding: "1rem" }}>
                   <Image
+                    onClick={() => {
+                      router.push("/profile");
+                    }}
                     style={{
                       height: "8rem",
                       width: "8rem",
@@ -337,23 +340,42 @@ export default function Nav(props) {
                 More <BiIcons.BiChevronDown />
               </li>
             </div>
-           {cookieValue ?<li
-              id="contact"
-              className="mobile-hidden"
-              onClick={logout}
-            >
-              <BiIcons.BiLogOutCircle />
-              &nbsp;Logout
-            </li> :<li
-              id="contact"
-              className="mobile-hidden"
-              onClick={() => {
-                router.push("/login");
-              }}
-            >
-              <AiIcons.AiOutlineLogin />
-              &nbsp;Login
-            </li>}
+            {cookieValue ? (
+              <li
+                id="contact"
+                className="mobile-hidden"
+                onClick={() => {
+                  router.push("/profile");
+                }}
+              >
+                <Image
+                  style={{
+                    height: "5rem",
+                    width: "5rem",
+                    borderRadius: "50%",
+                    backgroundImage:
+                      "linear-gradient( 135deg, #FFE985 10%, #FA742B 100%)",
+                    padding: "1rem",
+                  }}
+                  src={image}
+                  alt="logo"
+                  width={200}
+                  height={150}
+                />
+              </li>
+            ) : (
+              <li
+                style={{ backgroundColor: "#5626c4", width: "13rem" }}
+                id="contact"
+                className="mobile-hidden"
+                onClick={() => {
+                  router.push("/login");
+                }}
+              >
+                <AiIcons.AiOutlineLogin />
+                &nbsp;Login
+              </li>
+            )}
             <ul id="DropDown">
               <div className="hidden more">
                 <h3>

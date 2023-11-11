@@ -78,7 +78,7 @@ footer {
   display: none;
 }
 nav.navbar {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -346,10 +346,10 @@ header .themeSection .themeDisplay h2 {
 
 #contact {
   padding: 1rem;
-  background-color: #5626c4;
+  /* background-color: #5626c4; */
   height: 4.5rem;
   font-size: 1.8rem;
-  width: 13rem;
+  /* width: 13rem; */
   border-radius: 3rem;
   color: #fff;
   display: flex;
