@@ -360,6 +360,31 @@
   header img {
     width: 40rem;
   }
+  section.profileSec .mainProfileSection{
+    flex-direction: column;
+  }
+  section.profileSec .mainProfileSection .profile-first{
+    width: 95%;
+    margin-bottom: 1rem;
+  }
+  section.profileSec .mainProfileSection .profile-first .cardSec{
+    width: 100%;
+    height: 50rem;
+    padding: 3rem 0;
+  }
+  .suggestionCard{
+    padding: 1rem 0;
+    background: transparent;
+  }
+  .profile-second .suggestions{
+    background: transparent;
+  }
+  .suggestionCard{
+    margin-top: 1rem;
+  }
+  section.profileSec .mainProfileSection .profile-second {
+    width: 95%;
+  }
   section.projects .projectCards img {
     border-radius: 0.5rem;
   }
@@ -479,6 +504,9 @@
   nav .otherSec {
     width: 75%;
   }
+  .aboutMainSec {
+    padding: 0.5rem;
+  }
   section.searchSec {
     padding: 0.5rem;
   }
@@ -583,6 +611,7 @@
   }
   #DropDown {
     padding: 0;
+    display: flex;
   }
   nav .logo img {
     height: 8rem;

@@ -337,7 +337,14 @@ export default function Nav(props) {
                 More <BiIcons.BiChevronDown />
               </li>
             </div>
-            <li
+           {cookieValue ?<li
+              id="contact"
+              className="mobile-hidden"
+              onClick={logout}
+            >
+              <BiIcons.BiLogOutCircle />
+              &nbsp;Logout
+            </li> :<li
               id="contact"
               className="mobile-hidden"
               onClick={() => {
@@ -346,7 +353,7 @@ export default function Nav(props) {
             >
               <AiIcons.AiOutlineLogin />
               &nbsp;Login
-            </li>
+            </li>}
             <ul id="DropDown">
               <div className="hidden more">
                 <h3>
