@@ -7,7 +7,7 @@ import { BsIcons, BiIcons } from "../components/Icons";
 import Loader from "../tools/Loader";
 import { useRouter } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const [items, setItems] = useState([]);
   const [loader, setLoading] = useState(true);
