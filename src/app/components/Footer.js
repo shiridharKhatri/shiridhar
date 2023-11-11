@@ -38,7 +38,7 @@ export default function Footer(props) {
       name: "Fiverr",
       color: "#00b22d",
       icon: <TbIcons.TbBrandFiverr />,
-      link: "",
+      link: "https://www.fiverr.com/shiridhar?public_mode=true",
     },
     {
       name: "Github",
@@ -92,16 +92,16 @@ export default function Footer(props) {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="/hire">Hire me</Link>
+                <Link href="https://www.fiverr.com/shiridhar?public_mode=true" target="_blank">Hire me</Link>
               </li>
               <li>
                 <Link href="/blog">Blogs</Link>
               </li>
               <li>
-                <Link href="/service">Services</Link>
+                <Link href="/free_code">Free code</Link>
               </li>
               <li>
-                <Link href="/free_code">Projects</Link>
+                <Link href="/project">Projects</Link>
               </li>
             </ul>
           </div>
@@ -172,7 +172,7 @@ export default function Footer(props) {
                   <Fa6Icons.FaLocationDot />
                 </span>
 
-                <a href="#">
+                <a href="https://www.google.com/maps?q=Tutunga-15,33700,Pokhara,Nepal" target="_blank">
                   Tutunga-15, 33700
                   <br />
                   Pokhara, Nepal
@@ -184,14 +184,14 @@ export default function Footer(props) {
                   <IoIcons.IoCall />
                 </span>
 
-                <a href="#">+9779820610923</a>
+                <a href="tel:+9779820610923">+9779820610923</a>
               </li>
               <li>
                 <span>
                   {" "}
                   <IoIcons.IoMail />
                 </span>
-                <a href="#">khatrishiridhar6@gmail.com</a>
+                <a href="mailto:khatrishiridhar6@gmail.com">khatrishiridhar6@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -201,7 +201,9 @@ export default function Footer(props) {
         <ul>
           {socialicons.map((e, index) => {
             return (
-              <li key={index} style={{ background: e.color }}>
+              <li onClick={()=>{
+                window.open(e.link, "_blank");
+              }} key={index} style={{ background: e.color }}>
                 {e.icon}
               </li>
             );

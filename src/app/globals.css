@@ -2508,17 +2508,19 @@ section.aboutSection .about-header button {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 2rem;
+  bottom: 10rem;
 }
 .bannerNumber {
   background: var(--card-primary-color);
-  margin: 1rem 1rem;
-  /* width: 100%; */
+  margin: 1rem auto;
+  width: 80rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3rem 1rem;
-  border-radius: 10rem;
+  position: relative;
+  top: -10rem;
+  border-radius: 14rem;
 }
 .bannerNumber .itms {
   display: flex;
@@ -2540,25 +2542,31 @@ section.aboutSection .about-header button {
 }
 .aboutMainSec {
   padding: 2rem;
-  margin: 6rem 1rem;
+  margin: 0rem 1rem 9rem 1rem;
 }
 .aboutBelowBtn button {
   padding: 1rem;
-  width: 13rem;
+  width: 15rem;
+  height: 4.5rem;
   border: none;
-  background: var(--btn-bg-color);
-  color: var(--btn-text-color);
+ /* background: var(--btn-bg-color); */
+  color: rgba(238, 235, 255, 0.9); 
   margin: 1rem 1rem 1rem 0;
   border-radius: 3rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .aboutBelowBtn {
   margin-top: 3rem;
+  display: flex;
 }
 .aboutMainSec h1 {
   font-size: 3rem;
   margin: 0 0 1rem 0;
   color: var(--btn-text-color);
+  font-family: "Belanosima", sans-serif;
 }
 .aboutMainSec p {
   font-size: 1.7rem;
@@ -2567,7 +2575,7 @@ section.aboutSection .about-header button {
 }
 .bannerNumber .itms .number h2 {
   font-size: 3rem;
-  background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+  /* background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%); */
   padding: 1rem;
   height: 5.5rem;
   width: 5.5rem;
@@ -2575,8 +2583,8 @@ section.aboutSection .about-header button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  margin-bottom: 0.5rem;
+  color: #5626c4;
 }
 .bannerNumber .itms .number h3 {
   font-size: 2rem;

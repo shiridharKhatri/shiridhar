@@ -2,7 +2,7 @@
 import Nav from "../components/Nav";
 import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
-import { BiIcons, BsIcons, LuIcons } from "../components/Icons";
+import { BiIcons, BsIcons, LuIcons, TbIcons, IoIcons } from "../components/Icons";
 import Typed from "typed.js";
 import { useRouter } from "next/navigation";
 
@@ -31,7 +31,7 @@ export default function Page() {
         <div
           className="about-header"
           style={{
-            background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),url("./about.png")`,
+            background: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url("./header.png")`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -49,7 +49,7 @@ export default function Page() {
         <div className="bannerNumber">
           <div
             className="projects itms"
-            style={{ borderRight: "0.1rem solid #445" }}
+            // style={{ borderRight: "0.1rem solid #445" }}
           >
             <div className="number">
               <h2>
@@ -61,7 +61,7 @@ export default function Page() {
           </div>
           <div
             className="languages itms"
-            style={{ borderRight: "0.1rem solid #445" }}
+            // style={{ borderRight: "0.1rem solid #445" }}
           >
             <div className="number">
               <h2>
@@ -135,8 +135,8 @@ export default function Page() {
             programming community.
           </p>
           <div className="aboutBelowBtn">
-            <button>Hire me</button>
-            <button>Contact me</button>
+            <button style={{background:"#7360F2"}}><IoIcons.IoMail/>&nbsp;Message me</button>
+            <button style={{background:"#00b22d"}}><TbIcons.TbBrandFiverr/>&nbsp;Hire me</button>
           </div>
         </div>
       </section>

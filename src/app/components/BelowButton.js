@@ -6,13 +6,13 @@ export default function BelowButton() {
       name: "Facebook",
       color: "#4267B2",
       icon: <FaIcons.FaFacebookF />,
-      link:"",
+      link:"https://www.facebook.com/profile.php?id=61553390668688",
     },
     {
       name: "Instagram",
       color: "#E4405F",
       icon: <FiIcons.FiInstagram />,
-      link:"",
+      link:"#",
     },
     {
       name: "Linkedin",
@@ -44,7 +44,9 @@ export default function BelowButton() {
       <ul>
         {socialicons.map((e, index) => {
           return (
-            <li style={{ background: e.color }} key={index}>
+            <li onClick={()=>{
+              window.open(e.link, "_blank");
+            }} style={{ background: e.color }} key={index}>
               {e.icon}
               &nbsp;<span>{e.name}</span>
             </li>
