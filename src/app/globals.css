@@ -2809,6 +2809,7 @@ section.profileSec .mainProfileSection .profile-second{
     border: none;
     background: var(--btn-text-color);
     color: #ffffff;
+    cursor: pointer;
 }
 .suggestionCard{
   border-radius: 1.8rem;
@@ -2866,6 +2867,8 @@ section.profileSec .mainProfileSection .profile-first .photoDet img{
   border-radius: 50%;
   border: 0.3rem solid var(--btn-text-color);
   margin-bottom: 1rem;
+  padding: 3rem;
+  background: linear-gradient(45deg,#239FE9,#44D5F3);
 }
 section.profileSec .mainProfileSection{
   display: flex;

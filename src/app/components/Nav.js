@@ -88,6 +88,8 @@ export default function Nav(props) {
     sideMenu.style.left = "-100%";
   };
   const router = useRouter();
+  console.log(router);
+
   const cookieValue = Cookies.get("token");
   const name = Cookies.get("name");
   const email = Cookies.get("email");
