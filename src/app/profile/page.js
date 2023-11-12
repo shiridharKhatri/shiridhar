@@ -61,7 +61,7 @@ export default function Page() {
       };
 
       try {
-        let response = await fetch(`http://localhost:5000/auth/User/fetch`, {
+        let response = await fetch(`${host}/auth/User/fetch`, {
           method: "GET",
           headers: headersList,
         });
