@@ -101,7 +101,7 @@ export default function Footer(props) {
                 <Link href="/free_code">Free code</Link>
               </li>
               <li>
-                <Link href="/project">Projects</Link>
+                <Link href="/project">Projectfeed</Link>
               </li>
             </ul>
           </div>
