@@ -84,7 +84,7 @@ export default function Page() {
   return (
     <>
       <Nav position="relative" background="#000000" image="./logo.png" />
-      <section className="profileSec">
+      {(!Cookies.get('token'))?<Loader/>:<section className="profileSec">
         <div className="mainProfileSection">
           <div className="profile-first">
             <div className="cardSec">
@@ -167,7 +167,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
       <Footer image="./secondLogo.png" />
     </>
   );
