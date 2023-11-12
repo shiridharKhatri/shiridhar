@@ -7,6 +7,7 @@ import Spinner from "../tools/Spinner";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Loader from "../tools/Loader";
 export default function Verify(props) {
   let router = useRouter();
   const [verify, setVerify] = useState("");
@@ -178,7 +179,7 @@ export default function Verify(props) {
     <>
       <Nav background="#000000" image="./logo.png" />
 
-      {success === true ? (
+      {Cookies.get("token") ? <Loader/> : success === true ? (
         <section
           className="verify"
           style={{

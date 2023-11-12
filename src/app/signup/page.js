@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Spinner from "../tools/Spinner";
 import Cookies from "js-cookie";
+import Loader from "../tools/Loader";
 // Define the Signup functional component
 export default function Signup() {
   let router = useRouter();
@@ -115,7 +116,7 @@ export default function Signup() {
   return (
     <>
       <Nav position="relative" background="#000000" image="./logo.png" />
-      <section
+     {Cookies.get('token') ? <Loader/> : <section
         className="signup"
         style={{
           background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./header.svg")`,
@@ -305,7 +306,7 @@ export default function Signup() {
             </ul>
           </div>
         </div>
-      </section>
+      </section>}
       <Footer image="./secondLogo.png" />
     </>
   );
