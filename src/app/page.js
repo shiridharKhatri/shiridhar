@@ -10,6 +10,7 @@ import BlogsHighlight from "./components/BlogsHighlight";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
 import { useEffect } from "react";
+import AOS from "aos";
 export default function Home() {
   useEffect(() => {
     let darkmode = localStorage.getItem("DarkModeOn");
@@ -19,6 +20,10 @@ export default function Home() {
     } else {
       body.classList.remove("darkMode");
     }
+  }, []);
+  useEffect(() => {
+    AOS.init();
+    // rest of your code
   }, []);
   return (
     <>

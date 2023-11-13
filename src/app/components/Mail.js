@@ -1,7 +1,35 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Mail() {
+  const [input, setInput] = useState({ email: "", message: "" });
+  const host = "http://localhost:5000";
+  const inpValOnChange = (e) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    let headersList = {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    };
+
+    let bodyContent = JSON.stringify({
+      email: input.email,
+      message: input.message,
+    });
+
+    let response = await fetch(`${host}/message/messagePost`, {
+      method: "POST",
+      body: bodyContent,
+      headers: headersList,
+    });
+
+    let data = await response.json();
+    console.log(data);
+    setInput({ email: "", message: "" });
+  };
   return (
     <section className="mainMailSection">
       <div className="mailSection">
@@ -22,6 +50,8 @@ export default function Mail() {
             <form action="">
               {/* <label htmlFor="email">Email</label> */}
               <input
+                onChange={inpValOnChange}
+                value={input.email}
                 type="email"
                 name="email"
                 id="email"
@@ -29,6 +59,8 @@ export default function Mail() {
               />
               {/* <label htmlFor="message">Message</label> */}
               <textarea
+                onChange={inpValOnChange}
+                value={input.message}
                 name="message"
                 id="message"
                 placeholder="Type your mesage here"
@@ -38,7 +70,7 @@ export default function Mail() {
                 reach out through messaging if you have specific questions or
                 require assistance. Thank you.
               </p>
-              <button>Send</button>
+              <button onClick={sendMessage}>Send</button>
             </form>
           </div>
         </div>

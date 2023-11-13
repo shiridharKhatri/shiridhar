@@ -3,7 +3,7 @@ import React from "react";
 import { AiIcons, BiIcons, IoIcons, SiIcons, FaIcons, GrIcons } from "./Icons";
 import { useRouter } from "next/navigation";
 export default function Expertise() {
-  const router = useRouter()
+  const router = useRouter();
   const content = [
     {
       icon: <SiIcons.SiNextdotjs />,
@@ -68,6 +68,9 @@ export default function Expertise() {
         {content.map((e, index) => {
           return (
             <div
+              data-aos="fade-up fade-out"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-delay="200"
               className="contentCard"
               style={{ background: e.color }}
               onClick={() => openNewWindow(e.link)}
@@ -80,6 +83,9 @@ export default function Expertise() {
         })}
       </div>
       <div
+        data-aos="flip-left fade-out"
+        data-aos-anchor-placement="top-bottom"
+        data-aos-delay="200"
         className="banner"
         style={{
           background: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(./banner.png)`,
@@ -91,7 +97,12 @@ export default function Expertise() {
           check it out!
         </h3>
 
-        <button onClick={()=>{router.push('/free_code')}} className="learn-more">
+        <button
+          onClick={() => {
+            router.push("/free_code");
+          }}
+          className="learn-more"
+        >
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>

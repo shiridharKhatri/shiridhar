@@ -42,7 +42,13 @@ export default function BlogsHighlight() {
         <div className="BlogContainer">
           {blogs.slice(-4).map((e) => {
             return (
-              <div className="items" key={e._id}>
+              <div
+                data-aos="fade-down fade-out"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-delay="200"
+                className="items"
+                key={e._id}
+              >
                 <div className="card-item">
                   <div className="image-top">
                     <Image
@@ -55,7 +61,9 @@ export default function BlogsHighlight() {
                       loading="lazy"
                     />
                   </div>
-                  <p style={{width:"9rem"}} id="blogStatus">latest</p>
+                  <p style={{ width: "9rem" }} id="blogStatus">
+                    latest
+                  </p>
                   <h2>
                     {e.title.length > 52
                       ? e.title.slice(0, 52) + ".."

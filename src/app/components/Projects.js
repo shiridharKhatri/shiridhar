@@ -20,7 +20,7 @@ export default function Projects() {
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-const router = useRouter()
+  const router = useRouter();
   const tech = [
     {
       name: "nextjs",
@@ -80,7 +80,6 @@ const router = useRouter()
     };
     fetchProjects();
   }, [host]);
-
   return (
     <section className="projects">
       <h1 id="projectHeading">Created Projects</h1>
@@ -95,15 +94,26 @@ const router = useRouter()
         <>
           <div className="titleHead">
             <h3>
-              Total projects ({data.total}) <span onClick={()=>{
-                router.push('/project')
-              }}>View all</span>
+              Total projects ({data.total}){" "}
+              <span
+                onClick={() => {
+                  router.push("/project");
+                }}
+              >
+                View all
+              </span>
             </h3>
           </div>
           <div className="projectCards">
             {data.project?.slice(0, 4).map((e) => {
               return (
-                <div className="card" key={e._id}>
+                <div
+                data-aos="fade-down-right fade-out"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-delay="200"
+                  className="card"
+                  key={e._id}
+                >
                   <div className="project-card-items">
                     <div className="image">
                       <Image
