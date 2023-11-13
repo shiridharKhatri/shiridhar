@@ -326,17 +326,17 @@ export default function Nav(props) {
                 </span>
                 Home
               </li>
-              <li>
+              <li onClick={()=>{router.push('/project')}}>
                 <span className="hidden">
                   <AiIcons.AiOutlineFundProjectionScreen />
                 </span>
                 Projects
               </li>
-              <li>
+              <li onClick={()=>{router.push('/about')}}>
                 <span className="hidden">
-                  <MdIcons.MdWorkOutline />
+                  <BsIcons.BsInfoLg />
                 </span>
-                Service
+                About
               </li>
               <li id="moreItem" onClick={showMenuOnClick}>
                 More <BiIcons.BiChevronDown />
@@ -397,7 +397,7 @@ export default function Nav(props) {
                 </span>
                 Blogs
               </li>
-              <li>
+              <li onClick={()=>{router.push('/project')}}>
                 <span>
                   <CgIcons.CgFeed />
                 </span>
@@ -407,7 +407,7 @@ export default function Nav(props) {
                 <span>
                   <MdIcons.MdOutlineWorkspacePremium />
                 </span>
-                Paid Code
+                Paid Code <p>Coming soon</p>
               </li>
               <li
                 onClick={() => {
@@ -423,7 +423,7 @@ export default function Nav(props) {
                 <span>
                   <TbIcons.TbPhoto />
                 </span>
-                Gallery
+                Gallery <p>Coming soon</p>
               </li>
               {!cookieValue ? (
                 <li
@@ -437,7 +437,7 @@ export default function Nav(props) {
                   Signup
                 </li>
               ) : (
-                <li>
+                <li onClick={()=>{router.push('/profile')}}>
                   <span>
                     <AiIcons.AiOutlineSetting />
                   </span>

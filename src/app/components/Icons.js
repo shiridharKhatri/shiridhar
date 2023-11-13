@@ -61,7 +61,8 @@ import {
   BsPersonFill,
   BsPersonBadge,
   BsChevronLeft,
-  BsPersonX
+  BsPersonX,
+  BsInfoLg
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -117,7 +118,8 @@ const BsIcons = {
   BsPersonFill,
   BsPersonBadge,
   BsChevronLeft,
-  BsPersonX
+  BsPersonX,
+  BsInfoLg
 };
 const FiIcons = {
   FiChevronLeft,

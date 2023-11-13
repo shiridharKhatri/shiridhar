@@ -13,18 +13,19 @@ import {
 } from "./Icons";
 import Image from "next/image";
 import Loader from "../tools/Loader";
+import { useRouter } from "next/navigation";
 
 export default function Projects() {
   // const host = "http://localhost:5000";
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-
+const router = useRouter()
   const tech = [
     {
       name: "nextjs",
       icons: <SiIcons.SiNextdotjs />,
-      color: "#000000",
+      color: "var(--color)",
     },
     {
       name: "nodejs",
@@ -94,7 +95,9 @@ export default function Projects() {
         <>
           <div className="titleHead">
             <h3>
-              Total projects ({data.total}) <span>View all</span>
+              Total projects ({data.total}) <span onClick={()=>{
+                router.push('/project')
+              }}>View all</span>
             </h3>
           </div>
           <div className="projectCards">

@@ -192,6 +192,18 @@ nav .otherSec form {
   border-radius: 1rem;
   color: var(--btn-text-color);
 }
+#DropDown li P{
+  font-size: 1rem;
+  background: #e9d50233;
+  color: #E9D502;
+  height: 3rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
 nav .otherSec form .voiceSection {
   position: absolute;
   background: #ffffff;
