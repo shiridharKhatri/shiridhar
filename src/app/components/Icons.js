@@ -46,7 +46,8 @@ import {
   IoCheckmarkDoneCircle,
   IoMenu,
   IoCloseSharp,
-  IoArrowBackCircleOutline
+  IoArrowBackCircleOutline,
+  IoHeart
 } from "react-icons/io5";
 import { FiChevronLeft, FiInstagram, FiChevronRight,  } from "react-icons/fi";
 import {
@@ -157,7 +158,8 @@ const IoIcons = {
   IoCheckmarkDoneCircle,
   IoMenu,
   IoCloseSharp,
-  IoArrowBackCircleOutline
+  IoArrowBackCircleOutline,
+  IoHeart
 };
 const BiIcons = {
   BiChevronDown,

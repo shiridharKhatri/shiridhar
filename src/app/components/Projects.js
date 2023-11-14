@@ -79,7 +79,9 @@ export default function Projects() {
     });
 
     let data = await response.json();
-    console.log(data);
+    if (data.success === true) {
+      location.reload();
+    }
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -181,25 +183,38 @@ export default function Projects() {
                     </p> */}
                     <div className="buttons">
                       <button
-                       style={
-                        !Cookies.get("token")
-                          ? { color: "#000000" }
-                          : Cookies.get("id") &&
-                            e.likes.some((id) => id.userId === Cookies.get("id"))
-                          ? { color: "var(--btn-text-color)" }
-                          : { color: "#000000" }
-                      }
-                      
+                        style={
+                          !Cookies.get("token")
+                            ? { color: "#000000" }
+                            : Cookies.get("id") &&
+                              e.likes.some(
+                                (id) => id.userId === Cookies.get("id")
+                              )
+                            ? { color: "var(--btn-text-color)" }
+                            : { color: "#000000" }
+                        }
                         onClick={() => {
                           !Cookies.get("token")
                             ? router.push("/login")
                             : like(e._id);
                         }}
                       >
-                        <span className="projectIco">
-                          {/* <AiIcons.AiOutlineHeart /> */}
-                          <CiIcons.CiHeart />
-                        </span>
+                        {!Cookies.get("token") ? (
+                          <span className="projectIco">
+                            <CiIcons.CiHeart />
+                          </span>
+                        ) : Cookies.get("id") &&
+                          e.likes.some(
+                            (id) => id.userId === Cookies.get("id")
+                          ) ? (
+                          <span className="projectIco">
+                            <IoIcons.IoHeart />
+                          </span>
+                        ) : (
+                          <span className="projectIco">
+                            <CiIcons.CiHeart />
+                          </span>
+                        )}
                         &nbsp;
                         <span>
                           {e.likes.length > 1000
