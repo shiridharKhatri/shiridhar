@@ -88,7 +88,7 @@ export default function Nav(props) {
     sideMenu.style.left = "-100%";
   };
   const router = useRouter();
-  console.log(router);
+  // console.log(router);
 
   const cookieValue = Cookies.get("token");
   const name = Cookies.get("name");
@@ -97,7 +97,8 @@ export default function Nav(props) {
     Cookies.remove("token");
     Cookies.remove("name");
     Cookies.remove("email");
-    router.push("/login");
+    Cookies.remove("id");
+    router.push("/");
   };
   const showMenuOnClick = () => {
     let id = document.getElementById("DropDown");

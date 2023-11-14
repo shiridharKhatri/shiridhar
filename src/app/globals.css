@@ -192,10 +192,10 @@ nav .otherSec form {
   border-radius: 1rem;
   color: var(--btn-text-color);
 }
-#DropDown li P{
+#DropDown li P {
   font-size: 1rem;
   background: #e9d50233;
-  color: #E9D502;
+  color: #e9d502;
   height: 3rem;
   padding: 1rem;
   display: flex;
@@ -429,7 +429,7 @@ section.BelowButton li:hover {
 }
 section.projects {
   padding: 1rem;
-  margin: 5rem 0;
+  margin: 0rem 0 5rem 0;
 }
 section.projects h1 {
   width: 100%;
@@ -2562,8 +2562,8 @@ section.aboutSection .about-header button {
   width: 15rem;
   height: 4.5rem;
   border: none;
- /* background: var(--btn-bg-color); */
-  color: rgba(238, 235, 255, 0.9); 
+  /* background: var(--btn-bg-color); */
+  color: rgba(238, 235, 255, 0.9);
   margin: 1rem 1rem 1rem 0;
   border-radius: 3rem;
   cursor: pointer;
@@ -2785,46 +2785,46 @@ section.searchSec .headerTitle p {
   height: 100%;
   border-radius: 1.3rem 1.3rem 0 0;
 }
-section.profileSec{
+section.profileSec {
   padding: 10rem 0;
 }
-section.profileSec .mainProfileSection .profile-first{
+section.profileSec .mainProfileSection .profile-first {
   width: 30%;
-  padding: .1rem;
+  padding: 0.1rem;
   border-radius: 2rem;
   background: var(--card-primary-color);
 }
-section.profileSec .mainProfileSection .profile-first .cardSec{
+section.profileSec .mainProfileSection .profile-first .cardSec {
   width: 100%;
   height: 55rem;
   background: var(--card-secondary-color);
   padding: 5rem 0;
   border-radius: 1.8rem;
 }
-section.profileSec .mainProfileSection .profile-second{
+section.profileSec .mainProfileSection .profile-second {
   width: 40%;
   margin: 0 2rem;
 }
-.cardSecProfile h2{
+.cardSecProfile h2 {
   font-size: 2rem;
 }
-.cardSecProfile p{
+.cardSecProfile p {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #8888a3;
 }
-.cardSecProfile button{
+.cardSecProfile button {
   padding: 1rem;
-    height: 4.5rem;
-    width: 20rem;
-    margin-top: 1rem;
-    border-radius: 3rem;
-    border: none;
-    background: var(--btn-text-color);
-    color: #ffffff;
-    cursor: pointer;
+  height: 4.5rem;
+  width: 20rem;
+  margin-top: 1rem;
+  border-radius: 3rem;
+  border: none;
+  background: var(--btn-text-color);
+  color: #ffffff;
+  cursor: pointer;
 }
-.suggestionCard{
+.suggestionCard {
   border-radius: 1.8rem;
   background: var(--card-secondary-color);
   padding: 2rem;
@@ -2832,7 +2832,7 @@ section.profileSec .mainProfileSection .profile-second{
   height: 27rem;
   margin-top: 0.5rem;
 }
-.profile-second .suggestions .loader{
+.profile-second .suggestions .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2841,59 +2841,59 @@ section.profileSec .mainProfileSection .profile-second{
   height: 85%;
   margin: 1rem;
 }
-.suggestionCard .slider{
+.suggestionCard .slider {
   display: flex;
   margin: 2rem 0 0 0;
   overflow-x: scroll;
 }
-.suggestionCard .slider::-webkit-scrollbar{
+.suggestionCard .slider::-webkit-scrollbar {
   display: none;
 }
-.suggestionCard .slider .cardsSlider{
+.suggestionCard .slider .cardsSlider {
   padding: 1rem;
   /* background: red; */
   margin: 1rem 1rem 0 0;
   border-radius: 2rem;
   position: relative;
-  box-shadow: -38px -200px 94px -109px rgba(0,0,0,0.75) inset;
-  -webkit-box-shadow: -38px -200px 94px -109px rgba(0,0,0,0.75) inset;
-  -moz-box-shadow: -38px -200px 94px -109px rgba(0,0,0,0.75) inset;
+  box-shadow: -38px -200px 94px -109px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: -38px -200px 94px -109px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: -38px -200px 94px -109px rgba(0, 0, 0, 0.75) inset;
   height: 18rem;
   width: 20rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.suggestionCard .slider .cardsSlider h4{
+.suggestionCard .slider .cardsSlider h4 {
   position: absolute;
   bottom: 2rem;
   color: #ffffff;
 }
-section.profileSec .mainProfileSection .profile-second .mainCardSecond{
+section.profileSec .mainProfileSection .profile-second .mainCardSecond {
   padding: 0.1rem;
   border-radius: 2rem;
   background: var(--card-primary-color);
 }
-section.profileSec .mainProfileSection .profile-first .photoDet img{
+section.profileSec .mainProfileSection .profile-first .photoDet img {
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
   border: 0.3rem solid var(--btn-text-color);
   margin-bottom: 1rem;
   padding: 3rem;
-  background: linear-gradient(45deg,#239FE9,#44D5F3);
+  background: linear-gradient(45deg, #239fe9, #44d5f3);
 }
-section.profileSec .mainProfileSection{
+section.profileSec .mainProfileSection {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.profile-second .suggestions{
+.profile-second .suggestions {
   background: var(--card-primary-color);
   border-radius: 2rem;
 }
 
-.cardSecProfile{
+.cardSecProfile {
   border-radius: 1.8rem;
   background: var(--card-secondary-color);
   padding: 0rem 3rem;
@@ -2904,7 +2904,7 @@ section.profileSec .mainProfileSection{
   justify-content: center;
   margin: 0 0 0.5rem 0;
 }
-section.profileSec .mainProfileSection .profile-first .photoDet{
+section.profileSec .mainProfileSection .profile-first .photoDet {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2912,19 +2912,19 @@ section.profileSec .mainProfileSection .profile-first .photoDet{
   padding: 2rem;
   /* border-bottom: 0.1rem solid #445; */
 }
-section.profileSec .mainProfileSection .profile-first .photoDet h1{
+section.profileSec .mainProfileSection .profile-first .photoDet h1 {
   font-size: 2.3rem;
-    margin: 1rem 0 0.3rem 0;
-    font-family: "Belanosima", sans-serif;
-    color: #101010;
+  margin: 1rem 0 0.3rem 0;
+  font-family: "Belanosima", sans-serif;
+  color: #101010;
 }
-section.profileSec .mainProfileSection .profile-first .btnss{
+section.profileSec .mainProfileSection .profile-first .btnss {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-section.profileSec .mainProfileSection .profile-first .btnss button{
+section.profileSec .mainProfileSection .profile-first .btnss button {
   width: 25rem;
   padding: 1rem;
   margin: 1rem;
@@ -2938,7 +2938,7 @@ section.profileSec .mainProfileSection .profile-first .btnss button{
   justify-content: center;
   align-items: center;
 }
-section.profileSec .mainProfileSection .profile-first .photoDet p{
+section.profileSec .mainProfileSection .profile-first .photoDet p {
   font-size: 1.2rem;
   color: var(--btn-text-color);
 }

@@ -51,6 +51,7 @@ export default function Login() {
       Cookies.set("token", data.token);
       Cookies.set("name", data.name);
       Cookies.set("email", data.email);
+      Cookies.set("id", data.id);
       setSuccess({ success: true, msg: data.msg });
       errorMessageLogin.style.top = "3rem";
       setTimeout(() => {

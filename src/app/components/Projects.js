@@ -14,12 +14,13 @@ import {
 import Image from "next/image";
 import Loader from "../tools/Loader";
 import { useRouter } from "next/navigation";
-
+import Cookies from "js-cookie";
 export default function Projects() {
   // const host = "http://localhost:5000";
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [likes, setLikes] = useState(0);
   const router = useRouter();
   const tech = [
     {
@@ -58,6 +59,28 @@ export default function Projects() {
       color: "#ea4335",
     },
   ];
+
+  const like = async (id) => {
+    console.log(id);
+    let headersList = {
+      Accept: "*/*",
+      "auth-token": Cookies.get("token"),
+      "Content-Type": "application/json",
+    };
+
+    let bodyContent = JSON.stringify({
+      productId: id,
+    });
+
+    let response = await fetch(`${host}/api/project/like`, {
+      method: "POST",
+      body: bodyContent,
+      headers: headersList,
+    });
+
+    let data = await response.json();
+    console.log(data);
+  };
   useEffect(() => {
     const fetchProjects = async () => {
       setLoader(true);
@@ -74,6 +97,7 @@ export default function Projects() {
       if (data.success === true) {
         setLoader(false);
         setData(data);
+        setLikes();
       } else {
         setLoader(false);
       }
@@ -81,7 +105,7 @@ export default function Projects() {
     fetchProjects();
   }, [host]);
   return (
-    <section className="projects">
+    <section className="projects" style={{ margin: "5rem 0" }}>
       <h1 id="projectHeading">Created Projects</h1>
       <p id="projectParagraph">
         All the projects that i created using wed development technologies
@@ -108,9 +132,9 @@ export default function Projects() {
             {data.project?.slice(0, 4).map((e) => {
               return (
                 <div
-                data-aos="fade-down-right fade-out"
-                data-aos-anchor-placement="top-bottom"
-                data-aos-delay="200"
+                  data-aos="fade-down-right fade-out"
+                  data-aos-anchor-placement="top-bottom"
+                  data-aos-delay="200"
                   className="card"
                   key={e._id}
                 >
@@ -156,13 +180,33 @@ export default function Projects() {
                       </span>
                     </p> */}
                     <div className="buttons">
-                      <button>
+                      <button
+                        style={
+                          !Cookies.get("token")
+                            ? { color: "#000000" }
+                            : Cookies.get("id") ===
+                              e.likes.forEach((id) => {
+                                return id.userId;
+                              })
+                            ? { color: "var(--btn-text-color)" }
+                            : { color: "#000000" }
+                        }
+                        onClick={() => {
+                          !Cookies.get("token")
+                            ? router.push("/login")
+                            : like(e._id);
+                        }}
+                      >
                         <span className="projectIco">
                           {/* <AiIcons.AiOutlineHeart /> */}
                           <CiIcons.CiHeart />
                         </span>
                         &nbsp;
-                        <span>{e.likes > 1000 ? e.likes + "K" : e.likes}</span>
+                        <span>
+                          {e.likes.length > 1000
+                            ? e.likes.length + "K"
+                            : e.likes.length}
+                        </span>
                       </button>
                       <button>
                         <span className="projectIco">
