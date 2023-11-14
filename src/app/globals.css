@@ -2942,6 +2942,72 @@ section.profileSec .mainProfileSection .profile-first .photoDet p {
   font-size: 1.2rem;
   color: var(--btn-text-color);
 }
+section.projects .projectCards .card .buttons .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+section.projects .projectCards .card .buttons .container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.8rem;
+  user-select: none;
+  transition: 100ms;
+}
+
+section.projects .projectCards .card .buttons .checkmark {
+  top: 0;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  transition: 100ms;
+  animation: dislike_effect 400ms ease;
+}
+
+section.projects .projectCards .card .buttons .container input:checked ~ .checkmark path {
+  fill: #FF5353;
+  stroke-width: 0;
+}
+
+section.projects .projectCards .card .buttons .container input:checked ~ .checkmark {
+  animation: like_effect 400ms ease;
+}
+
+section.projects .projectCards .card .buttons .container:hover {
+  transform: scale(1.1);
+}
+
+@keyframes like_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dislike_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 footer {
   background: #000000;
   padding: 1rem;
