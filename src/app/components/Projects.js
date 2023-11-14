@@ -181,16 +181,15 @@ export default function Projects() {
                     </p> */}
                     <div className="buttons">
                       <button
-                        style={
-                          !Cookies.get("token")
-                            ? { color: "#000000" }
-                            : Cookies.get("id") ===
-                              e.likes.forEach((id) => {
-                                return id.userId;
-                              })
-                            ? { color: "var(--btn-text-color)" }
-                            : { color: "#000000" }
-                        }
+                       style={
+                        !Cookies.get("token")
+                          ? { color: "#000000" }
+                          : Cookies.get("id") &&
+                            e.likes.some((id) => id.userId === Cookies.get("id"))
+                          ? { color: "var(--btn-text-color)" }
+                          : { color: "#000000" }
+                      }
+                      
                         onClick={() => {
                           !Cookies.get("token")
                             ? router.push("/login")
