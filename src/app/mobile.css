@@ -388,6 +388,9 @@
   section.projects .projectCards img {
     border-radius: 0.5rem;
   }
+  section.projects .projectCards .card .buttons .container{
+    font-size: 2.3rem;
+  }
   .cardsSecParent {
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0;
