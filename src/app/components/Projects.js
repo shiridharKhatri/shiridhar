@@ -215,7 +215,7 @@ export default function Projects() {
                             <CiIcons.CiHeart />
                           </span>
                         )} */}
-                        <label class="container">
+                        <label className="container">
                           <input
                             type="checkbox"
                             checked={
@@ -225,7 +225,7 @@ export default function Projects() {
                               )
                             }
                           />
-                          <div class="checkmark">
+                          <div className="checkmark">
                             <svg viewBox="0 0 256 256">
                               <rect fill="none" height="256" width="256"></rect>
                               <path
