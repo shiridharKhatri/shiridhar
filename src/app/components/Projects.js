@@ -60,14 +60,16 @@ export default function Projects() {
       color: "#ea4335",
     },
   ];
-  let likeAudio = new Audio("./audio/like.mp3");
-  let unLikeAudio = new Audio("./audio/unlike.mp3");
+   // Check if window is defined (client-side)
+   const isClient = typeof window !== "undefined";
+   let likeAudio = isClient ? new Audio("./audio/like.mp3") : null;
+   let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
   const changeLike = (input, button, path, span) => {
     let spns = document.getElementById(span);
     let inpt = document.getElementById(input);
     let btns = document.getElementById(button);
     let svg = document.getElementById(path);
-    console.log(Number(spns.innerText));
+    // console.log(Number(spns.innerText));
     if (inpt.checked) {
       likeAudio.play();
       btns.style.color = "#FF5353";
