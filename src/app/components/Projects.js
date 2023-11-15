@@ -64,31 +64,10 @@ export default function Projects() {
   const isClient = typeof window !== "undefined";
   let likeAudio = isClient ? new Audio("./audio/like.mp3") : null;
   let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
-  const changeLike = (input, button, path, span) => {
-    let spns = document.getElementById(span);
-    let inpt = document.getElementById(input);
-    let btns = document.getElementById(button);
-    let svg = document.getElementById(path);
-    // console.log(Number(spns.innerText));
-    if (inpt.checked) {
-      likeAudio.play();
-      btns.style.color = "#FF5353";
-      svg.style.fill = "#FF5353";
-      svg.style.stroke = "#FF5353";
-      svg.style.transition = "100ms";
-      spns.innerHTML = Number(spns.innerText) + 1;
-    } else {
-      unLikeAudio.play();
-      btns.style.color = "#000000";
-      svg.style.fill = "none";
-      svg.style.stroke = "var(--color)";
-      svg.style.transition = "100ms";
-      spns.innerHTML = Number(spns.innerText) - 1;
-    }
-  };
+ 
   const likeOnClick = async (id) => {
     if (!Cookies.get("token")) {
-      router.push("/login");
+      router.push('/login')
     } else {
       try {
         // Prepare headers for the HTTP request
@@ -122,6 +101,30 @@ export default function Projects() {
         console.error("Error during 'like' action:", error.message);
         // You may choose to log the error, show a user-friendly message, or take other appropriate actions
       }
+    }
+  };
+  const changeLike = (input, button, path, span, id) => {
+    let spns = document.getElementById(span);
+    let inpt = document.getElementById(input);
+    let btns = document.getElementById(button);
+    let svg = document.getElementById(path);
+    // console.log(Number(spns.innerText));
+    if (inpt.checked) {
+      likeAudio.play();
+      btns.style.color = "#FF5353";
+      svg.style.fill = "#FF5353";
+      svg.style.stroke = "#FF5353";
+      svg.style.transition = "100ms";
+      spns.innerHTML = Number(spns.innerText) + 1;
+      likeOnClick(id);
+    } else {
+      unLikeAudio.play();
+      btns.style.color = "#000000";
+      svg.style.fill = "none";
+      svg.style.stroke = "var(--color)";
+      svg.style.transition = "100ms";
+      spns.innerHTML = Number(spns.innerText) - 1;
+      likeOnClick(id);
     }
   };
   useEffect(() => {
@@ -223,9 +226,7 @@ export default function Projects() {
                             ? { color: "#FF5353" }
                             : { color: "var(--color)" }
                         }
-                        onClick={() => {
-                          likeOnClick(e._id);
-                        }}
+                      
                       >
                         <input
                           style={{ display: "none" }}
@@ -242,7 +243,8 @@ export default function Projects() {
                               `${index}input`,
                               index,
                               `${index}path`,
-                              `${index}span`
+                              `${index}span`,
+                              e._id
                             );
                           }}
                           id={`${index}input`}
