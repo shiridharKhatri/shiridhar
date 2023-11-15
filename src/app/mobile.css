@@ -472,6 +472,9 @@
   .secComment .sendSec form{
     width: 100%;
   }
+  .commentSec {
+    height: 90vh;
+}
   section.freeCode .codeSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -565,9 +568,6 @@
   }
   .secComment .sendSec form{
     width: 100%;
-  }
-  .commentSec{
-    height: 95vh;
   }
   .postReviewSection {
     width: 95%;
