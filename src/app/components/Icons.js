@@ -8,7 +8,7 @@ import {
   BiSearch,
   BiHomeAlt,
   BiLogOutCircle,
-  BiGitRepoForked
+  BiGitRepoForked,
 } from "react-icons/bi";
 import {
   AiOutlineInfoCircle,
@@ -20,9 +20,9 @@ import {
   AiOutlineStar,
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
-  AiOutlineSetting
+  AiOutlineSetting,
 } from "react-icons/ai";
-import { RiServiceLine, RiMessage3Line } from "react-icons/ri";
+import { RiServiceLine, RiMessage3Line, RiSendPlaneFill } from "react-icons/ri";
 import { CiStickyNote, CiImageOn, CiHeart } from "react-icons/ci";
 import { GoProjectRoadmap, GoCodeReview, GoFileCode } from "react-icons/go";
 import { SiNextdotjs } from "react-icons/si";
@@ -32,9 +32,15 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaGithub,
-  FaUserSecret
+  FaUserSecret,
 } from "react-icons/fa";
-import {PiShareFatBold, PiEyeBold, PiEyeLight, PiShareFatLight, PiChatTeardropDotsLight} from "react-icons/pi"
+import {
+  PiShareFatBold,
+  PiEyeBold,
+  PiEyeLight,
+  PiShareFatLight,
+  PiChatTeardropDotsLight,
+} from "react-icons/pi";
 import { GrReactjs, GrGithub, GrNext, GrPrevious } from "react-icons/gr";
 import {
   IoLogoCss3,
@@ -47,9 +53,9 @@ import {
   IoMenu,
   IoCloseSharp,
   IoArrowBackCircleOutline,
-  IoHeart
+  IoHeart,
 } from "react-icons/io5";
-import { FiChevronLeft, FiInstagram, FiChevronRight,  } from "react-icons/fi";
+import { FiChevronLeft, FiInstagram, FiChevronRight } from "react-icons/fi";
 import {
   BsArrowRightShort,
   BsBook,
@@ -63,7 +69,7 @@ import {
   BsPersonBadge,
   BsChevronLeft,
   BsPersonX,
-  BsInfoLg
+  BsInfoLg,
 } from "react-icons/bs";
 import { TbBrandFiverr, TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -83,8 +89,8 @@ const PiIcons = {
   PiEyeBold,
   PiEyeLight,
   PiShareFatLight,
-  PiChatTeardropDotsLight
-}
+  PiChatTeardropDotsLight,
+};
 const LuIcons = {
   LuCalendarClock,
 };
@@ -120,7 +126,7 @@ const BsIcons = {
   BsPersonBadge,
   BsChevronLeft,
   BsPersonX,
-  BsInfoLg
+  BsInfoLg,
 };
 const FiIcons = {
   FiChevronLeft,
@@ -140,7 +146,7 @@ const FaIcons = {
   FaLinkedinIn,
   FaGithub,
   FaViber,
-  FaUserSecret
+  FaUserSecret,
 };
 const GrIcons = {
   GrReactjs,
@@ -159,7 +165,7 @@ const IoIcons = {
   IoMenu,
   IoCloseSharp,
   IoArrowBackCircleOutline,
-  IoHeart
+  IoHeart,
 };
 const BiIcons = {
   BiChevronDown,
@@ -170,7 +176,7 @@ const BiIcons = {
   BiSearch,
   BiHomeAlt,
   BiLogOutCircle,
-  BiGitRepoForked
+  BiGitRepoForked,
 };
 const AiIcons = {
   AiOutlineInfoCircle,
@@ -182,11 +188,12 @@ const AiIcons = {
   AiOutlineLogin,
   AiOutlineFundProjectionScreen,
   AiOutlineSetting,
-  AiOutlineStar
+  AiOutlineStar,
 };
 const RiIcons = {
   RiServiceLine,
-  RiMessage3Line
+  RiMessage3Line,
+  RiSendPlaneFill,
 };
 const GoIcons = {
   GoProjectRoadmap,
@@ -196,7 +203,7 @@ const GoIcons = {
 const CiIcons = {
   CiStickyNote,
   CiImageOn,
-  CiHeart
+  CiHeart,
 };
 export {
   CgIcons,
@@ -216,5 +223,5 @@ export {
   MdIcons,
   HiIcons,
   LuIcons,
-  PiIcons
+  PiIcons,
 };

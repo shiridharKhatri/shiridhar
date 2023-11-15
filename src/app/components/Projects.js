@@ -20,9 +20,25 @@ export default function Projects() {
   const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [likes, setLikes] = useState(0);
+  const [comment, setComment] = useState("");
   const router = useRouter();
-
+  const commentInpOnChange = (e) => {
+    setComment(e.target.value);
+    let sendBtn = document.getElementById("send-btn");
+    if (e.target.value.length > 0) {
+      sendBtn.style.transform = "rotate(45deg)";
+    } else {
+      sendBtn.style.transform = "rotate(0deg)";
+    }
+  };
+  const showCommentSec = () => {
+    const commentSec = document.getElementById("commentSec");
+    commentSec.style.bottom = "0";
+  };
+  const hideCommentSec = () => {
+    const commentSec = document.getElementById("commentSec");
+    commentSec.style.bottom = "-100%";
+  };
   const tech = [
     {
       name: "nextjs",
@@ -64,10 +80,10 @@ export default function Projects() {
   const isClient = typeof window !== "undefined";
   let likeAudio = isClient ? new Audio("./audio/like.mp3") : null;
   let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
- 
+
   const likeOnClick = async (id) => {
     if (!Cookies.get("token")) {
-      router.push('/login')
+      router.push("/login");
     } else {
       try {
         // Prepare headers for the HTTP request
@@ -226,7 +242,6 @@ export default function Projects() {
                             ? { color: "#FF5353" }
                             : { color: "var(--color)" }
                         }
-                      
                       >
                         <input
                           style={{ display: "none" }}
@@ -282,14 +297,26 @@ export default function Projects() {
                             </svg>
                           </div>
                           &nbsp;
-                          <span id={`${index}span`}>
+                          <span
+                            style={
+                              !Cookies.get("token")
+                                ? { color: "var(--color)" }
+                                : Cookies.get("id") &&
+                                  e.likes.some(
+                                    (id) => id.userId === Cookies.get("id")
+                                  )
+                                ? { color: "#FF5353" }
+                                : { color: "var(--color)" }
+                            }
+                            id={`${index}span`}
+                          >
                             {e.likes.length >= 1000
                               ? e.likes.length + "K"
                               : e.likes.length}
                           </span>
                         </label>
                       </button>
-                      <button>
+                      <button onClick={showCommentSec}>
                         <span className="projectIco">
                           {/* <RiIcons.RiMessage3Line /> */}
 
@@ -324,12 +351,37 @@ export default function Projects() {
           </div>
         </>
       )}
-      {/* <div className="showMore">
-        <button>
-          Show more&nbsp;
-          <BiIcons.BiChevronDown />
-        </button>
-      </div> */}
+      <div className="commentSec" id="commentSec">
+        <div className="line" onClick={hideCommentSec}>
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>
+        <div className="secComment">
+          <div className="noComment">
+            <Image
+              src="https://img.icons8.com/3d-fluency/94/delete-message.png"
+              width="94"
+              height="94"
+              alt="no-message"
+            />
+            <h2>No comments yet be a first to comment.</h2>
+          </div>
+          <div className="sendSec">
+            <form action="">
+              <input
+                onChange={commentInpOnChange}
+                type="text"
+                value={comment}
+                placeholder="Type your comment.."
+              />
+              <button id="send-btn">
+                <RiIcons.RiSendPlaneFill />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
