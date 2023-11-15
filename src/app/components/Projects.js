@@ -65,7 +65,7 @@ export default function Projects() {
     let inpt = document.getElementById(input);
     let btns = document.getElementById(button);
     let svg = document.getElementById(path);
-    console.log(Number(spns.innerText))
+    console.log(Number(spns.innerText));
     if (inpt.checked) {
       btns.style.color = "#FF5353";
       svg.style.fill = "#FF5353";
@@ -218,7 +218,12 @@ export default function Projects() {
                             )
                           }
                           onChange={() => {
-                            changeLike(`${index}input`, index, `${index}path`, `${index}span`);
+                            changeLike(
+                              `${index}input`,
+                              index,
+                              `${index}path`,
+                              `${index}span`
+                            );
                           }}
                           id={`${index}input`}
                         />
@@ -241,17 +246,24 @@ export default function Projects() {
                                     ? "var(--color)"
                                     : "var(--color)"
                                 }`}
-                                fill="none"
+                                fill={
+                                  !Cookies.get("token")
+                                    ? "none"
+                                    : Cookies.get("id") &&
+                                      e.likes.some(
+                                        (id) => id.userId === Cookies.get("id")
+                                      )
+                                    ? "#FF5353"
+                                    : "none"
+                                }
                               ></path>
                             </svg>
                           </div>
                           &nbsp;
                           <span id={`${index}span`}>
-                            {e.likes?.reduce((sum, e) => sum + e.like, 0) >=
-                            1000
-                              ? e.likes?.reduce((sum, e) => sum + e.like, 0) +
-                                "K"
-                              : e.likes?.reduce((sum, e) => sum + e.like, 0)}
+                            {e.likes.length >= 1000
+                              ? e.likes.length + "K"
+                              : e.likes.length}
                           </span>
                         </label>
                       </button>
