@@ -717,23 +717,25 @@ section.projects .projectCards .card .image {
   font-size: 1.2rem;
   font-weight: 400;
   margin: 0;
+  color: rgba(238, 235, 255, 0.9);
 }
-.comments-list .individual .display .main h1{
+.comments-list .individual .display .main h1 {
   text-align: left;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: rgb(250 205 61);
 }
-.comments-list .individual .display h2{
+.comments-list .individual .display h2 {
   font-size: 1.2rem;
   margin: 0.3rem 0 0 1rem;
   color: #8a8aa5;
   font-weight: 400;
 }
-.mainIndividual{
-  height: 43rem;
+.mainIndividual {
+  height: 52rem;
   overflow-y: scroll;
 }
-.mainIndividual::-webkit-scrollbar{
+.mainIndividual::-webkit-scrollbar {
   display: none;
 }
 .comments-list .individual .display {
@@ -753,6 +755,9 @@ section.projects .projectCards .card .image {
   bottom: 0;
   width: 100%;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .commentSec .line {
   height: 0.5rem;
