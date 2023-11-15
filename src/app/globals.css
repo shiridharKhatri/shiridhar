@@ -537,6 +537,7 @@ section.projects .projectCards .card .buttons button span {
   align-items: center;
   font-weight: 400;
   font-family: sans-serif;
+  font-size: 2rem;
 }
 section.projects .projectCards .card .buttons button span.projectIco {
   font-size: 2rem;
