@@ -2955,8 +2955,13 @@ section.projects .projectCards .card .buttons .container {
   position: relative;
   cursor: pointer;
   font-size: 1.8rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   transition: 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.projects .projectCards .card .buttons .checkmark {
