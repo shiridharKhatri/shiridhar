@@ -60,10 +60,10 @@ export default function Projects() {
       color: "#ea4335",
     },
   ];
-   // Check if window is defined (client-side)
-   const isClient = typeof window !== "undefined";
-   let likeAudio = isClient ? new Audio("./audio/like.mp3") : null;
-   let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
+  // Check if window is defined (client-side)
+  const isClient = typeof window !== "undefined";
+  let likeAudio = isClient ? new Audio("./audio/like.mp3") : null;
+  let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
   const changeLike = (input, button, path, span) => {
     let spns = document.getElementById(span);
     let inpt = document.getElementById(input);
@@ -86,27 +86,43 @@ export default function Projects() {
       spns.innerHTML = Number(spns.innerText) - 1;
     }
   };
-  const like = async (id) => {
-    let headersList = {
-      Accept: "*/*",
-      "auth-token": Cookies.get("token"),
-      "Content-Type": "application/json",
-    };
+  const likeOnClick = async (id) => {
+    if (!Cookies.get("token")) {
+      router.push("/login");
+    } else {
+      try {
+        // Prepare headers for the HTTP request
+        const headers = {
+          Accept: "*/*",
+          "auth-token": Cookies.get("token"),
+          "Content-Type": "application/json",
+        };
 
-    let bodyContent = JSON.stringify({
-      productId: id,
-    });
+        // Prepare the request body
+        const body = JSON.stringify({
+          productId: id,
+        });
 
-    await fetch(`${host}/api/project/like`, {
-      method: "POST",
-      body: bodyContent,
-      headers: headersList,
-    });
+        // Perform the 'like' action by sending a POST request to the server
+        await fetch(`${host}/api/project/like`, {
+          method: "POST",
+          body,
+          headers,
+        });
 
-    // let data = await response.json();
-    // if (data.success === true) {
-    //   location.reload();
-    // }
+        // If the 'like' action is successful, you may choose to perform additional actions
+        // For example, reloading the page
+        // Uncomment the following lines if needed:
+        // const data = await response.json();
+        // if (data.success === true) {
+        //   location.reload();
+        // }
+      } catch (error) {
+        // Handle errors that may occur during the 'like' action
+        console.error("Error during 'like' action:", error.message);
+        // You may choose to log the error, show a user-friendly message, or take other appropriate actions
+      }
+    }
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -208,9 +224,7 @@ export default function Projects() {
                             : { color: "var(--color)" }
                         }
                         onClick={() => {
-                          !Cookies.get("token")
-                            ? router.push("/login")
-                            : like(e._id);
+                          likeOnClick(e._id);
                         }}
                       >
                         <input
