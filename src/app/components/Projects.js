@@ -34,10 +34,12 @@ export default function Projects() {
   const showCommentSec = () => {
     const commentSec = document.getElementById("commentSec");
     commentSec.style.bottom = "0";
+    commentSec.style.opacity = "1";
   };
   const hideCommentSec = () => {
     const commentSec = document.getElementById("commentSec");
     commentSec.style.bottom = "-100%";
+    commentSec.style.opacity = "0";
   };
   const tech = [
     {
@@ -319,7 +321,6 @@ export default function Projects() {
                       <button onClick={showCommentSec}>
                         <span className="projectIco">
                           {/* <RiIcons.RiMessage3Line /> */}
-
                           <PiIcons.PiChatTeardropDotsLight />
                         </span>
                         &nbsp;
@@ -358,7 +359,7 @@ export default function Projects() {
           <div className="dot"></div>
         </div>
         <div className="secComment">
-          <div className="noComment">
+          {/* <div className="noComment">
             <Image
               src="https://img.icons8.com/3d-fluency/94/delete-message.png"
               width="94"
@@ -366,6 +367,219 @@ export default function Projects() {
               alt="no-message"
             />
             <h2>No comments yet be a first to comment.</h2>
+          </div> */}
+          <div className="comments-list">
+            <div className="topCommentheader">
+              <Image
+                src="https://img.icons8.com/3d-fluency/94/love-circled.png"
+                width="25"
+                height="25"
+                alt="likes"
+              />
+              <h4>2</h4>
+              <Image
+                style={{ marginLeft: "2rem" }}
+                src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
+                width="25"
+                height="25"
+                alt="comments"
+              />
+              <h4>3</h4>
+            </div>
+            <div className="mainIndividual">
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+              <div className="individual">
+                <div className="image">
+                  <Image
+                    src="./profile.png"
+                    width="50"
+                    height="50"
+                    alt="no-message"
+                  />
+                </div>
+                <div className="display">
+                  <div className="main">
+                    <h1>Shiridhar Khatri</h1>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Laborum magnam inventore fugiat quod, accusantium nemo
+                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
+                      praesentium veritatis totam eius. Cumque, iure atque.
+                    </p>
+                  </div>
+                  <h2>1min ago</h2>
+                </div>
+              </div>
+
+            </div>
           </div>
           <div className="sendSec">
             <form action="">
