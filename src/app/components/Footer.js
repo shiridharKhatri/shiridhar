@@ -50,7 +50,7 @@ export default function Footer(props) {
       name: "Viber",
       color: "#7360F2",
       icon: <FaIcons.FaViber />,
-      link: "",
+      link: "viber://add?number=123456789",
     },
   ];
   const fetchRepo = async () => {
