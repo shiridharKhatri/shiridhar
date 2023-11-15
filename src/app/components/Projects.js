@@ -22,7 +22,7 @@ export default function Projects() {
   const [loader, setLoader] = useState(true);
   const [likes, setLikes] = useState(0);
   const router = useRouter();
-  // let sum = 0;
+
   const tech = [
     {
       name: "nextjs",
@@ -60,6 +60,8 @@ export default function Projects() {
       color: "#ea4335",
     },
   ];
+  let likeAudio = new Audio("./audio/like.mp3");
+  let unLikeAudio = new Audio("./audio/unlike.mp3");
   const changeLike = (input, button, path, span) => {
     let spns = document.getElementById(span);
     let inpt = document.getElementById(input);
@@ -67,12 +69,14 @@ export default function Projects() {
     let svg = document.getElementById(path);
     console.log(Number(spns.innerText));
     if (inpt.checked) {
+      likeAudio.play();
       btns.style.color = "#FF5353";
       svg.style.fill = "#FF5353";
       svg.style.stroke = "#FF5353";
       svg.style.transition = "100ms";
       spns.innerHTML = Number(spns.innerText) + 1;
     } else {
+      unLikeAudio.play();
       btns.style.color = "#000000";
       svg.style.fill = "none";
       svg.style.stroke = "var(--color)";
@@ -243,7 +247,7 @@ export default function Projects() {
                                       e.likes.some(
                                         (id) => id.userId === Cookies.get("id")
                                       )
-                                    ? "var(--color)"
+                                    ? "#FF5353"
                                     : "var(--color)"
                                 }`}
                                 fill={
