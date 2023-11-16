@@ -99,6 +99,7 @@ export default function Nav(props) {
     Cookies.remove("email");
     Cookies.remove("id");
     router.push("/");
+    location.reload()
   };
   const showMenuOnClick = () => {
     let id = document.getElementById("DropDown");
