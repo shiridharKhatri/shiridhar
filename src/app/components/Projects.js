@@ -21,23 +21,25 @@ export default function Projects() {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const [comment, setComment] = useState("");
+  // const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const commentInpOnChange = (e) => {
+  const commentInpOnChange = (e, id) => {
     setComment(e.target.value);
-    let sendBtn = document.getElementById("send-btn");
+    let sendBtn = document.getElementById(id);
     if (e.target.value.length > 0) {
       sendBtn.style.transform = "rotate(45deg)";
     } else {
       sendBtn.style.transform = "rotate(0deg)";
     }
   };
-  const showCommentSec = () => {
-    const commentSec = document.getElementById("commentSec");
+  const showCommentSec = (id) => {
+    console.log(id);
+    const commentSec = document.getElementById(id);
     commentSec.style.bottom = "0";
     commentSec.style.opacity = "1";
   };
-  const hideCommentSec = () => {
-    const commentSec = document.getElementById("commentSec");
+  const hideCommentSec = (id) => {
+    const commentSec = document.getElementById(id);
     commentSec.style.bottom = "-100%";
     commentSec.style.opacity = "0";
   };
@@ -318,7 +320,11 @@ export default function Projects() {
                           </span>
                         </label>
                       </button>
-                      <button onClick={showCommentSec}>
+                      <button
+                        onClick={() => {
+                          showCommentSec(e._id);
+                        }}
+                      >
                         <span className="projectIco">
                           {/* <RiIcons.RiMessage3Line /> */}
                           <PiIcons.PiChatTeardropDotsLight />
@@ -344,6 +350,160 @@ export default function Projects() {
                           <PiIcons.PiShareFatLight />
                         </span>
                       </button>
+
+                      <div className="commentSec" id={e._id}>
+                        <div
+                          className="line"
+                          onClick={() => {
+                            hideCommentSec(e._id);
+                          }}
+                        >
+                          <div className="dot"></div>
+                          <div className="dot"></div>
+                          <div className="dot"></div>
+                        </div>
+                        <div className="secComment">
+                          {!e.comments.length || e.comments.length === 0 ? (
+                            <div className="noComment">
+                              <div
+                                className="topCommentheader"
+                                style={{ marginBottom: "13rem" }}
+                              >
+                                <Image
+                                  src="https://img.icons8.com/3d-fluency/94/love-circled.png"
+                                  width="25"
+                                  height="25"
+                                  alt="likes"
+                                  style={{
+                                    width: "2.5rem",
+                                    height: "2.5rem",
+                                    borderRadius: "0",
+                                  }}
+                                />
+                                <h4>{e.likes.length}</h4>
+                                <Image
+                                  style={{
+                                    marginLeft: "2rem",
+                                    width: "2.5rem",
+                                    height: "2.5rem",
+                                    borderRadius: "0",
+                                  }}
+                                  src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
+                                  width="25"
+                                  height="25"
+                                  alt="comments"
+                                />
+                                <h4>{e.comments.length}</h4>
+                              </div>
+                              <Image
+                                src="https://img.icons8.com/3d-fluency/94/delete-message.png"
+                                width="94"
+                                height="94"
+                                alt="no-message"
+                                style={{
+                                  width: "9.4rem",
+                                  height: "9.4rem",
+                                  borderRadius: "0",
+                                }}
+                              />
+                              <h2>No comments yet be a first to comment.</h2>
+                            </div>
+                          ) : (
+                            <div className="comments-list">
+                              <div className="topCommentheader">
+                                <Image
+                                  src="https://img.icons8.com/3d-fluency/94/love-circled.png"
+                                  width="25"
+                                  height="25"
+                                  alt="likes"
+                                  style={{
+                                    width: "2.5rem",
+                                    height: "2.5rem",
+                                    borderRadius: "0",
+                                  }}
+                                />
+                                <h4>{e.likes.length}</h4>
+                                <Image
+                                  style={{
+                                    marginLeft: "2rem",
+                                    width: "2.5rem",
+                                    height: "2.5rem",
+                                    borderRadius: "0",
+                                  }}
+                                  src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
+                                  width="25"
+                                  height="25"
+                                  alt="comments"
+                                />
+                                <h4>{e.comments.length}</h4>
+                              </div>
+                              <div className="mainIndividual">
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="sendSec">
+                            <form action="">
+                              <input
+                                onChange={(event) => {
+                                  commentInpOnChange(
+                                    event,
+                                    `${e._id}btnNumber`
+                                  );
+                                }}
+                                type="text"
+                                value={comment}
+                                placeholder="Type your comment.."
+                              />
+                              <button
+                                style={{
+                                  padding: "1rem",
+                                  height: "5rem",
+                                  border: "none",
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  fontSize: "2.3rem",
+                                  borderRadius: "3rem",
+                                  width: "5rem",
+                                  background: "#facd3d",
+                                  transition: "0.2s ease",
+                                  cursor: "pointer",
+                                  margin:"0"
+                                }}
+                                id={`${e._id}btnNumber`}
+                              >
+                                <RiIcons.RiSendPlaneFill />
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -352,250 +512,6 @@ export default function Projects() {
           </div>
         </>
       )}
-      <div className="commentSec" id="commentSec">
-        <div className="line" onClick={hideCommentSec}>
-          <div className="dot"></div>
-          <div className="dot"></div>
-          <div className="dot"></div>
-        </div>
-        <div className="secComment">
-          {/* <div className="noComment">
-            <Image
-              src="https://img.icons8.com/3d-fluency/94/delete-message.png"
-              width="94"
-              height="94"
-              alt="no-message"
-            />
-            <h2>No comments yet be a first to comment.</h2>
-          </div> */}
-          <div className="comments-list">
-            <div className="topCommentheader">
-              <Image
-                src="https://img.icons8.com/3d-fluency/94/love-circled.png"
-                width="25"
-                height="25"
-                alt="likes"
-              />
-              <h4>2</h4>
-              <Image
-                style={{ marginLeft: "2rem" }}
-                src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
-                width="25"
-                height="25"
-                alt="comments"
-              />
-              <h4>3</h4>
-            </div>
-            <div className="mainIndividual">
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-              <div className="individual">
-                <div className="image">
-                  <Image
-                    src="./profile.png"
-                    width="50"
-                    height="50"
-                    alt="no-message"
-                  />
-                </div>
-                <div className="display">
-                  <div className="main">
-                    <h1>Shiridhar Khatri</h1>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Laborum magnam inventore fugiat quod, accusantium nemo
-                      sequi cumque nesciunt est obcaecati enim aspernatur quasi
-                      praesentium veritatis totam eius. Cumque, iure atque.
-                    </p>
-                  </div>
-                  <h2>1min ago</h2>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="sendSec">
-            <form action="">
-              <input
-                onChange={commentInpOnChange}
-                type="text"
-                value={comment}
-                placeholder="Type your comment.."
-              />
-              <button id="send-btn">
-                <RiIcons.RiSendPlaneFill />
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
