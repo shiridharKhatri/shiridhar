@@ -416,9 +416,7 @@
     font-size: 2.8rem;
     color: var(--btn-text-color);
   }
-  .mainIndividual {
-    height: 60rem;
-  }
+ 
   .mailContent h2 {
     color: var(--color);
   }

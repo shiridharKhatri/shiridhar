@@ -674,9 +674,9 @@ section.projects .projectCards .card .image {
   z-index: 99999;
   height: 90vh;
   border-radius: 4rem 4rem 0 0;
-  display: flex;
+  /* display: flex; */
   opacity: 0;
-  justify-content: center;
+  /* justify-content: center; */
   transition: 0.2s ease;
 }
 .comments-list .topCommentheader {
@@ -713,8 +713,11 @@ section.projects .projectCards .card .image {
   border-radius: 1.5rem;
 }
 .comments-list{
-  height: 90%;
-  overflow: hidden;
+  height: 85%;
+  overflow-y: scroll;
+}
+.comments-list::-webkit-scrollbar{
+display: none;
 }
 .comments-list .individual .display .main p {
   text-align: left;
@@ -735,13 +738,7 @@ section.projects .projectCards .card .image {
   color: #8a8aa5;
   font-weight: 400;
 }
-.mainIndividual {
-  height: 43rem;
-  overflow-y: scroll;
-}
-.mainIndividual::-webkit-scrollbar {
-  display: none;
-}
+
 .comments-list .individual .display {
   display: flex;
   flex-direction: column;
@@ -755,13 +752,15 @@ section.projects .projectCards .card .image {
   background: #0d0a1a;
   height: 98%;
   border-radius: 4rem 4rem 0 0;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  margin-top: .5rem;
+  /* bottom: 0; */
   width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .commentSec .line {
   height: 0.5rem;
@@ -782,15 +781,13 @@ section.projects .projectCards .card .image {
   margin: 0.6rem;
 }
 .secComment .sendSec {
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
   background: #0d0a1a;
-  left: 0;
 }
 .secComment .sendSec form {
   display: flex;
