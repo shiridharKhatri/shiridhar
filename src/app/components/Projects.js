@@ -15,6 +15,7 @@ import Image from "next/image";
 import Loader from "../tools/Loader";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { Alphabets } from "./Alphabets";
 export default function Projects() {
   // const host = "http://localhost:5000";
   const host = "https://portfolio-backend-0roz.onrender.com";
@@ -42,6 +43,34 @@ export default function Projects() {
     const commentSec = document.getElementById(id);
     commentSec.style.bottom = "-100%";
     commentSec.style.opacity = "0";
+  };
+  const commentOnClick = async (id) => {
+    try {
+      let headersList = {
+        Accept: "*/*",
+        "auth-token": Cookies.get("token"),
+        "Content-Type": "application/json",
+      };
+
+      let bodyContent = JSON.stringify({
+        projectId: id,
+        comment: comment,
+      });
+
+      let response = await fetch(`${host}/api/project/comment`, {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      });
+
+      let data = await response.json();
+      if (data.success) {
+      }
+    } catch (error) {
+      // Handle errors that may occur during the 'like' action
+      console.error("Error during 'like' action:", error.message);
+      // You may choose to log the error, show a user-friendly message, or take other appropriate actions
+    }
   };
   const tech = [
     {
@@ -86,41 +115,37 @@ export default function Projects() {
   let unLikeAudio = isClient ? new Audio("./audio/unlike.mp3") : null;
 
   const likeOnClick = async (id) => {
-    if (!Cookies.get("token")) {
-      router.push("/login");
-    } else {
-      try {
-        // Prepare headers for the HTTP request
-        const headers = {
-          Accept: "*/*",
-          "auth-token": Cookies.get("token"),
-          "Content-Type": "application/json",
-        };
+    try {
+      // Prepare headers for the HTTP request
+      const headers = {
+        Accept: "*/*",
+        "auth-token": Cookies.get("token"),
+        "Content-Type": "application/json",
+      };
 
-        // Prepare the request body
-        const body = JSON.stringify({
-          productId: id,
-        });
+      // Prepare the request body
+      const body = JSON.stringify({
+        productId: id,
+      });
 
-        // Perform the 'like' action by sending a POST request to the server
-        await fetch(`${host}/api/project/like`, {
-          method: "POST",
-          body,
-          headers,
-        });
+      // Perform the 'like' action by sending a POST request to the server
+      await fetch(`${host}/api/project/like`, {
+        method: "POST",
+        body,
+        headers,
+      });
 
-        // If the 'like' action is successful, you may choose to perform additional actions
-        // For example, reloading the page
-        // Uncomment the following lines if needed:
-        // const data = await response.json();
-        // if (data.success === true) {
-        //   location.reload();
-        // }
-      } catch (error) {
-        // Handle errors that may occur during the 'like' action
-        console.error("Error during 'like' action:", error.message);
-        // You may choose to log the error, show a user-friendly message, or take other appropriate actions
-      }
+      // If the 'like' action is successful, you may choose to perform additional actions
+      // For example, reloading the page
+      // Uncomment the following lines if needed:
+      // const data = await response.json();
+      // if (data.success === true) {
+      //   location.reload();
+      // }
+    } catch (error) {
+      // Handle errors that may occur during the 'like' action
+      console.error("Error during 'like' action:", error.message);
+      // You may choose to log the error, show a user-friendly message, or take other appropriate actions
     }
   };
   const changeLike = (input, button, path, span, id) => {
@@ -129,22 +154,26 @@ export default function Projects() {
     let btns = document.getElementById(button);
     let svg = document.getElementById(path);
     // console.log(Number(spns.innerText));
-    if (inpt.checked) {
-      likeAudio.play();
-      btns.style.color = "#FF5353";
-      svg.style.fill = "#FF5353";
-      svg.style.stroke = "#FF5353";
-      svg.style.transition = "100ms";
-      spns.innerHTML = Number(spns.innerText) + 1;
-      likeOnClick(id);
+    if (!Cookies.get("token")) {
+      router.push("/login");
     } else {
-      unLikeAudio.play();
-      btns.style.color = "#000000";
-      svg.style.fill = "none";
-      svg.style.stroke = "var(--color)";
-      svg.style.transition = "100ms";
-      spns.innerHTML = Number(spns.innerText) - 1;
-      likeOnClick(id);
+      if (inpt.checked) {
+        likeAudio.play();
+        btns.style.color = "#FF5353";
+        svg.style.fill = "#FF5353";
+        svg.style.stroke = "#FF5353";
+        svg.style.transition = "100ms";
+        spns.innerHTML = Number(spns.innerText) + 1;
+        likeOnClick(id);
+      } else {
+        unLikeAudio.play();
+        btns.style.color = "#000000";
+        svg.style.fill = "none";
+        svg.style.stroke = "var(--color)";
+        svg.style.transition = "100ms";
+        spns.innerHTML = Number(spns.innerText) - 1;
+        likeOnClick(id);
+      }
     }
   };
   useEffect(() => {
@@ -409,7 +438,10 @@ export default function Projects() {
                               <h2>No comments yet be a first to comment.</h2>
                             </div>
                           ) : (
-                            <div className="comments-list">
+                            <div
+                              className="comments-list"
+                              style={{ width: "100%" }}
+                            >
                               <div className="topCommentheader">
                                 <Image
                                   src="https://img.icons8.com/3d-fluency/94/love-circled.png"
@@ -437,200 +469,53 @@ export default function Projects() {
                                 />
                                 <h4>{e.comments.length}</h4>
                               </div>
-                              <div className="mainIndividual">
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
+                              <div
+                                className="mainIndividual"
+                                style={{
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  alignItems: "start",
+                                }}
+                              >
+                                {e.comments?.map((com) => {
+                                  return (
+                                    <div className="individual" key={com._id}>
+                                      <div className="image-profile">
+                                        <Image
+                                          src={
+                                            Alphabets.map((imgs) => {
+                                              if (
+                                                imgs.letter ===
+                                                com.commentedBy.name
+                                                  .slice(0, 1)
+                                                  .toLowerCase()
+                                              ) {
+                                                return imgs.image;
+                                              }
+                                              return null; // Return null for non-matching items
+                                            }).filter(Boolean)[0] // Use default image URL if no match is found
+                                          }
+                                          width="50"
+                                          height="50"
+                                          alt="profile"
+                                          style={{
+                                            width: "5rem",
+                                            height: "5rem",
+                                            backgroundImage: `linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%)`,
+                                            padding: "0.5rem",
+                                          }}
+                                        />
+                                      </div>
+                                      <div className="display">
+                                        <div className="main">
+                                          <h1>{com.commentedBy.name}</h1>
+                                          <p>{com.comment}</p>
+                                        </div>
+                                        <h2>{com.commentedOn}</h2>
+                                      </div>
                                     </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
-
-
-
-                                <div className="individual">
-                                  <div className="image-profile">
-                                    <Image
-                                      src="./profile.png"
-                                      width="50"
-                                      height="50"
-                                      alt="profile"
-                                      style={{ width: "5rem", height: "5rem" }}
-                                    />
-                                  </div>
-                                  <div className="display">
-                                    <div className="main">
-                                      <h1>Shiridhar Khatri</h1>
-                                      <p>
-                                        Lorem ipsum dolor sit, amet consectetur
-                                        adipisicing elit. Laborum magnam
-                                        inventore fugiat quod, accusantium nemo
-                                        sequi cumque nesciunt est obcaecati enim
-                                        aspernatur quasi praesentium veritatis
-                                        totam eius. Cumque, iure atque.
-                                      </p>
-                                    </div>
-                                    <h2>1min ago</h2>
-                                  </div>
-                                </div>
+                                  );
+                                })}
                               </div>
                             </div>
                           )}
@@ -646,7 +531,12 @@ export default function Projects() {
                                 }}
                                 type="text"
                                 value={comment}
-                                placeholder="Type your comment.."
+                                disabled={!Cookies.get("token")}
+                                placeholder={
+                                  !Cookies.get("token")
+                                    ? "Please login to comment"
+                                    : "Type your comment.."
+                                }
                               />
                               <button
                                 style={{
@@ -662,10 +552,15 @@ export default function Projects() {
                                   background: "#facd3d",
                                   transition: "0.2s ease",
                                   cursor: "pointer",
-                                  margin:"0",
-                                  color:"#000000"
+                                  margin: "0",
+                                  color: "#000000",
                                 }}
                                 id={`${e._id}btnNumber`}
+                                onClick={() => {
+                                  !Cookies.get("token")
+                                    ? router.push("/login")
+                                    : commentOnClick(e._id);
+                                }}
                               >
                                 <RiIcons.RiSendPlaneFill />
                               </button>
