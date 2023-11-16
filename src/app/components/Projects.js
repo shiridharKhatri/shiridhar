@@ -11,7 +11,7 @@ import {
   RiIcons,
   CiIcons,
 } from "./Icons";
-import moment from 'moment';
+import moment from "moment";
 import Image from "next/image";
 import Loader from "../tools/Loader";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,6 @@ export default function Projects() {
     }
   };
   const showCommentSec = (id) => {
-    console.log(id);
     const commentSec = document.getElementById(id);
     commentSec.style.bottom = "0";
     commentSec.style.opacity = "1";
@@ -155,26 +154,23 @@ export default function Projects() {
     let btns = document.getElementById(button);
     let svg = document.getElementById(path);
     // console.log(Number(spns.innerText));
-    if (!Cookies.get("token")) {
-      router.push("/login");
+
+    if (inpt.checked) {
+      likeAudio.play();
+      btns.style.color = "#FF5353";
+      svg.style.fill = "#FF5353";
+      svg.style.stroke = "#FF5353";
+      svg.style.transition = "100ms";
+      spns.innerHTML = Number(spns.innerText) + 1;
+      likeOnClick(id);
     } else {
-      if (inpt.checked) {
-        likeAudio.play();
-        btns.style.color = "#FF5353";
-        svg.style.fill = "#FF5353";
-        svg.style.stroke = "#FF5353";
-        svg.style.transition = "100ms";
-        spns.innerHTML = Number(spns.innerText) + 1;
-        likeOnClick(id);
-      } else {
-        unLikeAudio.play();
-        btns.style.color = "#000000";
-        svg.style.fill = "none";
-        svg.style.stroke = "var(--color)";
-        svg.style.transition = "100ms";
-        spns.innerHTML = Number(spns.innerText) - 1;
-        likeOnClick(id);
-      }
+      unLikeAudio.play();
+      btns.style.color = "#000000";
+      svg.style.fill = "none";
+      svg.style.stroke = "var(--color)";
+      svg.style.transition = "100ms";
+      spns.innerHTML = Number(spns.innerText) - 1;
+      likeOnClick(id);
     }
   };
   useEffect(() => {
@@ -399,31 +395,46 @@ export default function Projects() {
                                 className="topCommentheader"
                                 style={{ marginBottom: "13rem" }}
                               >
-                                <Image
-                                  src="https://img.icons8.com/3d-fluency/94/love-circled.png"
-                                  width="25"
-                                  height="25"
-                                  alt="likes"
-                                  style={{
-                                    width: "2.5rem",
-                                    height: "2.5rem",
-                                    borderRadius: "0",
-                                  }}
-                                />
-                                <h4>{e.likes.length}</h4>
-                                <Image
-                                  style={{
-                                    marginLeft: "2rem",
-                                    width: "2.5rem",
-                                    height: "2.5rem",
-                                    borderRadius: "0",
-                                  }}
-                                  src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
-                                  width="25"
-                                  height="25"
-                                  alt="comments"
-                                />
-                                <h4>{e.comments.length}</h4>
+                                <div className="firstDiv">
+                                  <Image
+                                    src="https://img.icons8.com/3d-fluency/94/love-circled.png"
+                                    width="25"
+                                    height="25"
+                                    alt="likes"
+                                    style={{
+                                      width: "2.5rem",
+                                      height: "2.5rem",
+                                      borderRadius: "0",
+                                    }}
+                                  />
+                                  <h4>{e.likes.length}</h4>
+                                  <Image
+                                    style={{
+                                      marginLeft: "2rem",
+                                      width: "2.5rem",
+                                      height: "2.5rem",
+                                      borderRadius: "0",
+                                    }}
+                                    src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
+                                    width="25"
+                                    height="25"
+                                    alt="comments"
+                                  />
+                                  <h4>{e.comments.length}</h4>
+                                </div>
+                                <div className="secondDiv">
+                                  <h1
+                                    onClick={() => {
+                                      hideCommentSec(e._id);
+                                    }}
+                                    style={{
+                                      color: "#46415d",
+                                      cursor: "pointer",
+                                    }}
+                                  >
+                                    <IoIcons.IoCloseSharp />
+                                  </h1>
+                                </div>
                               </div>
                               <Image
                                 src="https://img.icons8.com/3d-fluency/94/delete-message.png"
@@ -444,31 +455,47 @@ export default function Projects() {
                               style={{ width: "100%" }}
                             >
                               <div className="topCommentheader">
-                                <Image
-                                  src="https://img.icons8.com/3d-fluency/94/love-circled.png"
-                                  width="25"
-                                  height="25"
-                                  alt="likes"
-                                  style={{
-                                    width: "2.5rem",
-                                    height: "2.5rem",
-                                    borderRadius: "0",
-                                  }}
-                                />
-                                <h4>{e.likes.length}</h4>
-                                <Image
-                                  style={{
-                                    marginLeft: "2rem",
-                                    width: "2.5rem",
-                                    height: "2.5rem",
-                                    borderRadius: "0",
-                                  }}
-                                  src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
-                                  width="25"
-                                  height="25"
-                                  alt="comments"
-                                />
-                                <h4>{e.comments.length}</h4>
+                                <div className="firstDiv">
+                                  <Image
+                                    src="https://img.icons8.com/3d-fluency/94/love-circled.png"
+                                    width="25"
+                                    height="25"
+                                    alt="likes"
+                                    style={{
+                                      width: "2.5rem",
+                                      height: "2.5rem",
+                                      borderRadius: "0",
+                                    }}
+                                  />
+                                  <h4>{e.likes.length}</h4>
+                                  <Image
+                                    style={{
+                                      marginLeft: "2rem",
+                                      width: "2.5rem",
+                                      height: "2.5rem",
+                                      borderRadius: "0",
+                                    }}
+                                    src="https://img.icons8.com/3d-fluency/94/speech-bubble-with-dots.png"
+                                    width="25"
+                                    height="25"
+                                    alt="comments"
+                                  />
+                                  <h4>{e.comments.length}</h4>
+                                </div>
+
+                                <div className="secondDiv">
+                                  <h1
+                                    onClick={() => {
+                                      hideCommentSec(e._id);
+                                    }}
+                                    style={{
+                                      color: "#46415d",
+                                      cursor: "pointer",
+                                    }}
+                                  >
+                                    <IoIcons.IoCloseSharp />
+                                  </h1>
+                                </div>
                               </div>
                               <div
                                 className="mainIndividual"
@@ -500,7 +527,7 @@ export default function Projects() {
                                           height="50"
                                           alt="profile"
                                           style={{
-                                            borderRadius:"50%",
+                                            borderRadius: "50%",
                                             width: "5rem",
                                             height: "5rem",
                                             backgroundImage: `linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%)`,
@@ -513,7 +540,9 @@ export default function Projects() {
                                           <h1>{com.commentedBy.name}</h1>
                                           <p>{com.comment}</p>
                                         </div>
-                                        <h2>{moment(com.commentedOn).fromNow()}</h2>
+                                        <h2>
+                                          {moment(com.commentedOn).fromNow()}
+                                        </h2>
                                       </div>
                                     </div>
                                   );

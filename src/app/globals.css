@@ -681,7 +681,7 @@ section.projects .projectCards .card .image {
 }
 .noComment .topCommentheader {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   /* margin: 1rem; */
   align-items: center;
   color: #ffffff;
@@ -691,13 +691,18 @@ section.projects .projectCards .card .image {
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
   width: 100%;
 }
+.topCommentheader .firstDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .noComment .topCommentheader h4 {
   font-size: 2rem;
   margin-left: 0.7rem;
 }
 .comments-list .topCommentheader {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   /* margin: 1rem; */
   align-items: center;
   color: #ffffff;
