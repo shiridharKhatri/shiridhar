@@ -11,6 +11,7 @@ import {
   RiIcons,
   CiIcons,
 } from "./Icons";
+import moment from 'moment';
 import Image from "next/image";
 import Loader from "../tools/Loader";
 import { useRouter } from "next/navigation";
@@ -512,7 +513,7 @@ export default function Projects() {
                                           <h1>{com.commentedBy.name}</h1>
                                           <p>{com.comment}</p>
                                         </div>
-                                        <h2>{com.commentedOn}</h2>
+                                        <h2>{moment(com.commentedOn).fromNow()}</h2>
                                       </div>
                                     </div>
                                   );
