@@ -568,7 +568,7 @@ export default function Projects() {
                                 placeholder={
                                   !Cookies.get("token")
                                     ? "Please login to comment"
-                                    : "Type your comment.."
+                                    : `Comment as ${Cookies.get('name')}...`
                                 }
                               />
                               <button
