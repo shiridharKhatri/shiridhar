@@ -360,26 +360,26 @@
   header img {
     width: 40rem;
   }
-  section.profileSec .mainProfileSection{
+  section.profileSec .mainProfileSection {
     flex-direction: column;
   }
-  section.profileSec .mainProfileSection .profile-first{
+  section.profileSec .mainProfileSection .profile-first {
     width: 95%;
     margin-bottom: 1rem;
   }
-  section.profileSec .mainProfileSection .profile-first .cardSec{
+  section.profileSec .mainProfileSection .profile-first .cardSec {
     width: 100%;
     height: 50rem;
     padding: 3rem 0;
   }
-  .suggestionCard{
+  .suggestionCard {
     padding: 1rem 0;
     background: transparent;
   }
-  .profile-second .suggestions{
+  .profile-second .suggestions {
     background: transparent;
   }
-  .suggestionCard{
+  .suggestionCard {
     margin-top: 1rem;
   }
   section.profileSec .mainProfileSection .profile-second {
@@ -388,7 +388,7 @@
   section.projects .projectCards img {
     border-radius: 0.5rem;
   }
-  section.projects .projectCards .card .buttons .container{
+  section.projects .projectCards .card .buttons .container {
     font-size: 2.3rem;
   }
   .cardsSecParent {
@@ -416,9 +416,9 @@
     font-size: 2.8rem;
     color: var(--btn-text-color);
   }
-  /* .mainIndividual{
-    height: 50rem;
-  } */
+  .mainIndividual {
+    height: 60rem;
+  }
   .mailContent h2 {
     color: var(--color);
   }
@@ -472,12 +472,12 @@
   .banner {
     height: 18rem;
   }
-  .secComment .sendSec form{
+  .secComment .sendSec form {
     width: 100%;
   }
   .commentSec {
     height: 90vh;
-}
+  }
   section.freeCode .codeSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -569,7 +569,7 @@
     border-radius: 2.5rem;
     background: var(--btn-bg-color);
   }
-  .secComment .sendSec form{
+  .secComment .sendSec form {
     width: 100%;
   }
   .postReviewSection {

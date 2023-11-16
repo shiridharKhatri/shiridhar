@@ -712,6 +712,10 @@ section.projects .projectCards .card .image {
   flex-direction: column;
   border-radius: 1.5rem;
 }
+.comments-list{
+  height: 90%;
+  overflow: hidden;
+}
 .comments-list .individual .display .main p {
   text-align: left;
   font-size: 1.2rem;
@@ -732,7 +736,7 @@ section.projects .projectCards .card .image {
   font-weight: 400;
 }
 .mainIndividual {
-  height: 52rem;
+  height: 43rem;
   overflow-y: scroll;
 }
 .mainIndividual::-webkit-scrollbar {
