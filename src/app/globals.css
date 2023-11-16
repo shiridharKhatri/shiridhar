@@ -802,7 +802,7 @@ display: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 0rem 2rem 0rem;
   background: #0d0a1a;
 }
 .secComment .sendSec form {
@@ -817,7 +817,7 @@ display: none;
   border-radius: 3rem;
   width: 85%;
   outline: none;
-  height: 5rem;
+  height: 6rem;
   margin-right: 1rem;
 }
 

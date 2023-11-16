@@ -463,6 +463,174 @@ export default function Projects() {
                                     <h2>1min ago</h2>
                                   </div>
                                 </div>
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+
+
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
+
+
+
+                                <div className="individual">
+                                  <div className="image-profile">
+                                    <Image
+                                      src="./profile.png"
+                                      width="50"
+                                      height="50"
+                                      alt="profile"
+                                      style={{ width: "5rem", height: "5rem" }}
+                                    />
+                                  </div>
+                                  <div className="display">
+                                    <div className="main">
+                                      <h1>Shiridhar Khatri</h1>
+                                      <p>
+                                        Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Laborum magnam
+                                        inventore fugiat quod, accusantium nemo
+                                        sequi cumque nesciunt est obcaecati enim
+                                        aspernatur quasi praesentium veritatis
+                                        totam eius. Cumque, iure atque.
+                                      </p>
+                                    </div>
+                                    <h2>1min ago</h2>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           )}
@@ -483,14 +651,14 @@ export default function Projects() {
                               <button
                                 style={{
                                   padding: "1rem",
-                                  height: "5rem",
+                                  height: "6rem",
                                   border: "none",
                                   display: "flex",
                                   justifyContent: "center",
                                   alignItems: "center",
                                   fontSize: "2.3rem",
                                   borderRadius: "3rem",
-                                  width: "5rem",
+                                  width: "6rem",
                                   background: "#facd3d",
                                   transition: "0.2s ease",
                                   cursor: "pointer",
