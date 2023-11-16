@@ -499,6 +499,7 @@ export default function Projects() {
                                           height="50"
                                           alt="profile"
                                           style={{
+                                            borderRadius:"50%",
                                             width: "5rem",
                                             height: "5rem",
                                             backgroundImage: `linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%)`,
