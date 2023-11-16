@@ -161,6 +161,7 @@ export default function Projects() {
       svg.style.fill = "#FF5353";
       svg.style.stroke = "#FF5353";
       svg.style.transition = "100ms";
+      spns.style.color = "#FF5353"
       spns.innerHTML = Number(spns.innerText) + 1;
       likeOnClick(id);
     } else {
@@ -169,6 +170,7 @@ export default function Projects() {
       svg.style.fill = "none";
       svg.style.stroke = "var(--color)";
       svg.style.transition = "100ms";
+      spns.style.color = "var(--color)"
       spns.innerHTML = Number(spns.innerText) - 1;
       likeOnClick(id);
     }
