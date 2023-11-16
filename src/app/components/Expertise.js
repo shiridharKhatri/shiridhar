@@ -64,7 +64,7 @@ export default function Expertise() {
       <p className="paragraph">
         I possess expertise in the following technologies.
       </p>
-      <div className="mainContent">
+      <div className="mainContent" id="mainExpContainer">
         {content.map((e, index) => {
           return (
             <div
@@ -98,6 +98,7 @@ export default function Expertise() {
         </h3>
 
         <button
+        id="freeCodeId"
           onClick={() => {
             router.push("/free_code");
           }}

@@ -328,11 +328,11 @@ export default function Nav(props) {
                 </span>
                 Home
               </li>
-              <li onClick={()=>{router.push('/project')}}>
+              <li onClick={props.tour}>
                 <span className="hidden">
                   <AiIcons.AiOutlineFundProjectionScreen />
                 </span>
-                Projects
+                Tour
               </li>
               <li onClick={()=>{router.push('/about')}}>
                 <span className="hidden">

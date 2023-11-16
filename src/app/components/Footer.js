@@ -79,7 +79,7 @@ export default function Footer(props) {
     scss: <IoIcons.IoLogoSass />,
   };
   return (
-    <footer>
+    <footer id="footerId">
       <div className="topSection">
         <div className="topLogo">
           <Image src={props.image} alt="logo" width={200} height={150} />

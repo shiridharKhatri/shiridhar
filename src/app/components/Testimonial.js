@@ -199,6 +199,7 @@ export default function Testimonial() {
     <>
       <section
         className="testimonial"
+        id="testimonialId"
         style={{
           background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./review.png")`,
           backgroundPosition: "center",
@@ -444,6 +445,7 @@ export default function Testimonial() {
         <div className="addReview">
           {!Cookies.get("token") ? (
             <button
+            id="addReviewId"
               onClick={() => {
                 router.push("/login");
               }}
@@ -454,7 +456,7 @@ export default function Testimonial() {
               Login
             </button>
           ) : (
-            <button onClick={showReviewForm}>
+            <button id="addReviewId" onClick={showReviewForm}>
               <span>
                 <HiIcons.HiPlus />
               </span>

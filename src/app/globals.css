@@ -60,13 +60,13 @@ body::-webkit-scrollbar {
   display: none;
 }
 section,
-footer,
-header {
+#footerId,
+#headerId {
   width: 100%;
   background: var(--secondary-background-color);
 }
 section,
-footer {
+#footerId {
   overflow: hidden;
   white-space: wrap;
   word-break: break-word;
@@ -296,12 +296,12 @@ nav ul li {
   font-family: sans-serif;
   color: #ffffff;
 }
-header .themeSection {
+#headerId .themeSection {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
 }
-header .themeSection .themeDisplay {
+#headerId .themeSection .themeDisplay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,7 +311,7 @@ header .themeSection .themeDisplay {
   border-radius: 1rem;
   cursor: pointer;
 }
-header .themeSection .themeDisplay h2 {
+#headerId .themeSection .themeDisplay h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -374,7 +374,7 @@ header .themeSection .themeDisplay h2 {
   background-color: #5626c440;
   color: #ffffff;
 }
-header {
+#headerId {
   background-color: #000000;
   background-position: center;
   background-repeat: no-repeat;
@@ -386,13 +386,13 @@ header {
   height: 100vh;
   position: relative;
 }
-header h1 {
+#headerId h1 {
   color: #fff;
   font-size: 25rem;
   font-family: "Belanosima", sans-serif;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px #000000;
 }
-header img {
+#headerId img {
   height: auto;
   width: 50rem;
   position: absolute;
@@ -2960,6 +2960,9 @@ section.searchSec .headerTitle p {
   height: 100%;
   border-radius: 1.3rem 1.3rem 0 0;
 }
+.driverjs-theme{
+  background-color: var(--btn-text-color);
+}
 section.profileSec {
   padding: 10rem 0;
 }
@@ -3201,16 +3204,17 @@ section.projects .projectCards .card .buttons .container:hover {
     transform: scale(1);
   }
 }
-footer {
+
+#footerId {
   background: #000000;
   padding: 1rem;
   color: var(--color);
   /* margin-top: 10rem; */
 }
-footer ul {
+#footerId ul {
   list-style: none;
 }
-footer .socialMedia ul {
+#footerId .socialMedia ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -3218,45 +3222,45 @@ footer .socialMedia ul {
   border-top: 0.1rem solid #445;
   padding-top: 3rem;
 }
-footer .socialMedia {
+#footerId .socialMedia {
   padding: 2rem;
 }
-footer .topSection {
+#footerId .topSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* background: red; */
   padding: 1rem;
 }
-footer .topSection .flex-disp-footer {
+#footerId .topSection .flex-disp-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 75%;
   padding: 1rem;
 }
-footer .topSection h1 {
+#footerId .topSection h1 {
   font-family: "Belanosima", sans-serif;
   font-size: 2.5rem;
   margin: 1rem 0;
   color: #ffffff;
 }
-footer .topSection .item ul li {
+#footerId .topSection .item ul li {
   font-size: 1.5rem;
   margin: 0.7rem 0;
   display: flex;
   color: #ffffff;
 }
-footer .topSection .item ul li a {
+#footerId .topSection .item ul li a {
   text-decoration: none;
   color: #fff;
   transition: 0.2s ease;
 }
-footer .topSection .item ul li a:hover {
+#footerId .topSection .item ul li a:hover {
   color: #f7cd46;
   text-decoration: underline;
 }
-footer .topSection .item ul li span {
+#footerId .topSection .item ul li span {
   /* background: red; */
   padding: 0rem 1rem;
   border-radius: 0.5rem;
@@ -3265,22 +3269,22 @@ footer .topSection .item ul li span {
   justify-content: center;
   align-items: center;
 }
-footer .topSection .item {
+#footerId .topSection .item {
   padding: 1rem;
   height: 23rem;
 }
 
-footer .fourthSection {
+#footerId .fourthSection {
   color: #ffffff;
   padding: 1rem;
   height: 23rem;
 }
-footer .fourthSection a {
+#footerId .fourthSection a {
   text-decoration: none;
   color: #ffffff;
   font-size: 1.4rem;
 }
-footer .fourthSection span {
+#footerId .fourthSection span {
   font-size: 2rem;
   padding: 1rem;
   background: #445;
@@ -3292,16 +3296,16 @@ footer .fourthSection span {
   height: 4rem;
   margin-right: 1rem;
 }
-footer .fourthSection h1 {
+#footerId .fourthSection h1 {
   padding: 0 0 1rem 1rem;
 }
-footer .fourthSection ul li {
+#footerId .fourthSection ul li {
   display: flex;
   justify-content: left;
   align-items: center;
   margin: 1rem;
 }
-footer .socialMedia ul li {
+#footerId .socialMedia ul li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3316,15 +3320,15 @@ footer .socialMedia ul li {
   border: 0.1rem solid #ffffff;
   transition: 0.2s ease;
 }
-footer .socialMedia ul li:hover {
+#footerId .socialMedia ul li:hover {
   background: transparent;
 }
-footer .socialMedia p {
+#footerId .socialMedia p {
   text-align: center;
   margin: 1.5rem 1rem 1rem 1rem;
   font-size: 1.3rem;
   color: #ffffff;
 }
-footer .topSection .topLogo img {
+#footerId .topSection .topLogo img {
   height: 20rem;
 }

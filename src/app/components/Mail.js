@@ -32,12 +32,12 @@ export default function Mail() {
   };
   return (
     <section className="mainMailSection">
-      <div className="mailSection">
+      <div className="mailSection" id="mailId">
         <div className="cardMail">
           <div className="mailImage">
             <Image src="./mail.gif" alt="message" width={300} height={50} />
           </div>
-          <div className="mailContent">
+          <div className="mailContent" >
             <h2>
               Do you have any{" "}
               <span style={{ color: "var(--btn-text-color)" }}>message</span>{" "}

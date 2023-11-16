@@ -198,7 +198,7 @@ export default function Projects() {
     fetchProjects();
   }, [host]);
   return (
-    <section className="projects" style={{ margin: "5rem 0" }}>
+    <section id="projectSec" className="projects" style={{ margin: "5rem 0" }}>
       <h1 id="projectHeading">Created Projects</h1>
       <p id="projectParagraph">
         All the projects that i created using wed development technologies
@@ -213,6 +213,7 @@ export default function Projects() {
             <h3>
               Total projects ({data.total}){" "}
               <span
+              id="viewAllProject"
                 onClick={() => {
                   router.push("/project");
                 }}
@@ -243,7 +244,7 @@ export default function Projects() {
                       />
                     </div>
                     <div className="techUsed">
-                      <ul>
+                      <ul id="techUsed">
                         {tech.map((e, index) => {
                           return (
                             <li key={index} style={{ color: e.color }}>
@@ -552,7 +553,6 @@ export default function Projects() {
                               </div>
                             </div>
                           )}
-
                           <div className="sendSec">
                             <form action="">
                               <input

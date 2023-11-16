@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsIcons } from "./Icons";
-export default function Header() {
+export default function Header(props) {
   const [darkmode, setDarkmode] = useState(false);
   const changeMode = () => {
     let body = document.body;
@@ -41,6 +41,7 @@ export default function Header() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
+      id="headerId"
     >
       <h1>PortFolio</h1>
       <Image
@@ -59,7 +60,7 @@ export default function Header() {
         </div>
       </div>
       <div className="themeSection">
-        <div className="themeDisplay" onClick={changeMode}>
+        <div className="themeDisplay" onClick={changeMode} id="themeSec">
           {darkmode === true ? (
             <h2 style={{ marginRight: "0.5rem" }}>
               <BsIcons.BsMoonStarsFill />

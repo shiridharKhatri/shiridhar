@@ -39,7 +39,7 @@ export default function BlogsHighlight() {
           <Loader />
         </div>
       ) : (
-        <div className="BlogContainer">
+        <div className="BlogContainer" id="BlogContainer">
           {blogs.slice(-4).map((e) => {
             return (
               <div
