@@ -10,6 +10,7 @@ import {
   CgIcons,
   GoIcons,
   TbIcons,
+  SiIcons,
 } from "./Icons";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -330,7 +331,7 @@ export default function Nav(props) {
               </li>
               <li onClick={props.tour}>
                 <span className="hidden">
-                  <AiIcons.AiOutlineFundProjectionScreen />
+                  <SiIcons.SiYourtraveldottv />
                 </span>
                 Tour
               </li>

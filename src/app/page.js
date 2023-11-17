@@ -33,6 +33,7 @@ export default function Home() {
       overlayColor: "var(--btn-bg-color)",
       showProgress: true,
       showButtons: ["next", "previous"],
+      popoverClass: "driverjs-theme-own",
       steps: [
         {
           element: "#logoFirst",
@@ -42,7 +43,7 @@ export default function Home() {
               "The website's logo serves a dual purpose as a home navigation icon. Clicking on this distinctive logo seamlessly redirects users to the homepage, regardless of their current section. This streamlined functionality ensures a user-friendly experience and easy navigation throughout the site",
             side: "left",
             align: "start",
-            popoverClass: "driverjs-theme",
+    
           },
         },
         {

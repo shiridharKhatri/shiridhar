@@ -161,7 +161,7 @@ export default function Projects() {
       svg.style.fill = "#FF5353";
       svg.style.stroke = "#FF5353";
       svg.style.transition = "100ms";
-      spns.style.color = "#FF5353"
+      spns.style.color = "#FF5353";
       spns.innerHTML = Number(spns.innerText) + 1;
       likeOnClick(id);
     } else {
@@ -170,10 +170,20 @@ export default function Projects() {
       svg.style.fill = "none";
       svg.style.stroke = "var(--color)";
       svg.style.transition = "100ms";
-      spns.style.color = "var(--color)"
+      spns.style.color = "var(--color)";
       spns.innerHTML = Number(spns.innerText) - 1;
       likeOnClick(id);
     }
+  };
+  const likeOnDoubleClick = (likeBtn, heart) => {
+    const likeSec = document.getElementById(likeBtn);
+    const inputHeart = document.getElementById(heart);
+    likeSec.style.opacity = "1";
+    inputHeart.checked = true
+    setTimeout(() => {
+      likeSec.style.opacity = "0";
+      inputHeart.checked = false
+    }, 3000);
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -213,7 +223,7 @@ export default function Projects() {
             <h3>
               Total projects ({data.total}){" "}
               <span
-              id="viewAllProject"
+                id="viewAllProject"
                 onClick={() => {
                   router.push("/project");
                 }}
@@ -233,8 +243,57 @@ export default function Projects() {
                   key={e._id}
                 >
                   <div className="project-card-items">
-                    <div className="image">
+                    <div
+                      className="image"
+                      style={{ position: "relative", userSelect: "none" }}
+                      onDoubleClick={() => {
+                        likeOnDoubleClick(`${index}likeBtn`, `${index}heartInImage`);
+                      }}
+                    >
+                      <div
+                        id={`${index}likeBtn`}
+                        className="likeBtnImg"
+                        style={{ position: "absolute" }}
+                      >
+                        <div className="heart-container" title="Like">
+                          <input
+                            type="checkbox"
+                            className="checkbox"
+                            id={`${index}heartInImage`}
+                          />
+                          <div className="svg-container">
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="svg-outline"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                            </svg>
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="svg-filled"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                            </svg>
+                            <svg
+                              className="svg-celebrate"
+                              width="100"
+                              height="100"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <polygon points="10,10 20,20"></polygon>
+                              <polygon points="10,50 20,50"></polygon>
+                              <polygon points="20,80 30,70"></polygon>
+                              <polygon points="90,10 80,20"></polygon>
+                              <polygon points="90,50 80,50"></polygon>
+                              <polygon points="80,80 70,70"></polygon>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                       <Image
+                        style={{ userSelect: "none" }}
                         src={`${host}/projectImage/${e.image[0]}`}
                         // src={e.image}
                         alt="projectPicture"
@@ -568,7 +627,7 @@ export default function Projects() {
                                 placeholder={
                                   !Cookies.get("token")
                                     ? "Please login to comment"
-                                    : `Comment as ${Cookies.get('name')}...`
+                                    : `Comment as ${Cookies.get("name")}...`
                                 }
                               />
                               <button

@@ -25,7 +25,7 @@ import {
 import { RiServiceLine, RiMessage3Line, RiSendPlaneFill } from "react-icons/ri";
 import { CiStickyNote, CiImageOn, CiHeart } from "react-icons/ci";
 import { GoProjectRoadmap, GoCodeReview, GoFileCode } from "react-icons/go";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs,SiYourtraveldottv } from "react-icons/si";
 import {
   FaNodeJs,
   FaViber,
@@ -139,6 +139,7 @@ const CgIcons = {
 };
 const SiIcons = {
   SiNextdotjs,
+  SiYourtraveldottv
 };
 const FaIcons = {
   FaNodeJs,
