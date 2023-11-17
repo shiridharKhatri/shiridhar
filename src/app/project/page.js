@@ -187,7 +187,7 @@ export default function Page() {
 
     likeSec.style.opacity = "1";
     inputHeart.checked = true;
-
+    likeAudio.play();
     if (!inpts.checked) {
       inpts.checked = true;
       likeAudio.play();
@@ -256,10 +256,7 @@ export default function Page() {
             <div className="projectCards">
               {data.project?.map((e, index) => {
                 return (
-                  <div
-                    className="card"
-                    key={e._id}
-                  >
+                  <div className="card" key={e._id}>
                     <div className="project-card-items">
                       <div
                         className="image"
