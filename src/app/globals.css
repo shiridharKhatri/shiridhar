@@ -3293,7 +3293,7 @@ section.projects .projectCards .card .buttons .container:hover {
 .hintsLike {
   position: absolute;
   left: 0rem;
-  bottom: 2rem;
+  bottom: 0rem;
   animation: flash 3s linear infinite;
   transition: 0.2s ease-in-out;
 }
@@ -3349,8 +3349,8 @@ section.projects .projectCards .card .buttons .container:hover {
 }
 .hintsLike p {
   padding: 1rem 2rem 1rem 1rem;
-  background: #d2042d;
-  color: #ffffff;
+  color: #445;
+  margin: 0;;
   border-radius: 0 3rem 3rem 0;
 }
 .likeBtnImg {

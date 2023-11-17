@@ -291,16 +291,16 @@ export default function Projects() {
                         className="hintsLike"
                         style={{
                           position: "absolute",
-                          left: "1rem",
-                          bottom: "2rem",
+                          left: "0rem",
+                          bottom: "0rem",
                         }}
                       >
                         <p
                           style={{
                             color: "#ffffff",
                             margin: "0",
-                            width: "13rem",
-                            fontSize:"1rem"
+                            width: "auto",
+                            fontSize:"1.5rem"
                           }}
                         >
                           Double tap to like
