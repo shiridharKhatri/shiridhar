@@ -691,7 +691,7 @@ section.projects .projectCards .card .image {
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
   width: 100%;
 }
-.topCommentheader .firstDiv{
+.topCommentheader .firstDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -733,12 +733,12 @@ section.projects .projectCards .card .image {
   flex-direction: column;
   border-radius: 1.5rem;
 }
-.comments-list{
+.comments-list {
   height: 85%;
   overflow-y: scroll;
 }
-.comments-list::-webkit-scrollbar{
-display: none;
+.comments-list::-webkit-scrollbar {
+  display: none;
 }
 .comments-list .individual .display .main p {
   text-align: left;
@@ -2960,7 +2960,7 @@ section.searchSec .headerTitle p {
   height: 100%;
   border-radius: 1.3rem 1.3rem 0 0;
 }
-.driverjs-theme{
+.driverjs-theme {
   background-color: var(--btn-text-color);
 }
 section.profileSec {
@@ -3205,13 +3205,12 @@ section.projects .projectCards .card .buttons .container:hover {
   }
 }
 
-
 .heart-container {
   --heart-color: #ff5353;
   position: relative;
   width: 50px;
   height: 50px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .heart-container .checkbox {
@@ -3232,7 +3231,7 @@ section.projects .projectCards .card .buttons .container:hover {
 }
 
 .heart-container .svg-outline,
-        .heart-container .svg-filled {
+.heart-container .svg-filled {
   fill: var(--heart-color);
   position: absolute;
 }
@@ -3244,7 +3243,7 @@ section.projects .projectCards .card .buttons .container:hover {
 
 .heart-container .svg-celebrate {
   position: absolute;
-  animation: keyframes-svg-celebrate .5s;
+  animation: keyframes-svg-celebrate 0.5s;
   animation-fill-mode: forwards;
   display: none;
   stroke: var(--heart-color);
@@ -3252,12 +3251,12 @@ section.projects .projectCards .card .buttons .container:hover {
   stroke-width: 2px;
 }
 
-.heart-container .checkbox:checked~.svg-container .svg-filled {
-  display: block
+.heart-container .checkbox:checked ~ .svg-container .svg-filled {
+  display: block;
 }
 
-.heart-container .checkbox:checked~.svg-container .svg-celebrate {
-  display: block
+.heart-container .checkbox:checked ~ .svg-container .svg-celebrate {
+  display: block;
 }
 
 @keyframes keyframes-svg-filled {
@@ -3291,18 +3290,81 @@ section.projects .projectCards .card .buttons .container:hover {
     display: none;
   }
 }
-.likeBtnImg{
+.hintsLike {
   position: absolute;
-    background: #4444556e;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3rem;
-    backdrop-filter: blur(0.2rem);
+  left: 0rem;
+  bottom: 2rem;
+  animation: flash 3s linear infinite;
+  transition: 0.2s ease-in-out;
+}
+@keyframes flash {
+  0% {
     opacity: 0;
-    transition: 0.2s ease-in-out;
+    left: -20rem;
+  }
+  25% {
+    opacity: 0.3;
+    left: -15rem;
+  }
+  50% {
+    opacity: 1;
+    left: 0rem;
+  }
+  53% {
+    opacity: 1;
+    left: 0rem;
+  }
+  55% {
+    opacity: 1;
+    left: 0rem;
+  }
+  58% {
+    opacity: 1;
+    left: 0rem;
+  }
+  60% {
+    opacity: 1;
+    left: 0rem;
+  }
+  63% {
+    opacity: 1;
+    left: 0rem;
+  }
+  65% {
+    opacity: 1;
+    left: 0rem;
+  }
+  68% {
+    opacity: 1;
+    left: 0rem;
+  }
+  75% {
+    opacity: 0.5;
+    left: -15rem;
+  }
+  100% {
+    opacity: 0;
+    left: -20rem;
+  }
+}
+.hintsLike p {
+  padding: 1rem 2rem 1rem 1rem;
+  background: #d2042d;
+  color: #ffffff;
+  border-radius: 0 3rem 3rem 0;
+}
+.likeBtnImg {
+  position: absolute;
+  background: #4444556e;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  backdrop-filter: blur(0.2rem);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
 }
 #footerId {
   background: #000000;

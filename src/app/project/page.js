@@ -208,7 +208,7 @@ export default function Page() {
     setTimeout(() => {
       likeSec.style.opacity = "0";
       inputHeart.checked = false;
-    }, 1500);
+    }, 1000);
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -238,7 +238,7 @@ export default function Page() {
       <section
         id="projectSec"
         className="projects"
-        style={{ margin: "5rem 0" }}
+        style={{ margin: "0rem 0 5rem 0" }}
       >
         <h1 id="projectHeading">Created Projects</h1>
         <p id="projectParagraph">
@@ -257,9 +257,6 @@ export default function Page() {
               {data.project?.map((e, index) => {
                 return (
                   <div
-                    data-aos="fade-down-right fade-out"
-                    data-aos-anchor-placement="top-bottom"
-                    data-aos-delay="200"
                     className="card"
                     key={e._id}
                   >

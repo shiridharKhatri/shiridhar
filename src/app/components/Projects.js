@@ -206,7 +206,7 @@ export default function Projects() {
     setTimeout(() => {
       likeSec.style.opacity = "0";
       inputHeart.checked = false;
-    }, 1500);
+    }, 1000);
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -268,7 +268,11 @@ export default function Projects() {
                   <div className="project-card-items">
                     <div
                       className="image"
-                      style={{ position: "relative", userSelect: "none" }}
+                      style={{
+                        position: "relative",
+                        userSelect: "none",
+                        overflow: "hidden",
+                      }}
                       onDoubleClick={() => {
                         !Cookies.get("token")
                           ? router.push("/login")
@@ -283,6 +287,25 @@ export default function Projects() {
                             );
                       }}
                     >
+                      <div
+                        className="hintsLike"
+                        style={{
+                          position: "absolute",
+                          left: "1rem",
+                          bottom: "2rem",
+                        }}
+                      >
+                        <p
+                          style={{
+                            color: "#ffffff",
+                            margin: "0",
+                            width: "13rem",
+                            fontSize:"1rem"
+                          }}
+                        >
+                          Double tap to like
+                        </p>
+                      </div>
                       <div
                         id={`${index}likeBtn`}
                         className="likeBtnImg"
