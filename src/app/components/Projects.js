@@ -175,15 +175,38 @@ export default function Projects() {
       likeOnClick(id);
     }
   };
-  const likeOnDoubleClick = (likeBtn, heart) => {
+  const likeOnDoubleClick = (likeBtn, heart, input, button, path, span, id) => {
     const likeSec = document.getElementById(likeBtn);
     const inputHeart = document.getElementById(heart);
+    const inpts = document.getElementById(input);
+    let spns = document.getElementById(span);
+    let btns = document.getElementById(button);
+    let svg = document.getElementById(path);
+
     likeSec.style.opacity = "1";
-    inputHeart.checked = true
+    inputHeart.checked = true;
+
+    if (!inpts.checked) {
+      inpts.checked = true;
+      likeAudio.play();
+      btns.style.color = "#FF5353";
+      svg.style.fill = "#FF5353";
+      svg.style.stroke = "#FF5353";
+      svg.style.transition = "100ms";
+      spns.style.color = "#FF5353";
+      spns.innerHTML = Number(spns.innerText) + 1;
+      likeOnClick(id);
+    } else {
+      btns.style.color = "#FF5353";
+      svg.style.fill = "#FF5353";
+      svg.style.stroke = "#FF5353";
+      svg.style.transition = "100ms";
+      spns.style.color = "#FF5353";
+    }
     setTimeout(() => {
       likeSec.style.opacity = "0";
-      inputHeart.checked = false
-    }, 3000);
+      inputHeart.checked = false;
+    }, 2000);
   };
   useEffect(() => {
     const fetchProjects = async () => {
@@ -247,7 +270,17 @@ export default function Projects() {
                       className="image"
                       style={{ position: "relative", userSelect: "none" }}
                       onDoubleClick={() => {
-                        likeOnDoubleClick(`${index}likeBtn`, `${index}heartInImage`);
+                        !Cookies.get("token")
+                          ? router.push("/login")
+                          : likeOnDoubleClick(
+                              `${index}likeBtn`,
+                              `${index}heartInImage`,
+                              `${index}input`,
+                              index,
+                              `${index}path`,
+                              `${index}span`,
+                              e._id
+                            );
                       }}
                     >
                       <div
