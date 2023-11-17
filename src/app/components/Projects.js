@@ -206,7 +206,7 @@ export default function Projects() {
     setTimeout(() => {
       likeSec.style.opacity = "0";
       inputHeart.checked = false;
-    }, 2000);
+    }, 1500);
   };
   useEffect(() => {
     const fetchProjects = async () => {

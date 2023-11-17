@@ -367,6 +367,9 @@
     width: 95%;
     margin-bottom: 1rem;
   }
+  .likeBtnImg{
+    border-radius: 1rem;
+  }
   section.profileSec .mainProfileSection .profile-first .cardSec {
     width: 100%;
     height: 50rem;

@@ -3293,7 +3293,7 @@ section.projects .projectCards .card .buttons .container:hover {
 }
 .likeBtnImg{
   position: absolute;
-    background: rgba(255,255,255,0.3);
+    background: #4444556e;
     width: 100%;
     height: 100%;
     display: flex;
