@@ -230,16 +230,87 @@ export default function Projects() {
     };
     fetchProjects();
   }, [host]);
+  let array = [1, 2, 3, 4];
   return (
     <section id="projectSec" className="projects" style={{ margin: "5rem 0" }}>
       <h1 id="projectHeading">Created Projects</h1>
       <p id="projectParagraph">
         All the projects that i created using wed development technologies
       </p>
+
       {loader ? (
-        <div className="loaderSection">
-          <Loader />
-        </div>
+        <>
+          <div className="titleHead">
+            <h3>
+              Total projects (Loading...)
+              <span
+                id="viewAllProject"
+                onClick={() => {
+                  router.push("/project");
+                }}
+              >
+                View all
+              </span>
+            </h3>
+          </div>
+          <div className="projectCards projectCards-loader">
+            {array.map((e, index) => {
+              return (
+                <div key={index} className="card card-loader">
+                  <div
+                    className="project-card-items project-card-items-loader"
+                    style={{
+                      background: "#e3e3e3",
+                      padding: " 1.5rem 1.5rem 2.5rem 1.5rem",
+                    }}
+                  >
+                    <div className="image image-loader"></div>
+                    <div className="techUsed techUsed-loader">
+                      <ul id="techUsed">
+                        {tech.map((e, index) => {
+                          return <li key={index}></li>;
+                        })}
+                      </ul>
+                    </div>
+                    <div className="details details-loader">
+                      <h2
+                        style={{
+                          margin: "2rem 0 0 0",
+                          height: "3rem",
+                          background: "#cacaca",
+                        }}
+                      ></h2>
+                      <p
+                        style={{
+                          background: "#cacaca",
+                          height: "1rem",
+                          margin: "1rem 0 0 0",
+                          width: "100%",
+                        }}
+                      ></p>
+                      <p
+                        style={{
+                          background: "#cacaca",
+                          height: "1rem",
+                          margin: "1rem 0 0 0",
+                          width: "100%",
+                        }}
+                      ></p>
+                      <p
+                        style={{
+                          background: "#cacaca",
+                          height: "1rem",
+                          margin: "1rem 0 0 0",
+                          width: "100%",
+                        }}
+                      ></p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
       ) : (
         <>
           <div className="titleHead">
@@ -300,7 +371,7 @@ export default function Projects() {
                             color: "#ffffff",
                             margin: "0",
                             width: "auto",
-                            fontSize:"1.5rem"
+                            fontSize: "1.5rem",
                           }}
                         >
                           Double tap to like

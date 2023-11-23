@@ -466,6 +466,86 @@ section.projects .projectCards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+section.projects .projectCards-loader {
+  position: relative;
+}
+
+section.projects
+  .projectCards-loader
+  .card-loader
+  .project-card-items-loader
+  .image-loader {
+  height: 30rem;
+  background: #cacaca;
+  border-radius: 1rem;
+  animation: imageLoader 2s linear infinite;
+}
+@keyframes imageLoader {
+  0% {
+    background: #cacaca;
+  }
+  50% {
+    background-color: #999191;
+  }
+  100% {
+    background: #cacaca;
+  }
+}
+
+section.projects .projectCards-loader .card-loader .project-card-items-loader {
+  border: 1px solid #d3d3d3;
+}
+
+section.projects .projectCards-loader .card-loader .details-loader h2 {
+  background: #cacaca;
+  border-radius: 1rem;
+  animation: headerTwo 2s linear infinite;
+}
+@keyframes headerTwo {
+  0% {
+    background: #cacaca;
+  }
+  50% {
+    background-color: #999191;
+  }
+  100% {
+    background: #cacaca;
+  }
+}
+section.projects .projectCards-loader .card-loader .details-loader p {
+  border-radius: 1rem;
+  animation: paragraph 2s linear infinite;
+}
+@keyframes paragraph {
+  0% {
+    background: #cacaca;
+  }
+  50% {
+    background-color: #999191;
+  }
+  100% {
+    background: #cacaca;
+  }
+}
+
+section.projects .projectCards-loader .card-loader .techUsed-loader ul li {
+  background: #cacaca;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  animation: techUsedKey 2s linear infinite;
+}
+@keyframes techUsedKey {
+  0% {
+    background: #cacaca;
+  }
+  50% {
+    background-color: #999191;
+  }
+  100% {
+    background: #cacaca;
+  }
+}
 
 section.projects .projectCards .card {
   background: transparent;
@@ -3350,7 +3430,7 @@ section.projects .projectCards .card .buttons .container:hover {
 .hintsLike p {
   padding: 1rem 2rem 1rem 1rem;
   color: #445;
-  margin: 0;;
+  margin: 0;
   border-radius: 0 3rem 3rem 0;
 }
 .likeBtnImg {

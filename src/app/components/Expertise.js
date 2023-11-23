@@ -83,9 +83,9 @@ export default function Expertise() {
         })}
       </div>
       <div
-        data-aos="flip-left fade-out"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-delay="200"
+        // data-aos="flip-left fade-out"
+        // data-aos-anchor-placement="top-bottom"
+        // data-aos-delay="200"
         className="banner"
         style={{
           background: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(./banner.png)`,
