@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kolker+Brush&family=Paytone+One&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Kolker+Brush&family=Montserrat:ital@1&family=Paytone+One&family=Poppins&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -70,6 +71,30 @@ section,
   overflow: hidden;
   white-space: wrap;
   word-break: break-word;
+}
+.topH{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 4rem 0 8rem 0;
+}
+.topH h1{
+  width: 100%;
+  /* background: red; */
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Belanosima", sans-serif;
+  color: var(--headTextColor);
+}
+.topH h2{
+  position: absolute;
+  font-family: 'Rubik Moonrocks', sans-serif;
+  font-size: 6rem;
+  opacity: 0.2;
+  color: #445;
 }
 .hidden {
   display: none;
@@ -431,14 +456,6 @@ section.projects {
   padding: 1rem;
   margin: 0rem 0 5rem 0;
 }
-section.projects h1 {
-  width: 100%;
-  /* background: red; */
-  text-align: center;
-  font-size: 3rem;
-  font-family: "Belanosima", sans-serif;
-  color: var(--headTextColor);
-}
 section.projects p {
   width: 100%;
   text-align: center;
@@ -477,7 +494,7 @@ section.projects
   .image-loader {
   height: 30rem;
   background: #cacaca;
-  border-radius: 1rem;
+  border-radius: 3rem;
   animation: imageLoader 2s linear infinite;
 }
 @keyframes imageLoader {
@@ -492,9 +509,6 @@ section.projects
   }
 }
 
-section.projects .projectCards-loader .card-loader .project-card-items-loader {
-  border: 1px solid #d3d3d3;
-}
 
 section.projects .projectCards-loader .card-loader .details-loader h2 {
   background: #cacaca;
@@ -546,7 +560,10 @@ section.projects .projectCards-loader .card-loader .techUsed-loader ul li {
     background: #cacaca;
   }
 }
-
+::selection{
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+}
 section.projects .projectCards .card {
   background: transparent;
   /* padding: 1rem; */
@@ -569,6 +586,11 @@ section.projects .projectCards .card .project-card-items .details {
 section.projects .projectCards .card .details h2 {
   font-size: 1.6rem;
   margin: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+section.projects .projectCards .card .details h2:hover{
+  color: var(--btn-text-color);
 }
 section.projects .projectCards .card .details p {
   text-align: left;
@@ -3370,69 +3392,7 @@ section.projects .projectCards .card .buttons .container:hover {
     display: none;
   }
 }
-.hintsLike {
-  position: absolute;
-  left: 0rem;
-  bottom: 0rem;
-  animation: flash 3s linear infinite;
-  transition: 0.2s ease-in-out;
-}
-@keyframes flash {
-  0% {
-    opacity: 0;
-    left: -20rem;
-  }
-  25% {
-    opacity: 0.3;
-    left: -15rem;
-  }
-  50% {
-    opacity: 1;
-    left: 0rem;
-  }
-  53% {
-    opacity: 1;
-    left: 0rem;
-  }
-  55% {
-    opacity: 1;
-    left: 0rem;
-  }
-  58% {
-    opacity: 1;
-    left: 0rem;
-  }
-  60% {
-    opacity: 1;
-    left: 0rem;
-  }
-  63% {
-    opacity: 1;
-    left: 0rem;
-  }
-  65% {
-    opacity: 1;
-    left: 0rem;
-  }
-  68% {
-    opacity: 1;
-    left: 0rem;
-  }
-  75% {
-    opacity: 0.5;
-    left: -15rem;
-  }
-  100% {
-    opacity: 0;
-    left: -20rem;
-  }
-}
-.hintsLike p {
-  padding: 1rem 2rem 1rem 1rem;
-  color: #445;
-  margin: 0;
-  border-radius: 0 3rem 3rem 0;
-}
+
 .likeBtnImg {
   position: absolute;
   background: #4444556e;

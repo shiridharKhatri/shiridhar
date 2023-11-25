@@ -232,11 +232,11 @@ export default function Projects() {
   }, [host]);
   let array = [1, 2, 3, 4];
   return (
-    <section id="projectSec" className="projects" style={{ margin: "5rem 0" }}>
-      <h1 id="projectHeading">Created Projects</h1>
-      <p id="projectParagraph">
-        All the projects that i created using wed development technologies
-      </p>
+    <section id="projectSec" className="projects">
+      <div className="topH">
+        <h2>PORTFOLIO</h2>
+        <h1 id="projectHeading">Created Projects</h1>
+      </div>
 
       {loader ? (
         <>
@@ -260,8 +260,7 @@ export default function Projects() {
                   <div
                     className="project-card-items project-card-items-loader"
                     style={{
-                      background: "#e3e3e3",
-                      padding: " 1.5rem 1.5rem 2.5rem 1.5rem",
+                      background: "transparent",
                     }}
                   >
                     <div className="image image-loader"></div>
@@ -358,25 +357,6 @@ export default function Projects() {
                             );
                       }}
                     >
-                      <div
-                        className="hintsLike"
-                        style={{
-                          position: "absolute",
-                          left: "0rem",
-                          bottom: "0rem",
-                        }}
-                      >
-                        <p
-                          style={{
-                            color: "#ffffff",
-                            margin: "0",
-                            width: "auto",
-                            fontSize: "1.5rem",
-                          }}
-                        >
-                          Double tap to like
-                        </p>
-                      </div>
                       <div
                         id={`${index}likeBtn`}
                         className="likeBtnImg"

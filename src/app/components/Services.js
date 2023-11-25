@@ -31,8 +31,10 @@ export default function Services() {
   return (
     <>
       <section className="services">
-        <h1>My Services</h1>
-        <p>Here is a selection of the services I offer</p>
+      <div className="topH">
+        <h2>SERVICES</h2>
+        <h1 id="projectHeading">My Services</h1>
+      </div>
         <div className="mainServiceBox" id="mainServiceBox">
           {services.map((e, index) => {
             return (

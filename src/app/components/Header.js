@@ -43,7 +43,7 @@ export default function Header(props) {
       }}
       id="headerId"
     >
-      <h1>PortFolio</h1>
+      <h1>Shiridhar</h1>
       <Image
         src="./picture.png"
         alt="picture"

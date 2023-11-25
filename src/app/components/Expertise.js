@@ -60,10 +60,10 @@ export default function Expertise() {
   }
   return (
     <section className="expertise">
-      <h1 className="head">My Expertise</h1>
-      <p className="paragraph">
-        I possess expertise in the following technologies.
-      </p>
+       <div className="topH">
+        <h2>EXPERTISE</h2>
+        <h1 id="projectHeading">My Expertise</h1>
+      </div>
       <div className="mainContent" id="mainExpContainer">
         {content.map((e, index) => {
           return (

@@ -354,6 +354,13 @@
   nav ul {
     height: 100vh;
   }
+  section.projects
+  .projectCards-loader
+  .card-loader
+  .project-card-items-loader
+  .image-loader {
+    border-radius: 1rem;
+  }
   #headerId h1 {
     font-size: 15rem;
   }
@@ -689,10 +696,10 @@
   section.projects .titleHead h3 {
     font-size: 1.5rem;
   }
-  #projectHeading,
+  /* #projectHeading,
   #projectParagraph {
     display: none;
-  }
+  } */
   .blogTitleHead {
     margin: 10rem 0rem 0 0rem;
   }

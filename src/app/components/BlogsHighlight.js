@@ -29,11 +29,10 @@ export default function BlogsHighlight() {
   }, [host]);
   return (
     <section className="blogs">
-      <h1>Latest Blogs</h1>
-      <p>
-        Feel free to peruse my latest blog for further insights. If you wish to
-        explore more, simply click on the &apos;View All&apos; button.
-      </p>
+        <div className="topH">
+        <h2>BLOGS</h2>
+        <h1 id="projectHeading">Latest Blogs</h1>
+      </div>
       {loading ? (
         <div className="BlogContainer-loader">
           <Loader />
