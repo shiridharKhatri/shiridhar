@@ -10,8 +10,8 @@ export default function Search(props) {
   const [blog, setBlog] = useState({ total: 0, result: [] });
   const [code, setCode] = useState({ total: 0, result: [] });
   const [project, setProject] = useState({ total: 0, result: [] });
-
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   let query = props.id;
   useEffect(() => {
     let fetchBlogs = async () => {

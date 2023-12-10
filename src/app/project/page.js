@@ -20,8 +20,8 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Alphabets } from "../components/Alphabets";
 export default function Page() {
-  // const host = "http://localhost:5000";
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const [comment, setComment] = useState("");
@@ -240,10 +240,6 @@ export default function Page() {
         className="projects"
         style={{ margin: "0rem 0 5rem 0" }}
       >
-        <h1 id="projectHeading">Created Projects</h1>
-        <p id="projectParagraph">
-          All the projects that i created using wed development technologies
-        </p>
         {loader ? (
           <div className="loaderSection">
             <Loader />

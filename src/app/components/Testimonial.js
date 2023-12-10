@@ -27,7 +27,8 @@ export default function Testimonial() {
   const [reviews, setReviews] = useState([]);
   const [prLoader, setPrLoader] = useState(true);
   const router = useRouter();
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   const reviewOnChange = (e) => {
     setReviewText(e.target.value);
   };

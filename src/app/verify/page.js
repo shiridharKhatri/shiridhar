@@ -39,8 +39,8 @@ export default function Verify(props) {
       confirm_password: "",
     }),
   ];
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   const verifyEmail = async (e) => {
     e.preventDefault();
     setActive(true);

@@ -16,7 +16,8 @@ export default function Page() {
   const [data, setData] = useState();
   const [image, setImage] = useState("");
   const [active, setActive] = useState({logout:false, deleteAc: false, changePw:false});
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  // const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
   const logout = () => {
     setActive({logout:true, deleteAc: false, changePw:false});
     Cookies.remove("token");

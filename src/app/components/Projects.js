@@ -18,8 +18,8 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Alphabets } from "./Alphabets";
 export default function Projects() {
-  // const host = "http://localhost:5000";
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const [comment, setComment] = useState("");
@@ -185,7 +185,7 @@ export default function Projects() {
 
     likeSec.style.opacity = "1";
     inputHeart.checked = true;
-
+    likeAudio.play();
     if (!inpts.checked) {
       inpts.checked = true;
       likeAudio.play();

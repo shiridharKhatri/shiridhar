@@ -12,9 +12,8 @@ export default function Login() {
   const [value, setValue] = useState({ email: "", password: "" });
   const [success, setSuccess] = useState({ success: "", message: "" });
   const [loader, setLoader] = useState(false);
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com";
-  // const host = "http://localhost:5000";
+  // const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
   let router = useRouter();
   const loginOnChangeStage = (e) => {
     const { name, value } = e.target;

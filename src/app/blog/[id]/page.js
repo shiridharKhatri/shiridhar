@@ -1,8 +1,8 @@
 import IndvBlog from "@/app/components/IndvBlog";
 
 export async function generateStaticParams() {
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   let headersList = {
     Accept: "*/*",
   };

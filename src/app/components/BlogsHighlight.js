@@ -8,8 +8,8 @@ export default function BlogsHighlight() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   useEffect(() => {
     async function fetchItems() {
       try {
@@ -29,7 +29,7 @@ export default function BlogsHighlight() {
   }, [host]);
   return (
     <section className="blogs">
-        <div className="topH">
+      <div className="topH">
         <h2>BLOGS</h2>
         <h1 id="projectHeading">Latest Blogs</h1>
       </div>
@@ -102,6 +102,21 @@ export default function BlogsHighlight() {
           </span>
           <span className="button-text">View All</span>
         </button>
+      </div>
+      <div
+        className="courses"
+        style={{
+          background: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(./course.png)`,
+          backgroundPosition:"center",
+          backgroundSize:"cover",
+          backgroundRepeat:"no-repeat"
+        }}
+      >
+        <h1 style={{color:"#f7cd46", fontSize:"4rem"}}>Free Courses</h1>
+        <p style={{color:"rgba(238, 235, 255, 0.9)"}}>
+          If you are a beginner learner you can download pdf of various courses
+          for free
+        </p>
       </div>
     </section>
   );

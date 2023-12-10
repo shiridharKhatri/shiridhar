@@ -40,8 +40,8 @@ export default function Signup() {
       password: "",
     });
   };
-  // const host = process.env.NEXT_PUBLIC_HOST;
-  const host = "https://portfolio-backend-0roz.onrender.com";
+  const host = process.env.NEXT_PUBLIC_HOST;
+  // const host = "https://portfolio-backend-0roz.onrender.com";
   // Handle gender selection change
   const handleGenderChange = (e) => {
     setGender(e.target.id);
