@@ -8,7 +8,7 @@ import Loader from "../tools/Loader";
 export default function IndvBlog(props) {
   const [items, setItems] = useState([]);
   const [success, setSuccess] = useState(false);
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   // const host = "https://portfolio-backend-0roz.onrender.com";
   const fetchById = async () => {
     setSuccess(false);

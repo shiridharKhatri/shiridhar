@@ -8,7 +8,7 @@ import Loader from "../tools/Loader";
 export default function Page() {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   // const host = "https://portfolio-backend-0roz.onrender.com";
   useEffect(() => {
     const fetchData = async () => {

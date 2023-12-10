@@ -12,7 +12,7 @@ export default function Page() {
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
   const router = useRouter();
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   // const host = "https://portfolio-backend-0roz.onrender.com";
   useEffect(() => {
     async function fetchItems() {

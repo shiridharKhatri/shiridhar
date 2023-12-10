@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Alphabets } from "./Alphabets";
 export default function Projects() {
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   // const host = "https://portfolio-backend-0roz.onrender.com";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);

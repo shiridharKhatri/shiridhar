@@ -13,7 +13,7 @@ export default function Login() {
   const [success, setSuccess] = useState({ success: "", message: "" });
   const [loader, setLoader] = useState(false);
   // const host = "https://portfolio-backend-0roz.onrender.com";
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   let router = useRouter();
   const loginOnChangeStage = (e) => {
     const { name, value } = e.target;

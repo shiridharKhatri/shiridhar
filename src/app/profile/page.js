@@ -17,7 +17,7 @@ export default function Page() {
   const [image, setImage] = useState("");
   const [active, setActive] = useState({logout:false, deleteAc: false, changePw:false});
   // const host = "https://portfolio-backend-0roz.onrender.com";
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   const logout = () => {
     setActive({logout:true, deleteAc: false, changePw:false});
     Cookies.remove("token");

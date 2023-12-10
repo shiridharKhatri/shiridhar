@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export default function Mail() {
   const [input, setInput] = useState({ email: "", message: "" });
   // const host = "http://localhost:5000";
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   const inpValOnChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });

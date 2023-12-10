@@ -39,7 +39,7 @@ export default function Verify(props) {
       confirm_password: "",
     }),
   ];
-  const host = process.env.NEXT_PUBLIC_HOST;
+  const host = process.env.NEXT_PUBLIC_HOST || "https://rich-teal-fossa-gear.cyclic.app";
   // const host = "https://portfolio-backend-0roz.onrender.com";
   const verifyEmail = async (e) => {
     e.preventDefault();
