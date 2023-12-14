@@ -103,21 +103,6 @@ export default function BlogsHighlight() {
           <span className="button-text">View All</span>
         </button>
       </div>
-      <div
-        className="courses"
-        style={{
-          background: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(./course.png)`,
-          backgroundPosition:"center",
-          backgroundSize:"cover",
-          backgroundRepeat:"no-repeat"
-        }}
-      >
-        <h1 style={{color:"#f7cd46", fontSize:"4rem"}}>Free Courses</h1>
-        <p style={{color:"rgba(238, 235, 255, 0.9)"}}>
-          If you are a beginner learner you can download pdf of various courses
-          for free
-        </p>
-      </div>
     </section>
   );
 }

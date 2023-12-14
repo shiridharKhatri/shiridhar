@@ -595,10 +595,12 @@ export default function Projects() {
                                   <h1
                                     onClick={() => {
                                       hideCommentSec(e._id);
+                      
                                     }}
                                     style={{
                                       color: "#46415d",
                                       cursor: "pointer",
+                                      fontSize:"3rem"
                                     }}
                                   >
                                     <IoIcons.IoCloseSharp />

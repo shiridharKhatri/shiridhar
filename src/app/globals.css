@@ -87,14 +87,16 @@ section,
   text-align: center;
   font-size: 3rem;
   font-family: "Belanosima", sans-serif;
-  color: var(--headTextColor);
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.1rem var(--headTextColor);
+  -webkit-text-fill-color: transparent;
 }
 .topH h2{
   position: absolute;
   font-family: 'Rubik Moonrocks', sans-serif;
   font-size: 5rem;
   opacity: 0.2;
-  color: #445;
+  color: #7d7d9b;
 }
 .hidden {
   display: none;
@@ -1039,23 +1041,7 @@ section.projects .projectCards .card .image {
   font-weight: 400;
   color: #ffffff;
 }
-.courses{
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  /* background: #5626c4; */
-  margin: 5rem 0;
-  border-radius: 1rem;
-  height: 24rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-direction: column;
-  color: var(--color);
-  width: 100%;
-}
+
 button.learn-more {
   width: 11rem;
   height: auto;

@@ -71,7 +71,6 @@ export default function Testimonial() {
     const fullStars = Math.floor(rating);
     const halfStars = Math.ceil(rating - fullStars);
     const emptyStars = 5 - fullStars - halfStars;
-
     const stars = [];
 
     for (let i = 0; i < fullStars; i++) {
